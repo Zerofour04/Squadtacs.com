@@ -1,0 +1,330 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Card from '../components/Card.astro';
+
+const categories = [
+  {
+    title: 'Getting Started',
+    description: 'New to Squad? Start here to learn the basics.',
+    href: '/guides',
+    badge: 'Beginner',
+    badgeColor: 'primary' as const,
+  },
+  {
+    title: 'Factions',
+    description: 'Explore all playable factions with their unique equipment.',
+    href: '/factions',
+    badge: '17 Factions',
+    badgeColor: 'blufor' as const,
+  },
+  {
+    title: 'Classes',
+    description: 'Learn about each role and how to play them effectively.',
+    href: '/classes',
+    badge: '10 Roles',
+    badgeColor: 'accent' as const,
+  },
+  {
+    title: 'Weapons',
+    description: 'Detailed info on all weapons, attachments, and ballistics.',
+    href: '/weapons',
+    badge: 'Reference',
+    badgeColor: 'redfor' as const,
+  },
+  {
+    title: 'Vehicles',
+    description: 'From transport trucks to main battle tanks.',
+    href: '/vehicles',
+    badge: 'Armor',
+    badgeColor: 'independent' as const,
+  },
+  {
+    title: 'Maps',
+    description: 'Tactical overviews and layer information for all maps.',
+    href: '/maps',
+    badge: 'Intel',
+    badgeColor: 'pac' as const,
+  },
+];
+---
+
+<BaseLayout title="Home" showSidebar={false}>
+  <!-- Hero Section with Background Image (Full Bleed) -->
+  <div class="relative -mt-8 mb-16 w-screen" style="margin-left: calc(-50vw + 50%);">
+    <!-- Background Image -->
+    <div class="absolute inset-0 z-0">
+      <img
+        src="/img/soldier1-wallpaper.jpg"
+        alt=""
+        class="w-full h-full object-cover object-center"
+      />
+      <!-- Gradient Overlays for depth and readability -->
+      <div class="absolute inset-0 bg-gradient-to-b from-bg/80 via-bg/60 to-bg"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-bg/50 via-transparent to-bg/50"></div>
+      <!-- Subtle vignette effect -->
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(10,14,20,0.4)_100%)]"></div>
+    </div>
+
+    <!-- Hero Content -->
+    <div class="relative z-10 text-center py-24 md:py-32 lg:py-40 px-4">
+      <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 uppercase tracking-wide drop-shadow-2xl">
+        Squad Guides
+      </h1>
+
+      <div class="inline-flex items-center gap-4 mb-6">
+        <span class="w-12 h-px bg-amber-400/60"></span>
+        <span class="font-display text-xl uppercase tracking-[0.25em] text-amber-200/80">
+          Developed by GER | Ben//[Zerofour][04]
+        </span>
+        <span class="w-12 h-px bg-amber-400/60"></span>
+      </div>
+
+      <p class="text-xl font-medium text-white/90 max-w-2xl mx-auto leading-relaxed drop-shadow-lg">
+        Your tactical field manual for Squad. Weapons, vehicles, maps, and strategies — all in one place. Hit Shift+Tab in-game for instant battlefield reference.
+      </p>
+
+      <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+        <a href="/guides" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary hover:bg-primary-light text-white font-display uppercase tracking-wider text-sm rounded-lg transition-all shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 hover:-translate-y-0.5">
+          Get Started
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+        <button id="copy-url-btn" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-amber-500/20 backdrop-blur-sm hover:bg-amber-500/30 text-amber-200 font-display uppercase tracking-wider text-sm rounded-lg border border-amber-400/30 hover:border-amber-400/50 transition-all hover:-translate-y-0.5">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+          </svg>
+          <span id="copy-url-text">Copy URL for Steam</span>
+        </button>
+      </div>
+
+      <script>
+        const btn = document.getElementById('copy-url-btn');
+        const text = document.getElementById('copy-url-text');
+        btn?.addEventListener('click', async () => {
+          await navigator.clipboard.writeText(window.location.href);
+          text!.textContent = 'Copied!';
+          setTimeout(() => text!.textContent = 'Copy URL for Steam', 2000);
+        });
+      </script>
+    </div>
+  </div>
+
+  <div class="max-w-5xl mx-auto">
+
+    <!-- Welcome Section -->
+    <div class="mb-16">
+      <div class="flex items-center gap-4 mb-6">
+        <span class="w-12 h-px bg-primary/60"></span>
+        <h2 class="font-display text-sm uppercase tracking-[0.2em] text-text-dim">Why This Exists</h2>
+        <span class="flex-1 h-px bg-border"></span>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 items-start">
+        <div class="space-y-4">
+          <p class="text-lg text-text leading-relaxed">
+            After hundreds of hours in Squad, I noticed new players constantly struggling with the same questions:
+            <span class="text-amber-200">Where do I spawn? What kit should I take? How does logistics work?</span>
+          </p>
+          <p class="text-text-muted leading-relaxed">
+            The answers exist — scattered across Steam guides, the Wiki, and YouTube videos.
+            But who has time to search during a firefight?
+          </p>
+          <p class="text-text-muted leading-relaxed">
+            So I built this. A condensed, tactical handbook you can pull up with
+            <kbd class="px-1.5 py-0.5 bg-bg-elevated rounded text-xs text-amber-200 border border-border">Shift+Tab</kbd>
+            and get answers in seconds.
+          </p>
+        </div>
+
+        <div class="space-y-4 p-5 bg-bg-card/30 rounded-lg border-l-2 border-amber-500/50">
+          <h3 class="font-display text-sm uppercase tracking-wide text-text flex items-center gap-2">
+            <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+            What You'll Find Here
+          </h3>
+          <ul class="space-y-2 text-text-muted">
+            <li class="flex items-start gap-2">
+              <span class="text-amber-400 mt-1">›</span>
+              <span>Curated tactics from top-rated Steam guides</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-amber-400 mt-1">›</span>
+              <span>Essential info from the official Squad Wiki</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-amber-400 mt-1">›</span>
+              <span>Quick-reference for weapons, vehicles & maps</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-amber-400 mt-1">›</span>
+              <span>No fluff — just what you need in the field</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Categories Grid -->
+    <div class="mb-16">
+      <h2 class="font-display text-sm uppercase tracking-[0.2em] text-text-dim mb-6 flex items-center gap-3">
+        <span class="w-8 h-px bg-border"></span>
+        Explore Categories
+        <span class="flex-1 h-px bg-border"></span>
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {categories.map((cat) => (
+          <Card
+            title={cat.title}
+            description={cat.description}
+            href={cat.href}
+            badge={cat.badge}
+            badgeColor={cat.badgeColor}
+          />
+        ))}
+      </div>
+    </div>
+
+    <!-- New to Squad? - Full Width Section -->
+    <div class="mb-16 -mx-6 px-6 py-12 bg-gradient-to-b from-bg-card/50 to-transparent border-y border-border/50">
+      <!-- Header -->
+      <div class="text-center mb-10">
+        <span class="inline-block font-display text-xs uppercase tracking-[0.3em] text-amber-400 mb-3">First Time?</span>
+        <h2 class="font-display text-3xl md:text-4xl uppercase tracking-wide text-text">New to Squad?</h2>
+      </div>
+
+      <!-- Video + Description -->
+      <div class="max-w-4xl mx-auto mb-12">
+        <div class="aspect-video rounded-xl overflow-hidden border-2 border-border shadow-2xl shadow-black/50">
+          <iframe
+            class="w-full h-full"
+            src="https://www.youtube-nocookie.com/embed/SQLjpazPml8?si=3rotwcU2bMYJGXnW"
+            title="Squad Beginner Guide"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <p class="text-center text-text-muted mt-6 max-w-2xl mx-auto leading-relaxed">
+          Squad is a 100-player tactical shooter where <span class="text-amber-200">communication and teamwork</span> win battles.
+          Build bases, coordinate with your squad, and experience combat where <span class="text-amber-200">strategy matters</span> as much as your aim.
+        </p>
+      </div>
+
+      <!-- Quick Tips as Cards -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="group p-5 bg-bg-card rounded-xl border border-border hover:border-amber-500/30 transition-all">
+          <div class="w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center mb-4 group-hover:bg-amber-500/30 transition-colors">
+            <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+            </svg>
+          </div>
+          <h4 class="font-display text-sm uppercase tracking-wide text-text mb-2">Communicate</h4>
+          <p class="text-sm text-text-muted">
+            Use <kbd class="px-1 py-0.5 bg-bg-elevated rounded text-xs text-amber-200">V</kbd> local,
+            <kbd class="px-1 py-0.5 bg-bg-elevated rounded text-xs text-amber-200">B</kbd> squad radio.
+            Talk more, not less.
+          </p>
+        </div>
+
+        <div class="group p-5 bg-bg-card rounded-xl border border-border hover:border-amber-500/30 transition-all">
+          <div class="w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center mb-4 group-hover:bg-amber-500/30 transition-colors">
+            <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          </div>
+          <h4 class="font-display text-sm uppercase tracking-wide text-text mb-2">Stay Together</h4>
+          <p class="text-sm text-text-muted">
+            Lone wolves die fast. Follow your Squad Leader and stick with the team.
+          </p>
+        </div>
+
+        <div class="group p-5 bg-bg-card rounded-xl border border-border hover:border-amber-500/30 transition-all">
+          <div class="w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center mb-4 group-hover:bg-amber-500/30 transition-colors">
+            <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </div>
+          <h4 class="font-display text-sm uppercase tracking-wide text-text mb-2">Spawn Smart</h4>
+          <p class="text-sm text-text-muted">
+            Don't just pick the closest spawn. Think about where your squad needs you.
+          </p>
+        </div>
+
+        <div class="group p-5 bg-bg-card rounded-xl border border-border hover:border-amber-500/30 transition-all">
+          <div class="w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center mb-4 group-hover:bg-amber-500/30 transition-colors">
+            <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+            </svg>
+          </div>
+          <h4 class="font-display text-sm uppercase tracking-wide text-text mb-2">Learn Basics</h4>
+          <p class="text-sm text-text-muted">
+            Start as Medic or Rifleman. Master the basics before going specialized.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Keyboard Shortcuts -->
+    <div class="mb-16">
+      <div class="flex items-center gap-4 mb-6">
+        <span class="w-12 h-px bg-primary/60"></span>
+        <h2 class="font-display text-sm uppercase tracking-[0.2em] text-text-dim">Essential Keybinds</h2>
+        <span class="flex-1 h-px bg-border"></span>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+        <div class="p-4 bg-bg-card rounded-lg border border-border text-center">
+          <kbd class="inline-block px-3 py-1.5 bg-bg-elevated rounded text-lg font-mono text-amber-200 border border-border mb-2">V</kbd>
+          <p class="text-xs text-text-muted uppercase tracking-wide">Local Voice</p>
+        </div>
+        <div class="p-4 bg-bg-card rounded-lg border border-border text-center">
+          <kbd class="inline-block px-3 py-1.5 bg-bg-elevated rounded text-lg font-mono text-amber-200 border border-border mb-2">B</kbd>
+          <p class="text-xs text-text-muted uppercase tracking-wide">Squad Radio</p>
+        </div>
+        <div class="p-4 bg-bg-card rounded-lg border border-border text-center">
+          <kbd class="inline-block px-3 py-1.5 bg-bg-elevated rounded text-lg font-mono text-amber-200 border border-border mb-2">G</kbd>
+          <p class="text-xs text-text-muted uppercase tracking-wide">Command Radio</p>
+        </div>
+        <div class="p-4 bg-bg-card rounded-lg border border-border text-center">
+          <kbd class="inline-block px-3 py-1.5 bg-bg-elevated rounded text-lg font-mono text-amber-200 border border-border mb-2">M</kbd>
+          <p class="text-xs text-text-muted uppercase tracking-wide">Map</p>
+        </div>
+        <div class="p-4 bg-bg-card rounded-lg border border-border text-center">
+          <kbd class="inline-block px-3 py-1.5 bg-bg-elevated rounded text-lg font-mono text-amber-200 border border-border mb-2">T</kbd>
+          <p class="text-xs text-text-muted uppercase tracking-wide">Squad Menu</p>
+        </div>
+        <div class="p-4 bg-bg-card rounded-lg border border-border text-center">
+          <kbd class="inline-block px-3 py-1.5 bg-bg-elevated rounded text-lg font-mono text-amber-200 border border-border mb-2">Enter</kbd>
+          <p class="text-xs text-text-muted uppercase tracking-wide">Spawn / Deploy</p>
+        </div>
+        <div class="p-4 bg-bg-card rounded-lg border border-border text-center">
+          <kbd class="inline-block px-3 py-1.5 bg-bg-elevated rounded text-lg font-mono text-amber-200 border border-border mb-2">Caps</kbd>
+          <p class="text-xs text-text-muted uppercase tracking-wide">Toggle Crouch</p>
+        </div>
+        <div class="p-4 bg-bg-card rounded-lg border border-border text-center">
+          <kbd class="inline-block px-3 py-1.5 bg-bg-elevated rounded text-lg font-mono text-amber-200 border border-border mb-2">Shift</kbd>
+          <p class="text-xs text-text-muted uppercase tracking-wide">Sprint / Focus</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Shoutout to Developers -->
+    <div class="mb-8 text-center py-8 border-t border-border">
+      <p class="text-text-muted leading-relaxed max-w-2xl mx-auto">
+        <span class="text-amber-200">Shoutout to Offworld Industries</span> for creating one of the best tactical shooters out there.
+        Squad is a masterpiece of teamwork-focused gameplay — thanks for the countless hours of intense firefights and unforgettable moments.
+      </p>
+      <a href="https://joinsquad.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 mt-4 text-sm text-text-dim hover:text-amber-200 transition-colors">
+        <span>joinsquad.com</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</BaseLayout>

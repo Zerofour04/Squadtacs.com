@@ -1,0 +1,76 @@
+---
+interface SidebarSection {
+  title: string;
+  items: { label: string; href: string }[];
+}
+
+const sections: SidebarSection[] = [
+  {
+    title: 'Getting Started',
+    items: [
+      { label: 'Introduction', href: '/guides/introduction' },
+      { label: 'Game Modes', href: '/guides/game-modes' },
+      { label: 'Communication', href: '/guides/communication' },
+    ],
+  },
+  {
+    title: 'Factions',
+    items: [
+      { label: 'Overview', href: '/factions' },
+      { label: 'BLUFOR', href: '/factions?side=BLUFOR' },
+      { label: 'REDFOR', href: '/factions?side=REDFOR' },
+    ],
+  },
+  {
+    title: 'Classes',
+    items: [
+      { label: 'Overview', href: '/classes' },
+      { label: 'Squad Leader', href: '/classes/squad-leader' },
+      { label: 'Medic', href: '/classes/medic' },
+    ],
+  },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<aside class="fixed left-0 top-16 bottom-0 w-64 bg-bg-base border-r border-border overflow-y-auto">
+  <div class="p-4">
+    {sections.map((section, index) => (
+      <div class:list={["mb-6", index > 0 && "pt-4 border-t border-border/50"]}>
+        <h3 class="font-display text-xs font-semibold uppercase tracking-widest text-text-dim mb-3 px-3">
+          {section.title}
+        </h3>
+        <ul class="space-y-1">
+          {section.items.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class:list={[
+                  'block px-3 py-2 rounded-md text-sm transition-all duration-200 border-l-2',
+                  currentPath === item.href
+                    ? 'bg-primary/10 text-accent border-accent font-medium'
+                    : 'text-text-muted hover:text-text hover:bg-bg-hover border-transparent hover:border-primary/50',
+                ]}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+
+  <div class="absolute bottom-0 left-0 right-0 p-4 border-t border-border bg-bg-base/80 backdrop-blur-sm">
+    <div class="text-xs text-text-dim">
+      <span class="font-display uppercase tracking-wider">Quick Access</span>
+      <div class="mt-2 flex gap-2">
+        <kbd class="px-1.5 py-0.5 bg-bg-card rounded text-text-muted border border-border">Ctrl</kbd>
+        <span class="text-text-muted">+</span>
+        <kbd class="px-1.5 py-0.5 bg-bg-card rounded text-text-muted border border-border">K</kbd>
+        <span class="text-text-muted ml-1">Search</span>
+      </div>
+    </div>
+  </div>
+</aside>

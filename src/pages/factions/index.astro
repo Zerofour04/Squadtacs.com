@@ -1,0 +1,65 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Card from '../../components/Card.astro';
+
+const factions = await getCollection('factions');
+const sortedFactions = factions.sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 99));
+
+const sideColors = {
+  BLUFOR: 'blufor',
+  REDFOR: 'redfor',
+  INDEPENDENT: 'independent',
+  PAC: 'pac',
+} as const;
+
+const sideLabels = {
+  BLUFOR: 'Coalition Forces',
+  REDFOR: 'Opposition Forces',
+  INDEPENDENT: 'Independent Forces',
+  PAC: 'Pacific Forces',
+};
+
+const sides = ['BLUFOR', 'REDFOR', 'PAC', 'INDEPENDENT'] as const;
+---
+
+<BaseLayout title="Factions">
+  <div class="mb-10">
+    <h1 class="font-display text-4xl font-bold text-text mb-3 uppercase tracking-wide">Factions</h1>
+    <p class="text-text-muted text-lg">All playable factions in Squad</p>
+  </div>
+
+  {sides.map((side) => {
+    const sideFactions = sortedFactions.filter((f) => f.data.side === side);
+    if (sideFactions.length === 0) return null;
+
+    return (
+      <div class="mb-12">
+        <h2 class="font-display text-sm uppercase tracking-[0.2em] text-text-dim mb-6 flex items-center gap-3">
+          <span class={`w-3 h-3 rounded-full bg-${sideColors[side]}`}></span>
+          <span class={`text-${sideColors[side]}`}>{side}</span>
+          <span class="text-text-dim font-normal normal-case tracking-normal">- {sideLabels[side]}</span>
+          <span class="flex-1 h-px bg-border"></span>
+        </h2>
+        <div class="grid gap-3">
+          {sideFactions.map((faction) => (
+            <Card
+              title={faction.data.title}
+              description={faction.data.description}
+              href={`/factions/${faction.id}`}
+              badge={faction.data.shortName}
+              badgeColor={sideColors[side]}
+            />
+          ))}
+        </div>
+      </div>
+    );
+  })}
+
+  {sortedFactions.length === 0 && (
+    <div class="p-8 bg-bg-card rounded-lg border border-border text-center">
+      <p class="text-text-muted mb-2">No factions yet</p>
+      <p class="text-sm text-text-dim">Add markdown files to <code class="text-accent">src/content/factions/</code></p>
+    </div>
+  )}
+</BaseLayout>

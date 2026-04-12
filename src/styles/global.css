@@ -1,0 +1,193 @@
+@import "tailwindcss";
+
+@theme {
+  /* Military/Tactical Color Palette */
+  --color-primary: #4a7c59;
+  --color-primary-light: #5a9a6a;
+  --color-primary-dark: #3d6b4a;
+
+  /* Accent - Amber/Gold for actions */
+  --color-accent: #d4a24c;
+  --color-accent-light: #e4b86c;
+
+  /* Backgrounds - Olive/Grey tones */
+  --color-bg-dark: #121a14;
+  --color-bg-base: #1a241c;
+  --color-bg-card: #222e24;
+  --color-bg-hover: #2d3b2f;
+  --color-bg-elevated: #354438;
+
+  /* Text */
+  --color-text: #e8ece9;
+  --color-text-muted: #9ca89e;
+  --color-text-dim: #6b7a6d;
+
+  /* Border */
+  --color-border: #3a4a3c;
+  --color-border-light: #4a5c4c;
+
+  /* Faction Colors */
+  --color-blufor: #4a90d9;
+  --color-redfor: #d94a4a;
+  --color-independent: #d9a54a;
+  --color-pac: #4ad97a;
+
+  /* Status Colors */
+  --color-success: #4ade80;
+  --color-warning: #fbbf24;
+  --color-danger: #f87171;
+  --color-info: #60a5fa;
+
+  /* Typography */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Barlow Condensed', 'Inter', system-ui, sans-serif;
+}
+
+body {
+  @apply bg-bg-dark text-text antialiased;
+  font-family: var(--font-sans);
+}
+
+/* Display Headlines */
+.font-display {
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Prose styling for markdown content */
+.prose {
+  @apply max-w-none;
+}
+
+.prose h1 {
+  font-family: var(--font-display);
+  @apply text-4xl font-semibold text-text mb-4 mt-8 uppercase tracking-wide;
+}
+
+.prose h2 {
+  font-family: var(--font-display);
+  @apply text-2xl font-semibold text-text mb-3 mt-8 pb-2 border-b border-border uppercase tracking-wide;
+}
+
+.prose h3 {
+  @apply text-xl font-semibold text-text mb-2 mt-6;
+}
+
+.prose h4 {
+  @apply text-lg font-medium text-text mb-2 mt-4;
+}
+
+.prose p {
+  @apply text-text-muted leading-relaxed mb-4;
+}
+
+.prose ul, .prose ol {
+  @apply text-text-muted mb-4 pl-6;
+}
+
+.prose ul {
+  @apply list-disc;
+}
+
+.prose ol {
+  @apply list-decimal;
+}
+
+.prose li {
+  @apply mb-2;
+}
+
+.prose strong {
+  @apply text-text font-semibold;
+}
+
+.prose code {
+  @apply bg-bg-elevated px-1.5 py-0.5 rounded text-sm text-accent font-mono;
+}
+
+.prose pre {
+  @apply bg-bg-card border border-border p-4 rounded-lg overflow-x-auto mb-4;
+}
+
+.prose pre code {
+  @apply bg-transparent p-0;
+}
+
+.prose a {
+  @apply text-primary-light hover:text-accent underline underline-offset-2 transition-colors;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-accent bg-bg-card/50 pl-4 pr-4 py-3 italic text-text-muted my-4 rounded-r-lg;
+}
+
+.prose table {
+  @apply w-full mb-4 border-collapse;
+}
+
+.prose thead {
+  @apply bg-bg-elevated;
+}
+
+.prose th {
+  font-family: var(--font-display);
+  @apply px-4 py-3 text-left font-semibold text-text uppercase tracking-wider text-sm border-b-2 border-primary/30;
+}
+
+.prose td {
+  @apply px-4 py-3 border-b border-border text-text-muted;
+}
+
+.prose tbody tr:hover {
+  @apply bg-bg-hover/50;
+}
+
+.prose img {
+  @apply rounded-lg my-4 border border-border;
+}
+
+.prose hr {
+  @apply border-border my-8;
+}
+
+/* Faction badge colors */
+.badge-blufor {
+  @apply bg-blufor/20 text-blufor border-blufor/30;
+}
+
+.badge-redfor {
+  @apply bg-redfor/20 text-redfor border-redfor/30;
+}
+
+.badge-independent {
+  @apply bg-independent/20 text-independent border-independent/30;
+}
+
+.badge-pac {
+  @apply bg-pac/20 text-pac border-pac/30;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-bg-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-border rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-border-light;
+}
+
+/* Selection */
+::selection {
+  @apply bg-primary/30 text-text;
+}

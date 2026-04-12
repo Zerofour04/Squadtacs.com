@@ -1,0 +1,40 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Card from '../../components/Card.astro';
+
+const guides = await getCollection('guides');
+const sortedGuides = guides.sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 99));
+
+const categoryColors = {
+  basics: 'primary',
+  advanced: 'accent',
+  tactics: 'redfor',
+} as const;
+---
+
+<BaseLayout title="Guides">
+  <div class="mb-10">
+    <h1 class="font-display text-4xl font-bold text-text mb-3 uppercase tracking-wide">Guides</h1>
+    <p class="text-text-muted text-lg">Everything you need to know about Squad</p>
+  </div>
+
+  <div class="grid gap-4">
+    {sortedGuides.length > 0 ? (
+      sortedGuides.map((guide) => (
+        <Card
+          title={guide.data.title}
+          description={guide.data.description}
+          href={`/guides/${guide.id}`}
+          badge={guide.data.category}
+          badgeColor={categoryColors[guide.data.category] || 'primary'}
+        />
+      ))
+    ) : (
+      <div class="p-8 bg-bg-card rounded-lg border border-border text-center">
+        <p class="text-text-muted mb-2">No guides yet</p>
+        <p class="text-sm text-text-dim">Add markdown files to <code class="text-accent">src/content/guides/</code></p>
+      </div>
+    )}
+  </div>
+</BaseLayout>

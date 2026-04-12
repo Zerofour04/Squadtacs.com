@@ -1,0 +1,36 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  badge?: string;
+  badgeColor?: string;
+}
+
+const { title, description, badge, badgeColor = 'primary' } = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <article>
+    <header class="mb-10 pb-6 border-b border-border">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <h1 class="font-display text-3xl md:text-4xl font-bold text-text mb-3 uppercase tracking-wide">{title}</h1>
+          {description && (
+            <p class="text-lg text-text-muted leading-relaxed">{description}</p>
+          )}
+        </div>
+        {badge && (
+          <span class={`flex-shrink-0 font-display text-xs font-semibold px-3 py-1.5 rounded uppercase tracking-wider bg-${badgeColor}/15 text-${badgeColor} border border-${badgeColor}/30`}>
+            {badge}
+          </span>
+        )}
+      </div>
+    </header>
+
+    <div class="prose">
+      <slot />
+    </div>
+  </article>
+</BaseLayout>

@@ -1,0 +1,95 @@
+---
+const navItems = [
+  { label: 'HOME', href: '/' },
+  { label: 'GUIDES', href: '/guides' },
+  { label: 'FACTIONS', href: '/factions' },
+  { label: 'CLASSES', href: '/classes' },
+  { label: 'WEAPONS', href: '/weapons' },
+  { label: 'VEHICLES', href: '/vehicles' },
+  { label: 'MAPS', href: '/maps' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<nav class="fixed top-0 left-0 right-0 h-16 bg-bg-base/95 backdrop-blur-md border-b border-border z-50">
+  <div class="h-full px-6 flex items-center justify-between">
+    <!-- Logo - Links -->
+    <a href="/" class="flex items-center gap-3 group w-48">
+      <div class="w-10 h-10 bg-gradient-to-br from-primary to-primary-dark rounded-lg flex items-center justify-center border border-primary-light/20 shadow-lg shadow-primary/20 group-hover:shadow-primary/40 transition-shadow">
+        <span class="font-display text-white font-bold text-base tracking-wider">SQ</span>
+      </div>
+      <div class="flex flex-col">
+        <span class="font-display text-lg font-semibold text-text tracking-wide uppercase">Squad Guides</span>
+        <span class="text-[10px] text-text-dim uppercase tracking-widest -mt-0.5">Tactical Wiki</span>
+      </div>
+    </a>
+
+    <!-- Navigation - Mitte mit Roboto (absolute zentriert) -->
+    <div class="absolute left-1/2 -translate-x-1/2 flex items-center">
+      {navItems.map((item) => (
+        <a
+          href={item.href}
+          class:list={[
+            'nav-item px-3 py-2 text-sm tracking-[0.08em] transition-all duration-200 relative',
+            currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href))
+              ? 'text-accent'
+              : 'text-text-muted hover:text-text',
+          ]}
+        >
+          {item.label}
+          {(currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href))) && (
+            <span class="absolute bottom-0 left-2 right-2 h-0.5 bg-accent rounded-full"></span>
+          )}
+        </a>
+      ))}
+    </div>
+
+    <!-- Rechts - Externe Tools -->
+    <div class="flex items-center gap-1 justify-end">
+      <a
+        href="https://squadcalc.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="tool-link group flex items-center gap-2 px-2 py-1.5 hover:bg-bg-hover rounded-md transition-all overflow-hidden"
+      >
+        <img src="/rallypoint.svg" alt="" class="w-5 h-5 opacity-60 group-hover:opacity-100 transition-opacity flex-shrink-0" />
+        <span class="tool-text">CALCULATOR</span>
+      </a>
+      <a
+        href="https://squad-armor.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="tool-link group flex items-center gap-2 px-2 py-1.5 hover:bg-bg-hover rounded-md transition-all overflow-hidden"
+      >
+        <img src="/map_tank.svg" alt="" class="w-5 h-5 opacity-60 group-hover:opacity-100 transition-opacity flex-shrink-0" />
+        <span class="tool-text">ARMOR</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<style>
+  .nav-item {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+  }
+
+  .tool-text {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+    white-space: nowrap;
+    max-width: 0;
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+
+  .tool-link:hover .tool-text {
+    max-width: 100px;
+    opacity: 1;
+    color: var(--color-text);
+  }
+</style>

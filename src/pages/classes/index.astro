@@ -1,0 +1,34 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Card from '../../components/Card.astro';
+
+const classes = await getCollection('classes');
+const sortedClasses = classes.sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 99));
+---
+
+<BaseLayout title="Classes">
+  <div class="mb-10">
+    <h1 class="font-display text-4xl font-bold text-text mb-3 uppercase tracking-wide">Classes</h1>
+    <p class="text-text-muted text-lg">All infantry roles and how to play them</p>
+  </div>
+
+  <div class="grid gap-4">
+    {sortedClasses.length > 0 ? (
+      sortedClasses.map((cls) => (
+        <Card
+          title={cls.data.title}
+          description={cls.data.description}
+          href={`/classes/${cls.id}`}
+          badge="Infantry"
+          badgeColor="accent"
+        />
+      ))
+    ) : (
+      <div class="p-8 bg-bg-card rounded-lg border border-border text-center">
+        <p class="text-text-muted mb-2">No classes yet</p>
+        <p class="text-sm text-text-dim">Add markdown files to <code class="text-accent">src/content/classes/</code></p>
+      </div>
+    )}
+  </div>
+</BaseLayout>
