@@ -1,26 +1,57 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import Card from '../../components/Card.astro';
 
 const factions = await getCollection('factions');
 const sortedFactions = factions.sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 99));
 
-const sideColors = {
-  BLUFOR: 'blufor',
-  REDFOR: 'redfor',
-  INDEPENDENT: 'independent',
-  PAC: 'pac',
+const sideInfo = {
+  BLUFOR: {
+    title: 'BLUFOR Factions',
+    description: 'Consisting of NATO members and Western-aligned countries, conventional BLUFOR factions are high-tech militaries outfitted with modern equipment of western design.',
+    color: 'blufor',
+  },
+  PAC: {
+    title: 'PAC Factions',
+    description: 'Consisting of significant military, geopolitical, and technological rivals to the Western-aligned countries in the Pacific regions.',
+    color: 'pac',
+  },
+  REDFOR: {
+    title: 'REDFOR Factions',
+    description: 'Consisting of significant and direct threats to the Western-aligned countries. They use Soviet and Russian weapon platforms.',
+    color: 'redfor',
+  },
+  INDEPENDENT: {
+    title: 'INDEPENDENT Factions',
+    description: 'Non-aligned armed forces that can engage both BLUFOR and REDFOR.',
+    color: 'independent',
+  },
 } as const;
 
-const sideLabels = {
-  BLUFOR: 'Coalition Forces',
-  REDFOR: 'Opposition Forces',
-  INDEPENDENT: 'Independent Forces',
-  PAC: 'Pacific Forces',
+// Unconventional factions
+const unconventionalIds = ['ins', 'imf', 'wpmc'];
+
+// Unit with flag images mapping
+const unitWithFlagImages: Record<string, string> = {
+  usa: '/img/units/unitwithflag/US_Rifleman_Flag.webp',
+  usmc: '/img/units/unitwithflag/USMC_Rifleman_Flag.webp',
+  baf: '/img/units/unitwithflag/GB_Rifleman_Flag.webp',
+  caf: '/img/units/unitwithflag/CAF_Rifleman_Flag.webp',
+  adf: '/img/units/unitwithflag/AUS_Rifleman_Flag.webp',
+  afu: '/img/units/unitwithflag/AFU_TeamImage.webp',
+  rgf: '/img/units/unitwithflag/RUS_Rifleman_Flag.webp',
+  vdv: '/img/units/unitwithflag/VDV_Rifleman_Flag.webp',
+  pla: '/img/units/unitwithflag/PLAImage.webp',
+  planmc: '/img/units/unitwithflag/PLANMC_Rifleman_Flag.webp',
+  plaagf: '/img/units/unitwithflag/PLAAGF_Rifleman_Flag.webp',
+  mea: '/img/units/unitwithflag/MEA_Rifleman_Flag.webp',
+  tlf: '/img/units/unitwithflag/TLFTeamImage_desert.webp',
+  imf: '/img/units/unitwithflag/IMF_TeamImage.webp',
+  ins: '/img/units/unitwithflag/INS_Rifleman_Flag.webp',
+  wpmc: '/img/units/unitwithflag/WPMC_Rifleman_Flag.webp',
 };
 
-const sides = ['BLUFOR', 'REDFOR', 'PAC', 'INDEPENDENT'] as const;
+const sides = ['BLUFOR', 'PAC', 'REDFOR', 'INDEPENDENT'] as const;
 ---
 
 <BaseLayout title="Factions">
@@ -33,25 +64,67 @@ const sides = ['BLUFOR', 'REDFOR', 'PAC', 'INDEPENDENT'] as const;
     const sideFactions = sortedFactions.filter((f) => f.data.side === side);
     if (sideFactions.length === 0) return null;
 
+    const conventional = sideFactions.filter((f) => !unconventionalIds.includes(f.id));
+    const unconventional = sideFactions.filter((f) => unconventionalIds.includes(f.id));
+
     return (
-      <div class="mb-12">
-        <h2 class="font-display text-sm uppercase tracking-[0.2em] text-text-dim mb-6 flex items-center gap-3">
-          <span class={`w-3 h-3 rounded-full bg-${sideColors[side]}`}></span>
-          <span class={`text-${sideColors[side]}`}>{side}</span>
-          <span class="text-text-dim font-normal normal-case tracking-normal">- {sideLabels[side]}</span>
-          <span class="flex-1 h-px bg-border"></span>
-        </h2>
-        <div class="grid gap-3">
-          {sideFactions.map((faction) => (
-            <Card
-              title={faction.data.title}
-              description={faction.data.description}
-              href={`/factions/${faction.id}`}
-              badge={faction.data.shortName}
-              badgeColor={sideColors[side]}
-            />
-          ))}
+      <div class="mb-14">
+        <div class="mb-6">
+          <h2 class={`font-display text-2xl font-bold text-${sideInfo[side].color} mb-2`}>
+            {sideInfo[side].title}
+          </h2>
+          <p class="text-text-muted text-sm max-w-3xl">{sideInfo[side].description}</p>
         </div>
+
+        {conventional.length > 0 && (
+          <div class="mb-6">
+            <h3 class="text-xs uppercase tracking-widest text-text-dim mb-4 pl-1">Conventional</h3>
+            <div class="grid gap-2">
+              {conventional.map((faction) => (
+                <a
+                  href={`/factions/${faction.id}`}
+                  class="group flex items-center gap-4 p-3 bg-bg-card/50 hover:bg-bg-card border border-border/50 hover:border-border rounded-lg transition-all"
+                >
+                  {unitWithFlagImages[faction.id] && (
+                    <img
+                      src={unitWithFlagImages[faction.id]}
+                      alt={`${faction.data.shortName}`}
+                      class="w-12 h-12 object-cover rounded shadow-sm"
+                    />
+                  )}
+                  <span class="text-text group-hover:text-accent transition-colors font-medium">
+                    {faction.data.title}
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {unconventional.length > 0 && (
+          <div>
+            <h3 class="text-xs uppercase tracking-widest text-text-dim mb-4 pl-1">Unconventional</h3>
+            <div class="grid gap-2">
+              {unconventional.map((faction) => (
+                <a
+                  href={`/factions/${faction.id}`}
+                  class="group flex items-center gap-4 p-3 bg-bg-card/50 hover:bg-bg-card border border-border/50 hover:border-border rounded-lg transition-all"
+                >
+                  {unitWithFlagImages[faction.id] && (
+                    <img
+                      src={unitWithFlagImages[faction.id]}
+                      alt={`${faction.data.shortName}`}
+                      class="w-12 h-12 object-cover rounded shadow-sm"
+                    />
+                  )}
+                  <span class="text-text group-hover:text-accent transition-colors font-medium">
+                    {faction.data.title}
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     );
   })}

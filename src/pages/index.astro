@@ -2,6 +2,82 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Card from '../components/Card.astro';
 
+// Fetch latest Squad news from Steam API
+interface NewsItem {
+  gid: string;
+  title: string;
+  url: string;
+  date: number;
+  feedlabel: string;
+  contents: string;
+}
+
+let latestNews: NewsItem[] = [];
+try {
+  const res = await fetch('https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=393380&count=10');
+  const data = await res.json();
+  latestNews = data.appnews?.newsitems?.filter((item: NewsItem) =>
+    item.title.toLowerCase().includes('patch') ||
+    item.title.toLowerCase().includes('update') ||
+    item.title.toLowerCase().includes('hotfix')
+  ).slice(0, 3) || [];
+} catch (e) {
+  console.error('Failed to fetch Squad news:', e);
+}
+
+// Helper to clean up Steam's BBCode/HTML content
+function cleanContent(content: string): string {
+  return content
+    // Remove all image formats
+    .replace(/\[img\].*?\[\/img\]/gi, '')
+    .replace(/\[img src="[^"]*"\]\[\/img\]/gi, '')
+    .replace(/\[img[^\]]*\].*?\[\/img\]/gi, '')
+    // Remove YouTube embeds
+    .replace(/\[previewyoutube=.*?\].*?\[\/previewyoutube\]/gi, '')
+    // Remove Steam clan images
+    .replace(/\{STEAM_CLAN_IMAGE\}[^\s\]]*/gi, '')
+    // Remove HTML tags
+    .replace(/<[^>]*>/g, '')
+    // Remove URLs but keep text
+    .replace(/\[url=.*?\](.*?)\[\/url\]/gi, '$1')
+    // Remove hr tags completely
+    .replace(/\[\/?hr\]/gi, '\n')
+    .replace(/^---$/gm, '')
+    // Remove list tags
+    .replace(/\[\/?list\]/gi, '')
+    // Convert [*] to bullet points
+    .replace(/\[\*\]\s*/gi, '\n• ')
+    .replace(/\[\/\*\]\s*/gi, '')
+    // Handle paragraphs
+    .replace(/\[p\]\s*\[\/p\]/gi, '\n')
+    .replace(/\[p\]/gi, '')
+    .replace(/\[\/p\]/gi, '\n')
+    // Headers - just make them uppercase with newlines
+    .replace(/\[h[1-6]\]/gi, '\n\n')
+    .replace(/\[\/h[1-6]\]/gi, '\n')
+    // Remove all formatting tags
+    .replace(/\[\/?b\]/gi, '')
+    .replace(/\[\/?i\]/gi, '')
+    .replace(/\[\/?u\]/gi, '')
+    .replace(/\[\/?strike\]/gi, '')
+    .replace(/\[\/?code\]/gi, '')
+    .replace(/\[\/?quote\]/gi, '')
+    // Remove table tags
+    .replace(/\[\/?table\]/gi, '')
+    .replace(/\[\/?tr\]/gi, '\n')
+    .replace(/\[\/?td\]/gi, ' ')
+    .replace(/\[\/?th\]/gi, ' ')
+    // Clean up any remaining BBCode tags
+    .replace(/\[[^\]]*\]/g, '')
+    // Fix bullet point newlines
+    .replace(/\n• \n/g, '\n• ')
+    // Max 2 newlines
+    .replace(/\n{3,}/g, '\n\n')
+    // Remove leading newlines
+    .replace(/^\n+/, '')
+    .trim();
+}
+
 const categories = [
   {
     title: 'Getting Started',
@@ -188,7 +264,7 @@ const categories = [
     </div>
 
     <!-- New to Squad? - Full Width Section -->
-    <div class="mb-16 -mx-6 px-6 py-12 bg-gradient-to-b from-bg-card/50 to-transparent border-y border-border/50">
+    <div class="mb-16 -mx-6 px-6 pt-6 pb-12 bg-gradient-to-b from-bg-card/50 to-transparent border-t border-border/50">
       <!-- Header -->
       <div class="text-center mb-10">
         <span class="inline-block font-display text-xs uppercase tracking-[0.3em] text-amber-400 mb-3">First Time?</span>
@@ -314,7 +390,7 @@ const categories = [
     </div>
 
     <!-- Shoutout to Developers -->
-    <div class="mb-8 text-center py-8 border-t border-border">
+    <div class="text-center py-8 border-t border-border">
       <p class="text-text-muted leading-relaxed max-w-2xl mx-auto">
         <span class="text-amber-200">Shoutout to Offworld Industries</span> for creating one of the best tactical shooters out there.
         Squad is a masterpiece of teamwork-focused gameplay — thanks for the countless hours of intense firefights and unforgettable moments.
@@ -326,5 +402,60 @@ const categories = [
         </svg>
       </a>
     </div>
+
+    <!-- Latest Patch Notes from Steam API -->
+    {latestNews.length > 0 && (
+      <div class="py-8 border-t border-border">
+        <div class="flex items-center gap-4 mb-6">
+          <span class="w-12 h-px bg-primary/60"></span>
+          <h2 class="font-display text-sm uppercase tracking-[0.2em] text-text-dim">Latest Updates</h2>
+          <span class="flex-1 h-px bg-border"></span>
+        </div>
+
+        <div class="space-y-3">
+          {latestNews.map((news) => (
+            <details class="group bg-bg-card rounded-lg border border-border hover:border-primary/50 transition-all">
+              <summary class="flex items-center justify-between p-4 cursor-pointer list-none select-none">
+                <div class="flex items-center gap-3">
+                  <svg class="w-4 h-4 text-primary transition-transform group-open:rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                  <span class="text-text">{news.title}</span>
+                </div>
+                <span class="text-text-dim text-sm">{new Date(news.date * 1000).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+              </summary>
+              <div class="px-4 pb-4 pt-2 border-t border-border/50 ml-7 space-y-3">
+                <div class="text-sm text-text-muted leading-relaxed whitespace-pre-line max-h-64 overflow-y-auto pr-2 scrollbar-thin">
+                  {cleanContent(news.contents)}
+                </div>
+                <a
+                  href={news.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-sm text-primary hover:text-primary-light transition-colors"
+                >
+                  <span>Read full patch notes on Steam</span>
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
+              </div>
+            </details>
+          ))}
+        </div>
+
+        <a
+          href="https://store.steampowered.com/news/app/393380"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 mt-4 text-sm text-text-dim hover:text-amber-200 transition-colors"
+        >
+          <span>View all updates on Steam</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+    )}
   </div>
 </BaseLayout>

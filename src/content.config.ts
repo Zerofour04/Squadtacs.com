@@ -59,8 +59,10 @@ const maps = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
+    region: z.enum(['northern-europe', 'eastern-europe', 'southern-asia', 'eastern-asia', 'middle-east', 'north-america', 'training']),
     size: z.enum(['small', 'medium', 'large']).optional(),
-    layers: z.number().optional(),
+    image: z.string().optional(),
+    order: z.number().optional(),
   }),
 });
 

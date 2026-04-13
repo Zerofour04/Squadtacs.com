@@ -1,20 +1,102 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const maps = await getCollection('maps');
+const sortedMaps = maps.sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 99));
+
+const regionInfo = {
+  'northern-europe': {
+    title: 'Northern Europe',
+    description: 'Maps based in Norway and Finland. Features large mountains, small villages, and coastal areas.',
+  },
+  'eastern-europe': {
+    title: 'Eastern Europe',
+    description: 'Maps based in Russia, Ukraine, Georgia, and Estonia. Features dense forests, plains, villages, and industrial areas.',
+  },
+  'southern-asia': {
+    title: 'Southern Asia',
+    description: 'Maps based in Afghanistan and Pakistan. Features massive farms, rural communities, tall hills, and rivers.',
+  },
+  'eastern-asia': {
+    title: 'Eastern Asia',
+    description: 'Maps based in China and Japan. Features island groups, coastal villages, and dense forests.',
+  },
+  'middle-east': {
+    title: 'Middle East',
+    description: 'Maps based in Iraq. Features urban areas, villages, and large deserts.',
+  },
+  'north-america': {
+    title: 'North America',
+    description: 'Maps based in Canada. Features boreal forests, military installations, and wilderness terrain.',
+  },
+  'training': {
+    title: 'Training',
+    description: 'Practice maps for testing weapons, vehicles, and learning game mechanics.',
+  },
+} as const;
+
+const regions = ['northern-europe', 'eastern-europe', 'southern-asia', 'eastern-asia', 'middle-east', 'north-america', 'training'] as const;
 ---
 
 <BaseLayout title="Maps">
   <div class="mb-10">
     <h1 class="font-display text-4xl font-bold text-text mb-3 uppercase tracking-wide">Maps</h1>
-    <p class="text-text-muted text-lg">All maps in Squad</p>
+    <p class="text-text-muted text-lg">All playable maps in Squad</p>
   </div>
 
-  <div class="p-8 bg-bg-card rounded-lg border border-border text-center">
-    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-pac/10 flex items-center justify-center">
-      <svg class="w-8 h-8 text-pac" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-      </svg>
+  {regions.map((region) => {
+    const regionMaps = sortedMaps.filter((m) => m.data.region === region);
+    if (regionMaps.length === 0) return null;
+
+    return (
+      <div class="mb-12">
+        <div class="mb-5">
+          <h2 class="font-display text-xl font-bold text-accent mb-1">
+            {regionInfo[region].title}
+          </h2>
+          <p class="text-text-muted text-sm">{regionInfo[region].description}</p>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+          {regionMaps.map((map) => (
+            <a
+              href={`/maps/${map.id}`}
+              class="group relative aspect-[4/3] rounded-lg overflow-hidden border border-border/50 hover:border-accent/50 transition-all"
+            >
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10"></div>
+              {map.data.image ? (
+                <img
+                  src={map.data.image}
+                  alt={map.data.title}
+                  class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              ) : (
+                <div class="absolute inset-0 bg-bg-card flex items-center justify-center">
+                  <svg class="w-8 h-8 text-text-dim" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                  </svg>
+                </div>
+              )}
+              <div class="absolute bottom-0 left-0 right-0 p-2 z-20">
+                <div class="text-sm font-medium text-white group-hover:text-accent transition-colors">
+                  {map.data.title}
+                </div>
+                {map.data.size && (
+                  <div class="text-xs text-white/60 capitalize">{map.data.size}</div>
+                )}
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    );
+  })}
+
+  {sortedMaps.length === 0 && (
+    <div class="p-8 bg-bg-card rounded-lg border border-border text-center">
+      <p class="text-text-muted mb-2">No maps yet</p>
+      <p class="text-sm text-text-dim">Add markdown files to <code class="text-accent">src/content/maps/</code></p>
     </div>
-    <p class="text-text-muted mb-2">No maps yet</p>
-    <p class="text-sm text-text-dim">Add markdown files to <code class="text-accent">src/content/maps/</code></p>
-  </div>
+  )}
 </BaseLayout>
