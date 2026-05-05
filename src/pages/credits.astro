@@ -16,81 +16,60 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <span class="flex-1 h-px bg-border"></span>
       </h2>
 
-      <div class="bg-bg-card rounded-lg border border-border p-6 mb-4 relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-1 h-full bg-blufor"></div>
-        <h3 class="font-display text-lg font-semibold text-text mb-2 uppercase tracking-wide">Squad Wiki (Fandom)</h3>
-        <p class="text-text-muted mb-3">
-          Much of the game information, statistics, and factual content on this site is adapted from the
-          <a href="https://squad.fandom.com" target="_blank" rel="noopener noreferrer" class="text-primary-light hover:text-accent transition-colors">
-            Squad Wiki on Fandom
-          </a>.
-        </p>
-        <p class="text-sm text-text-dim">
-          Licensed under
-          <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank" rel="noopener noreferrer" class="text-primary-light hover:text-accent transition-colors">
-            Creative Commons Attribution-NonCommercial-ShareAlike (CC BY-NC-SA)
-          </a>
-        </p>
-      </div>
-
-      <div class="bg-bg-card rounded-lg border border-border p-6 mb-4 relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-1 h-full bg-pac"></div>
-        <h3 class="font-display text-lg font-semibold text-text mb-2 uppercase tracking-wide">SquadCalc</h3>
-        <p class="text-text-muted mb-3">
-          Icons and assets used from
-          <a href="https://github.com/sh4rkman/SquadCalc" target="_blank" rel="noopener noreferrer" class="text-primary-light hover:text-accent transition-colors">
-            SquadCalc
-          </a>
-          by Maxime "sharkman" Boussard.
-        </p>
-        <p class="text-sm text-text-dim">
-          Licensed under
-          <a href="https://github.com/sh4rkman/SquadCalc/blob/master/LICENSE" target="_blank" rel="noopener noreferrer" class="text-primary-light hover:text-accent transition-colors">
-            MIT License (Non-Commercial)
-          </a>
-        </p>
-      </div>
-
-      <div class="bg-bg-card rounded-lg border border-border p-6 mb-4 relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-1 h-full bg-redfor"></div>
-        <h3 class="font-display text-lg font-semibold text-text mb-2 uppercase tracking-wide">ZenLogic</h3>
-        <p class="text-text-muted mb-3">
-          Vehicle penetration guide content adapted from
-          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3172739937" target="_blank" rel="noopener noreferrer" class="text-primary-light hover:text-accent transition-colors">
-            Ultimate Armored Guide
-          </a>
-          on Steam.
-        </p>
-        <p class="text-sm text-text-dim">
-          Used with attribution as per Steam Subscriber Agreement
-        </p>
-      </div>
-
-      <div class="bg-bg-card rounded-lg border border-border p-6 mb-4 relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-1 h-full bg-independent"></div>
-        <h3 class="font-display text-lg font-semibold text-text mb-2 uppercase tracking-wide">ExSide</h3>
-        <p class="text-text-muted mb-3">
-          Penetration indicators guide content adapted from
-          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3157599349" target="_blank" rel="noopener noreferrer" class="text-primary-light hover:text-accent transition-colors">
-            Vehicle Penetration Guide
-          </a>
-          on Steam.
-        </p>
-        <p class="text-sm text-text-dim">
-          Used with attribution as per Steam Subscriber Agreement
-        </p>
-      </div>
-
-      <div class="bg-bg-card rounded-lg border border-border p-6 relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-1 h-full bg-accent"></div>
-        <h3 class="font-display text-lg font-semibold text-text mb-2 uppercase tracking-wide">Offworld Industries</h3>
-        <p class="text-text-muted">
-          Squad is developed by
-          <a href="https://www.offworldindustries.com" target="_blank" rel="noopener noreferrer" class="text-primary-light hover:text-accent transition-colors">
-            Offworld Industries
-          </a>.
-          All game assets, screenshots, and trademarks belong to their respective owners.
-        </p>
+      <div class="overflow-hidden rounded-lg border border-border">
+        <table class="w-full text-sm">
+          <thead class="bg-bg-elevated text-left">
+            <tr>
+              <th class="px-5 py-3 text-text font-semibold">Source</th>
+              <th class="px-5 py-3 text-text font-semibold">Content</th>
+              <th class="px-5 py-3 text-text font-semibold">License</th>
+            </tr>
+          </thead>
+          <tbody class="text-text-muted">
+            <tr class="border-t border-border bg-bg-card">
+              <td class="px-5 py-4">
+                <a href="https://squad.fandom.com" target="_blank" rel="noopener noreferrer" class="text-primary-light hover:text-accent font-medium">Squad Wiki</a>
+              </td>
+              <td class="px-5 py-4">Game information, statistics, factual content</td>
+              <td class="px-5 py-4">
+                <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank" rel="noopener noreferrer" class="text-text-dim hover:text-accent">CC BY-NC-SA</a>
+              </td>
+            </tr>
+            <tr class="border-t border-border bg-bg-card">
+              <td class="px-5 py-4">
+                <a href="https://github.com/sh4rkman/SquadCalc" target="_blank" rel="noopener noreferrer" class="text-primary-light hover:text-accent font-medium">SquadCalc</a>
+                <span class="block text-text-dim text-xs">by sharkman</span>
+              </td>
+              <td class="px-5 py-4">Icons and assets</td>
+              <td class="px-5 py-4">
+                <a href="https://github.com/sh4rkman/SquadCalc/blob/master/LICENSE" target="_blank" rel="noopener noreferrer" class="text-text-dim hover:text-accent">MIT (Non-Commercial)</a>
+              </td>
+            </tr>
+            <tr class="border-t border-border bg-bg-card">
+              <td class="px-5 py-4">
+                <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3172739937" target="_blank" rel="noopener noreferrer" class="text-primary-light hover:text-accent font-medium">ZenLogic</a>
+                <span class="block text-text-dim text-xs">Steam Guide</span>
+              </td>
+              <td class="px-5 py-4">Vehicle penetration guide</td>
+              <td class="px-5 py-4 text-text-dim">Steam Subscriber Agreement</td>
+            </tr>
+            <tr class="border-t border-border bg-bg-card">
+              <td class="px-5 py-4">
+                <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3157599349" target="_blank" rel="noopener noreferrer" class="text-primary-light hover:text-accent font-medium">ExSide</a>
+                <span class="block text-text-dim text-xs">Steam Guide</span>
+              </td>
+              <td class="px-5 py-4">Penetration indicators guide</td>
+              <td class="px-5 py-4 text-text-dim">Steam Subscriber Agreement</td>
+            </tr>
+            <tr class="border-t border-border bg-bg-card">
+              <td class="px-5 py-4">
+                <a href="https://www.offworldindustries.com" target="_blank" rel="noopener noreferrer" class="text-primary-light hover:text-accent font-medium">Offworld Industries</a>
+              </td>
+              <td class="px-5 py-4">Game assets, screenshots, trademarks</td>
+              <td class="px-5 py-4 text-text-dim">Property of respective owners</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </section>
 

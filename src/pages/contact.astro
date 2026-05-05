@@ -1,0 +1,177 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const turnstileSiteKey = '0x4AAAAAADJs2KHio8PHqjyG';
+---
+
+<BaseLayout title="Contact" showSidebar={false}>
+  <div class="max-w-2xl mx-auto">
+    <div class="mb-10">
+      <h1 class="font-display text-4xl font-bold text-text mb-3 uppercase tracking-wide">Contact</h1>
+      <p class="text-text-muted">Have questions, feedback, or found an error? Let us know.</p>
+    </div>
+
+    <form id="contact-form" class="space-y-6">
+      <div>
+        <label for="name" class="block text-sm font-medium text-text mb-2">Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          class="w-full px-5 py-4 bg-bg-card border border-border rounded-lg text-text placeholder-text-dim focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
+          placeholder="Your name"
+        />
+      </div>
+
+      <div>
+        <label for="email" class="block text-sm font-medium text-text mb-2">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          class="w-full px-5 py-4 bg-bg-card border border-border rounded-lg text-text placeholder-text-dim focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
+          placeholder="your@email.com"
+        />
+      </div>
+
+      <div>
+        <label for="subject" class="block text-sm font-medium text-text mb-2">Subject</label>
+        <select
+          id="subject"
+          name="subject"
+          required
+          class="w-full px-5 py-4 bg-bg-card border border-border rounded-lg text-text focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors appearance-none cursor-pointer"
+        >
+          <option value="" disabled selected>Select a topic...</option>
+          <option value="General Feedback">General Feedback</option>
+          <option value="Bug Report">Bug Report / Error Found</option>
+          <option value="Content Suggestion">Content Suggestion</option>
+          <option value="Copyright Issue">Copyright Issue</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="message" class="block text-sm font-medium text-text mb-2">Message</label>
+        <textarea
+          id="message"
+          name="message"
+          required
+          rows="6"
+          class="w-full px-5 py-4 bg-bg-card border border-border rounded-lg text-text placeholder-text-dim focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors resize-none"
+          placeholder="Your message..."
+        ></textarea>
+      </div>
+
+      <!-- Privacy Checkbox -->
+      <div class="flex items-start gap-3">
+        <input
+          type="checkbox"
+          id="privacy"
+          name="privacy"
+          required
+          class="mt-1 w-5 h-5 bg-bg-card border border-border rounded text-primary focus:ring-primary focus:ring-offset-0 cursor-pointer"
+        />
+        <label for="privacy" class="text-sm text-text-muted cursor-pointer">
+          I agree to the <a href="/privacy" class="text-primary-light hover:text-accent underline">Privacy Policy</a> and consent to the processing of my data for handling this request.
+        </label>
+      </div>
+
+      <!-- Cloudflare Turnstile -->
+      <div class="cf-turnstile" data-sitekey={turnstileSiteKey} data-theme="dark"></div>
+
+      <button
+        type="submit"
+        id="submit-btn"
+        class="w-full px-6 py-4 bg-primary hover:bg-primary-dark text-white font-display uppercase tracking-wider text-sm rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+      >
+        Send Message
+      </button>
+
+      <!-- Status Messages -->
+      <div id="form-status" class="hidden">
+        <div id="form-success" class="hidden p-4 bg-green-500/10 border border-green-500/30 rounded-lg text-green-400">
+          Message sent successfully! We'll get back to you soon.
+        </div>
+        <div id="form-error" class="hidden p-4 bg-red-500/10 border border-red-500/30 rounded-lg text-red-400">
+          Something went wrong. Please try again.
+        </div>
+      </div>
+    </form>
+  </div>
+</BaseLayout>
+
+<!-- Turnstile Script -->
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+  const formStatus = document.getElementById('form-status') as HTMLDivElement;
+  const formSuccess = document.getElementById('form-success') as HTMLDivElement;
+  const formError = document.getElementById('form-error') as HTMLDivElement;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Get Turnstile token
+    const turnstileResponse = document.querySelector('[name="cf-turnstile-response"]') as HTMLInputElement;
+    if (!turnstileResponse?.value) {
+      formStatus.classList.remove('hidden');
+      formError.classList.remove('hidden');
+      formError.textContent = 'Please complete the security check.';
+      return;
+    }
+
+    // Disable button
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+
+    // Hide previous status
+    formStatus.classList.add('hidden');
+    formSuccess.classList.add('hidden');
+    formError.classList.add('hidden');
+
+    try {
+      const formData = new FormData(form);
+      const data = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        subject: formData.get('subject'),
+        message: formData.get('message'),
+        turnstileToken: turnstileResponse.value,
+      };
+
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      formStatus.classList.remove('hidden');
+
+      if (response.ok) {
+        formSuccess.classList.remove('hidden');
+        form.reset();
+        // Reset Turnstile
+        if (window.turnstile) {
+          window.turnstile.reset();
+        }
+      } else {
+        formError.classList.remove('hidden');
+        formError.textContent = result.error || 'Something went wrong. Please try again.';
+      }
+    } catch (error) {
+      formStatus.classList.remove('hidden');
+      formError.classList.remove('hidden');
+      formError.textContent = 'Network error. Please try again.';
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send Message';
+    }
+  });
+</script>
