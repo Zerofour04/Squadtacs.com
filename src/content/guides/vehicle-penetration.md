@@ -117,8 +117,8 @@ All MBTs have **3000 HP** hull and **2000 HP** ammo racks.
 ## 🔵 Challenger 2 (British)
 
 <div style="display: flex; gap: 1.5rem; margin: 1.5rem 0;">
-<div style="flex-shrink: 0;">
-<img src="/img/guides/zenlogic-mbt-guide/challenger-front.png" alt="Challenger Front" style="max-width: 280px; border-radius: 8px;" />
+<div>
+<img src="/img/guides/zenlogic-mbt-guide/challenger-front.png" alt="Challenger Front" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 <div>
 
@@ -134,8 +134,8 @@ All MBTs have **3000 HP** hull and **2000 HP** ammo racks.
 </div>
 
 <div style="display: flex; gap: 1rem; margin: 1rem 0; flex-wrap: wrap;">
-<img src="/img/guides/zenlogic-mbt-guide/challenger-side.png" alt="Challenger Side" style="max-width: 280px; border-radius: 8px;" />
-<img src="/img/guides/zenlogic-mbt-guide/challenger-weakspot.png" alt="Challenger Weakspots" style="max-width: 280px; border-radius: 8px;" />
+<img src="/img/guides/zenlogic-mbt-guide/challenger-side.png" alt="Challenger Side" style="width: 300px; height: auto; border-radius: 8px;" />
+<img src="/img/guides/zenlogic-mbt-guide/challenger-weakspot.png" alt="Challenger Weakspots" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 
 **🛡️ Defending:** Good luck. Play more passive with good positioning. You can angle your front to mislead gunners into aiming at the window or causing ricochets off the angled track.
@@ -145,8 +145,8 @@ All MBTs have **3000 HP** hull and **2000 HP** ammo racks.
 ## 🔵 Leopard 2 (Canada)
 
 <div style="display: flex; gap: 1.5rem; margin: 1.5rem 0;">
-<div style="flex-shrink: 0;">
-<img src="/img/guides/zenlogic-mbt-guide/leopard-front.png" alt="Leopard Front" style="max-width: 280px; border-radius: 8px;" />
+<div>
+<img src="/img/guides/zenlogic-mbt-guide/leopard-front.png" alt="Leopard Front" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 <div>
 
@@ -162,8 +162,8 @@ All MBTs have **3000 HP** hull and **2000 HP** ammo racks.
 </div>
 
 <div style="display: flex; gap: 1rem; margin: 1rem 0; flex-wrap: wrap;">
-<img src="/img/guides/zenlogic-mbt-guide/leopard-side.png" alt="Leopard Side" style="max-width: 280px; border-radius: 8px;" />
-<img src="/img/guides/zenlogic-mbt-guide/leopard-weakspot.png" alt="Leopard Weakspots" style="max-width: 280px; border-radius: 8px;" />
+<img src="/img/guides/zenlogic-mbt-guide/leopard-side.png" alt="Leopard Side" style="width: 300px; height: auto; border-radius: 8px;" />
+<img src="/img/guides/zenlogic-mbt-guide/leopard-weakspot.png" alt="Leopard Weakspots" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 
 **🛡️ Defending:** Another MBT you need to play carefully. Avoid frontal engagements, rely on information and good positioning.
@@ -173,8 +173,8 @@ All MBTs have **3000 HP** hull and **2000 HP** ammo racks.
 ## 🔵 M1A2/1 Abrams (USA/Australia)
 
 <div style="display: flex; gap: 1.5rem; margin: 1.5rem 0;">
-<div style="flex-shrink: 0;">
-<img src="/img/guides/zenlogic-mbt-guide/m1a2-front.jpg" alt="M1A2 Front" style="max-width: 280px; border-radius: 8px;" />
+<div>
+<img src="/img/guides/zenlogic-mbt-guide/m1a2-front.jpg" alt="M1A2 Front" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 <div>
 
@@ -190,8 +190,8 @@ All MBTs have **3000 HP** hull and **2000 HP** ammo racks.
 </div>
 
 <div style="display: flex; gap: 1rem; margin: 1rem 0; flex-wrap: wrap;">
-<img src="/img/guides/zenlogic-mbt-guide/m1a2-side.png" alt="M1A2 Side" style="max-width: 280px; border-radius: 8px;" />
-<img src="/img/guides/zenlogic-mbt-guide/m1a2-weakspot.jpg" alt="M1A2 Weakspots" style="max-width: 280px; border-radius: 8px;" />
+<img src="/img/guides/zenlogic-mbt-guide/m1a2-side.png" alt="M1A2 Side" style="width: 300px; height: auto; border-radius: 8px;" />
+<img src="/img/guides/zenlogic-mbt-guide/m1a2-weakspot.jpg" alt="M1A2 Weakspots" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 
 **🛡️ Defending:** A tank you can be aggressive with. You'll win most trades in frontal engagements.
@@ -201,8 +201,8 @@ All MBTs have **3000 HP** hull and **2000 HP** ammo racks.
 ## 🟡 ZTZ-99 (China)
 
 <div style="display: flex; gap: 1.5rem; margin: 1.5rem 0;">
-<div style="flex-shrink: 0;">
-<img src="/img/guides/zenlogic-mbt-guide/ztz-front.jpg" alt="ZTZ Front" style="max-width: 280px; border-radius: 8px;" />
+<div>
+<img src="/img/guides/zenlogic-mbt-guide/ztz-front.jpg" alt="ZTZ Front" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 <div>
 
@@ -218,9 +218,9 @@ All MBTs have **3000 HP** hull and **2000 HP** ammo racks.
 </div>
 
 <div style="display: flex; gap: 1rem; margin: 1rem 0; flex-wrap: wrap;">
-<img src="/img/guides/zenlogic-mbt-guide/ztz-front2.jpg" alt="ZTZ Front 2" style="max-width: 280px; border-radius: 8px;" />
-<img src="/img/guides/zenlogic-mbt-guide/ztz-side.png" alt="ZTZ Side" style="max-width: 280px; border-radius: 8px;" />
-<img src="/img/guides/zenlogic-mbt-guide/ztz-weakspot.png" alt="ZTZ Weakspots" style="max-width: 280px; border-radius: 8px;" />
+<img src="/img/guides/zenlogic-mbt-guide/ztz-front2.jpg" alt="ZTZ Front 2" style="width: 300px; height: auto; border-radius: 8px;" />
+<img src="/img/guides/zenlogic-mbt-guide/ztz-side.png" alt="ZTZ Side" style="width: 300px; height: auto; border-radius: 8px;" />
+<img src="/img/guides/zenlogic-mbt-guide/ztz-weakspot.png" alt="ZTZ Weakspots" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 
 **🛡️ Defending:** No fear in this war machine. Face the enemy tank with your front and angle to hide the neck if possible. Also equipped with TOW.
@@ -232,8 +232,8 @@ All MBTs have **3000 HP** hull and **2000 HP** ammo racks.
 ## 🔴 T-72/S (Russia/MEA)
 
 <div style="display: flex; gap: 1.5rem; margin: 1.5rem 0;">
-<div style="flex-shrink: 0;">
-<img src="/img/guides/zenlogic-mbt-guide/t72-front.png" alt="T72 Front" style="max-width: 280px; border-radius: 8px;" />
+<div>
+<img src="/img/guides/zenlogic-mbt-guide/t72-front.png" alt="T72 Front" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 <div>
 
@@ -249,8 +249,8 @@ All MBTs have **3000 HP** hull and **2000 HP** ammo racks.
 </div>
 
 <div style="display: flex; gap: 1rem; margin: 1rem 0; flex-wrap: wrap;">
-<img src="/img/guides/zenlogic-mbt-guide/t72-side.png" alt="T72 Side" style="max-width: 280px; border-radius: 8px;" />
-<img src="/img/guides/zenlogic-mbt-guide/t72-weakspot.png" alt="T72 Weakspots" style="max-width: 280px; border-radius: 8px;" />
+<img src="/img/guides/zenlogic-mbt-guide/t72-side.png" alt="T72 Side" style="width: 300px; height: auto; border-radius: 8px;" />
+<img src="/img/guides/zenlogic-mbt-guide/t72-weakspot.png" alt="T72 Weakspots" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 
 **🛡️ Defending:** You can be aggressive and win most trades in frontal engagements since you have TOWs in your favor. After the TOW rework and the new T-90, play more passively against better factions (RU/US/CN) and be aggressive against others.
@@ -260,8 +260,8 @@ All MBTs have **3000 HP** hull and **2000 HP** ammo racks.
 ## 🔴 T-90 (Russia)
 
 <div style="display: flex; gap: 1.5rem; margin: 1.5rem 0;">
-<div style="flex-shrink: 0;">
-<img src="/img/guides/zenlogic-mbt-guide/t90-front.jpg" alt="T90 Front" style="max-width: 280px; border-radius: 8px;" />
+<div>
+<img src="/img/guides/zenlogic-mbt-guide/t90-front.jpg" alt="T90 Front" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 <div>
 
@@ -277,7 +277,7 @@ All MBTs have **3000 HP** hull and **2000 HP** ammo racks.
 </div>
 
 <div style="display: flex; gap: 1rem; margin: 1rem 0; flex-wrap: wrap;">
-<img src="/img/guides/zenlogic-mbt-guide/t90-weakspot.png" alt="T90 Weakspots" style="max-width: 280px; border-radius: 8px;" />
+<img src="/img/guides/zenlogic-mbt-guide/t90-weakspot.png" alt="T90 Weakspots" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 
 **🛡️ Defending:** A worthy opponent for the Abrams and ZTZ. Can be aggressive and win trades with good positioning or first shot advantage.
@@ -287,8 +287,8 @@ All MBTs have **3000 HP** hull and **2000 HP** ammo racks.
 ## 🟢 M60T (Turkey/PMC)
 
 <div style="display: flex; gap: 1.5rem; margin: 1.5rem 0;">
-<div style="flex-shrink: 0;">
-<img src="/img/guides/zenlogic-mbt-guide/m60-front.png" alt="M60 Front" style="max-width: 280px; border-radius: 8px;" />
+<div>
+<img src="/img/guides/zenlogic-mbt-guide/m60-front.png" alt="M60 Front" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 <div>
 
@@ -304,8 +304,8 @@ All MBTs have **3000 HP** hull and **2000 HP** ammo racks.
 </div>
 
 <div style="display: flex; gap: 1rem; margin: 1rem 0; flex-wrap: wrap;">
-<img src="/img/guides/zenlogic-mbt-guide/m60-side.png" alt="M60 Side" style="max-width: 280px; border-radius: 8px;" />
-<img src="/img/guides/zenlogic-mbt-guide/m60-weakspot.png" alt="M60 Weakspots" style="max-width: 280px; border-radius: 8px;" />
+<img src="/img/guides/zenlogic-mbt-guide/m60-side.png" alt="M60 Side" style="width: 300px; height: auto; border-radius: 8px;" />
+<img src="/img/guides/zenlogic-mbt-guide/m60-weakspot.png" alt="M60 Weakspots" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 
 **🛡️ Defending:** Avoid frontal confrontations and play on information with this tin box. Note: The "High Explosive" ammo is actually fragmentation.
@@ -315,8 +315,8 @@ All MBTs have **3000 HP** hull and **2000 HP** ammo racks.
 ## 🟢 T-62 (Insurgents/Militia)
 
 <div style="display: flex; gap: 1.5rem; margin: 1.5rem 0;">
-<div style="flex-shrink: 0;">
-<img src="/img/guides/zenlogic-mbt-guide/t62-front.png" alt="T62 Front" style="max-width: 280px; border-radius: 8px;" />
+<div>
+<img src="/img/guides/zenlogic-mbt-guide/t62-front.png" alt="T62 Front" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 <div>
 
@@ -334,7 +334,7 @@ All MBTs have **3000 HP** hull and **2000 HP** ammo racks.
 </div>
 
 <div style="display: flex; gap: 1rem; margin: 1rem 0; flex-wrap: wrap;">
-<img src="/img/guides/zenlogic-mbt-guide/t62-side.png" alt="T62 Side" style="max-width: 280px; border-radius: 8px;" />
+<img src="/img/guides/zenlogic-mbt-guide/t62-side.png" alt="T62 Side" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 
 ---
@@ -353,8 +353,8 @@ The Sprut, ZTD-05, and M1128 are Mobile Gun Systems equipped with 105mm cannons.
 ## 🔵 M1128 Stryker MGS (USA)
 
 <div style="display: flex; gap: 1.5rem; margin: 1.5rem 0;">
-<div style="flex-shrink: 0;">
-<img src="/img/guides/zenlogic-mbt-guide/m1128-front.jpg" alt="M1128 Front" style="max-width: 280px; border-radius: 8px;" />
+<div>
+<img src="/img/guides/zenlogic-mbt-guide/m1128-front.jpg" alt="M1128 Front" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 <div>
 
@@ -370,7 +370,7 @@ The first BLUFOR MGS. Equipped with powerful weapons and wheeled for great movem
 </div>
 
 <div style="display: flex; gap: 1rem; margin: 1rem 0;">
-<img src="/img/guides/zenlogic-mbt-guide/m1128-side.jpg" alt="M1128 Side" style="max-width: 280px; border-radius: 8px;" />
+<img src="/img/guides/zenlogic-mbt-guide/m1128-side.jpg" alt="M1128 Side" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 
 **Stronger than:** MTLB-6MB, BMP-1, BMP-2, BTR-82, ZBD-04, ACV-15, PARS III
@@ -382,8 +382,8 @@ The first BLUFOR MGS. Equipped with powerful weapons and wheeled for great movem
 ## 🟡 ZTD-05 (China Navy)
 
 <div style="display: flex; gap: 1.5rem; margin: 1.5rem 0;">
-<div style="flex-shrink: 0;">
-<img src="/img/guides/zenlogic-mbt-guide/zdt05-front.png" alt="ZTD05 Front" style="max-width: 280px; border-radius: 8px;" />
+<div>
+<img src="/img/guides/zenlogic-mbt-guide/zdt05-front.png" alt="ZTD05 Front" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 <div>
 
@@ -401,7 +401,7 @@ One of the first MGS. Uses powerful weapons and mobility to take down armor.
 </div>
 
 <div style="display: flex; gap: 1rem; margin: 1rem 0;">
-<img src="/img/guides/zenlogic-mbt-guide/ztd05-side.png" alt="ZTD05 Side" style="max-width: 280px; border-radius: 8px;" />
+<img src="/img/guides/zenlogic-mbt-guide/ztd05-side.png" alt="ZTD05 Side" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 
 **Stronger than:** FV107, Coyote, LAV III, Stryker, AAVP, LAV-25, ASLAV, LAV 6, FV510
@@ -413,8 +413,8 @@ One of the first MGS. Uses powerful weapons and mobility to take down armor.
 ## 🔴 Sprut-SD (Russia VDV)
 
 <div style="display: flex; gap: 1.5rem; margin: 1.5rem 0;">
-<div style="flex-shrink: 0;">
-<img src="/img/guides/zenlogic-mbt-guide/sprut-front.png" alt="Sprut Front" style="max-width: 280px; border-radius: 8px;" />
+<div>
+<img src="/img/guides/zenlogic-mbt-guide/sprut-front.png" alt="Sprut Front" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 <div>
 
@@ -430,7 +430,7 @@ Same function as ZTD-05 with improved weapons but weaker armor.
 </div>
 
 <div style="display: flex; gap: 1rem; margin: 1rem 0;">
-<img src="/img/guides/zenlogic-mbt-guide/sprut-side.png" alt="Sprut Side" style="max-width: 280px; border-radius: 8px;" />
+<img src="/img/guides/zenlogic-mbt-guide/sprut-side.png" alt="Sprut Side" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 
 **Stronger than:** FV107, Coyote, LAV III, Stryker, AAVP, LAV-25, ASLAV, LAV 6, FV510
@@ -446,8 +446,8 @@ Same function as ZTD-05 with improved weapons but weaker armor.
 ## 🔵 M2A3 Bradley (USA)
 
 <div style="display: flex; gap: 1.5rem; margin: 1.5rem 0;">
-<div style="flex-shrink: 0;">
-<img src="/img/guides/zenlogic-mbt-guide/m2a3-front.png" alt="Bradley Front" style="max-width: 280px; border-radius: 8px;" />
+<div>
+<img src="/img/guides/zenlogic-mbt-guide/m2a3-front.png" alt="Bradley Front" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 <div>
 
@@ -463,7 +463,7 @@ The old reliable Bradley - a US war machine. Well armored and equipped with TOW 
 </div>
 
 <div style="display: flex; gap: 1rem; margin: 1rem 0;">
-<img src="/img/guides/zenlogic-mbt-guide/m2a3-side.png" alt="Bradley Side" style="max-width: 280px; border-radius: 8px;" />
+<img src="/img/guides/zenlogic-mbt-guide/m2a3-side.png" alt="Bradley Side" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 
 **Stronger than:** Everything except tanks
@@ -473,8 +473,8 @@ The old reliable Bradley - a US war machine. Well armored and equipped with TOW 
 ## 🔵 FV510 Warrior (UK)
 
 <div style="display: flex; gap: 1.5rem; margin: 1.5rem 0;">
-<div style="flex-shrink: 0;">
-<img src="/img/guides/zenlogic-mbt-guide/fv510-front.png" alt="FV510 Front" style="max-width: 280px; border-radius: 8px;" />
+<div>
+<img src="/img/guides/zenlogic-mbt-guide/fv510-front.png" alt="FV510 Front" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 <div>
 
@@ -492,7 +492,7 @@ A strong IFV with powerful armor but slower fire rate than the FV520.
 </div>
 
 <div style="display: flex; gap: 1rem; margin: 1rem 0;">
-<img src="/img/guides/zenlogic-mbt-guide/fv510-side.png" alt="FV510 Side" style="max-width: 280px; border-radius: 8px;" />
+<img src="/img/guides/zenlogic-mbt-guide/fv510-side.png" alt="FV510 Side" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 
 **Stronger than:** BMP-1, BTR, MTLB-6MB, ACV-15, PARS III
@@ -504,8 +504,8 @@ A strong IFV with powerful armor but slower fire rate than the FV520.
 ## 🔵 FV107 Scimitar (UK)
 
 <div style="display: flex; gap: 1.5rem; margin: 1.5rem 0;">
-<div style="flex-shrink: 0;">
-<img src="/img/guides/zenlogic-mbt-guide/fv107-front.png" alt="FV107 Front" style="max-width: 280px; border-radius: 8px;" />
+<div>
+<img src="/img/guides/zenlogic-mbt-guide/fv107-front.png" alt="FV107 Front" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 <div>
 
@@ -528,8 +528,8 @@ The Sniper - basically a paper box with bad fire rate. Can be taken down by a si
 ## 🟡 ZBD-04A (China)
 
 <div style="display: flex; gap: 1.5rem; margin: 1.5rem 0;">
-<div style="flex-shrink: 0;">
-<img src="/img/guides/zenlogic-mbt-guide/zbd04-front.png" alt="ZBD04 Front" style="max-width: 280px; border-radius: 8px;" />
+<div>
+<img src="/img/guides/zenlogic-mbt-guide/zbd04-front.png" alt="ZBD04 Front" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 <div>
 
@@ -553,8 +553,8 @@ Well-equipped IFV for the Chinese faction.
 ## 🟡 ZBD-05 HJ-73C (China Navy)
 
 <div style="display: flex; gap: 1.5rem; margin: 1.5rem 0;">
-<div style="flex-shrink: 0;">
-<img src="/img/guides/zenlogic-mbt-guide/zbd04hj73-front.png" alt="ZBD HJ73 Front" style="max-width: 280px; border-radius: 8px;" />
+<div>
+<img src="/img/guides/zenlogic-mbt-guide/zbd04hj73-front.png" alt="ZBD HJ73 Front" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 <div>
 
@@ -570,7 +570,7 @@ The HJ-73C variant with combo TOW kit. Unfortunately has bad armor.
 </div>
 
 <div style="display: flex; gap: 1rem; margin: 1rem 0;">
-<img src="/img/guides/zenlogic-mbt-guide/zbd04hj73-side.png" alt="ZBD HJ73 Side" style="max-width: 280px; border-radius: 8px;" />
+<img src="/img/guides/zenlogic-mbt-guide/zbd04hj73-side.png" alt="ZBD HJ73 Side" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 
 **Equal to:** Bradley
@@ -581,8 +581,8 @@ The HJ-73C variant with combo TOW kit. Unfortunately has bad armor.
 ## 🟡 ZBL-08 HJ-73C (China)
 
 <div style="display: flex; gap: 1.5rem; margin: 1.5rem 0;">
-<div style="flex-shrink: 0;">
-<img src="/img/guides/zenlogic-mbt-guide/zbl-front.png" alt="ZBL Front" style="max-width: 280px; border-radius: 8px;" />
+<div>
+<img src="/img/guides/zenlogic-mbt-guide/zbl-front.png" alt="ZBL Front" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 <div>
 
@@ -598,7 +598,7 @@ The HJ-73C variant with combo TOW kit. Unfortunately has bad armor.
 </div>
 
 <div style="display: flex; gap: 1rem; margin: 1rem 0;">
-<img src="/img/guides/zenlogic-mbt-guide/zbl-side.png" alt="ZBL Side" style="max-width: 280px; border-radius: 8px;" />
+<img src="/img/guides/zenlogic-mbt-guide/zbl-side.png" alt="ZBL Side" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 
 **Equal to:** Bradley
@@ -609,8 +609,8 @@ The HJ-73C variant with combo TOW kit. Unfortunately has bad armor.
 ## 🔴 BMP-2/2M (Russia/MEA)
 
 <div style="display: flex; gap: 1.5rem; margin: 1.5rem 0;">
-<div style="flex-shrink: 0;">
-<img src="/img/guides/zenlogic-mbt-guide/bmp2-front.png" alt="BMP2 Front" style="max-width: 280px; border-radius: 8px;" />
+<div>
+<img src="/img/guides/zenlogic-mbt-guide/bmp2-front.png" alt="BMP2 Front" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 <div>
 
@@ -628,7 +628,7 @@ The **2M variant** has even better firepower: 4 laser-guided TOWs with no reload
 </div>
 
 <div style="display: flex; gap: 1rem; margin: 1rem 0;">
-<img src="/img/guides/zenlogic-mbt-guide/bmp2-side.png" alt="BMP2 Side" style="max-width: 280px; border-radius: 8px;" />
+<img src="/img/guides/zenlogic-mbt-guide/bmp2-side.png" alt="BMP2 Side" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 
 > On the side, aim for the top part so you don't split component damage with tracks. The 2M variant takes less component damage due to extra armor layer.
@@ -641,8 +641,8 @@ The **2M variant** has even better firepower: 4 laser-guided TOWs with no reload
 ## 🔴 BMP-1 (Russia/Militia)
 
 <div style="display: flex; gap: 1.5rem; margin: 1.5rem 0;">
-<div style="flex-shrink: 0;">
-<img src="/img/guides/zenlogic-mbt-guide/bmp1-front.jpg" alt="BMP1 Front" style="max-width: 280px; border-radius: 8px;" />
+<div>
+<img src="/img/guides/zenlogic-mbt-guide/bmp1-front.jpg" alt="BMP1 Front" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 <div>
 
@@ -660,7 +660,7 @@ The **2M variant** has even better firepower: 4 laser-guided TOWs with no reload
 </div>
 
 <div style="display: flex; gap: 1rem; margin: 1rem 0;">
-<img src="/img/guides/zenlogic-mbt-guide/bmp1-side.jpg" alt="BMP1 Side" style="max-width: 280px; border-radius: 8px;" />
+<img src="/img/guides/zenlogic-mbt-guide/bmp1-side.jpg" alt="BMP1 Side" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 
 ---
@@ -668,8 +668,8 @@ The **2M variant** has even better firepower: 4 laser-guided TOWs with no reload
 ## 🔴 BMP-3M (Russia)
 
 <div style="display: flex; gap: 1.5rem; margin: 1.5rem 0;">
-<div style="flex-shrink: 0;">
-<img src="/img/guides/zenlogic-mbt-guide/bmp3-front.jpg" alt="BMP3 Front" style="max-width: 280px; border-radius: 8px;" />
+<div>
+<img src="/img/guides/zenlogic-mbt-guide/bmp3-front.jpg" alt="BMP3 Front" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 <div>
 
@@ -685,7 +685,7 @@ An amazing Russian tool packed with almost 200 AP and 300 HE rounds plus 100mm f
 </div>
 
 <div style="display: flex; gap: 1rem; margin: 1rem 0;">
-<img src="/img/guides/zenlogic-mbt-guide/bmp3-side.jpg" alt="BMP3 Side" style="max-width: 280px; border-radius: 8px;" />
+<img src="/img/guides/zenlogic-mbt-guide/bmp3-side.jpg" alt="BMP3 Side" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 
 ---
@@ -693,8 +693,8 @@ An amazing Russian tool packed with almost 200 AP and 300 HE rounds plus 100mm f
 ## 🔴 BMD-4M (Russia VDV)
 
 <div style="display: flex; gap: 1.5rem; margin: 1.5rem 0;">
-<div style="flex-shrink: 0;">
-<img src="/img/guides/zenlogic-mbt-guide/bmd4-front.png" alt="BMD4 Front" style="max-width: 280px; border-radius: 8px;" />
+<div>
+<img src="/img/guides/zenlogic-mbt-guide/bmd4-front.png" alt="BMD4 Front" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 <div>
 
@@ -710,7 +710,7 @@ Solid IFV but has the same HP issue as BMP-2.
 </div>
 
 <div style="display: flex; gap: 1rem; margin: 1rem 0;">
-<img src="/img/guides/zenlogic-mbt-guide/bmd4-side.png" alt="BMD4 Side" style="max-width: 280px; border-radius: 8px;" />
+<img src="/img/guides/zenlogic-mbt-guide/bmd4-side.png" alt="BMD4 Side" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 
 **Equal to:** LAV 6
@@ -721,8 +721,8 @@ Solid IFV but has the same HP issue as BMP-2.
 ## 🔴 BMD-1 (Russia VDV)
 
 <div style="display: flex; gap: 1.5rem; margin: 1.5rem 0;">
-<div style="flex-shrink: 0;">
-<img src="/img/guides/zenlogic-mbt-guide/bmd1-front.jpg" alt="BMD1 Front" style="max-width: 280px; border-radius: 8px;" />
+<div>
+<img src="/img/guides/zenlogic-mbt-guide/bmd1-front.jpg" alt="BMD1 Front" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 <div>
 
@@ -742,8 +742,8 @@ Basically the BMP-1.
 ## 🔴 BTR-82A (Russia)
 
 <div style="display: flex; gap: 1.5rem; margin: 1.5rem 0;">
-<div style="flex-shrink: 0;">
-<img src="/img/guides/zenlogic-mbt-guide/btr82-front.png" alt="BTR82 Front" style="max-width: 280px; border-radius: 8px;" />
+<div>
+<img src="/img/guides/zenlogic-mbt-guide/btr82-front.png" alt="BTR82 Front" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 <div>
 
@@ -766,8 +766,8 @@ The fast Russian IFV. Unique for having the engine on the back.
 ## 🔴 MT-LB 6MB (Russia/MEA)
 
 <div style="display: flex; gap: 1.5rem; margin: 1.5rem 0;">
-<div style="flex-shrink: 0;">
-<img src="/img/guides/zenlogic-mbt-guide/mtlb-front.png" alt="MTLB Front" style="max-width: 280px; border-radius: 8px;" />
+<div>
+<img src="/img/guides/zenlogic-mbt-guide/mtlb-front.png" alt="MTLB Front" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 <div>
 
@@ -785,7 +785,7 @@ Basically a worse BMP. Same issues but slower due to tracks and exposed engine.
 </div>
 
 <div style="display: flex; gap: 1rem; margin: 1rem 0;">
-<img src="/img/guides/zenlogic-mbt-guide/mtlb-side.png" alt="MTLB Side" style="max-width: 280px; border-radius: 8px;" />
+<img src="/img/guides/zenlogic-mbt-guide/mtlb-side.png" alt="MTLB Side" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 
 ---
@@ -793,8 +793,8 @@ Basically a worse BMP. Same issues but slower due to tracks and exposed engine.
 ## 🔵 ASLAV (Australia)
 
 <div style="display: flex; gap: 1.5rem; margin: 1.5rem 0;">
-<div style="flex-shrink: 0;">
-<img src="/img/guides/zenlogic-mbt-guide/aslav-front.png" alt="ASLAV Front" style="max-width: 280px; border-radius: 8px;" />
+<div>
+<img src="/img/guides/zenlogic-mbt-guide/aslav-front.png" alt="ASLAV Front" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 <div>
 
@@ -817,8 +817,8 @@ The weakest faction IFV-wise.
 ## 🔵 LAV 6.0 (Canada)
 
 <div style="display: flex; gap: 1.5rem; margin: 1.5rem 0;">
-<div style="flex-shrink: 0;">
-<img src="/img/guides/zenlogic-mbt-guide/lav6-front.png" alt="LAV6 Front" style="max-width: 280px; border-radius: 8px;" />
+<div>
+<img src="/img/guides/zenlogic-mbt-guide/lav6-front.png" alt="LAV6 Front" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 <div>
 
@@ -842,8 +842,8 @@ The main Canadian IFV. Solid but better in duo with another LAV/Coyote due to lo
 ## 🔵 Coyote (Canada)
 
 <div style="display: flex; gap: 1.5rem; margin: 1.5rem 0;">
-<div style="flex-shrink: 0;">
-<img src="/img/guides/zenlogic-mbt-guide/coyote6-front.png" alt="Coyote Front" style="max-width: 280px; border-radius: 8px;" />
+<div>
+<img src="/img/guides/zenlogic-mbt-guide/coyote6-front.png" alt="Coyote Front" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 <div>
 
@@ -866,8 +866,8 @@ Pretty much an ASLAV copy with a smaller engine.
 ## 🔵 LAV-25 (USMC)
 
 <div style="display: flex; gap: 1.5rem; margin: 1.5rem 0;">
-<div style="flex-shrink: 0;">
-<img src="/img/guides/zenlogic-mbt-guide/lav25-front.png" alt="LAV25 Front" style="max-width: 280px; border-radius: 8px;" />
+<div>
+<img src="/img/guides/zenlogic-mbt-guide/lav25-front.png" alt="LAV25 Front" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 <div>
 
@@ -891,8 +891,8 @@ Copy of Coyote.
 ## 🔵 AAVP-7A1 (USMC)
 
 <div style="display: flex; gap: 1.5rem; margin: 1.5rem 0;">
-<div style="flex-shrink: 0;">
-<img src="/img/guides/zenlogic-mbt-guide/aavp-front.png" alt="AAVP Front" style="max-width: 280px; border-radius: 8px;" />
+<div>
+<img src="/img/guides/zenlogic-mbt-guide/aavp-front.png" alt="AAVP Front" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 <div>
 
@@ -912,8 +912,8 @@ Copy of Coyote.
 ## 🔵 M1125 Stryker (USA)
 
 <div style="display: flex; gap: 1.5rem; margin: 1.5rem 0;">
-<div style="flex-shrink: 0;">
-<img src="/img/guides/zenlogic-mbt-guide/m1125-front.png" alt="M1125 Front" style="max-width: 280px; border-radius: 8px;" />
+<div>
+<img src="/img/guides/zenlogic-mbt-guide/m1125-front.png" alt="M1125 Front" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 <div>
 
@@ -936,8 +936,8 @@ US main IFV has a .50cal? Yes, and it goes head-to-head against the BTR-82.
 ## 🔵 Bulldog APC (UK)
 
 <div style="display: flex; gap: 1.5rem; margin: 1.5rem 0;">
-<div style="flex-shrink: 0;">
-<img src="/img/guides/zenlogic-mbt-guide/bulldog-apc-front.png" alt="Bulldog Front" style="max-width: 280px; border-radius: 8px;" />
+<div>
+<img src="/img/guides/zenlogic-mbt-guide/bulldog-apc-front.png" alt="Bulldog Front" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 <div>
 
@@ -957,8 +957,8 @@ Not much you can do except kill infantry. The RWS (closed) variant does no damag
 ## 🟢 ACV-15 (Turkey)
 
 <div style="display: flex; gap: 1.5rem; margin: 1.5rem 0;">
-<div style="flex-shrink: 0;">
-<img src="/img/guides/zenlogic-mbt-guide/acv15-front.png" alt="ACV15 Front" style="max-width: 280px; border-radius: 8px;" />
+<div>
+<img src="/img/guides/zenlogic-mbt-guide/acv15-front.png" alt="ACV15 Front" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 <div>
 
@@ -978,8 +978,8 @@ Pretty mediocre IFV. Lacks extra armor, is slow, and has no TOW available.
 ## 🟢 PARS III (Turkey)
 
 <div style="display: flex; gap: 1.5rem; margin: 1.5rem 0;">
-<div style="flex-shrink: 0;">
-<img src="/img/guides/zenlogic-mbt-guide/pars-front.png" alt="PARS Front" style="max-width: 280px; border-radius: 8px;" />
+<div>
+<img src="/img/guides/zenlogic-mbt-guide/pars-front.png" alt="PARS Front" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 <div>
 
@@ -995,7 +995,7 @@ Pretty mediocre IFV. Lacks extra armor, is slow, and has no TOW available.
 </div>
 
 <div style="display: flex; gap: 1rem; margin: 1rem 0;">
-<img src="/img/guides/zenlogic-mbt-guide/pars-side.png" alt="PARS Side" style="max-width: 280px; border-radius: 8px;" />
+<img src="/img/guides/zenlogic-mbt-guide/pars-side.png" alt="PARS Side" style="width: 300px; height: auto; border-radius: 8px;" />
 </div>
 
 ---

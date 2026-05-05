@@ -8,10 +8,874 @@ const sortedClasses = classes.sort((a, b) => (a.data.order ?? 99) - (b.data.orde
 ---
 
 <BaseLayout title="Classes">
-  <div class="mb-10">
-    <h1 class="font-display text-4xl font-bold text-text mb-3 uppercase tracking-wide">Classes</h1>
-    <p class="text-text-muted text-lg">All infantry roles and how to play them</p>
+  <!-- Hero Section -->
+  <div class="mb-12">
+    <h1 class="font-display text-4xl font-bold text-text mb-3 uppercase tracking-wide">Kit Role Selection</h1>
+    <p class="text-text-muted text-lg max-w-3xl">
+      Players in Squad must select a Role before they can spawn in. The role determines what equipment your soldier has as their loadout; ranging from your choice of rifle, handgun, grenades, and special items.
+    </p>
   </div>
+
+  <!-- Introduction -->
+  <section class="mb-12 p-6 bg-bg-card rounded-lg border border-border">
+    <h2 class="font-display text-2xl font-bold text-text mb-4 uppercase">How Roles Work</h2>
+    <p class="text-text-muted mb-4">
+      The role you select largely influences what you will do on the battlefield; from reviving and healing other players as <span class="text-accent font-semibold">Medic</span>, providing suppressing fire as <span class="text-accent font-semibold">Automatic Rifleman / Machine Gunner</span>, or to destroying enemy vehicles as <span class="text-accent font-semibold">Light Anti-Tank / Heavy Anti-Tank</span>.
+    </p>
+    <p class="text-text-muted">
+      The available roles depend on the faction. For instance, the <span class="text-accent font-semibold">Raider</span> is only available to the Insurgents and an extra <span class="text-accent font-semibold">Marksman</span> is available to the British Armed Forces. Many of the roles have multiple kits to choose from, meaning you can change your equipment loadout (if available) within the same role.
+    </p>
+  </section>
+
+  <!-- Changing Roles Section -->
+  <section class="mb-12">
+    <h2 class="font-display text-2xl font-bold text-text mb-4 uppercase">Changing Roles and Kits</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="p-5 bg-bg-card rounded-lg border border-border">
+        <h3 class="text-lg font-semibold text-text mb-3">Deployment Menu</h3>
+        <p class="text-text-muted text-sm">
+          At the beginning of each match and after a player dies, they can choose which role they wish to spawn in as. Within the Deployment Menu (default <kbd class="px-2 py-1 bg-bg rounded text-accent text-xs">Enter</kbd>), players can see more details of each role in the Role Loadout tab.
+        </p>
+      </div>
+      <div class="p-5 bg-bg-card rounded-lg border border-border">
+        <h3 class="text-lg font-semibold text-text mb-3">In-Game Changes</h3>
+        <p class="text-text-muted text-sm">
+          Players can also change their role in-game at an <span class="text-accent">Ammo Crate</span> or at a <span class="text-accent">vehicle</span>. Note that switching roles outside the deployment menu costs ammunition points. Be careful not to waste your team's resources!
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Role Types Overview -->
+  <section class="mb-12">
+    <h2 class="font-display text-2xl font-bold text-text mb-4 uppercase">Types of Roles</h2>
+    <p class="text-text-muted mb-6">Roles are broken into four different role types: Command and Support, Direct Combat, Fire Support and Specialist. Below you will find information on each role:</p>
+
+    <!-- Command and Support -->
+    <div class="mb-8">
+      <h3 class="text-xl font-semibold text-accent mb-4 flex items-center gap-2">
+        <span class="w-8 h-8 bg-accent/20 rounded flex items-center justify-center text-sm">C</span>
+        Command and Support
+      </h3>
+      <div class="space-y-3">
+        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
+          <img src="/img/roles/Icon_Squad_Leader_kit.webp" alt="Squad Leader" class="w-12 h-12 object-contain flex-shrink-0" />
+          <div>
+            <h4 class="font-semibold text-text">Squad / Cell / Section Leader</h4>
+            <p class="text-text-muted text-sm">Leader of a squad. Responsible for leading the squad, deploying assets, placing rallies, and coordinating with other squad leaders.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
+          <img src="/img/roles/Icon_Lead_Crewman_kit.webp" alt="Lead Crewman" class="w-12 h-12 object-contain flex-shrink-0" />
+          <div>
+            <h4 class="font-semibold text-text">Lead Crewman</h4>
+            <p class="text-text-muted text-sm">Leader of a squad. This role is necessary for crewing APCs, IFVs, and MBTs in the driver, gunner and commander seats.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
+          <img src="/img/roles/Icon_Lead_Pilot_kit.webp" alt="Lead Pilot" class="w-12 h-12 object-contain flex-shrink-0" />
+          <div>
+            <h4 class="font-semibold text-text">Lead Pilot</h4>
+            <p class="text-text-muted text-sm">Leader of a squad. This role is necessary to fly helicopters.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
+          <img src="/img/roles/Icon_Medic_kit.webp" alt="Medic" class="w-12 h-12 object-contain flex-shrink-0" />
+          <div>
+            <h4 class="font-semibold text-text">Medic</h4>
+            <p class="text-text-muted text-sm">Critical to the survivability of a squad. Medics are equipped with more bandages and a First Aid Kit.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
+          <img src="/img/roles/Icon_Crewman_kit.webp" alt="Crewman" class="w-12 h-12 object-contain flex-shrink-0" />
+          <div>
+            <h4 class="font-semibold text-text">Crewman</h4>
+            <p class="text-text-muted text-sm">This role is necessary for crewing APCs, IFVs, and MBTs in the driver, gunner and commander seats. Reduced ammunition makes this role unsuitable for direct combat.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
+          <img src="/img/roles/Icon_Pilot.webp" alt="Pilot" class="w-12 h-12 object-contain flex-shrink-0" />
+          <div>
+            <h4 class="font-semibold text-text">Pilot</h4>
+            <p class="text-text-muted text-sm">This role is necessary to fly helicopters. As with the crewman, reduced ammunition makes this role unsuitable for direct combat.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Direct Combat -->
+    <div class="mb-8">
+      <h3 class="text-xl font-semibold text-accent mb-4 flex items-center gap-2">
+        <span class="w-8 h-8 bg-accent/20 rounded flex items-center justify-center text-sm">D</span>
+        Direct Combat
+      </h3>
+      <div class="space-y-3">
+        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
+          <img src="/img/roles/Icon_Rifleman_kit.webp" alt="Rifleman" class="w-12 h-12 object-contain flex-shrink-0" />
+          <div>
+            <h4 class="font-semibold text-text">Rifleman / Fighter</h4>
+            <p class="text-text-muted text-sm">Equipped with a standard loadout, specialized for general-purpose combat. Only role equipped with an Ammo bag which can resupply friendly players.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
+          <img src="/img/roles/Icon_Raider_kit.webp" alt="Raider" class="w-12 h-12 object-contain flex-shrink-0" />
+          <div>
+            <h4 class="font-semibold text-text">Raider <span class="text-xs px-2 py-0.5 bg-red-500/20 text-red-400 rounded ml-2">Insurgents Only</span></h4>
+            <p class="text-text-muted text-sm">Equipped with a fast-firing sub-machine gun, this role is perfect for close-quarter combat. Exclusive to the Insurgents faction.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
+          <img src="/img/roles/Icon_Ambusher_kit.webp" alt="Ambusher" class="w-12 h-12 object-contain flex-shrink-0" />
+          <div>
+            <h4 class="font-semibold text-text">Ambusher <span class="text-xs px-2 py-0.5 bg-red-500/20 text-red-400 rounded ml-2">Militia Only</span></h4>
+            <p class="text-text-muted text-sm">Equipped with rifle grenades and explosives, this role is perfect for medium-range ambush. Exclusive to the Irregular Militia faction.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
+          <img src="/img/roles/Icon_Automatic_Rifleman_kit.webp" alt="Automatic Rifleman" class="w-12 h-12 object-contain flex-shrink-0" />
+          <div>
+            <h4 class="font-semibold text-text">Automatic Rifleman</h4>
+            <p class="text-text-muted text-sm">Provides sustained direct fire support and suppression for the Squad. Equipped with a Light Machine Gun. This role is available for both Squad and Fire Support role types and features different loadouts.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fire Support -->
+    <div class="mb-8">
+      <h3 class="text-xl font-semibold text-accent mb-4 flex items-center gap-2">
+        <span class="w-8 h-8 bg-accent/20 rounded flex items-center justify-center text-sm">F</span>
+        Fire Support
+      </h3>
+      <div class="space-y-3">
+        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
+          <img src="/img/roles/Icon_Grenadier_kit.webp" alt="Grenadier" class="w-12 h-12 object-contain flex-shrink-0" />
+          <div>
+            <h4 class="font-semibold text-text">Grenadier</h4>
+            <p class="text-text-muted text-sm">Provides fire support with launched grenades. Can also mark areas or targets with smoke.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
+          <img src="/img/roles/Icon_Light_Anti_Tank_kit.webp" alt="Light Anti-Tank" class="w-12 h-12 object-contain flex-shrink-0" />
+          <div>
+            <h4 class="font-semibold text-text">Light Anti-Tank</h4>
+            <p class="text-text-muted text-sm">Capable of dealing with most light armor and vehicle threats.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
+          <img src="/img/roles/Icon_Marksman_kit.webp" alt="Marksman" class="w-12 h-12 object-contain flex-shrink-0" />
+          <div>
+            <h4 class="font-semibold text-text">Marksman</h4>
+            <p class="text-text-muted text-sm">Capable of medium to long-range direct fire support, this role's weapon comes equipped with a powerful optic. This role is also available as an additional Direct Combat role for the British Army and Middle Eastern Alliance.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
+          <img src="/img/roles/Icon_Scout_kit.webp" alt="Scout" class="w-12 h-12 object-contain flex-shrink-0" />
+          <div>
+            <h4 class="font-semibold text-text">Scout <span class="text-xs px-2 py-0.5 bg-blue-500/20 text-blue-400 rounded ml-2">VDV Only</span></h4>
+            <p class="text-text-muted text-sm">The Scout role was replaced with the Sapper role in the Alpha 13.0 update. It was reintroduced in 6.0 with suppressed rifles for the VDV.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
+          <img src="/img/roles/Icon_Infiltrator_kit.webp" alt="Infiltrator" class="w-12 h-12 object-contain flex-shrink-0" />
+          <div>
+            <h4 class="font-semibold text-text">Infiltrator <span class="text-xs px-2 py-0.5 bg-red-500/20 text-red-400 rounded ml-2">Militia Only</span></h4>
+            <p class="text-text-muted text-sm">Equipped with machine pistol and AT grenades. This role is perfect for close-quarter infiltration, surprise attacks on armors, and taking out radios. Exclusive to the Irregular Militia faction.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Specialist -->
+    <div class="mb-8">
+      <h3 class="text-xl font-semibold text-accent mb-4 flex items-center gap-2">
+        <span class="w-8 h-8 bg-accent/20 rounded flex items-center justify-center text-sm">S</span>
+        Specialist
+      </h3>
+      <div class="space-y-3">
+        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
+          <img src="/img/roles/Icon_Sniper_kit.webp" alt="Sniper" class="w-12 h-12 object-contain flex-shrink-0" />
+          <div>
+            <h4 class="font-semibold text-text">Sniper</h4>
+            <p class="text-text-muted text-sm">Capable of long-range direct fire support, this role's bolt-action rifle features 1-shot kill potential and a high-powered optic.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
+          <img src="/img/roles/Icon_Machine_Gunner_kit.webp" alt="Machine Gunner" class="w-12 h-12 object-contain flex-shrink-0" />
+          <div>
+            <h4 class="font-semibold text-text">Machine Gunner</h4>
+            <p class="text-text-muted text-sm">Provides sustained direct fire support and suppression for the Squad. Equipped with a General Purpose Machine Gun, this role provides greater penetration and power over the Automatic Rifleman.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
+          <img src="/img/roles/Icon_Heavy_Anti_Tank_kit.webp" alt="Heavy Anti-Tank" class="w-12 h-12 object-contain flex-shrink-0" />
+          <div>
+            <h4 class="font-semibold text-text">Heavy Anti-Tank</h4>
+            <p class="text-text-muted text-sm">Only kit that can fire a Tandem rocket, capable of damaging and destroying heavy armor.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
+          <img src="/img/roles/Icon_Combat_Engineer_kit.webp" alt="Combat Engineer" class="w-12 h-12 object-contain flex-shrink-0" />
+          <div>
+            <h4 class="font-semibold text-text">Combat Engineer <span class="text-xs px-2 py-0.5 bg-green-500/20 text-green-400 rounded ml-2">Conventional Only</span></h4>
+            <p class="text-text-muted text-sm">Equipped with mines and C4, this role is perfect for sabotage behind enemy lines. Can construct and deconstruct with the Entrenching tool faster. Exclusive to conventional factions.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
+          <img src="/img/roles/Icon_Sapper_kit.webp" alt="Sapper" class="w-12 h-12 object-contain flex-shrink-0" />
+          <div>
+            <h4 class="font-semibold text-text">Sapper <span class="text-xs px-2 py-0.5 bg-red-500/20 text-red-400 rounded ml-2">Insurgents Only</span></h4>
+            <p class="text-text-muted text-sm">Equipped with binoculars, mines, TNT, and IEDs. This role is perfect for scouting enemy positions and guiding fire. Exclusive to Insurgents.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
+          <img src="/img/roles/Icon_Saboteur_kit.webp" alt="Saboteur" class="w-12 h-12 object-contain flex-shrink-0" />
+          <div>
+            <h4 class="font-semibold text-text">Saboteur <span class="text-xs px-2 py-0.5 bg-red-500/20 text-red-400 rounded ml-2">Militia Only</span></h4>
+            <p class="text-text-muted text-sm">Equipped with mines and TNT. This role is used to disrupt enemy logistics from behind their lines. Exclusive to Irregular Militia Forces.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Miscellaneous -->
+    <div class="mb-8">
+      <h3 class="text-xl font-semibold text-text-muted mb-4 flex items-center gap-2">
+        <span class="w-8 h-8 bg-text-muted/20 rounded flex items-center justify-center text-sm">M</span>
+        Miscellaneous
+      </h3>
+      <div class="space-y-3">
+        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border/50 hover:border-border transition-colors">
+          <img src="/img/roles/Icon_Recruit_kit.webp" alt="Recruit" class="w-12 h-12 object-contain flex-shrink-0 opacity-70" />
+          <div>
+            <h4 class="font-semibold text-text">Recruit</h4>
+            <p class="text-text-muted text-sm">A stripped-down kit capable of only self-defense. This kit is reserved for players kicked or removed from a Squad.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border/50 hover:border-border transition-colors">
+          <img src="/img/roles/Icon_Unarmed_kit.webp" alt="Unarmed" class="w-12 h-12 object-contain flex-shrink-0 opacity-70" />
+          <div>
+            <h4 class="font-semibold text-text">Unarmed</h4>
+            <p class="text-text-muted text-sm">Equipped with no weapons, instead has the ability to hold up the player's hands with the Right Mouse Button.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Role Restrictions -->
+  <section class="mb-12">
+    <h2 class="font-display text-2xl font-bold text-text mb-4 uppercase">Role Restrictions</h2>
+    <p class="text-text-muted mb-6">The majority of roles in Squad are restricted in some way. There are four basic types of limitations:</p>
+
+    <div class="space-y-4">
+      <div class="p-4 bg-bg-card rounded-lg border border-border">
+        <h3 class="font-semibold text-accent mb-2">Squad-Size Limitations</h3>
+        <p class="text-text-muted text-sm">As the number of players in a squad increases, more roles become available. Many roles require a minimum squad size to unlock.</p>
+      </div>
+      <div class="p-4 bg-bg-card rounded-lg border border-border">
+        <h3 class="font-semibold text-accent mb-2">Role-Number Limitations</h3>
+        <p class="text-text-muted text-sm">Many roles are limited to a certain number per squad. For instance, Medics are limited to two per squad. Each role shows "1/2" meaning one of two available slots is claimed.</p>
+      </div>
+      <div class="p-4 bg-bg-card rounded-lg border border-border">
+        <h3 class="font-semibold text-accent mb-2">Role-Type Limitations</h3>
+        <p class="text-text-muted text-sm">Fire Support roles are limited to three per squad. For example: 1x Grenadier, 1x LAT, and 1x Marksman; or 1x Grenadier and 2x LAT.</p>
+      </div>
+      <div class="p-4 bg-bg-card rounded-lg border border-border">
+        <h3 class="font-semibold text-accent mb-2">Team-Wide Limitations</h3>
+        <p class="text-text-muted text-sm">Certain roles like Sniper, Machine Gunner, HAT, and Combat Engineer are restricted to a maximum number per team (usually 2). Some unlock only when the team reaches a certain player count.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Squad-Size Restrictions -->
+  <section class="mb-12">
+    <h2 class="font-display text-2xl font-bold text-text mb-4 uppercase">Squad-Size Restrictions</h2>
+    <p class="text-text-muted mb-6">The following tables show when a role is unlocked based on squad size. As the squad grows, additional roles and kits become available.</p>
+
+    <!-- Conventional Factions Table -->
+    <div class="mb-8">
+      <h3 class="text-xl font-semibold text-accent mb-4">Conventional Factions</h3>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm border-collapse">
+          <thead>
+            <tr class="bg-bg-card border-b border-border">
+              <th class="p-3 text-left text-text font-semibold">Role / Squad Size</th>
+              <th class="p-2 text-center text-text-muted">1</th>
+              <th class="p-2 text-center text-text-muted">2</th>
+              <th class="p-2 text-center text-text-muted">3</th>
+              <th class="p-2 text-center text-text-muted">4</th>
+              <th class="p-2 text-center text-text-muted">5</th>
+              <th class="p-2 text-center text-text-muted">6</th>
+              <th class="p-2 text-center text-text-muted">7</th>
+              <th class="p-2 text-center text-text-muted">8</th>
+              <th class="p-2 text-center text-text-muted">9</th>
+            </tr>
+          </thead>
+          <tbody class="text-text-muted">
+            <tr class="border-b border-border/50 bg-bg-card/30">
+              <td colspan="10" class="p-2 text-accent font-semibold text-xs uppercase">Command & Support</td>
+            </tr>
+            <tr class="border-b border-border/30 hover:bg-bg-card/50">
+              <td class="p-2 pl-4">Squad Leader</td>
+              <td class="p-2 text-center text-accent">1st, 2nd</td>
+              <td class="p-2 text-center text-accent">+Optic</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+            </tr>
+            <tr class="border-b border-border/30 hover:bg-bg-card/50">
+              <td class="p-2 pl-4">Lead Crewman</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center text-accent">✓</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+            </tr>
+            <tr class="border-b border-border/30 hover:bg-bg-card/50">
+              <td class="p-2 pl-4">Lead Pilot</td>
+              <td class="p-2 text-center text-accent">✓</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+            </tr>
+            <tr class="border-b border-border/30 hover:bg-bg-card/50">
+              <td class="p-2 pl-4">Medic</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center text-accent">1st</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center text-accent">+Optic</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+            </tr>
+            <tr class="border-b border-border/30 hover:bg-bg-card/50">
+              <td class="p-2 pl-4">Crewman / Pilot</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center text-accent">✓</td>
+              <td class="p-2 text-center text-accent">✓</td>
+              <td class="p-2 text-center text-accent">✓</td>
+              <td class="p-2 text-center text-accent">✓</td>
+              <td class="p-2 text-center text-accent">✓</td>
+              <td class="p-2 text-center text-accent">✓</td>
+              <td class="p-2 text-center text-accent">✓</td>
+              <td class="p-2 text-center text-accent">✓</td>
+            </tr>
+            <tr class="border-b border-border/50 bg-bg-card/30">
+              <td colspan="10" class="p-2 text-accent font-semibold text-xs uppercase">Direct Combat</td>
+            </tr>
+            <tr class="border-b border-border/30 hover:bg-bg-card/50">
+              <td class="p-2 pl-4">Rifleman</td>
+              <td class="p-2 text-center text-accent">1st, 2nd</td>
+              <td class="p-2 text-center text-accent">1/3 Optic</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center text-accent">2/3 Optic</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center text-accent">3/3 Optic</td>
+              <td class="p-2 text-center">-</td>
+            </tr>
+            <tr class="border-b border-border/30 hover:bg-bg-card/50">
+              <td class="p-2 pl-4">Automatic Rifleman</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center text-accent">1st</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+            </tr>
+            <tr class="border-b border-border/30 hover:bg-bg-card/50">
+              <td class="p-2 pl-4">Marksman <span class="text-xs text-text-dim">(GB)</span></td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center text-accent">✓</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+            </tr>
+            <tr class="border-b border-border/50 bg-bg-card/30">
+              <td colspan="10" class="p-2 text-accent font-semibold text-xs uppercase">Fire Support</td>
+            </tr>
+            <tr class="border-b border-border/30 hover:bg-bg-card/50">
+              <td class="p-2 pl-4">AR <span class="text-xs text-text-dim">(secondary)</span></td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center text-accent">+Optic</td>
+              <td class="p-2 text-center">-</td>
+            </tr>
+            <tr class="border-b border-border/30 hover:bg-bg-card/50">
+              <td class="p-2 pl-4">Grenadier</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center text-accent">✓</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+            </tr>
+            <tr class="border-b border-border/30 hover:bg-bg-card/50">
+              <td class="p-2 pl-4">Light Anti-Tank</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center text-accent">1st</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center text-accent">+Optic</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+            </tr>
+            <tr class="border-b border-border/30 hover:bg-bg-card/50">
+              <td class="p-2 pl-4">Marksman</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center text-accent">✓</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+            </tr>
+            <tr class="border-b border-border/50 bg-bg-card/30">
+              <td colspan="10" class="p-2 text-accent font-semibold text-xs uppercase">Specialist</td>
+            </tr>
+            <tr class="border-b border-border/30 hover:bg-bg-card/50">
+              <td class="p-2 pl-4">Sniper</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center text-accent">✓</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+            </tr>
+            <tr class="border-b border-border/30 hover:bg-bg-card/50">
+              <td class="p-2 pl-4">Machine Gunner</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center text-accent">✓</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+            </tr>
+            <tr class="border-b border-border/30 hover:bg-bg-card/50">
+              <td class="p-2 pl-4">Heavy Anti-Tank</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center text-accent">✓</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+            </tr>
+            <tr class="hover:bg-bg-card/50">
+              <td class="p-2 pl-4">Combat Engineer</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center text-accent">✓</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Unconventional Factions Table -->
+    <div>
+      <h3 class="text-xl font-semibold text-accent mb-4">Unconventional Factions</h3>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm border-collapse">
+          <thead>
+            <tr class="bg-bg-card border-b border-border">
+              <th class="p-3 text-left text-text font-semibold">Role / Squad Size</th>
+              <th class="p-2 text-center text-text-muted">1</th>
+              <th class="p-2 text-center text-text-muted">2</th>
+              <th class="p-2 text-center text-text-muted">3</th>
+              <th class="p-2 text-center text-text-muted">4</th>
+              <th class="p-2 text-center text-text-muted">5</th>
+              <th class="p-2 text-center text-text-muted">6</th>
+              <th class="p-2 text-center text-text-muted">7</th>
+              <th class="p-2 text-center text-text-muted">8</th>
+              <th class="p-2 text-center text-text-muted">9</th>
+            </tr>
+          </thead>
+          <tbody class="text-text-muted">
+            <tr class="border-b border-border/50 bg-bg-card/30">
+              <td colspan="10" class="p-2 text-accent font-semibold text-xs uppercase">Command & Support</td>
+            </tr>
+            <tr class="border-b border-border/30 hover:bg-bg-card/50">
+              <td class="p-2 pl-4">Squad Leader</td>
+              <td class="p-2 text-center text-accent">1st, 2nd</td>
+              <td class="p-2 text-center text-accent">+Optic</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+            </tr>
+            <tr class="border-b border-border/30 hover:bg-bg-card/50">
+              <td class="p-2 pl-4">Lead Crewman</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center text-accent">✓</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+            </tr>
+            <tr class="border-b border-border/30 hover:bg-bg-card/50">
+              <td class="p-2 pl-4">Medic</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center text-accent">1st</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center text-accent">+Optic</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+            </tr>
+            <tr class="border-b border-border/30 hover:bg-bg-card/50">
+              <td class="p-2 pl-4">Crewman</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center text-accent">✓</td>
+              <td class="p-2 text-center text-accent">✓</td>
+              <td class="p-2 text-center text-accent">✓</td>
+              <td class="p-2 text-center text-accent">✓</td>
+              <td class="p-2 text-center text-accent">✓</td>
+              <td class="p-2 text-center text-accent">✓</td>
+              <td class="p-2 text-center text-accent">✓</td>
+              <td class="p-2 text-center text-accent">✓</td>
+            </tr>
+            <tr class="border-b border-border/50 bg-bg-card/30">
+              <td colspan="10" class="p-2 text-accent font-semibold text-xs uppercase">Direct Combat</td>
+            </tr>
+            <tr class="border-b border-border/30 hover:bg-bg-card/50">
+              <td class="p-2 pl-4">Rifleman</td>
+              <td class="p-2 text-center text-accent">1st, 2nd</td>
+              <td class="p-2 text-center text-accent">1/3 Optic</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center text-accent">2/3 Optic</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center text-accent">3/3 Optic</td>
+              <td class="p-2 text-center">-</td>
+            </tr>
+            <tr class="border-b border-border/30 hover:bg-bg-card/50">
+              <td class="p-2 pl-4">Raider <span class="text-xs text-text-dim">(INS)</span></td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center text-accent">✓</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+            </tr>
+            <tr class="border-b border-border/30 hover:bg-bg-card/50">
+              <td class="p-2 pl-4">Automatic Rifleman</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center text-accent">1st</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+            </tr>
+            <tr class="border-b border-border/50 bg-bg-card/30">
+              <td colspan="10" class="p-2 text-accent font-semibold text-xs uppercase">Fire Support</td>
+            </tr>
+            <tr class="border-b border-border/30 hover:bg-bg-card/50">
+              <td class="p-2 pl-4">AR <span class="text-xs text-text-dim">(secondary)</span></td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center text-accent">2nd</td>
+              <td class="p-2 text-center">-</td>
+            </tr>
+            <tr class="border-b border-border/30 hover:bg-bg-card/50">
+              <td class="p-2 pl-4">Grenadier</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center text-accent">✓</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+            </tr>
+            <tr class="border-b border-border/30 hover:bg-bg-card/50">
+              <td class="p-2 pl-4">Light Anti-Tank</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center text-accent">1st</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center text-accent">+Optic</td>
+              <td class="p-2 text-center">-</td>
+            </tr>
+            <tr class="border-b border-border/30 hover:bg-bg-card/50">
+              <td class="p-2 pl-4">Marksman</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center text-accent">✓</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+            </tr>
+            <tr class="border-b border-border/50 bg-bg-card/30">
+              <td colspan="10" class="p-2 text-accent font-semibold text-xs uppercase">Specialist</td>
+            </tr>
+            <tr class="border-b border-border/30 hover:bg-bg-card/50">
+              <td class="p-2 pl-4">Sniper <span class="text-xs text-text-dim">(INS)</span></td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center text-accent">✓</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+            </tr>
+            <tr class="border-b border-border/30 hover:bg-bg-card/50">
+              <td class="p-2 pl-4">Machine Gunner</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center text-accent">✓</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+            </tr>
+            <tr class="border-b border-border/30 hover:bg-bg-card/50">
+              <td class="p-2 pl-4">Heavy Anti-Tank</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center text-accent">✓</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+            </tr>
+            <tr class="hover:bg-bg-card/50">
+              <td class="p-2 pl-4">Sapper</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center text-accent">✓</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+              <td class="p-2 text-center">-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team-Wide Restrictions -->
+  <section class="mb-12">
+    <h2 class="font-display text-2xl font-bold text-text mb-4 uppercase">Team-Wide Restrictions</h2>
+    <p class="text-text-muted mb-6">The following roles are restricted to a maximum number per team. These roles unlock when the team reaches a minimum player count.</p>
+
+    <!-- Direct Combat Roles -->
+    <div class="mb-6">
+      <h3 class="text-lg font-semibold text-accent mb-3">Direct Combat Roles</h3>
+      <div class="space-y-2">
+        <div class="p-3 bg-bg-card rounded border border-border/50 flex flex-wrap items-center gap-2 text-sm">
+          <span class="font-semibold text-text">Automatic Rifleman (primary)</span>
+          <span class="px-2 py-0.5 bg-accent/20 text-accent rounded text-xs">Max 4/team</span>
+          <span class="text-text-muted">Unlock: 1st@3, 2nd@9, 3rd@15, 4th@21 players</span>
+        </div>
+        <div class="p-3 bg-bg-card rounded border border-border/50 flex flex-wrap items-center gap-2 text-sm">
+          <span class="font-semibold text-text">Marksman <span class="text-text-dim">(GB)</span></span>
+          <span class="px-2 py-0.5 bg-accent/20 text-accent rounded text-xs">Max 4/team</span>
+          <span class="text-text-muted">Unlock: 1st@5, 2nd@15, 3rd@25, 4th@35 players</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fire Support Roles -->
+    <div class="mb-6">
+      <h3 class="text-lg font-semibold text-accent mb-3">Fire Support Roles</h3>
+      <div class="space-y-2">
+        <div class="p-3 bg-bg-card rounded border border-border/50 flex flex-wrap items-center gap-2 text-sm">
+          <span class="font-semibold text-text">Automatic Rifleman (secondary)</span>
+          <span class="px-2 py-0.5 bg-accent/20 text-accent rounded text-xs">Max 4/team</span>
+          <span class="text-text-muted">Unlock: 1st@6, 2nd@12, 3rd@18, 4th@24 players</span>
+        </div>
+        <div class="p-3 bg-bg-card rounded border border-border/50 flex flex-wrap items-center gap-2 text-sm">
+          <span class="font-semibold text-text">Grenadier</span>
+          <span class="px-2 py-0.5 bg-accent/20 text-accent rounded text-xs">Max 4/team</span>
+          <span class="text-text-muted">Unlock: 1st@5, 2nd@15, 3rd@25, 4th@35 players</span>
+        </div>
+        <div class="p-3 bg-bg-card rounded border border-border/50 flex flex-wrap items-center gap-2 text-sm">
+          <span class="font-semibold text-text">Light Anti-Tank (primary)</span>
+          <span class="px-2 py-0.5 bg-accent/20 text-accent rounded text-xs">Max 4/team</span>
+          <span class="text-text-muted">Unlock: 1st@3, 2nd@9, 3rd@15, 4th@21 players</span>
+        </div>
+        <div class="p-3 bg-bg-card rounded border border-border/50 flex flex-wrap items-center gap-2 text-sm">
+          <span class="font-semibold text-text">Light Anti-Tank (secondary)</span>
+          <span class="px-2 py-0.5 bg-accent/20 text-accent rounded text-xs">Max 4/team</span>
+          <span class="text-text-muted">Unlock: 1st@6, 2nd@12, 3rd@18, 4th@24 players</span>
+        </div>
+        <div class="p-3 bg-bg-card rounded border border-border/50 flex flex-wrap items-center gap-2 text-sm">
+          <span class="font-semibold text-text">Marksman</span>
+          <span class="px-2 py-0.5 bg-accent/20 text-accent rounded text-xs">Max 4/team</span>
+          <span class="text-text-muted">Unlock: 1st@10, 2nd@20, 3rd@30, 4th@40 players</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Specialist Roles -->
+    <div>
+      <h3 class="text-lg font-semibold text-accent mb-3">Specialist Roles</h3>
+      <div class="space-y-2">
+        <div class="p-3 bg-bg-card rounded border border-border/50 flex flex-wrap items-center gap-2 text-sm">
+          <span class="font-semibold text-text">Sniper</span>
+          <span class="px-2 py-0.5 bg-red-500/20 text-red-400 rounded text-xs">Max 2/team</span>
+          <span class="px-2 py-0.5 bg-yellow-500/20 text-yellow-400 rounded text-xs">1/squad</span>
+          <span class="text-text-muted">Unlock: 1st@15, 2nd@20 players</span>
+        </div>
+        <div class="p-3 bg-bg-card rounded border border-border/50 flex flex-wrap items-center gap-2 text-sm">
+          <span class="font-semibold text-text">Machine Gunner</span>
+          <span class="px-2 py-0.5 bg-red-500/20 text-red-400 rounded text-xs">Max 2/team</span>
+          <span class="px-2 py-0.5 bg-yellow-500/20 text-yellow-400 rounded text-xs">1/squad</span>
+          <span class="text-text-muted">Unlock: 1st@15, 2nd@20 players</span>
+        </div>
+        <div class="p-3 bg-bg-card rounded border border-border/50 flex flex-wrap items-center gap-2 text-sm">
+          <span class="font-semibold text-text">Heavy Anti-Tank (primary)</span>
+          <span class="px-2 py-0.5 bg-red-500/20 text-red-400 rounded text-xs">Max 1/team</span>
+          <span class="px-2 py-0.5 bg-yellow-500/20 text-yellow-400 rounded text-xs">1/squad</span>
+          <span class="text-text-muted">Unlock: @15 players</span>
+        </div>
+        <div class="p-3 bg-bg-card rounded border border-border/50 flex flex-wrap items-center gap-2 text-sm">
+          <span class="font-semibold text-text">Heavy Anti-Tank (secondary)</span>
+          <span class="px-2 py-0.5 bg-red-500/20 text-red-400 rounded text-xs">Max 1/team</span>
+          <span class="px-2 py-0.5 bg-yellow-500/20 text-yellow-400 rounded text-xs">1/squad</span>
+          <span class="text-text-muted">Unlock: @20 players</span>
+        </div>
+        <div class="p-3 bg-bg-card rounded border border-border/50 flex flex-wrap items-center gap-2 text-sm">
+          <span class="font-semibold text-text">Combat Engineer</span>
+          <span class="px-2 py-0.5 bg-red-500/20 text-red-400 rounded text-xs">Max 2/team</span>
+          <span class="px-2 py-0.5 bg-yellow-500/20 text-yellow-400 rounded text-xs">1/squad</span>
+          <span class="text-text-muted">Unlock: 1st@15, 2nd@20 players</span>
+        </div>
+        <div class="p-3 bg-bg-card rounded border border-border/50 flex flex-wrap items-center gap-2 text-sm">
+          <span class="font-semibold text-text">Sapper</span>
+          <span class="px-2 py-0.5 bg-accent/20 text-accent rounded text-xs">Max 4/team</span>
+          <span class="px-2 py-0.5 bg-yellow-500/20 text-yellow-400 rounded text-xs">1/squad</span>
+          <span class="text-text-muted">Unlock: 1st@5, 2nd@10, 3rd@15, 4th@20 players</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tips -->
+  <section class="mb-12 p-4 bg-bg-card rounded-lg border border-border">
+    <h3 class="font-semibold text-text mb-2">Tip</h3>
+    <p class="text-text-muted text-sm">If you mouse-over the symbols in the Role tab, you will see a tooltip with details about each role as well as the reason, if any, why that role is unavailable.</p>
+  </section>
+
+  <!-- Best Practice -->
+  <section class="mb-12 p-6 bg-accent/10 rounded-lg border border-accent/30">
+    <h2 class="font-display text-2xl font-bold text-text mb-4 uppercase">Best Practice - Role Priority</h2>
+    <ol class="space-y-3 text-text-muted">
+      <li class="flex items-start gap-3">
+        <span class="flex-shrink-0 w-6 h-6 bg-accent text-bg rounded-full flex items-center justify-center text-sm font-bold">1</span>
+        <div><span class="text-text font-semibold">Squad Leader</span> - Every squad should have one to deploy assets and rallies.</div>
+      </li>
+      <li class="flex items-start gap-3">
+        <span class="flex-shrink-0 w-6 h-6 bg-accent text-bg rounded-full flex items-center justify-center text-sm font-bold">2</span>
+        <div><span class="text-text font-semibold">Medic</span> - Extends squad longevity on the battlefield. Reduces ticket loss.</div>
+      </li>
+      <li class="flex items-start gap-3">
+        <span class="flex-shrink-0 w-6 h-6 bg-accent text-bg rounded-full flex items-center justify-center text-sm font-bold">3</span>
+        <div><span class="text-text font-semibold">LAT / HAT</span> - Essential on vehicle-heavy maps. HAT kits should always be claimed.</div>
+      </li>
+      <li class="flex items-start gap-3">
+        <span class="flex-shrink-0 w-6 h-6 bg-accent text-bg rounded-full flex items-center justify-center text-sm font-bold">4</span>
+        <div><span class="text-text font-semibold">Rifleman</span> - Backbone of the squad. Ammo bag supplies the whole squad anywhere.</div>
+      </li>
+      <li class="flex items-start gap-3">
+        <span class="flex-shrink-0 w-6 h-6 bg-accent text-bg rounded-full flex items-center justify-center text-sm font-bold">5</span>
+        <div><span class="text-text font-semibold">Fire Support / Specialist</span> - Discuss with your SL based on map and objective.</div>
+      </li>
+    </ol>
+    <p class="mt-4 text-sm text-accent font-semibold">Priority 1 and 2 should always be filled!</p>
+  </section>
+
+  <!-- All Roles Section -->
+  <section class="mb-8">
+    <h2 class="font-display text-2xl font-bold text-text mb-6 uppercase">All Roles</h2>
+  </section>
 
   <div class="grid gap-4">
     {sortedClasses.length > 0 ? (

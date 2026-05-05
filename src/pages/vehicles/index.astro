@@ -3,18 +3,427 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="Vehicles">
-  <div class="mb-10">
+  <!-- Hero Section -->
+  <div class="mb-12">
     <h1 class="font-display text-4xl font-bold text-text mb-3 uppercase tracking-wide">Vehicles</h1>
-    <p class="text-text-muted text-lg">All vehicles in Squad</p>
+    <p class="text-text-muted text-lg max-w-3xl">
+      Vehicles are crucial assets in Squad, providing transportation, fire support, and logistics capabilities. From nimble motorbikes to devastating Main Battle Tanks, mastering vehicles is key to victory.
+    </p>
   </div>
 
-  <div class="p-8 bg-bg-card rounded-lg border border-border text-center">
-    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-independent/10 flex items-center justify-center">
-      <svg class="w-8 h-8 text-independent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-      </svg>
+  <!-- Gameplay Section -->
+  <section class="mb-12 p-6 bg-bg-card rounded-lg border border-border">
+    <h2 class="font-display text-2xl font-bold text-text mb-4 uppercase">Gameplay</h2>
+
+    <!-- Entering a Vehicle -->
+    <div class="mb-6">
+      <h3 class="text-lg font-semibold text-accent mb-3">Entering a Vehicle</h3>
+      <p class="text-text-muted mb-3">
+        To drive a vehicle, you must first claim the vehicle, then enter the driver's seat and start the engine. To enter, exit, rearm, or switch kits off a vehicle, press and hold <kbd class="px-2 py-1 bg-bg rounded text-accent text-xs">F</kbd>.
+      </p>
+      <p class="text-text-muted mb-3">
+        To switch seats, press <kbd class="px-2 py-1 bg-bg rounded text-accent text-xs">F1</kbd> to <kbd class="px-2 py-1 bg-bg rounded text-accent text-xs">F10</kbd>. For a short moment, you will also see a list of the current passengers of the vehicle.
+      </p>
+      <div class="p-3 bg-accent/10 rounded border border-accent/30 text-sm text-text-muted">
+        <strong class="text-accent">Tip:</strong> Entering or exiting vehicles and switching seats is not instantaneous. This greatly reduces the effectiveness of soloing vehicles when ambushed.
+      </div>
     </div>
-    <p class="text-text-muted mb-2">No vehicles yet</p>
-    <p class="text-sm text-text-dim">Add markdown files to <code class="text-accent">src/content/vehicles/</code></p>
-  </div>
+
+    <!-- Driving a Vehicle -->
+    <div class="mb-6">
+      <h3 class="text-lg font-semibold text-accent mb-3">Driving a Vehicle</h3>
+      <p class="text-text-muted mb-3">
+        To start and turn off the engine, press and hold <kbd class="px-2 py-1 bg-bg rounded text-accent text-xs">E</kbd>. Make sure you have assigned a keyboard key to "Vehicle toggle engine" in the settings menu.
+      </p>
+      <p class="text-text-muted">
+        Squad emulates gears of vehicles. To maintain the current gear, press and hold <kbd class="px-2 py-1 bg-bg rounded text-accent text-xs">Shift</kbd>. This can result in more traction when the vehicle is struggling, and can also limit the speed.
+      </p>
+    </div>
+
+    <!-- Shooting in a Vehicle -->
+    <div>
+      <h3 class="text-lg font-semibold text-accent mb-3">Shooting in a Vehicle</h3>
+      <p class="text-text-muted mb-3">
+        If you are in a gunner seat and your vehicle has zoom mode, zoom in by pressing <kbd class="px-2 py-1 bg-bg rounded text-accent text-xs">Q</kbd>. Some vehicles can stabilize your view by pressing <kbd class="px-2 py-1 bg-bg rounded text-accent text-xs">Z</kbd>.
+      </p>
+      <p class="text-text-muted">
+        The <kbd class="px-2 py-1 bg-bg rounded text-accent text-xs">WASD</kbd> keys control traverse and pitch on most vehicle turrets. Tanks and IFVs have different ammo types: use <span class="text-accent font-semibold">AP rounds</span> against armor and <span class="text-accent font-semibold">HE/HEAT rounds</span> against infantry.
+      </p>
+    </div>
+  </section>
+
+  <!-- Damaging a Vehicle -->
+  <section class="mb-12">
+    <h2 class="font-display text-2xl font-bold text-text mb-4 uppercase">Damaging a Vehicle</h2>
+    <p class="text-text-muted mb-6">Vehicles have defined armor values. The front typically has more armor than the sides and rear. Vehicles also have simulated components:</p>
+
+    <div class="grid md:grid-cols-2 gap-4">
+      <div class="p-4 bg-bg-card rounded-lg border border-border">
+        <h3 class="font-semibold text-red-400 mb-2">Engine Damage</h3>
+        <p class="text-text-muted text-sm">Damaging an engine will result in the vehicle moving extremely slowly.</p>
+      </div>
+      <div class="p-4 bg-bg-card rounded-lg border border-border">
+        <h3 class="font-semibold text-red-400 mb-2">Ammo Compartment</h3>
+        <p class="text-text-muted text-sm">Damaging the ammo compartment will result in a "cook off" and full destruction of the vehicle.</p>
+      </div>
+      <div class="p-4 bg-bg-card rounded-lg border border-border">
+        <h3 class="font-semibold text-red-400 mb-2">Tracks/Wheels</h3>
+        <p class="text-text-muted text-sm">Destroying tracks prevents movement on that side. Damaged wheels result in loss of traction and control. Repair with a repair toolbox.</p>
+      </div>
+      <div class="p-4 bg-bg-card rounded-lg border border-border">
+        <h3 class="font-semibold text-red-400 mb-2">Turret Damage</h3>
+        <p class="text-text-muted text-sm">Below 50% health, turrets suffer movement penalties. A crack appears on-screen at 50%. Repair toolbox can only repair to 25% health.</p>
+      </div>
+    </div>
+
+    <div class="mt-6 space-y-3">
+      <div class="p-4 bg-orange-500/10 rounded-lg border border-orange-500/30">
+        <h3 class="font-semibold text-orange-400 mb-2">Burning</h3>
+        <p class="text-text-muted text-sm">Vehicles start burning once enough damage is taken. Health ticks down to destruction unless repaired. 2 crewmen may be required to repair simultaneously to stop severe fires. Fire also damages crew with a coughing sound.</p>
+      </div>
+      <div class="p-4 bg-yellow-500/10 rounded-lg border border-yellow-500/30">
+        <h3 class="font-semibold text-yellow-400 mb-2">Unattended Damage</h3>
+        <p class="text-text-muted text-sm">Unoccupied vehicles not within 150m of a Rally Point or FOB will start to burn after 20 minutes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Infantry Interaction -->
+  <section class="mb-12">
+    <h2 class="font-display text-2xl font-bold text-text mb-4 uppercase">Infantry Interaction</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="p-5 bg-bg-card rounded-lg border border-border">
+        <h3 class="text-lg font-semibold text-text mb-3">Supplies</h3>
+        <p class="text-text-muted text-sm mb-3">
+          All vehicles carry some amount of supplies. While the vehicle is stopped, any teammate in or next to the vehicle can load and unload supplies using the radial menu (<kbd class="px-2 py-1 bg-bg rounded text-accent text-xs">F</kbd>).
+        </p>
+        <p class="text-text-muted text-sm">Multiple players can load/unload faster than a single player.</p>
+      </div>
+      <div class="p-5 bg-bg-card rounded-lg border border-border">
+        <h3 class="text-lg font-semibold text-text mb-3">Resupply & Kit Switch</h3>
+        <p class="text-text-muted text-sm mb-3">
+          All vehicles carry ammunition for infantry resupply. Resupply and kit-switch is possible on a moving vehicle from the radial menu.
+        </p>
+        <p class="text-text-muted text-sm">Most vehicles only allow Crewman/Lead Crewman kits. APCs, IFVs, and Transport Helicopters allow any infantry kit.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reset/Recovery -->
+  <section class="mb-12 p-6 bg-bg-card rounded-lg border border-border">
+    <h2 class="font-display text-2xl font-bold text-text mb-4 uppercase">Vehicle Recovery</h2>
+    <p class="text-text-muted mb-4">
+      The vehicle recovery/reset system is useful for flipped or stuck vehicles. Access it from outside the vehicle using the radial menu (<kbd class="px-2 py-1 bg-bg rounded text-accent text-xs">F</kbd>).
+    </p>
+    <div class="grid md:grid-cols-2 gap-4">
+      <div class="p-3 bg-bg rounded border border-border/50">
+        <span class="text-accent font-semibold">Reset Time:</span>
+        <span class="text-text-muted text-sm ml-2">~40 seconds to right a vehicle</span>
+      </div>
+      <div class="p-3 bg-bg rounded border border-border/50">
+        <span class="text-accent font-semibold">Quick Re-reset:</span>
+        <span class="text-text-muted text-sm ml-2">~5 seconds if recently righted</span>
+      </div>
+    </div>
+    <p class="text-text-muted text-sm mt-4">
+      You can also push certain vehicles like boats and helicopters to get them unstuck from terrain. Vehicles are pushed in the direction between your character center and the vehicle center.
+    </p>
+  </section>
+
+  <!-- Physics -->
+  <section class="mb-12">
+    <h2 class="font-display text-2xl font-bold text-text mb-4 uppercase">Physics</h2>
+    <p class="text-text-muted mb-4">Different surfaces provide different amounts of traction and rolling resistance (Physmat). Wheeled vehicles are more affected than tracked vehicles.</p>
+
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="bg-bg-card border-b border-border">
+            <th class="p-3 text-left text-text font-semibold">Surface Type</th>
+            <th class="p-3 text-center text-text font-semibold">Resistance</th>
+          </tr>
+        </thead>
+        <tbody class="text-text-muted">
+          <tr class="border-b border-border/30 hover:bg-bg-card/50">
+            <td class="p-3">Asphalt, Concrete, Solid Wood</td>
+            <td class="p-3 text-center"><span class="text-green-400">Lowest</span></td>
+          </tr>
+          <tr class="border-b border-border/30 hover:bg-bg-card/50">
+            <td class="p-3">Gravel</td>
+            <td class="p-3 text-center"><span class="text-green-300">Low</span></td>
+          </tr>
+          <tr class="border-b border-border/30 hover:bg-bg-card/50">
+            <td class="p-3">Dirt, Grass</td>
+            <td class="p-3 text-center"><span class="text-yellow-400">Medium</span></td>
+          </tr>
+          <tr class="border-b border-border/30 hover:bg-bg-card/50">
+            <td class="p-3">Sand, Snow</td>
+            <td class="p-3 text-center"><span class="text-orange-400">High</span></td>
+          </tr>
+          <tr class="hover:bg-bg-card/50">
+            <td class="p-3">Mud</td>
+            <td class="p-3 text-center"><span class="text-red-400">Highest</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mt-4 p-3 bg-bg-card rounded border border-border text-sm text-text-muted">
+      <strong class="text-text">Ricochets:</strong> Missed shots have a chance to ricochet depending on angle. Ricocheted shots don't deal damage but indicate non-penetration. Tracer rounds will follow ricochets.
+    </div>
+  </section>
+
+  <!-- Vehicle Types -->
+  <section class="mb-12">
+    <h2 class="font-display text-2xl font-bold text-text mb-4 uppercase">Vehicle Types</h2>
+    <p class="text-text-muted mb-6">Squad features a wide variety of vehicles, each serving different tactical purposes:</p>
+
+    <!-- Combat Vehicles -->
+    <div class="mb-8">
+      <h3 class="text-xl font-semibold text-accent mb-4 flex items-center gap-2">
+        <span class="w-8 h-8 bg-red-500/20 rounded flex items-center justify-center text-sm text-red-400">C</span>
+        Combat Vehicles
+      </h3>
+      <div class="space-y-3">
+        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
+          <img src="/img/icons/default/vehicles/map_tank.svg" alt="MBT" class="w-12 h-12 object-contain flex-shrink-0" />
+          <div>
+            <h4 class="font-semibold text-text">Main Battle Tanks (MBTs)</h4>
+            <p class="text-text-muted text-sm">MBTs are the most powerful land vehicles in Squad. With unmatched long range firepower and heavy armor, they're the kings of the battlefield.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
+          <img src="/img/icons/default/vehicles/T_map_mgs.svg" alt="MGS" class="w-12 h-12 object-contain flex-shrink-0" />
+          <div>
+            <h4 class="font-semibold text-text">Mobile Gun Systems (MGS)</h4>
+            <p class="text-text-muted text-sm">MGSs are fire support vehicles equipped with tank cannons but light armor.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
+          <img src="/img/icons/default/vehicles/map_trackedifv.svg" alt="IFV" class="w-12 h-12 object-contain flex-shrink-0" />
+          <div>
+            <h4 class="font-semibold text-text">Infantry Fighting Vehicles (IFVs)</h4>
+            <p class="text-text-muted text-sm">IFVs are autocannon-equipped vehicles that can also transport infantry in a pinch. Their weapon systems can often cripple other vehicles in its class, and even damage Tanks.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
+          <img src="/img/icons/default/vehicles/map_trackedapc.svg" alt="APC" class="w-12 h-12 object-contain flex-shrink-0" />
+          <div>
+            <h4 class="font-semibold text-text">Armored Personnel Carriers (APCs)</h4>
+            <p class="text-text-muted text-sm">APCs are designed to transport infantry across the battlefield. They typically have excellent protection against small arms fire and have a turret-mounted MG or possibly grenade launcher for fire support.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
+          <img src="/img/icons/default/vehicles/T_map_wheeledrecon.svg" alt="Recon" class="w-12 h-12 object-contain flex-shrink-0" />
+          <div>
+            <h4 class="font-semibold text-text">Reconnaissance Vehicles</h4>
+            <p class="text-text-muted text-sm">Reconnaissance vehicles are infantry fighting vehicles without troop compartments. They are dedicated armored fighting vehicles for forward observation, intelligence gathering, and skirmish operations.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Light Vehicles -->
+    <div class="mb-8">
+      <h3 class="text-xl font-semibold text-accent mb-4 flex items-center gap-2">
+        <span class="w-8 h-8 bg-yellow-500/20 rounded flex items-center justify-center text-sm text-yellow-400">L</span>
+        Light Vehicles
+      </h3>
+      <div class="space-y-3">
+        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
+          <img src="/img/icons/default/vehicles/map_jeep_turret.svg" alt="Light Vehicle" class="w-12 h-12 object-contain flex-shrink-0" />
+          <div>
+            <h4 class="font-semibold text-text">Light Vehicles</h4>
+            <p class="text-text-muted text-sm">Light vehicles encompass everything from technicals to Humvee-style vehicles and typically have some form of mounted light armament. They usually can carry a number of passengers as well.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
+          <img src="/img/icons/default/vehicles/map_jeep_transport.svg" alt="Scout Car" class="w-12 h-12 object-contain flex-shrink-0" />
+          <div>
+            <h4 class="font-semibold text-text">Scout Car</h4>
+            <p class="text-text-muted text-sm">Scout cars or Jeeps are open-topped, nimble vehicles possibly with a mounted MG to provide fire support. They have poor protection against incoming fire.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
+          <img src="/img/icons/default/vehicles/map_jeep_antitank.svg" alt="AT Light Vehicle" class="w-12 h-12 object-contain flex-shrink-0" />
+          <div>
+            <h4 class="font-semibold text-text">Anti-Tank Light Vehicles</h4>
+            <p class="text-text-muted text-sm">AT Light Vehicles are light vehicles that have an anti-tank missile launcher mounted on them. They are the definition of a glass cannon - huge punch but quite vulnerable to all kinds of incoming fire.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
+          <img src="/img/icons/default/vehicles/map_motorcycle.svg" alt="Motorbike" class="w-12 h-12 object-contain flex-shrink-0" />
+          <div>
+            <h4 class="font-semibold text-text">Motorbikes</h4>
+            <p class="text-text-muted text-sm">Small motorbikes provide quick personal transportation. They are vulnerable to small arms fire but are extremely nimble and small targets.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Support Vehicles -->
+    <div class="mb-8">
+      <h3 class="text-xl font-semibold text-accent mb-4 flex items-center gap-2">
+        <span class="w-8 h-8 bg-blue-500/20 rounded flex items-center justify-center text-sm text-blue-400">S</span>
+        Support Vehicles
+      </h3>
+      <div class="space-y-3">
+        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
+          <img src="/img/icons/default/vehicles/map_antiair.svg" alt="Anti-Air" class="w-12 h-12 object-contain flex-shrink-0" />
+          <div>
+            <h4 class="font-semibold text-text">Anti-Air Artillery</h4>
+            <p class="text-text-muted text-sm">AA vehicles have the capability to strike against air targets, such as helicopters. Their guns can also be used in a ground-fire support role as well.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
+          <img src="/img/icons/default/vehicles/map_jeep_artillery.svg" alt="Artillery" class="w-12 h-12 object-contain flex-shrink-0" />
+          <div>
+            <h4 class="font-semibold text-text">Artillery Vehicles</h4>
+            <p class="text-text-muted text-sm">Artillery Vehicles provide long-range indirect fire support. They typically require a good deal of coordination and skill to fire effectively. However, their impact on the battlefield, when used effectively, cannot be denied.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Logistics & Transport -->
+    <div class="mb-8">
+      <h3 class="text-xl font-semibold text-accent mb-4 flex items-center gap-2">
+        <span class="w-8 h-8 bg-green-500/20 rounded flex items-center justify-center text-sm text-green-400">T</span>
+        Logistics & Transport
+      </h3>
+      <div class="space-y-3">
+        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
+          <img src="/img/icons/default/vehicles/map_truck_logistics.svg" alt="Logistics" class="w-12 h-12 object-contain flex-shrink-0" />
+          <div>
+            <h4 class="font-semibold text-text">Logistics Vehicles</h4>
+            <p class="text-text-muted text-sm">Logis are crucial in an army's supply chain, making sure construction and ammo supplies are getting to where they need to be. Truck logis offer reasonable speed and a large supply load of 3000.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
+          <img src="/img/icons/default/vehicles/map_truck_transport.svg" alt="Transport" class="w-12 h-12 object-contain flex-shrink-0" />
+          <div>
+            <h4 class="font-semibold text-text">Transport Trucks</h4>
+            <p class="text-text-muted text-sm">Transports are used to hold infantry. The basic transport truck can carry 16 infantrymen.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Aircraft -->
+    <div class="mb-8">
+      <h3 class="text-xl font-semibold text-accent mb-4 flex items-center gap-2">
+        <span class="w-8 h-8 bg-purple-500/20 rounded flex items-center justify-center text-sm text-purple-400">A</span>
+        Aircraft
+      </h3>
+      <div class="space-y-3">
+        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
+          <img src="/img/icons/default/vehicles/map_transporthelo.svg" alt="Transport Helo" class="w-12 h-12 object-contain flex-shrink-0" />
+          <div>
+            <h4 class="font-semibold text-text">Transport Helicopters</h4>
+            <p class="text-text-muted text-sm">Transport Helicopters can transport infantry across the battlefield in a quick and versatile way. They are also crucial in an army's supply chain, making sure construction and ammo supplies are getting to where they need to be.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
+          <img src="/img/icons/default/vehicles/map_attackhelo.svg" alt="Attack Helo" class="w-12 h-12 object-contain flex-shrink-0" />
+          <div>
+            <h4 class="font-semibold text-text">Attack Helicopters</h4>
+            <p class="text-text-muted text-sm">Attack Helicopters are not really meant for troop transportation. With their miniguns and high-explosive rockets they can root out and destroy large groups of infantry quickly. The rockets can even be used against lightly armored targets.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Watercraft -->
+    <div class="mb-8">
+      <h3 class="text-xl font-semibold text-accent mb-4 flex items-center gap-2">
+        <span class="w-8 h-8 bg-cyan-500/20 rounded flex items-center justify-center text-sm text-cyan-400">W</span>
+        Watercraft
+      </h3>
+      <div class="space-y-3">
+        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
+          <img src="/img/icons/default/vehicles/T_map_boat_logistics.svg" alt="Boat" class="w-12 h-12 object-contain flex-shrink-0" />
+          <div>
+            <h4 class="font-semibold text-text">Boats</h4>
+            <p class="text-text-muted text-sm">Boats are transport or logistic vehicles capable of traversing water at high speed but have poor protection against incoming fire.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Legend -->
+  <section class="mb-12">
+    <h2 class="font-display text-2xl font-bold text-text mb-4 uppercase">Vehicle Stats Legend</h2>
+    <p class="text-text-muted mb-6">When viewing vehicle statistics, you'll encounter these indicators:</p>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="p-4 bg-bg-card rounded-lg border border-border">
+        <div class="flex items-center gap-3 mb-2">
+          <div class="w-10 h-10 bg-accent/20 rounded flex items-center justify-center">
+            <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm1 11H9v-2h2v2zm0-4H9V5h2v4z"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-text">Ammo Capacity</h3>
+        </div>
+        <p class="text-text-muted text-sm">Many non-logistical vehicles carry a small amount of ammo points to resupply troops in the field.</p>
+      </div>
+      <div class="p-4 bg-bg-card rounded-lg border border-border">
+        <div class="flex items-center gap-3 mb-2">
+          <div class="w-10 h-10 bg-green-500/20 rounded flex items-center justify-center">
+            <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm3 2h6v4H7V5zm8 8v2h-2v-2h2zm-4 0v2H7v-2h4z"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-text">Supply Capacity</h3>
+        </div>
+        <p class="text-text-muted text-sm">Total amount of Ammo and Construction points a logistics vehicle can carry combined.</p>
+      </div>
+      <div class="p-4 bg-bg-card rounded-lg border border-border">
+        <div class="flex items-center gap-3 mb-2">
+          <div class="w-10 h-10 bg-blue-500/20 rounded flex items-center justify-center">
+            <svg class="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-text">Crew + Capacity</h3>
+        </div>
+        <p class="text-text-muted text-sm">Maximum amount of crewmen/pilots and soldiers that can occupy the vehicle.</p>
+      </div>
+      <div class="p-4 bg-bg-card rounded-lg border border-border">
+        <div class="flex items-center gap-3 mb-2">
+          <div class="w-10 h-10 bg-red-500/20 rounded flex items-center justify-center">
+            <svg class="w-5 h-5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M5 2a2 2 0 00-2 2v14l3.5-2 3.5 2 3.5-2 3.5 2V4a2 2 0 00-2-2H5zm4.707 5.707a1 1 0 00-1.414-1.414L7 7.586l-.293-.293a1 1 0 00-1.414 1.414l1 1a1 1 0 001.414 0l2-2z" clip-rule="evenodd"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-text">Ticket Value</h3>
+        </div>
+        <p class="text-text-muted text-sm">Vehicles have a ticket value. If destroyed, your team loses that many tickets.</p>
+      </div>
+      <div class="p-4 bg-bg-card rounded-lg border border-border">
+        <div class="flex items-center gap-3 mb-2">
+          <div class="w-10 h-10 bg-yellow-500/20 rounded flex items-center justify-center">
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-text">Respawn Timer</h3>
+        </div>
+        <p class="text-text-muted text-sm">When destroyed, a replacement vehicle spawns after a certain time. If flipped, the vehicle burns - pay attention to where you drive!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tips -->
+  <section class="mb-12 p-4 bg-accent/10 rounded-lg border border-accent/30">
+    <h3 class="font-semibold text-accent mb-2">Tips</h3>
+    <ul class="text-text-muted text-sm space-y-2">
+      <li>- Stay on roads when possible - off-road driving significantly slows wheeled vehicles</li>
+      <li>- Coordinate with your team before taking valuable assets like MBTs</li>
+      <li>- Always check your surroundings before exiting a vehicle in combat</li>
+      <li>- Use AP rounds against armor, HE/HEAT against infantry</li>
+      <li>- Don't abandon vehicles - they will burn and your team loses tickets</li>
+    </ul>
+  </section>
 </BaseLayout>

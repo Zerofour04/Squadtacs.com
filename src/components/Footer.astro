@@ -9,6 +9,11 @@ const links = [
   { label: 'Credits & License', href: '/credits' },
 ];
 
+const legalLinks = [
+  { label: 'Imprint', href: '/imprint' },
+  { label: 'Privacy Policy', href: '/privacy' },
+];
+
 const externalLinks = [
   { label: 'Official Squad Website', href: 'https://joinsquad.com' },
   { label: 'Squad Wiki', href: 'https://squad.fandom.com' },
@@ -74,11 +79,12 @@ const externalLinks = [
         <p class="text-sm text-text-dim">
           &copy; {currentYear} Squad Guides. Not affiliated with Offworld Industries.
         </p>
-        <div class="flex items-center gap-2 text-xs text-text-dim">
-          <span>Built with</span>
-          <span class="text-accent">Astro</span>
-          <span>&</span>
-          <span class="text-primary-light">Tailwind</span>
+        <div class="flex items-center gap-4">
+          {legalLinks.map((link) => (
+            <a href={link.href} class="text-xs text-text-dim hover:text-accent transition-colors">
+              {link.label}
+            </a>
+          ))}
         </div>
       </div>
 
