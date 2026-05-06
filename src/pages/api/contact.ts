@@ -1,7 +1,6 @@
-interface Env {
-  TURNSTILE_SECRET_KEY: string;
-  RESEND_API_KEY: string;
-}
+export const prerender = false;
+
+import type { APIRoute } from 'astro';
 
 interface ContactRequest {
   name: string;
@@ -11,29 +10,31 @@ interface ContactRequest {
   turnstileToken: string;
 }
 
-export const onRequestPost: PagesFunction<Env> = async (context) => {
-  const { request, env } = context;
-
+export const POST: APIRoute = async ({ request }) => {
   try {
     const body: ContactRequest = await request.json();
     const { name, email, subject, message, turnstileToken } = body;
 
     // Validate required fields
     if (!name || !email || !subject || !message || !turnstileToken) {
-      return Response.json(
-        { error: 'All fields are required' },
-        { status: 400 }
+      return new Response(
+        JSON.stringify({ error: 'All fields are required' }),
+        { status: 400, headers: { 'Content-Type': 'application/json' } }
       );
     }
 
     // Validate email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      return Response.json(
-        { error: 'Invalid email format' },
-        { status: 400 }
+      return new Response(
+        JSON.stringify({ error: 'Invalid email format' }),
+        { status: 400, headers: { 'Content-Type': 'application/json' } }
       );
     }
+
+    // Get environment variables
+    const TURNSTILE_SECRET_KEY = import.meta.env.TURNSTILE_SECRET_KEY;
+    const RESEND_API_KEY = import.meta.env.RESEND_API_KEY;
 
     // Verify Turnstile token
     const turnstileResponse = await fetch(
@@ -42,7 +43,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams({
-          secret: env.TURNSTILE_SECRET_KEY,
+          secret: TURNSTILE_SECRET_KEY,
           response: turnstileToken,
         }),
       }
@@ -51,9 +52,9 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     const turnstileResult = await turnstileResponse.json() as { success: boolean };
 
     if (!turnstileResult.success) {
-      return Response.json(
-        { error: 'Security verification failed. Please try again.' },
-        { status: 400 }
+      return new Response(
+        JSON.stringify({ error: 'Security verification failed. Please try again.' }),
+        { status: 400, headers: { 'Content-Type': 'application/json' } }
       );
     }
 
@@ -61,12 +62,12 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     const resendResponse = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${env.RESEND_API_KEY}`,
+        'Authorization': `Bearer ${RESEND_API_KEY}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'Squad Guides',
-        to: ['brubiyt@gmail.com'], // Change to your email
+        from: 'Squad Guides <onboarding@resend.dev>',
+        to: ['brubiyt@gmail.com'],
         subject: `[Squad Guides] ${subject}`,
         html: `
           <h2>New Contact Form Submission</h2>
@@ -87,18 +88,21 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     if (!resendResponse.ok) {
       const errorData = await resendResponse.json();
       console.error('Resend error:', errorData);
-      return Response.json(
-        { error: 'Failed to send email. Please try again.' },
-        { status: 500 }
+      return new Response(
+        JSON.stringify({ error: 'Failed to send email. Please try again.' }),
+        { status: 500, headers: { 'Content-Type': 'application/json' } }
       );
     }
 
-    return Response.json({ success: true });
+    return new Response(
+      JSON.stringify({ success: true }),
+      { status: 200, headers: { 'Content-Type': 'application/json' } }
+    );
   } catch (error) {
     console.error('Contact form error:', error);
-    return Response.json(
-      { error: 'An unexpected error occurred' },
-      { status: 500 }
+    return new Response(
+      JSON.stringify({ error: 'An unexpected error occurred' }),
+      { status: 500, headers: { 'Content-Type': 'application/json' } }
     );
   }
 };
