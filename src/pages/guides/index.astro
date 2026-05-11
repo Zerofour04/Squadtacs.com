@@ -1,40 +1,85 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import Card from '../../components/Card.astro';
 
 const guides = await getCollection('guides');
 const sortedGuides = guides.sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 99));
 
-const categoryColors = {
-  basics: 'primary',
-  advanced: 'accent',
-  tactics: 'redfor',
-} as const;
+const categories = [
+  {
+    id: 'basics',
+    title: 'Basics',
+    description: 'Essential knowledge for new players',
+    color: 'primary',
+    icon: '/img/icons/default/infantry/map_genericinfantry.svg',
+  },
+  {
+    id: 'advanced',
+    title: 'Advanced',
+    description: 'Leadership, coordination, and squad management',
+    color: 'accent',
+    icon: '/img/icons/default/deployables/deployable_fob.svg',
+  },
+  {
+    id: 'tactics',
+    title: 'Tactics',
+    description: 'Combat strategies and vehicle warfare',
+    color: 'redfor',
+    icon: '/img/icons/default/vehicles/map_tank.svg',
+  },
+] as const;
 ---
 
 <BaseLayout title="Guides">
   <div class="mb-10">
     <h1 class="font-display text-4xl font-bold text-text mb-3 uppercase tracking-wide">Guides</h1>
-    <p class="text-text-muted text-lg">Everything you need to know about Squad</p>
+    <p class="text-text-muted text-lg">Tactical knowledge and strategies for Squad</p>
   </div>
 
-  <div class="grid gap-4">
-    {sortedGuides.length > 0 ? (
-      sortedGuides.map((guide) => (
-        <Card
-          title={guide.data.title}
-          description={guide.data.description}
-          href={`/guides/${guide.id}`}
-          badge={guide.data.category}
-          badgeColor={categoryColors[guide.data.category] || 'primary'}
-        />
-      ))
-    ) : (
-      <div class="p-8 bg-bg-card rounded-lg border border-border text-center">
-        <p class="text-text-muted mb-2">No guides yet</p>
-        <p class="text-sm text-text-dim">Add markdown files to <code class="text-accent">src/content/guides/</code></p>
-      </div>
-    )}
-  </div>
+  {sortedGuides.length > 0 ? (
+    categories.map((category) => {
+      const categoryGuides = sortedGuides.filter((g) => g.data.category === category.id);
+      if (categoryGuides.length === 0) return null;
+
+      return (
+        <section class="mb-10">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 bg-bg-hover rounded-lg flex items-center justify-center p-2">
+              <img src={category.icon} alt="" class="w-full h-full object-contain opacity-70" />
+            </div>
+            <div>
+              <h2 class={`font-display text-xl font-bold text-${category.color}`}>{category.title}</h2>
+              <p class="text-text-dim text-sm">{category.description}</p>
+            </div>
+          </div>
+
+          <div class="grid gap-3">
+            {categoryGuides.map((guide) => (
+              <a
+                href={`/guides/${guide.id}`}
+                class="group flex items-center gap-4 p-4 bg-bg-card/50 hover:bg-bg-card border border-border/50 hover:border-border rounded-lg transition-all"
+              >
+                <div class="flex-1">
+                  <h3 class="font-display text-lg font-semibold text-text group-hover:text-accent transition-colors mb-1">
+                    {guide.data.title}
+                  </h3>
+                  <p class="text-text-muted text-sm">{guide.data.description}</p>
+                </div>
+                <div class="text-text-dim group-hover:text-accent transition-colors">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+      );
+    })
+  ) : (
+    <div class="p-8 bg-bg-card rounded-lg border border-border text-center">
+      <p class="text-text-muted mb-2">No guides yet</p>
+      <p class="text-sm text-text-dim">Add markdown files to <code class="text-accent">src/content/guides/</code></p>
+    </div>
+  )}
 </BaseLayout>

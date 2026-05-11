@@ -1,0 +1,238 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const captureModes = [
+  {
+    id: 'aas',
+    name: 'Advance and Secure (AAS)',
+    image: '/img/gamemode/AAS_gamemode.webp',
+    description: 'The classic Squad mode. Both teams fight to capture flag points in a set order. You can only attack the next flag in the chain and must defend your current flags.',
+    details: [
+      'Flags must be captured in sequence',
+      'Orange arrow = attackable flag',
+      'Purple shield = defendable flag',
+      'Holding all flags triggers Mercy Bleed (50 tickets/min)',
+    ],
+  },
+  {
+    id: 'raas',
+    name: 'Random AAS (RAAS)',
+    image: '/img/gamemode/RAAS_gamemode.webp',
+    description: 'Same as AAS, but flag locations are randomized at the start of each match. Some flags may be hidden until the previous one is captured.',
+    details: [
+      'Flag positions change each match',
+      'Some flags are revealed only after capturing others',
+      'Forces teams to adapt on the fly',
+      'Prevents "meta" strategies',
+    ],
+  },
+  {
+    id: 'skirmish',
+    name: 'Skirmish',
+    image: '/img/gamemode/Skirmish_gamemode.webp',
+    description: 'A smaller-scale version of AAS with fewer players, vehicles, and tickets. Great for learning the game or low-population servers.',
+    details: [
+      'Reduced ticket count',
+      'Fewer vehicles available',
+      'Smaller play area',
+      'Good for beginners',
+    ],
+  },
+  {
+    id: 'invasion',
+    name: 'Invasion',
+    image: '/img/gamemode/Invasion_gamemode.webp',
+    description: 'Asymmetric mode where one team attacks and the other defends. Attackers must capture all objectives in order, while defenders try to bleed attacker tickets.',
+    details: [
+      'Attackers have more tickets but must capture all points',
+      'Defenders have fewer tickets but only need to hold',
+      'Defenders cannot recapture lost flags',
+      'Often used for historical or asymmetric scenarios',
+    ],
+  },
+];
+
+const objectiveModes = [
+  {
+    id: 'destruction',
+    name: 'Destruction',
+    image: '/img/gamemode/Destruction_gamemode.webp',
+    description: 'Teams must destroy enemy weapon caches while protecting their own. Intelligence gathering reveals cache locations.',
+    details: [
+      'Caches are hidden and must be found',
+      'Destroying caches removes enemy tickets',
+      'Intel points reveal cache locations',
+      'Encourages search-and-destroy tactics',
+    ],
+  },
+  {
+    id: 'insurgency',
+    name: 'Insurgency',
+    image: '/img/gamemode/Insurgency_gamemode.webp',
+    description: 'Conventional forces hunt for insurgent weapon caches. Insurgents must protect caches while harassing the enemy with guerrilla tactics.',
+    details: [
+      'Insurgents have unlimited spawns but limited caches',
+      'Conventional forces gather intel to find caches',
+      'Asymmetric gameplay (military vs. guerrillas)',
+      'Insurgents can place IEDs and ambushes',
+    ],
+  },
+  {
+    id: 'tc',
+    name: 'Territory Control (TC)',
+    image: '/img/gamemode/TC_gamemode.webp',
+    description: 'Teams fight over hexagonal territories across the map. Controlling more territory generates ticket bleed for the enemy.',
+    details: [
+      'Hex-based territory system',
+      'Can attack any adjacent enemy hex',
+      'More territory = faster enemy ticket bleed',
+      'Encourages front-line management',
+    ],
+  },
+];
+
+const otherModes = [
+  {
+    id: 'seed',
+    name: 'Seed',
+    description: 'A special mode for populating servers. Ticket penalties are disabled, combat is restricted to central areas, and kit restrictions may be lifted.',
+    details: [
+      'No ticket loss for deaths or vehicle destruction',
+      'Combat restricted to central capture point',
+      'Kill zones prevent flanking to enemy side',
+      'Projectiles can still pass through restricted areas',
+    ],
+  },
+  {
+    id: 'jensens',
+    name: "Jensen's Range (Shooting Range)",
+    description: 'Single-player sandbox mode for practicing weapons, vehicles, and game mechanics without affecting live servers.',
+    details: [
+      'Test all weapons and vehicles',
+      'Practice driving and flying',
+      'Learn FOB building',
+      'No other players required',
+    ],
+  },
+];
+---
+
+<BaseLayout title="Game Modes">
+  <div class="mb-10">
+    <h1 class="font-display text-4xl font-bold text-text mb-3 uppercase tracking-wide">Game Modes</h1>
+    <p class="text-text-muted text-lg">All playable game modes in Squad</p>
+  </div>
+
+  <!-- Info Box -->
+  <div class="mb-10 p-4 bg-bg-card/50 border border-border/50 rounded-lg">
+    <p class="text-text-muted text-sm">
+      <strong class="text-text">Tip:</strong> The game mode name appears at the top of your screen when a new match starts.
+      Servers rotate maps and modes after each match. Most matches begin with a 3-minute <strong>Staging Phase</strong> where
+      you can organize squads and claim vehicles, but cannot leave the main base or fire weapons.
+    </p>
+  </div>
+
+  <!-- Capture Point Modes -->
+  <section class="mb-14">
+    <div class="mb-6">
+      <h2 class="font-display text-2xl font-bold text-accent mb-2">Capture Point Modes</h2>
+      <p class="text-text-muted text-sm max-w-3xl">Classic Squad gameplay focused on capturing and holding objectives in sequence.</p>
+    </div>
+
+    <div class="grid gap-4">
+      {captureModes.map((mode) => (
+        <div class="group p-4 bg-bg-card/50 hover:bg-bg-card border border-border/50 hover:border-border rounded-lg transition-all">
+          <div class="flex gap-4">
+            <img
+              src={mode.image}
+              alt={mode.name}
+              class="w-32 h-20 object-contain rounded flex-shrink-0"
+            />
+            <div class="flex-1">
+              <h3 class="font-display text-lg font-semibold text-text mb-1">{mode.name}</h3>
+              <p class="text-text-muted text-sm mb-3">{mode.description}</p>
+              <ul class="grid grid-cols-2 gap-x-4 gap-y-1">
+                {mode.details.map((detail) => (
+                  <li class="text-text-dim text-xs flex items-start gap-1.5">
+                    <span class="text-accent mt-0.5">•</span>
+                    {detail}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Objective-based Modes -->
+  <section class="mb-14">
+    <div class="mb-6">
+      <h2 class="font-display text-2xl font-bold text-accent mb-2">Objective-based Modes</h2>
+      <p class="text-text-muted text-sm max-w-3xl">Modes focused on destroying or defending specific targets rather than capturing territory.</p>
+    </div>
+
+    <div class="grid gap-4">
+      {objectiveModes.map((mode) => (
+        <div class="group p-4 bg-bg-card/50 hover:bg-bg-card border border-border/50 hover:border-border rounded-lg transition-all">
+          <div class="flex gap-4">
+            <img
+              src={mode.image}
+              alt={mode.name}
+              class="w-32 h-20 object-contain rounded flex-shrink-0"
+            />
+            <div class="flex-1">
+              <h3 class="font-display text-lg font-semibold text-text mb-1">{mode.name}</h3>
+              <p class="text-text-muted text-sm mb-3">{mode.description}</p>
+              <ul class="grid grid-cols-2 gap-x-4 gap-y-1">
+                {mode.details.map((detail) => (
+                  <li class="text-text-dim text-xs flex items-start gap-1.5">
+                    <span class="text-accent mt-0.5">•</span>
+                    {detail}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Other Modes -->
+  <section class="mb-14">
+    <div class="mb-6">
+      <h2 class="font-display text-2xl font-bold text-text-muted mb-2">Other Modes</h2>
+      <p class="text-text-muted text-sm max-w-3xl">Special modes for server seeding and practice.</p>
+    </div>
+
+    <div class="grid gap-4">
+      {otherModes.map((mode) => (
+        <div class="group p-4 bg-bg-card/30 border border-border/30 rounded-lg">
+          <div class="flex-1">
+            <h3 class="font-display text-lg font-semibold text-text mb-1">{mode.name}</h3>
+            <p class="text-text-muted text-sm mb-3">{mode.description}</p>
+            <ul class="grid grid-cols-2 gap-x-4 gap-y-1">
+              {mode.details.map((detail) => (
+                <li class="text-text-dim text-xs flex items-start gap-1.5">
+                  <span class="text-text-dim mt-0.5">•</span>
+                  {detail}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Trivia -->
+  <section class="p-4 bg-bg-card/30 border border-border/30 rounded-lg">
+    <h3 class="font-display text-sm font-semibold text-text-muted mb-2 uppercase tracking-wide">Trivia</h3>
+    <p class="text-text-dim text-sm">
+      Sumari Bala has a special Skirmish version called "Seed" with even fewer tickets and vehicles,
+      specifically designed for server seeding. As of 2021, this is the only map with such a layer.
+    </p>
+  </section>
+</BaseLayout>
