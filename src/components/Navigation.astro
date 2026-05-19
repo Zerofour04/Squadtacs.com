@@ -6,24 +6,63 @@ const navItems = [
   { label: 'MAPS', href: '/maps' },
 ];
 
+const sidebarSections = [
+  {
+    title: 'Getting Started',
+    items: [
+      { label: 'Introduction', href: '/guides/introduction' },
+      { label: 'Game Modes', href: '/guides/game-modes' },
+      { label: 'Communication', href: '/guides/communication' },
+    ],
+  },
+  {
+    title: 'Factions',
+    items: [
+      { label: 'Overview', href: '/factions' },
+      { label: 'BLUFOR', href: '/factions?side=BLUFOR' },
+      { label: 'REDFOR', href: '/factions?side=REDFOR' },
+    ],
+  },
+  {
+    title: 'Classes',
+    items: [
+      { label: 'Overview', href: '/classes' },
+      { label: 'Squad Leader', href: '/classes/squad-leader' },
+      { label: 'Medic', href: '/classes/medic' },
+    ],
+  },
+];
+
 const currentPath = Astro.url.pathname;
 ---
 
 <nav class="fixed top-0 left-0 right-0 h-16 bg-bg-base/95 backdrop-blur-md border-b border-border z-50">
-  <div class="h-full px-6 flex items-center justify-between">
-    <!-- Logo - Links -->
-    <a href="/" class="flex items-center gap-3 group w-48">
-      <div class="w-10 h-10 bg-gradient-to-br from-primary to-primary-dark rounded-lg flex items-center justify-center border border-primary-light/20 shadow-lg shadow-primary/20 group-hover:shadow-primary/40 transition-shadow">
-        <span class="font-display text-white font-bold text-base tracking-wider">SQ</span>
-      </div>
-      <div class="flex flex-col">
-        <span class="font-display text-lg font-semibold text-text tracking-wide uppercase">Squad Guides</span>
+  <div class="h-full px-4 lg:px-6 flex items-center justify-between">
+    <!-- Hamburger Menu Button (Mobile only) -->
+    <button
+      id="menu-toggle"
+      class="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg hover:bg-bg-hover transition-colors"
+      aria-label="Menu"
+    >
+      <svg id="menu-icon" class="w-6 h-6 text-text" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+      <svg id="close-icon" class="w-6 h-6 text-text hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-3 group lg:w-48">
+      <img src="/Squadtacs.png" alt="Squad Tacs" class="w-10 h-10 rounded-lg shadow-lg shadow-primary/20 group-hover:shadow-primary/40 transition-shadow" />
+      <div class="hidden sm:flex flex-col">
+        <span class="font-display text-lg font-semibold text-text tracking-wide uppercase">Squad Tacs</span>
         <span class="text-[10px] text-text-dim uppercase tracking-widest -mt-0.5">Tactical Wiki</span>
       </div>
     </a>
 
-    <!-- Navigation - Mitte mit Roboto (absolute zentriert) -->
-    <div class="absolute left-1/2 -translate-x-1/2 flex items-center">
+    <!-- Navigation - Center (Desktop only) -->
+    <div class="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center">
       {navItems.map((item) => (
         <a
           href={item.href}
@@ -42,8 +81,8 @@ const currentPath = Astro.url.pathname;
       ))}
     </div>
 
-    <!-- Rechts - Externe Tools -->
-    <div class="flex items-center gap-1 justify-end">
+    <!-- External Tools (Desktop only) -->
+    <div class="hidden lg:flex items-center gap-1 justify-end">
       <a
         href="https://squadcalc.app/"
         target="_blank"
@@ -63,8 +102,98 @@ const currentPath = Astro.url.pathname;
         <span class="tool-text">ARMOR</span>
       </a>
     </div>
+
+    <!-- Placeholder for mobile right side -->
+    <div class="lg:hidden w-10"></div>
   </div>
 </nav>
+
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu-overlay" class="fixed inset-0 bg-black/50 z-40 hidden lg:hidden" aria-hidden="true"></div>
+
+<!-- Mobile Menu Drawer -->
+<aside id="mobile-menu" class="fixed left-0 top-16 bottom-0 w-72 bg-bg-base border-r border-border z-40 lg:hidden overflow-y-auto mobile-menu-drawer">
+  <!-- Main Navigation -->
+  <div class="p-4 border-b border-border">
+    <h3 class="font-display text-xs font-semibold uppercase tracking-widest text-text-dim mb-3 px-3">
+      Navigation
+    </h3>
+    <ul class="space-y-1">
+      {navItems.map((item) => (
+        <li>
+          <a
+            href={item.href}
+            class:list={[
+              'block px-3 py-2 rounded-md text-sm transition-all duration-200 border-l-2',
+              currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href))
+                ? 'bg-primary/10 text-accent border-accent font-medium'
+                : 'text-text-muted hover:text-text hover:bg-bg-hover border-transparent hover:border-primary/50',
+            ]}
+          >
+            {item.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <!-- Sidebar Sections -->
+  {sidebarSections.map((section, index) => (
+    <div class:list={["p-4", index < sidebarSections.length - 1 && "border-b border-border/50"]}>
+      <h3 class="font-display text-xs font-semibold uppercase tracking-widest text-text-dim mb-3 px-3">
+        {section.title}
+      </h3>
+      <ul class="space-y-1">
+        {section.items.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class:list={[
+                'block px-3 py-2 rounded-md text-sm transition-all duration-200 border-l-2',
+                currentPath === item.href
+                  ? 'bg-primary/10 text-accent border-accent font-medium'
+                  : 'text-text-muted hover:text-text hover:bg-bg-hover border-transparent hover:border-primary/50',
+              ]}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  ))}
+
+  <!-- External Tools -->
+  <div class="p-4 border-t border-border">
+    <h3 class="font-display text-xs font-semibold uppercase tracking-widest text-text-dim mb-3 px-3">
+      External Tools
+    </h3>
+    <ul class="space-y-1">
+      <li>
+        <a
+          href="https://squadcalc.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center gap-3 px-3 py-2 rounded-md text-sm text-text-muted hover:text-text hover:bg-bg-hover transition-all"
+        >
+          <img src="/rallypoint.svg" alt="" class="w-5 h-5 opacity-60" />
+          Calculator
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://squad-armor.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center gap-3 px-3 py-2 rounded-md text-sm text-text-muted hover:text-text hover:bg-bg-hover transition-all"
+        >
+          <img src="/map_tank.svg" alt="" class="w-5 h-5 opacity-60" />
+          Armor Guide
+        </a>
+      </li>
+    </ul>
+  </div>
+</aside>
 
 <style>
   .nav-item {
@@ -89,4 +218,41 @@ const currentPath = Astro.url.pathname;
     opacity: 1;
     color: var(--color-text);
   }
+
+  .mobile-menu-drawer {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .mobile-menu-drawer.open {
+    transform: translateX(0);
+  }
 </style>
+
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const overlay = document.getElementById('mobile-menu-overlay');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+
+  function toggleMenu() {
+    const isOpen = mobileMenu?.classList.toggle('open');
+    overlay?.classList.toggle('hidden', !isOpen);
+    menuIcon?.classList.toggle('hidden', isOpen);
+    closeIcon?.classList.toggle('hidden', !isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  }
+
+  menuToggle?.addEventListener('click', toggleMenu);
+  overlay?.addEventListener('click', toggleMenu);
+
+  // Close menu on link click
+  mobileMenu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (mobileMenu.classList.contains('open')) {
+        toggleMenu();
+      }
+    });
+  });
+</script>

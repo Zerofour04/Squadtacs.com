@@ -34,7 +34,7 @@ const sections: SidebarSection[] = [
 const currentPath = Astro.url.pathname;
 ---
 
-<aside class="fixed left-0 top-16 bottom-0 w-64 bg-bg-base border-r border-border overflow-y-auto">
+<aside class="hidden lg:block fixed left-0 top-16 bottom-0 w-64 bg-bg-base border-r border-border overflow-y-auto">
   <div class="p-4">
     {sections.map((section, index) => (
       <div class:list={["mb-6", index > 0 && "pt-4 border-t border-border/50"]}>

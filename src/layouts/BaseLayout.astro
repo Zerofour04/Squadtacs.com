@@ -23,7 +23,7 @@ const { title, description = 'Squad Game Guides', showSidebar = true } = Astro.p
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
-    <title>{title} | Squad Guides</title>
+    <title>{title} | Squad Tacs</title>
   </head>
   <body class="min-h-screen">
     <Navigation />
@@ -31,14 +31,14 @@ const { title, description = 'Squad Game Guides', showSidebar = true } = Astro.p
     <div class="flex min-h-[calc(100vh-4rem)]">
       {showSidebar && <Sidebar />}
 
-      <main class={`flex-1 ${showSidebar ? 'ml-64' : ''} pt-16`}>
+      <main class={`flex-1 ${showSidebar ? 'lg:ml-64' : ''} pt-16`}>
         <div class="max-w-4xl mx-auto px-6 py-8">
           <slot />
         </div>
       </main>
     </div>
 
-    <div class={showSidebar ? 'ml-64' : ''}>
+    <div class={showSidebar ? 'lg:ml-64' : ''}>
       <Footer />
     </div>
   </body>

@@ -66,9 +66,9 @@ export const POST: APIRoute = async ({ request }) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'Squad Guides <onboarding@resend.dev>',
+        from: 'Squad Tacs <onboarding@resend.dev>',
         to: ['brubiyt@gmail.com'],
-        subject: `[Squad Guides] ${subject}`,
+        subject: `[Squad Tacs] ${subject}`,
         html: `
           <h2>New Contact Form Submission</h2>
           <p><strong>From:</strong> ${name} (${email})</p>
@@ -78,7 +78,7 @@ export const POST: APIRoute = async ({ request }) => {
           <p>${message.replace(/\n/g, '<br />')}</p>
           <hr />
           <p style="color: #666; font-size: 12px;">
-            Sent from Squad Guides contact form
+            Sent from Squad Tacs contact form
           </p>
         `,
         reply_to: email,
