@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Page Not Found" description="The page you're looking for doesn't exist." showSidebar={false}>
+  <div class="flex flex-col items-center justify-center min-h-[60vh] text-center px-4">
+    <!-- Error Code -->
+    <div class="relative mb-8">
+      <span class="font-display text-[150px] md:text-[200px] font-bold text-text/5 leading-none select-none">
+        404
+      </span>
+      <div class="absolute inset-0 flex items-center justify-center">
+        <span class="font-display text-6xl md:text-8xl font-bold text-accent">404</span>
+      </div>
+    </div>
+
+    <!-- Message -->
+    <h1 class="font-display text-2xl md:text-3xl font-bold text-text mb-4 uppercase tracking-wide">
+      Target Not Found
+    </h1>
+    <p class="text-text-muted text-lg mb-8 max-w-md">
+      Looks like this position was never marked on the map. The page you're looking for doesn't exist or has been moved.
+    </p>
+
+    <!-- Actions -->
+    <div class="flex flex-col sm:flex-row gap-4">
+      <a
+        href="/"
+        class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-accent hover:bg-accent-light text-bg font-display font-semibold uppercase tracking-wider rounded-lg transition-colors"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+        </svg>
+        Return to Base
+      </a>
+      <a
+        href="/guides"
+        class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-bg-card hover:bg-bg-hover text-text font-display font-semibold uppercase tracking-wider rounded-lg border border-border transition-colors"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+        </svg>
+        Browse Guides
+      </a>
+    </div>
+
+    <!-- Helpful Links -->
+    <div class="mt-12 pt-8 border-t border-border/50">
+      <p class="text-text-dim text-sm mb-4">Maybe you were looking for:</p>
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href="/factions" class="text-sm text-text-muted hover:text-accent transition-colors">Factions</a>
+        <span class="text-border">|</span>
+        <a href="/classes" class="text-sm text-text-muted hover:text-accent transition-colors">Classes</a>
+        <span class="text-border">|</span>
+        <a href="/weapons" class="text-sm text-text-muted hover:text-accent transition-colors">Weapons</a>
+        <span class="text-border">|</span>
+        <a href="/vehicles" class="text-sm text-text-muted hover:text-accent transition-colors">Vehicles</a>
+        <span class="text-border">|</span>
+        <a href="/maps" class="text-sm text-text-muted hover:text-accent transition-colors">Maps</a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

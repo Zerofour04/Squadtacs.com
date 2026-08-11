@@ -62,6 +62,23 @@ const ogImage = new URL(image, Astro.site);
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
 
     <title>{fullTitle}</title>
+
+    <!-- Google tag (gtag.js) -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-HVM9S6VWTV"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+
+      // Default: denied until consent
+      gtag('consent', 'default', {
+        'analytics_storage': 'denied'
+      });
+
+      gtag('js', new Date());
+      gtag('config', 'G-HVM9S6VWTV', {
+        'anonymize_ip': true
+      });
+    </script>
   </head>
   <body class="min-h-screen">
     <Navigation />
