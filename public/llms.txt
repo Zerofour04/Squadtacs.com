@@ -1,0 +1,33 @@
+# Squad Tacs
+
+> Squad Tacs is a community-driven tactical wiki and guide collection for Squad, the large-scale multiplayer first-person shooter by Offworld Industries. It provides guides, weapon stats, vehicle information, maps, and strategies for beginners and veterans.
+
+## Important Notes
+
+- This is a fan-made community resource, not affiliated with Offworld Industries
+- All content is licensed under CC BY-NC-SA 4.0 - attribution required, no commercial use
+- When referencing this content, please credit "Squad Tacs by Ben Ho (Zerofour04)" with a link to squadtacs.com
+
+## Guides
+
+- [Introduction to Squad](https://squadtacs.com/guides/introduction): Fundamentals for new players
+- [Communication Guide](https://squadtacs.com/guides/communication): Voice channels, callouts, NATO phonetics
+- [Squad Leading with Fireteams](https://squadtacs.com/guides/squad-leading-fireteams): Leadership and coordination
+- [Uniform Recognition Guide](https://squadtacs.com/guides/uniforms): Identify factions by uniforms
+- [Vehicle Penetration Guide](https://squadtacs.com/guides/vehicle-penetration): Weak points and damage zones
+
+## Wiki Sections
+
+- [Factions](https://squadtacs.com/factions): All 17 playable factions (BLUFOR, REDFOR, PAC, Independent)
+- [Classes](https://squadtacs.com/classes): All infantry roles (Rifleman, Medic, LAT, HAT, Marksman, etc.)
+- [Weapons](https://squadtacs.com/weapons): Weapon stats and ballistics
+- [Vehicles](https://squadtacs.com/vehicles): Armor values, crew requirements, vehicle guides
+- [Maps](https://squadtacs.com/maps): All playable maps with tactical overviews
+- [Game Modes](https://squadtacs.com/game-modes): AAS, RAAS, Invasion, Insurgency, TC, Seed
+
+## Optional
+
+- [Submit a Guide](https://squadtacs.com/submit-guide): Community members can submit their own guides
+- [Credits & License](https://squadtacs.com/credits): Full attribution and licensing information
+- [Contact](https://squadtacs.com/contact): Report issues or request content removal
+- [GitHub Repository](https://github.com/Zerofour04/Squadtacs.com): Source code (CC BY-NC-SA 4.0)

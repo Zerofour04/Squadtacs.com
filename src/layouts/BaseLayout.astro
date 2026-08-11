@@ -3,14 +3,25 @@ import '../styles/global.css';
 import Navigation from '../components/Navigation.astro';
 import Sidebar from '../components/Sidebar.astro';
 import Footer from '../components/Footer.astro';
+import SearchModal from '../components/SearchModal.astro';
 
 interface Props {
   title: string;
   description?: string;
+  image?: string;
   showSidebar?: boolean;
 }
 
-const { title, description = 'Squad Game Guides', showSidebar = true } = Astro.props;
+const {
+  title,
+  description = 'Your tactical field manual for Squad. Guides, weapons, vehicles, maps, and strategies — all in one place.',
+  image = '/Squadtacs.png',
+  showSidebar = true
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const fullTitle = `${title} | Squad Tacs`;
+const ogImage = new URL(image, Astro.site);
 ---
 
 <!doctype html>
@@ -19,11 +30,38 @@ const { title, description = 'Squad Game Guides', showSidebar = true } = Astro.p
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="author" content="Squad Tacs" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:site_name" content="Squad Tacs" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/Squadtacs.png" />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
-    <title>{title} | Squad Tacs</title>
+
+    <title>{fullTitle}</title>
   </head>
   <body class="min-h-screen">
     <Navigation />
@@ -41,5 +79,23 @@ const { title, description = 'Squad Game Guides', showSidebar = true } = Astro.p
     <div class={showSidebar ? 'lg:ml-64' : ''}>
       <Footer />
     </div>
+
+    <SearchModal />
+
+    <script>
+      import { initCookieConsent, hasAnalyticsConsent } from '../scripts/cookieConsent';
+      import { enableAnalytics, disableAnalytics } from '../scripts/analytics';
+
+      // Check if user already gave consent
+      if (hasAnalyticsConsent()) {
+        enableAnalytics();
+      }
+
+      // Initialize cookie consent banner
+      initCookieConsent(
+        () => enableAnalytics(),
+        () => disableAnalytics()
+      );
+    </script>
   </body>
 </html>

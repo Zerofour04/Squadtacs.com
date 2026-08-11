@@ -7,7 +7,7 @@ const classes = await getCollection('classes');
 const sortedClasses = classes.sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 99));
 ---
 
-<BaseLayout title="Classes">
+<BaseLayout title="Classes" description="All Squad roles explained: Rifleman, Medic, Squad Leader, LAT, HAT, Marksman, Combat Engineer, Crewman, Pilot, and more.">
   <!-- Hero Section -->
   <div class="mb-12">
     <h1 class="font-display text-4xl font-bold text-text mb-3 uppercase tracking-wide">Kit Role Selection</h1>

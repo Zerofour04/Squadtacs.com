@@ -1,4 +1,6 @@
 ---
+import { getCollection } from 'astro:content';
+
 const navItems = [
   { label: 'HOME', href: '/' },
   { label: 'GUIDES', href: '/guides' },
@@ -6,34 +8,55 @@ const navItems = [
   { label: 'MAPS', href: '/maps' },
 ];
 
-const sidebarSections = [
-  {
-    title: 'Getting Started',
-    items: [
-      { label: 'Introduction', href: '/guides/introduction' },
-      { label: 'Game Modes', href: '/guides/game-modes' },
-      { label: 'Communication', href: '/guides/communication' },
-    ],
-  },
-  {
-    title: 'Factions',
-    items: [
-      { label: 'Overview', href: '/factions' },
-      { label: 'BLUFOR', href: '/factions?side=BLUFOR' },
-      { label: 'REDFOR', href: '/factions?side=REDFOR' },
-    ],
-  },
-  {
-    title: 'Classes',
-    items: [
-      { label: 'Overview', href: '/classes' },
-      { label: 'Squad Leader', href: '/classes/squad-leader' },
-      { label: 'Medic', href: '/classes/medic' },
-    ],
-  },
-];
-
 const currentPath = Astro.url.pathname;
+
+// Determine which section we're in based on URL
+const isGuides = currentPath.startsWith('/guides');
+const isWiki = currentPath.startsWith('/wiki') || currentPath.startsWith('/factions') || currentPath.startsWith('/classes') || currentPath.startsWith('/weapons') || currentPath.startsWith('/vehicles') || currentPath.startsWith('/game-modes');
+const isMaps = currentPath.startsWith('/maps');
+
+// Get content collections for mobile sidebar
+const guides = await getCollection('guides');
+const maps = await getCollection('maps');
+
+// Sort guides by order
+const sortedGuides = guides.sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 99));
+
+// Group guides by category
+const basicGuides = sortedGuides.filter(g => g.data.category === 'basics');
+const advancedGuides = sortedGuides.filter(g => g.data.category === 'advanced');
+const tacticGuides = sortedGuides.filter(g => g.data.category === 'tactics');
+
+// Sort maps alphabetically
+const sortedMaps = maps.sort((a, b) => a.data.title.localeCompare(b.data.title));
+
+// Build mobile sidebar sections
+interface SidebarSection {
+  title: string;
+  items: { label: string; href: string }[];
+}
+
+let mobileSections: SidebarSection[] = [];
+
+if (isGuides) {
+  mobileSections = [
+    { title: 'Basics', items: basicGuides.map(g => ({ label: g.data.title, href: `/guides/${g.id}` })) },
+    { title: 'Advanced', items: advancedGuides.map(g => ({ label: g.data.title, href: `/guides/${g.id}` })) },
+    { title: 'Tactics', items: tacticGuides.map(g => ({ label: g.data.title, href: `/guides/${g.id}` })) },
+  ].filter(s => s.items.length > 0);
+} else if (isWiki) {
+  mobileSections = [
+    { title: 'Forces', items: [{ label: 'Factions', href: '/factions' }, { label: 'Classes', href: '/classes' }] },
+    { title: 'Arsenal', items: [{ label: 'Weapons', href: '/weapons' }, { label: 'Vehicles', href: '/vehicles' }] },
+    { title: 'Gameplay', items: [{ label: 'Game Modes', href: '/game-modes' }] },
+  ];
+} else if (isMaps) {
+  mobileSections = [
+    { title: 'All Maps', items: sortedMaps.map(m => ({ label: m.data.title, href: `/maps/${m.id}` })) },
+  ];
+}
+
+const sectionLabel = isGuides ? 'Guides' : isWiki ? 'Wiki' : isMaps ? 'Maps' : '';
 ---
 
 <nav class="fixed top-0 left-0 right-0 h-16 bg-bg-base/95 backdrop-blur-md border-b border-border z-50">
@@ -124,10 +147,10 @@ const currentPath = Astro.url.pathname;
           <a
             href={item.href}
             class:list={[
-              'block px-3 py-2 rounded-md text-sm transition-all duration-200 border-l-2',
+              'block px-3 py-2 text-sm transition-all duration-200 border-l-2 -ml-[2px]',
               currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href))
-                ? 'bg-primary/10 text-accent border-accent font-medium'
-                : 'text-text-muted hover:text-text hover:bg-bg-hover border-transparent hover:border-primary/50',
+                ? 'text-accent border-accent font-medium bg-accent/5'
+                : 'text-text-muted hover:text-text border-transparent hover:border-text-dim',
             ]}
           >
             {item.label}
@@ -137,31 +160,38 @@ const currentPath = Astro.url.pathname;
     </ul>
   </div>
 
-  <!-- Sidebar Sections -->
-  {sidebarSections.map((section, index) => (
-    <div class:list={["p-4", index < sidebarSections.length - 1 && "border-b border-border/50"]}>
-      <h3 class="font-display text-xs font-semibold uppercase tracking-widest text-text-dim mb-3 px-3">
-        {section.title}
+  <!-- Context-aware Sidebar Sections -->
+  {mobileSections.length > 0 && (
+    <div class="p-4 border-b border-border">
+      <h3 class="font-display text-xs font-semibold uppercase tracking-widest text-accent mb-3 px-3">
+        {sectionLabel}
       </h3>
-      <ul class="space-y-1">
-        {section.items.map((item) => (
-          <li>
-            <a
-              href={item.href}
-              class:list={[
-                'block px-3 py-2 rounded-md text-sm transition-all duration-200 border-l-2',
-                currentPath === item.href
-                  ? 'bg-primary/10 text-accent border-accent font-medium'
-                  : 'text-text-muted hover:text-text hover:bg-bg-hover border-transparent hover:border-primary/50',
-              ]}
-            >
-              {item.label}
-            </a>
-          </li>
-        ))}
-      </ul>
+      {mobileSections.map((section, index) => (
+        <div class:list={[index > 0 && "mt-4 pt-4 border-t border-border/50"]}>
+          <h4 class="font-display text-xs font-semibold uppercase tracking-widest text-text-dim mb-2 px-3">
+            {section.title}
+          </h4>
+          <ul class="space-y-1">
+            {section.items.map((item) => (
+              <li>
+                <a
+                  href={item.href}
+                  class:list={[
+                    'block px-3 py-2 text-sm transition-all duration-200 border-l-2 -ml-[2px]',
+                    currentPath === item.href || currentPath.startsWith(item.href + '/')
+                      ? 'text-accent border-accent font-medium bg-accent/5'
+                      : 'text-text-muted hover:text-text border-transparent hover:border-text-dim',
+                  ]}
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
     </div>
-  ))}
+  )}
 
   <!-- External Tools -->
   <div class="p-4 border-t border-border">

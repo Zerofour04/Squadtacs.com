@@ -18,6 +18,8 @@ const externalLinks = [
   { label: 'Official Squad Website', href: 'https://joinsquad.com' },
   { label: 'Squad Wiki', href: 'https://squad.fandom.com' },
   { label: 'Reddit', href: 'https://reddit.com/r/joinsquad' },
+  { label: 'GitHub', href: 'https://github.com/Zerofour04/Squadtacs.com' },
+  { label: 'Submit a Guide', href: '/submit-guide' },
 ];
 ---
 
@@ -83,6 +85,13 @@ const externalLinks = [
               {link.label}
             </a>
           ))}
+          <button
+            type="button"
+            id="cookie-settings-btn"
+            class="text-xs text-text-dim hover:text-accent transition-colors"
+          >
+            Cookie Settings
+          </button>
         </div>
       </div>
 
@@ -103,3 +112,11 @@ const externalLinks = [
     </div>
   </div>
 </footer>
+
+<script>
+  import { showCookiePreferences } from '../scripts/cookieConsent';
+
+  document.getElementById('cookie-settings-btn')?.addEventListener('click', () => {
+    showCookiePreferences();
+  });
+</script>

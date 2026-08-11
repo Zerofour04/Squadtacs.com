@@ -1,0 +1,354 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const turnstileSiteKey = '0x4AAAAAADJs2KHio8PHqjyG';
+
+const categories = [
+  { value: 'basics', label: 'Basics - For new players' },
+  { value: 'advanced', label: 'Advanced - In-depth mechanics' },
+  { value: 'tactics', label: 'Tactics - Strategies & teamplay' },
+];
+
+const exampleMarkdown = `## Introduction
+
+Brief overview of what this guide covers...
+
+## Section 1
+
+Your content here. You can use:
+- Bullet points
+- **Bold text**
+- *Italic text*
+
+## Tips
+
+1. First tip
+2. Second tip
+3. Third tip
+
+## Summary
+
+Wrap up your guide here.`;
+---
+
+<BaseLayout title="Submit a Guide" description="Share your Squad tactics with the community. Submit guides, tips, and strategies to help fellow players." showSidebar={false}>
+  <div class="max-w-4xl mx-auto">
+    <div class="mb-8">
+      <h1 class="font-display text-4xl font-bold text-text mb-3 uppercase tracking-wide">Submit a Guide</h1>
+      <p class="text-text-muted">Share your Squad knowledge with the community. Write your guide in Markdown format.</p>
+    </div>
+
+    <div class="mb-8 p-5 bg-bg-card rounded-lg border border-border/50">
+      <h2 class="font-display text-sm uppercase tracking-[0.2em] text-accent mb-3">Why submit a guide?</h2>
+      <p class="text-text-muted text-sm mb-4">
+        Squad Tacs is a free community resource built to help new and experienced players alike.
+        Your guides, tips, and tactics can make a real difference for someone just starting out or looking to improve.
+      </p>
+      <ul class="text-text-muted text-sm space-y-2 mb-4">
+        <li class="flex items-start gap-2">
+          <span class="text-accent mt-0.5">✓</span>
+          <span>Submitted content is <strong class="text-text">only used on this website</strong> — we don't share or sell your work</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-accent mt-0.5">✓</span>
+          <span>You'll be credited as the author with your chosen name</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-accent mt-0.5">✓</span>
+          <span>Guides are reviewed before publishing to ensure quality</span>
+        </li>
+      </ul>
+      <p class="text-text-dim text-xs border-t border-border/30 pt-3">
+        <strong class="text-text-muted">Already have a Steam guide?</strong> Just paste the link in your submission and we'll adapt the content for you (with proper credit, of course).
+      </p>
+    </div>
+
+    <form id="guide-form" class="space-y-6">
+      <!-- Basic Info -->
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <label for="title" class="block text-sm font-medium text-text mb-2">Guide Title *</label>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            required
+            class="w-full px-4 py-3 bg-bg-card border border-border rounded-lg text-text placeholder-text-dim focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
+            placeholder="e.g., Effective Squad Communication"
+          />
+        </div>
+
+        <div>
+          <label for="category" class="block text-sm font-medium text-text mb-2">Category *</label>
+          <select
+            id="category"
+            name="category"
+            required
+            class="w-full px-4 py-3 bg-bg-card border border-border rounded-lg text-text focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors appearance-none cursor-pointer"
+          >
+            <option value="" disabled selected>Select a category...</option>
+            {categories.map((cat) => (
+              <option value={cat.value}>{cat.label}</option>
+            ))}
+          </select>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <label for="author" class="block text-sm font-medium text-text mb-2">Your Name / Username *</label>
+          <input
+            type="text"
+            id="author"
+            name="author"
+            required
+            class="w-full px-4 py-3 bg-bg-card border border-border rounded-lg text-text placeholder-text-dim focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
+            placeholder="How should we credit you?"
+          />
+        </div>
+
+        <div>
+          <label for="email" class="block text-sm font-medium text-text mb-2">Email *</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            class="w-full px-4 py-3 bg-bg-card border border-border rounded-lg text-text placeholder-text-dim focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
+            placeholder="For follow-up questions only"
+          />
+        </div>
+      </div>
+
+      <div>
+        <label for="summary" class="block text-sm font-medium text-text mb-2">Short Summary *</label>
+        <input
+          type="text"
+          id="summary"
+          name="summary"
+          required
+          maxlength="200"
+          class="w-full px-4 py-3 bg-bg-card border border-border rounded-lg text-text placeholder-text-dim focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
+          placeholder="One sentence describing your guide (max 200 chars)"
+        />
+      </div>
+
+      <!-- Markdown Editor -->
+      <div>
+        <div class="flex items-center justify-between mb-2">
+          <label for="content" class="block text-sm font-medium text-text">Guide Content (Markdown) *</label>
+          <button
+            type="button"
+            id="insert-template"
+            class="text-xs text-primary hover:text-accent transition-colors"
+          >
+            Insert template
+          </button>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-4">
+          <!-- Editor -->
+          <div class="relative">
+            <div class="absolute top-2 left-3 text-xs text-text-dim uppercase tracking-wider">Editor</div>
+            <textarea
+              id="content"
+              name="content"
+              required
+              rows="20"
+              class="w-full px-4 pt-8 pb-4 bg-bg-card border border-border rounded-lg text-text placeholder-text-dim focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors resize-none font-mono text-sm"
+              placeholder="Write your guide in Markdown format..."
+            ></textarea>
+          </div>
+
+          <!-- Preview -->
+          <div class="relative">
+            <div class="absolute top-2 left-3 text-xs text-text-dim uppercase tracking-wider">Preview</div>
+            <div
+              id="preview"
+              class="w-full h-full min-h-[480px] px-4 pt-8 pb-4 bg-bg-card border border-border rounded-lg overflow-y-auto prose prose-invert prose-sm"
+            >
+              <p class="text-text-dim italic">Start typing to see preview...</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="mt-2 text-xs text-text-dim">
+          Supports Markdown: **bold**, *italic*, ## headings, - lists, [links](url), etc.
+        </p>
+      </div>
+
+      <!-- Checkboxes -->
+      <div class="space-y-3 p-4 bg-bg-card rounded-lg border border-border">
+        <div class="flex items-start gap-3">
+          <input
+            type="checkbox"
+            id="original"
+            name="original"
+            required
+            class="mt-1 w-5 h-5 bg-bg-card border border-border rounded text-primary focus:ring-primary focus:ring-offset-0 cursor-pointer"
+          />
+          <label for="original" class="text-sm text-text-muted cursor-pointer">
+            This guide is my original work or I have permission to share it
+          </label>
+        </div>
+
+        <div class="flex items-start gap-3">
+          <input
+            type="checkbox"
+            id="license"
+            name="license"
+            required
+            class="mt-1 w-5 h-5 bg-bg-card border border-border rounded text-primary focus:ring-primary focus:ring-offset-0 cursor-pointer"
+          />
+          <label for="license" class="text-sm text-text-muted cursor-pointer">
+            I agree to license this guide under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer" class="text-primary-light hover:text-accent underline">CC BY-NC-SA 4.0</a> and allow editing for formatting/clarity
+          </label>
+        </div>
+
+        <div class="flex items-start gap-3">
+          <input
+            type="checkbox"
+            id="privacy"
+            name="privacy"
+            required
+            class="mt-1 w-5 h-5 bg-bg-card border border-border rounded text-primary focus:ring-primary focus:ring-offset-0 cursor-pointer"
+          />
+          <label for="privacy" class="text-sm text-text-muted cursor-pointer">
+            I agree to the <a href="/privacy" class="text-primary-light hover:text-accent underline">Privacy Policy</a>
+          </label>
+        </div>
+      </div>
+
+      <!-- Turnstile -->
+      <div class="cf-turnstile" data-sitekey={turnstileSiteKey} data-theme="dark"></div>
+
+      <!-- Submit -->
+      <button
+        type="submit"
+        id="submit-btn"
+        class="w-full px-6 py-4 bg-accent hover:bg-accent-dark text-bg-dark font-display uppercase tracking-wider text-sm rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed font-bold"
+      >
+        Submit Guide
+      </button>
+
+      <!-- Status Messages -->
+      <div id="form-status" class="hidden">
+        <div id="form-success" class="hidden p-4 bg-green-500/10 border border-green-500/30 rounded-lg text-green-400">
+          <strong>Guide submitted successfully!</strong> We'll review it and get back to you soon. Thank you for contributing!
+        </div>
+        <div id="form-error" class="hidden p-4 bg-red-500/10 border border-red-500/30 rounded-lg text-red-400">
+          Something went wrong. Please try again.
+        </div>
+      </div>
+    </form>
+  </div>
+</BaseLayout>
+
+<!-- Turnstile Script -->
+<script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+<!-- Marked.js for Markdown parsing + DOMPurify for sanitization -->
+<script is:inline src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script is:inline src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js"></script>
+
+<script is:inline define:vars={{ exampleMarkdown }}>
+  // Markdown Preview with sanitization
+  const contentArea = document.getElementById('content');
+  const previewArea = document.getElementById('preview');
+  const insertTemplateBtn = document.getElementById('insert-template');
+
+  function updatePreview() {
+    const markdown = contentArea.value;
+    if (markdown.trim()) {
+      // Parse markdown and sanitize HTML to prevent XSS
+      const rawHtml = marked.parse(markdown);
+      const cleanHtml = DOMPurify.sanitize(rawHtml);
+      previewArea.innerHTML = cleanHtml;
+    } else {
+      previewArea.textContent = '';
+      const placeholder = document.createElement('p');
+      placeholder.className = 'text-text-dim italic';
+      placeholder.textContent = 'Start typing to see preview...';
+      previewArea.appendChild(placeholder);
+    }
+  }
+
+  contentArea.addEventListener('input', updatePreview);
+
+  insertTemplateBtn.addEventListener('click', () => {
+    contentArea.value = exampleMarkdown;
+    updatePreview();
+  });
+
+  // Form Submission
+  const form = document.getElementById('guide-form');
+  const submitBtn = document.getElementById('submit-btn');
+  const formStatus = document.getElementById('form-status');
+  const formSuccess = document.getElementById('form-success');
+  const formError = document.getElementById('form-error');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const turnstileResponse = document.querySelector('[name="cf-turnstile-response"]');
+    if (!turnstileResponse?.value) {
+      formStatus.classList.remove('hidden');
+      formError.classList.remove('hidden');
+      formError.textContent = 'Please complete the security check.';
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting...';
+
+    formStatus.classList.add('hidden');
+    formSuccess.classList.add('hidden');
+    formError.classList.add('hidden');
+
+    try {
+      const formData = new FormData(form);
+      const data = {
+        title: formData.get('title'),
+        category: formData.get('category'),
+        author: formData.get('author'),
+        email: formData.get('email'),
+        summary: formData.get('summary'),
+        content: formData.get('content'),
+        turnstileToken: turnstileResponse.value,
+      };
+
+      const response = await fetch('/api/submit-guide', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      formStatus.classList.remove('hidden');
+
+      if (response.ok) {
+        formSuccess.classList.remove('hidden');
+        form.reset();
+        previewArea.textContent = '';
+        const placeholder = document.createElement('p');
+        placeholder.className = 'text-text-dim italic';
+        placeholder.textContent = 'Start typing to see preview...';
+        previewArea.appendChild(placeholder);
+        if (window.turnstile) {
+          window.turnstile.reset();
+        }
+      } else {
+        formError.classList.remove('hidden');
+        formError.textContent = result.error || 'Something went wrong. Please try again.';
+      }
+    } catch (error) {
+      formStatus.classList.remove('hidden');
+      formError.classList.remove('hidden');
+      formError.textContent = 'Network error. Please try again.';
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Submit Guide';
+    }
+  });
+</script>

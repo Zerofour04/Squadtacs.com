@@ -124,7 +124,7 @@ const categories = [
 ];
 ---
 
-<BaseLayout title="Home" showSidebar={false}>
+<BaseLayout title="Home" description="Squad Tacs - Your tactical field manual for Squad. Comprehensive guides, weapon stats, vehicle info, maps, and strategies for beginners and veterans." showSidebar={false}>
   <!-- Hero Section with Background Image (Full Bleed) -->
   <div class="relative -mt-8 mb-16 w-screen" style="margin-left: calc(-50vw + 50%);">
     <!-- Background Image -->
@@ -160,13 +160,13 @@ const categories = [
       </p>
 
       <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
-        <a href="/guides" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary hover:bg-primary-light text-white font-display uppercase tracking-wider text-sm rounded-lg transition-all shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 hover:-translate-y-0.5">
+        <a href="/guides" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary hover:bg-primary-light text-white font-display uppercase tracking-wider text-sm rounded transition-all shadow-lg shadow-primary/40 hover:shadow-xl hover:shadow-primary/50 hover:-translate-y-0.5">
           Get Started
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
           </svg>
         </a>
-        <button id="copy-url-btn" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-amber-500/20 backdrop-blur-sm hover:bg-amber-500/30 text-amber-200 font-display uppercase tracking-wider text-sm rounded-lg border border-amber-400/30 hover:border-amber-400/50 transition-all hover:-translate-y-0.5">
+        <button id="copy-url-btn" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-amber-600/60 backdrop-blur-sm hover:bg-amber-500/70 text-amber-100 font-display uppercase tracking-wider text-sm rounded border-2 border-amber-400/70 hover:border-amber-300 transition-all hover:-translate-y-0.5">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
           </svg>
@@ -213,31 +213,28 @@ const categories = [
           </p>
         </div>
 
-        <div class="space-y-4 p-5 bg-bg-card/30 rounded-lg border-l-2 border-amber-500/50">
-          <h3 class="font-display text-sm uppercase tracking-wide text-text flex items-center gap-2">
-            <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-            </svg>
-            What You'll Find Here
-          </h3>
-          <ul class="space-y-2 text-text-muted">
-            <li class="flex items-start gap-2">
-              <span class="text-amber-400 mt-1">›</span>
-              <span>Curated tactics from top-rated Steam guides</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-amber-400 mt-1">›</span>
-              <span>Essential info from the official Squad Wiki</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-amber-400 mt-1">›</span>
-              <span>Quick-reference for weapons, vehicles & maps</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-amber-400 mt-1">›</span>
-              <span>No fluff — just what you need in the field</span>
-            </li>
-          </ul>
+        <div class="relative p-5 bg-bg-elevated/80 border border-border">
+          <div class="absolute -top-3 left-4 px-2 bg-bg-elevated text-[10px] font-mono uppercase tracking-widest text-amber-400">
+            Sources
+          </div>
+          <div class="space-y-3 text-sm">
+            <div class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 bg-amber-400 mt-1.5 shrink-0"></span>
+              <span class="text-text-muted">Curated tactics from top-rated Steam guides</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 bg-amber-400 mt-1.5 shrink-0"></span>
+              <span class="text-text-muted">Essential info from the official Squad Wiki</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 bg-amber-400 mt-1.5 shrink-0"></span>
+              <span class="text-text-muted">Quick-reference for weapons, vehicles & maps</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 bg-amber-400 mt-1.5 shrink-0"></span>
+              <span class="text-text-muted">No fluff — just what you need in the field</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>

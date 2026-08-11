@@ -192,6 +192,102 @@ body {
   @apply bg-primary/30 text-text;
 }
 
+/* Cookie Consent Banner - Custom Theme */
+#cc-main {
+  --cc-font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  --cc-modal-border-radius: 0.75rem;
+  --cc-btn-border-radius: 0.5rem;
+
+  /* Background colors */
+  --cc-bg: #1a241c;
+  --cc-primary-color: #e8ece9;
+  --cc-secondary-color: #9ca89e;
+
+  /* Primary button (Alle akzeptieren) */
+  --cc-btn-primary-bg: #4a7c59;
+  --cc-btn-primary-color: #e8ece9;
+  --cc-btn-primary-border-color: #4a7c59;
+  --cc-btn-primary-hover-bg: #5a9a6a;
+  --cc-btn-primary-hover-border-color: #5a9a6a;
+  --cc-btn-primary-hover-color: #e8ece9;
+
+  /* Secondary button (Nur notwendige) */
+  --cc-btn-secondary-bg: #222e24;
+  --cc-btn-secondary-color: #e8ece9;
+  --cc-btn-secondary-border-color: #3a4a3c;
+  --cc-btn-secondary-hover-bg: #2d3b2f;
+  --cc-btn-secondary-hover-border-color: #4a5c4c;
+  --cc-btn-secondary-hover-color: #e8ece9;
+
+  /* Toggle */
+  --cc-toggle-on-bg: #4a7c59;
+  --cc-toggle-off-bg: #3a4a3c;
+  --cc-toggle-readonly-bg: #4a7c59;
+
+  /* Cookie category blocks */
+  --cc-cookie-category-block-bg: #222e24;
+  --cc-cookie-category-block-border: #3a4a3c;
+  --cc-cookie-category-block-hover-bg: #2d3b2f;
+  --cc-cookie-category-block-hover-border: #4a5c4c;
+  --cc-cookie-category-expanded-block-bg: #1a241c;
+  --cc-cookie-category-expanded-block-hover-bg: #1a241c;
+
+  /* Separator & overlay */
+  --cc-separator-border-color: #3a4a3c;
+  --cc-overlay-bg: rgba(18, 26, 20, 0.85);
+
+  /* Footer */
+  --cc-footer-bg: #121a14;
+  --cc-footer-color: #6b7a6d;
+  --cc-footer-border-color: #3a4a3c;
+
+  /* Links */
+  --cc-link-color: #5a9a6a;
+
+  /* Section border */
+  --cc-section-border: #3a4a3c;
+
+  /* Scrollbar */
+  --cc-webkit-scrollbar-bg: #1a241c;
+  --cc-webkit-scrollbar-bg-hover: #3a4a3c;
+
+  /* PM (Preferences Modal) */
+  --cc-pm-bg: #1a241c;
+}
+
+#cc-main .cm__title,
+#cc-main .pm__title {
+  font-family: 'Barlow Condensed', 'Inter', system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+#cc-main .pm__section-title {
+  font-family: 'Barlow Condensed', 'Inter', system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+#cc-main a {
+  color: #5a9a6a !important;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+#cc-main a:hover {
+  color: #d4a24c !important;
+}
+
+/* Fix disabled toggle (necessary cookies) to be green */
+#cc-main .section__toggle:disabled ~ .toggle__icon {
+  background-color: #4a7c59 !important;
+}
+
+/* Active/checked toggle green */
+#cc-main .section__toggle:checked ~ .toggle__icon {
+  background-color: #4a7c59 !important;
+}
+
 /* Responsive styles for vehicle guide layouts */
 @media (max-width: 768px) {
   /* Stack flex layouts vertically on mobile */

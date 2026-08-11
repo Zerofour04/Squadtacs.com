@@ -1,0 +1,99 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  size?: string;
+  region?: string;
+  wikiSlug?: string;
+}
+
+const { title, description, image, size, region, wikiSlug } = Astro.props;
+
+// Generate wiki URL from title if no custom slug provided
+const wikiUrl = `https://squad.fandom.com/wiki/${wikiSlug || title.replace(/ /g, '_')}`;
+
+const sizeLabels: Record<string, string> = {
+  small: 'Small',
+  medium: 'Medium',
+  large: 'Large',
+};
+
+const regionLabels: Record<string, string> = {
+  'northern-europe': 'Northern Europe',
+  'eastern-europe': 'Eastern Europe',
+  'middle-east': 'Middle East',
+  'central-asia': 'Central Asia',
+  'east-asia': 'East Asia',
+  'north-america': 'North America',
+  'training': 'Training',
+};
+---
+
+<BaseLayout title={title} description={description}>
+  <article>
+    <!-- Map Header with Image -->
+    <header class="mb-8">
+      {image && (
+        <div class="relative rounded-lg overflow-hidden mb-6 border border-border">
+          <img
+            src={image}
+            alt={`${title} map`}
+            class="w-full h-auto max-h-[400px] object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-bg-dark/80 via-transparent to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-4">
+            <h1 class="font-display text-3xl md:text-4xl font-bold text-text uppercase tracking-wide drop-shadow-lg">
+              {title}
+            </h1>
+          </div>
+        </div>
+      )}
+
+      {!image && (
+        <h1 class="font-display text-3xl md:text-4xl font-bold text-text mb-3 uppercase tracking-wide">
+          {title}
+        </h1>
+      )}
+
+      {description && (
+        <p class="text-lg text-text-muted leading-relaxed mb-4">{description}</p>
+      )}
+
+      <!-- Map Info Badges -->
+      <div class="flex flex-wrap gap-2">
+        {size && (
+          <span class="font-display text-xs font-semibold px-3 py-1.5 rounded uppercase tracking-wider bg-primary/15 text-primary border border-primary/30">
+            {sizeLabels[size] || size}
+          </span>
+        )}
+        {region && (
+          <span class="font-display text-xs font-semibold px-3 py-1.5 rounded uppercase tracking-wider bg-accent/15 text-accent border border-accent/30">
+            {regionLabels[region] || region}
+          </span>
+        )}
+      </div>
+    </header>
+
+    <div class="prose border-t border-border pt-6 [&>h1:first-child]:hidden">
+      <slot />
+    </div>
+
+    <!-- Wiki Link -->
+    <div class="mt-8 pt-6 border-t border-border">
+      <a
+        href={wikiUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 px-4 py-2 bg-bg-card hover:bg-bg-hover border border-border hover:border-primary/50 rounded-lg text-text-muted hover:text-text transition-all text-sm"
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+        </svg>
+        Full details on Squad Wiki
+      </a>
+    </div>
+  </article>
+</BaseLayout>

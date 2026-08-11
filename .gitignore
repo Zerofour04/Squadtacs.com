@@ -26,3 +26,10 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# claude
+CLAUDE.md
+.claude/
+
+# project specific
+.downloads-from-steam/

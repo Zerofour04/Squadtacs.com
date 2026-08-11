@@ -1,6 +1,6 @@
 ---
 import { getCollection, render } from 'astro:content';
-import GuideLayout from '../../layouts/GuideLayout.astro';
+import MapLayout from '../../layouts/MapLayout.astro';
 
 export async function getStaticPaths() {
   const maps = await getCollection('maps');
@@ -14,6 +14,12 @@ const { map } = Astro.props;
 const { Content } = await render(map);
 ---
 
-<GuideLayout title={map.data.title} description={map.data.description}>
+<MapLayout
+  title={map.data.title}
+  description={map.data.description}
+  image={map.data.image}
+  size={map.data.size}
+  region={map.data.region}
+>
   <Content />
-</GuideLayout>
+</MapLayout>
