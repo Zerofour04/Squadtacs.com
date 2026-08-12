@@ -54,80 +54,80 @@ export function initCookieConsent(onAccept: () => void, onReject: () => void) {
     },
 
     language: {
-      default: 'de',
+      default: 'en',
       translations: {
-        de: {
+        en: {
           consentModal: {
-            title: 'Wir verwenden Cookies',
-            description: 'Diese Website verwendet Cookies, um die Nutzererfahrung zu verbessern und Besucherstatistiken zu analysieren. Du kannst deine Einstellungen jederzeit anpassen.',
-            acceptAllBtn: 'Alle akzeptieren',
-            acceptNecessaryBtn: 'Nur notwendige',
-            showPreferencesBtn: 'Einstellungen',
-            footer: '<a href="/privacy">Datenschutz</a> <a href="/imprint">Impressum</a>'
+            title: 'We use cookies',
+            description: 'This website uses cookies to improve user experience and analyze visitor statistics. You can adjust your settings at any time.',
+            acceptAllBtn: 'Accept all',
+            acceptNecessaryBtn: 'Necessary only',
+            showPreferencesBtn: 'Settings',
+            footer: '<a href="/privacy">Privacy Policy</a> <a href="/imprint">Imprint</a>'
           },
           preferencesModal: {
-            title: 'Cookie-Einstellungen',
-            acceptAllBtn: 'Alle akzeptieren',
-            acceptNecessaryBtn: 'Nur notwendige',
-            savePreferencesBtn: 'Auswahl speichern',
-            closeIconLabel: 'Schließen',
+            title: 'Cookie Settings',
+            acceptAllBtn: 'Accept all',
+            acceptNecessaryBtn: 'Necessary only',
+            savePreferencesBtn: 'Save preferences',
+            closeIconLabel: 'Close',
             serviceCounterLabel: 'Service|Services',
             sections: [
               {
-                title: 'Cookie-Nutzung',
-                description: 'Wir verwenden Cookies, um grundlegende Funktionen dieser Website zu ermöglichen und um dein Nutzungserlebnis zu verbessern.'
+                title: 'Cookie Usage',
+                description: 'We use cookies to enable basic functionality of this website and to improve your user experience.'
               },
               {
-                title: 'Notwendige Cookies <span class="pm__badge">Immer aktiv</span>',
-                description: 'Diese Cookies sind für die Grundfunktionen der Website erforderlich und können nicht deaktiviert werden.',
+                title: 'Necessary Cookies <span class="pm__badge">Always active</span>',
+                description: 'These cookies are required for the basic functions of the website and cannot be disabled.',
                 linkedCategory: 'necessary',
                 cookieTable: {
                   headers: {
                     name: 'Cookie',
                     domain: 'Domain',
-                    desc: 'Beschreibung'
+                    desc: 'Description'
                   },
                   body: [
                     {
                       name: 'cc_cookie',
                       domain: 'squadtacs.com',
-                      desc: 'Speichert deine Cookie-Einstellungen'
+                      desc: 'Stores your cookie preferences'
                     },
                     {
                       name: '__cf_bm',
                       domain: 'cloudflare.com',
-                      desc: 'Cloudflare Bot-Schutz'
+                      desc: 'Cloudflare bot protection'
                     }
                   ]
                 }
               },
               {
-                title: 'Analyse Cookies',
-                description: 'Diese Cookies helfen uns zu verstehen, wie Besucher mit unserer Website interagieren, indem Informationen anonym gesammelt und gemeldet werden.',
+                title: 'Analytics Cookies',
+                description: 'These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously.',
                 linkedCategory: 'analytics',
                 cookieTable: {
                   headers: {
                     name: 'Cookie',
                     domain: 'Domain',
-                    desc: 'Beschreibung'
+                    desc: 'Description'
                   },
                   body: [
                     {
                       name: '_ga',
                       domain: 'squadtacs.com',
-                      desc: 'Google Analytics - Unterscheidet Benutzer'
+                      desc: 'Google Analytics - Distinguishes users'
                     },
                     {
                       name: '_ga_*',
                       domain: 'squadtacs.com',
-                      desc: 'Google Analytics - Speichert Session-Daten'
+                      desc: 'Google Analytics - Stores session data'
                     }
                   ]
                 }
               },
               {
-                title: 'Weitere Informationen',
-                description: 'Weitere Details findest du in unserer <a href="/privacy">Datenschutzerklärung</a> und im <a href="/imprint">Impressum</a>.'
+                title: 'More Information',
+                description: 'For more details, please see our <a href="/privacy">Privacy Policy</a> and <a href="/imprint">Imprint</a>.'
               }
             ]
           }
