@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && mv dist/client/sitemap-0.xml dist/client/sitemap.xml && rm dist/client/sitemap-index.xml",
     "preview": "astro preview",
     "astro": "astro"
   },

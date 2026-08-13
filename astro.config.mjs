@@ -15,7 +15,20 @@ export default defineConfig({
   integrations: [
     mdx(),
     sitemap({
-      filter: (page) => !page.includes('/api/'),
+      filter: (page) => {
+        // Exclude unimportant pages from sitemap
+        const excludePages = [
+          '/imprint',
+          '/privacy',
+          '/credits',
+          '/contact',
+          '/submit-guide',
+          '/game-modes',
+          '/404',
+          '/api/',
+        ];
+        return !excludePages.some(excluded => page.includes(excluded));
+      },
       serialize: (item) => {
         // Homepage - highest priority
         if (item.url === 'https://squadtacs.com/') {
@@ -32,10 +45,6 @@ export default defineConfig({
         // Individual pages (factions, classes, maps)
         if (item.url.match(/\/(factions|classes|maps)\/.+/)) {
           return { ...item, priority: 0.7, changefreq: 'monthly' };
-        }
-        // Legal pages - low priority
-        if (item.url.match(/\/(imprint|privacy|credits)/)) {
-          return { ...item, priority: 0.3, changefreq: 'yearly' };
         }
         // Default
         return { ...item, priority: 0.5, changefreq: 'monthly' };
