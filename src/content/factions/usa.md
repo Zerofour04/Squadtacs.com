@@ -24,9 +24,12 @@ The United States Army is the land warfare branch of the US Armed Forces. It is 
 
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 1rem 0;">
 
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem;">
+<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; display: flex; align-items: center; gap: 1rem;">
+<img src="/img/guides/Clark/US_uniform.png" alt="USA Uniform" style="width: 80px; height: auto; border-radius: 4px;" />
+<div>
 <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: #64748b; margin-bottom: 0.5rem;">Uniform</div>
 <div style="font-weight: 600; color: #e2e8f0;">Operational Camouflage Pattern (OCP)</div>
+</div>
 </div>
 
 <div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem;">
@@ -142,7 +145,7 @@ The United States Army is the land warfare branch of the US Armed Forces. It is 
 
 <div style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem;">
 <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
-<img src="/img/icons/ally/vehicles/map_transporthelo.webp" style="width: 28px; height: 28px;" alt="UAV" />
+<img src="/img/icons/default/vehicles/T_strategic_uav.svg" style="width: 28px; height: 28px;" alt="UAV" />
 <div style="font-weight: 600; color: #e2e8f0;">MQ-9 UAV</div>
 </div>
 <div style="font-size: 0.8rem; color: #94a3b8;">Reconnaissance Drone with Thermal</div>

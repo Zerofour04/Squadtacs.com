@@ -49,7 +49,15 @@ const vehicles = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    category: z.enum(['transport', 'apc', 'ifv', 'tank', 'helicopter']),
+    category: z.enum(['mbt', 'mgs', 'ifv', 'apc', 'recon', 'light', 'technical', 'at-light', 'anti-air', 'artillery', 'logistics', 'transport', 'helicopter', 'boat']),
+    image: z.string().optional(),
+    tickets: z.number().optional(),
+    crew: z.number().optional(),
+    passengers: z.number().optional(),
+    hp: z.number().optional(),
+    respawn: z.string().optional(),
+    factions: z.array(z.string()).optional(),
+    weapons: z.array(z.string()).optional(),
     order: z.number().optional(),
   }),
 });

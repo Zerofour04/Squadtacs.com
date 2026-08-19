@@ -1,0 +1,132 @@
+---
+import { getCollection, render } from 'astro:content';
+import GuideLayout from '../../layouts/GuideLayout.astro';
+
+export async function getStaticPaths() {
+  const vehicles = await getCollection('vehicles');
+  return vehicles.map((vehicle) => ({
+    params: { slug: vehicle.id },
+    props: { vehicle },
+  }));
+}
+
+const { vehicle } = Astro.props;
+const { Content } = await render(vehicle);
+
+// Category display names
+const categoryNames: Record<string, string> = {
+  mbt: 'Main Battle Tank',
+  mgs: 'Mobile Gun System',
+  ifv: 'Infantry Fighting Vehicle',
+  apc: 'Armored Personnel Carrier',
+  recon: 'Reconnaissance Vehicle',
+  light: 'Light Vehicle',
+  technical: 'Technical',
+  'at-light': 'Anti-Tank Light Vehicle',
+  'anti-air': 'Anti-Air Vehicle',
+  artillery: 'Artillery Vehicle',
+  logistics: 'Logistics Vehicle',
+  transport: 'Transport Vehicle',
+  helicopter: 'Helicopter',
+  boat: 'Boat',
+};
+
+const categoryName = categoryNames[vehicle.data.category] || vehicle.data.category;
+---
+
+<GuideLayout title={vehicle.data.title} description={vehicle.data.description}>
+  <!-- Vehicle Header -->
+  <div class="mb-8">
+    <div class="flex flex-col md:flex-row gap-6">
+      <!-- Vehicle Image -->
+      {vehicle.data.image && (
+        <div class="md:w-1/3">
+          <img
+            src={`/img/vehicles/${vehicle.data.image}`}
+            alt={vehicle.data.title}
+            class="w-full rounded-lg border border-border"
+          />
+        </div>
+      )}
+
+      <!-- Vehicle Info -->
+      <div class="flex-1">
+        <div class="text-sm text-accent uppercase tracking-wide mb-2">{categoryName}</div>
+        <h1 class="font-display text-3xl font-bold text-text mb-3">{vehicle.data.title}</h1>
+        <p class="text-text-muted mb-4">{vehicle.data.description}</p>
+
+        <!-- Quick Stats -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          {vehicle.data.tickets && (
+            <div class="bg-bg-card rounded-lg border border-border p-3">
+              <div class="text-xs text-text-muted uppercase">Tickets</div>
+              <div class="text-xl font-bold text-text">{vehicle.data.tickets}</div>
+            </div>
+          )}
+          {vehicle.data.crew && (
+            <div class="bg-bg-card rounded-lg border border-border p-3">
+              <div class="text-xs text-text-muted uppercase">Crew</div>
+              <div class="text-xl font-bold text-text">{vehicle.data.crew}</div>
+            </div>
+          )}
+          {vehicle.data.passengers !== undefined && (
+            <div class="bg-bg-card rounded-lg border border-border p-3">
+              <div class="text-xs text-text-muted uppercase">Passengers</div>
+              <div class="text-xl font-bold text-text">{vehicle.data.passengers}</div>
+            </div>
+          )}
+          {vehicle.data.hp && (
+            <div class="bg-bg-card rounded-lg border border-border p-3">
+              <div class="text-xs text-text-muted uppercase">HP</div>
+              <div class="text-xl font-bold text-text">{vehicle.data.hp}</div>
+            </div>
+          )}
+          {vehicle.data.respawn && (
+            <div class="bg-bg-card rounded-lg border border-border p-3">
+              <div class="text-xs text-text-muted uppercase">Respawn</div>
+              <div class="text-xl font-bold text-text">{vehicle.data.respawn}</div>
+            </div>
+          )}
+        </div>
+
+        <!-- Factions -->
+        {vehicle.data.factions && vehicle.data.factions.length > 0 && (
+          <div class="mt-4">
+            <div class="text-xs text-text-muted uppercase mb-2">Available to</div>
+            <div class="flex flex-wrap gap-2">
+              {vehicle.data.factions.map((faction: string) => (
+                <a
+                  href={`/factions/${faction.toLowerCase()}`}
+                  class="flex items-center gap-2 bg-bg-card rounded border border-border px-3 py-1.5 hover:border-accent transition-colors"
+                >
+                  <img src={`/img/flags/${faction}.webp`} alt={faction} class="w-5 h-4 object-cover rounded-sm" />
+                  <span class="text-sm text-text">{faction}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <!-- Weapons -->
+        {vehicle.data.weapons && vehicle.data.weapons.length > 0 && (
+          <div class="mt-4">
+            <div class="text-xs text-text-muted uppercase mb-2">Armament</div>
+            <ul class="space-y-1">
+              {vehicle.data.weapons.map((weapon: string) => (
+                <li class="text-sm text-text flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                  {weapon}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+    </div>
+  </div>
+
+  <!-- Content from Markdown -->
+  <div class="prose prose-invert max-w-none">
+    <Content />
+  </div>
+</GuideLayout>

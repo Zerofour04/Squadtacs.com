@@ -1,5 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { vehicleCategories, getVehicleCount } from '../../data/vehicles';
+
+const totalVehicles = getVehicleCount();
 ---
 
 <BaseLayout title="Squad Vehicles" description="Squad vehicle wiki and tactics guide. Transport trucks, APCs, IFVs, tanks, helicopters - armor values, weapons, and crew requirements.">
@@ -9,7 +12,112 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <p class="text-text-muted text-lg max-w-3xl">
       Vehicles are crucial assets in Squad, providing transportation, fire support, and logistics capabilities. From nimble motorbikes to devastating Main Battle Tanks, mastering vehicles is key to victory.
     </p>
+    <p class="text-accent mt-2 text-sm">{totalVehicles} vehicles documented</p>
   </div>
+
+  <!-- Vehicle Categories Browser -->
+  <section class="mb-12">
+    <h2 class="font-display text-2xl font-bold text-text mb-6 uppercase">Browse by Category</h2>
+
+    <div class="space-y-6">
+      {vehicleCategories.map((category) => (
+        <div class="bg-bg-card rounded-lg border border-border overflow-hidden">
+          <!-- Category Header -->
+          <div class={`p-4 border-b border-border ${category.colorClass.split(' ')[0]}`}>
+            <h3 class="text-xl font-semibold text-text flex items-center gap-3">
+              <span class={`w-8 h-8 rounded flex items-center justify-center text-sm font-bold ${category.colorClass}`}>
+                {category.name.charAt(0)}
+              </span>
+              {category.name}
+              <span class="text-text-muted text-sm font-normal ml-auto">
+                {category.subcategories.reduce((acc, sub) => acc + sub.vehicles.length, 0)} vehicles
+              </span>
+            </h3>
+          </div>
+
+          <!-- Subcategories -->
+          <div class="divide-y divide-border/50">
+            {category.subcategories.map((subcategory) => (
+              <details class="group">
+                <summary class="flex items-start gap-4 p-4 cursor-pointer hover:bg-bg/50 transition-colors list-none">
+                  <img
+                    src={subcategory.icon}
+                    alt={subcategory.name}
+                    class="w-12 h-12 object-contain flex-shrink-0 mt-1"
+                  />
+                  <div class="flex-1 min-w-0">
+                    <div class="flex items-center gap-2">
+                      <h4 class="font-semibold text-text">{subcategory.name}</h4>
+                      <span class="text-xs text-text-muted bg-bg px-2 py-0.5 rounded">
+                        {subcategory.vehicles.length}
+                      </span>
+                      <svg
+                        class="w-5 h-5 text-text-muted ml-auto transform transition-transform group-open:rotate-180"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </div>
+                    <p class="text-text-muted text-sm mt-1">{subcategory.description}</p>
+                  </div>
+                </summary>
+
+                <!-- Vehicle List -->
+                <div class="p-4 pt-0">
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mt-4">
+                    {subcategory.vehicles.map((vehicle) => (
+                      <div class="group/card flex items-center gap-3 bg-bg rounded-lg border border-border/50 hover:border-accent/50 transition-all p-2">
+                        {/* Vehicle Image - Clickable for Lightbox */}
+                        <button
+                          type="button"
+                          class="w-20 h-12 flex-shrink-0 bg-bg-card rounded flex items-center justify-center cursor-pointer hover:ring-2 hover:ring-accent/50 transition-all"
+                          data-lightbox-trigger
+                          data-image={`/img/vehicles/${vehicle.image}`}
+                          data-title={vehicle.name}
+                        >
+                          <img
+                            src={`/img/vehicles/${vehicle.image}`}
+                            alt={vehicle.name}
+                            class="max-w-full max-h-full object-contain pointer-events-none"
+                            loading="lazy"
+                          />
+                        </button>
+                        {/* Vehicle Name */}
+                        <div class="flex-1 min-w-0">
+                          <p class="text-sm text-text truncate group-hover/card:text-accent transition-colors" title={vehicle.name}>
+                            {vehicle.name}
+                          </p>
+                        </div>
+                        {/* Faction Flags */}
+                        <div class="flex items-center gap-1 flex-shrink-0">
+                          {vehicle.factions.slice(0, 3).map((faction) => (
+                            <img
+                              src={`/img/flags/${faction}.webp`}
+                              alt={faction}
+                              title={faction}
+                              class="w-6 h-6 rounded-sm object-cover"
+                              loading="lazy"
+                            />
+                          ))}
+                          {vehicle.factions.length > 3 && (
+                            <span class="text-xs text-text-muted" title={vehicle.factions.slice(3).join(', ')}>
+                              +{vehicle.factions.length - 3}
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
 
   <!-- Gameplay Section -->
   <section class="mb-12 p-6 bg-bg-card rounded-lg border border-border">
@@ -173,184 +281,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     </div>
   </section>
 
-  <!-- Vehicle Types -->
-  <section class="mb-12">
-    <h2 class="font-display text-2xl font-bold text-text mb-4 uppercase">Vehicle Types</h2>
-    <p class="text-text-muted mb-6">Squad features a wide variety of vehicles, each serving different tactical purposes:</p>
-
-    <!-- Combat Vehicles -->
-    <div class="mb-8">
-      <h3 class="text-xl font-semibold text-accent mb-4 flex items-center gap-2">
-        <span class="w-8 h-8 bg-red-500/20 rounded flex items-center justify-center text-sm text-red-400">C</span>
-        Combat Vehicles
-      </h3>
-      <div class="space-y-3">
-        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
-          <img src="/img/icons/default/vehicles/map_tank.svg" alt="MBT" class="w-12 h-12 object-contain flex-shrink-0" />
-          <div>
-            <h4 class="font-semibold text-text">Main Battle Tanks (MBTs)</h4>
-            <p class="text-text-muted text-sm">MBTs are the most powerful land vehicles in Squad. With unmatched long range firepower and heavy armor, they're the kings of the battlefield.</p>
-          </div>
-        </div>
-        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
-          <img src="/img/icons/default/vehicles/T_map_mgs.svg" alt="MGS" class="w-12 h-12 object-contain flex-shrink-0" />
-          <div>
-            <h4 class="font-semibold text-text">Mobile Gun Systems (MGS)</h4>
-            <p class="text-text-muted text-sm">MGSs are fire support vehicles equipped with tank cannons but light armor.</p>
-          </div>
-        </div>
-        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
-          <img src="/img/icons/default/vehicles/map_trackedifv.svg" alt="IFV" class="w-12 h-12 object-contain flex-shrink-0" />
-          <div>
-            <h4 class="font-semibold text-text">Infantry Fighting Vehicles (IFVs)</h4>
-            <p class="text-text-muted text-sm">IFVs are autocannon-equipped vehicles that can also transport infantry in a pinch. Their weapon systems can often cripple other vehicles in its class, and even damage Tanks.</p>
-          </div>
-        </div>
-        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
-          <img src="/img/icons/default/vehicles/map_trackedapc.svg" alt="APC" class="w-12 h-12 object-contain flex-shrink-0" />
-          <div>
-            <h4 class="font-semibold text-text">Armored Personnel Carriers (APCs)</h4>
-            <p class="text-text-muted text-sm">APCs are designed to transport infantry across the battlefield. They typically have excellent protection against small arms fire and have a turret-mounted MG or possibly grenade launcher for fire support.</p>
-          </div>
-        </div>
-        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
-          <img src="/img/icons/default/vehicles/T_map_wheeledrecon.svg" alt="Recon" class="w-12 h-12 object-contain flex-shrink-0" />
-          <div>
-            <h4 class="font-semibold text-text">Reconnaissance Vehicles</h4>
-            <p class="text-text-muted text-sm">Reconnaissance vehicles are infantry fighting vehicles without troop compartments. They are dedicated armored fighting vehicles for forward observation, intelligence gathering, and skirmish operations.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Light Vehicles -->
-    <div class="mb-8">
-      <h3 class="text-xl font-semibold text-accent mb-4 flex items-center gap-2">
-        <span class="w-8 h-8 bg-yellow-500/20 rounded flex items-center justify-center text-sm text-yellow-400">L</span>
-        Light Vehicles
-      </h3>
-      <div class="space-y-3">
-        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
-          <img src="/img/icons/default/vehicles/map_jeep_turret.svg" alt="Light Vehicle" class="w-12 h-12 object-contain flex-shrink-0" />
-          <div>
-            <h4 class="font-semibold text-text">Light Vehicles</h4>
-            <p class="text-text-muted text-sm">Light vehicles encompass everything from technicals to Humvee-style vehicles and typically have some form of mounted light armament. They usually can carry a number of passengers as well.</p>
-          </div>
-        </div>
-        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
-          <img src="/img/icons/default/vehicles/map_jeep_transport.svg" alt="Scout Car" class="w-12 h-12 object-contain flex-shrink-0" />
-          <div>
-            <h4 class="font-semibold text-text">Scout Car</h4>
-            <p class="text-text-muted text-sm">Scout cars or Jeeps are open-topped, nimble vehicles possibly with a mounted MG to provide fire support. They have poor protection against incoming fire.</p>
-          </div>
-        </div>
-        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
-          <img src="/img/icons/default/vehicles/map_jeep_antitank.svg" alt="AT Light Vehicle" class="w-12 h-12 object-contain flex-shrink-0" />
-          <div>
-            <h4 class="font-semibold text-text">Anti-Tank Light Vehicles</h4>
-            <p class="text-text-muted text-sm">AT Light Vehicles are light vehicles that have an anti-tank missile launcher mounted on them. They are the definition of a glass cannon - huge punch but quite vulnerable to all kinds of incoming fire.</p>
-          </div>
-        </div>
-        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
-          <img src="/img/icons/default/vehicles/map_motorcycle.svg" alt="Motorbike" class="w-12 h-12 object-contain flex-shrink-0" />
-          <div>
-            <h4 class="font-semibold text-text">Motorbikes</h4>
-            <p class="text-text-muted text-sm">Small motorbikes provide quick personal transportation. They are vulnerable to small arms fire but are extremely nimble and small targets.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Support Vehicles -->
-    <div class="mb-8">
-      <h3 class="text-xl font-semibold text-accent mb-4 flex items-center gap-2">
-        <span class="w-8 h-8 bg-blue-500/20 rounded flex items-center justify-center text-sm text-blue-400">S</span>
-        Support Vehicles
-      </h3>
-      <div class="space-y-3">
-        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
-          <img src="/img/icons/default/vehicles/map_antiair.svg" alt="Anti-Air" class="w-12 h-12 object-contain flex-shrink-0" />
-          <div>
-            <h4 class="font-semibold text-text">Anti-Air Artillery</h4>
-            <p class="text-text-muted text-sm">AA vehicles have the capability to strike against air targets, such as helicopters. Their guns can also be used in a ground-fire support role as well.</p>
-          </div>
-        </div>
-        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
-          <img src="/img/icons/default/vehicles/map_jeep_artillery.svg" alt="Artillery" class="w-12 h-12 object-contain flex-shrink-0" />
-          <div>
-            <h4 class="font-semibold text-text">Artillery Vehicles</h4>
-            <p class="text-text-muted text-sm">Artillery Vehicles provide long-range indirect fire support. They typically require a good deal of coordination and skill to fire effectively. However, their impact on the battlefield, when used effectively, cannot be denied.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Logistics & Transport -->
-    <div class="mb-8">
-      <h3 class="text-xl font-semibold text-accent mb-4 flex items-center gap-2">
-        <span class="w-8 h-8 bg-green-500/20 rounded flex items-center justify-center text-sm text-green-400">T</span>
-        Logistics & Transport
-      </h3>
-      <div class="space-y-3">
-        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
-          <img src="/img/icons/default/vehicles/map_truck_logistics.svg" alt="Logistics" class="w-12 h-12 object-contain flex-shrink-0" />
-          <div>
-            <h4 class="font-semibold text-text">Logistics Vehicles</h4>
-            <p class="text-text-muted text-sm">Logis are crucial in an army's supply chain, making sure construction and ammo supplies are getting to where they need to be. Truck logis offer reasonable speed and a large supply load of 3000.</p>
-          </div>
-        </div>
-        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
-          <img src="/img/icons/default/vehicles/map_truck_transport.svg" alt="Transport" class="w-12 h-12 object-contain flex-shrink-0" />
-          <div>
-            <h4 class="font-semibold text-text">Transport Trucks</h4>
-            <p class="text-text-muted text-sm">Transports are used to hold infantry. The basic transport truck can carry 16 infantrymen.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Aircraft -->
-    <div class="mb-8">
-      <h3 class="text-xl font-semibold text-accent mb-4 flex items-center gap-2">
-        <span class="w-8 h-8 bg-purple-500/20 rounded flex items-center justify-center text-sm text-purple-400">A</span>
-        Aircraft
-      </h3>
-      <div class="space-y-3">
-        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
-          <img src="/img/icons/default/vehicles/map_transporthelo.svg" alt="Transport Helo" class="w-12 h-12 object-contain flex-shrink-0" />
-          <div>
-            <h4 class="font-semibold text-text">Transport Helicopters</h4>
-            <p class="text-text-muted text-sm">Transport Helicopters can transport infantry across the battlefield in a quick and versatile way. They are also crucial in an army's supply chain, making sure construction and ammo supplies are getting to where they need to be.</p>
-          </div>
-        </div>
-        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
-          <img src="/img/icons/default/vehicles/map_attackhelo.svg" alt="Attack Helo" class="w-12 h-12 object-contain flex-shrink-0" />
-          <div>
-            <h4 class="font-semibold text-text">Attack Helicopters</h4>
-            <p class="text-text-muted text-sm">Attack Helicopters are not really meant for troop transportation. With their miniguns and high-explosive rockets they can root out and destroy large groups of infantry quickly. The rockets can even be used against lightly armored targets.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Watercraft -->
-    <div class="mb-8">
-      <h3 class="text-xl font-semibold text-accent mb-4 flex items-center gap-2">
-        <span class="w-8 h-8 bg-cyan-500/20 rounded flex items-center justify-center text-sm text-cyan-400">W</span>
-        Watercraft
-      </h3>
-      <div class="space-y-3">
-        <div class="flex items-start gap-4 p-4 bg-bg-card rounded-lg border border-border hover:border-accent/50 transition-colors">
-          <img src="/img/icons/default/vehicles/T_map_boat_logistics.svg" alt="Boat" class="w-12 h-12 object-contain flex-shrink-0" />
-          <div>
-            <h4 class="font-semibold text-text">Boats</h4>
-            <p class="text-text-muted text-sm">Boats are transport or logistic vehicles capable of traversing water at high speed but have poor protection against incoming fire.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Legend -->
   <section class="mb-12">
     <h2 class="font-display text-2xl font-bold text-text mb-4 uppercase">Vehicle Stats Legend</h2>
@@ -426,4 +356,78 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       <li>- Don't abandon vehicles - they will burn and your team loses tickets</li>
     </ul>
   </section>
+
+  <!-- Lightbox Modal -->
+  <div
+    id="lightbox"
+    class="fixed inset-0 z-50 hidden items-center justify-center bg-black/90 backdrop-blur-sm"
+  >
+    <button
+      id="lightbox-close"
+      type="button"
+      class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-full bg-bg-card/80 hover:bg-bg-card text-text hover:text-accent transition-colors z-10"
+      aria-label="Close"
+    >
+      <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+    <div class="relative max-w-4xl max-h-[90vh] p-4">
+      <img
+        id="lightbox-image"
+        src=""
+        alt=""
+        class="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl"
+      />
+      <p id="lightbox-title" class="text-center text-text mt-4 text-lg font-semibold"></p>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImage = document.getElementById('lightbox-image') as HTMLImageElement;
+      const lightboxTitle = document.getElementById('lightbox-title');
+      const lightboxClose = document.getElementById('lightbox-close');
+
+      // Open lightbox
+      document.querySelectorAll('[data-lightbox-trigger]').forEach(trigger => {
+        trigger.addEventListener('click', (e) => {
+          const target = e.currentTarget as HTMLElement;
+          const imageSrc = target.dataset.image;
+          const title = target.dataset.title;
+
+          if (lightboxImage && imageSrc) {
+            lightboxImage.src = imageSrc;
+            lightboxImage.alt = title || '';
+          }
+          if (lightboxTitle) {
+            lightboxTitle.textContent = title || '';
+          }
+          if (lightbox) {
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+          }
+        });
+      });
+
+      // Close lightbox
+      const closeLightbox = () => {
+        if (lightbox) {
+          lightbox.classList.add('hidden');
+          lightbox.classList.remove('flex');
+          document.body.style.overflow = '';
+        }
+      };
+
+      lightboxClose?.addEventListener('click', closeLightbox);
+      lightbox?.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeLightbox();
+      });
+    });
+  </script>
 </BaseLayout>
