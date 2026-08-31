@@ -2,8 +2,8 @@
 title: "Leopard 2A6M CAN"
 description: "Canadian main battle tank with 120mm L/55 smoothbore cannon and excellent armor protection"
 category: "mbt"
-faction: "CAF"
-image: "/img/vehicles/Leopard 2A6M CAN.webp"
+factions: [CAF]
+image: "Leopard 2A6M CAN.webp"
 tickets: 15
 respawn: "20 min"
 crew: 4

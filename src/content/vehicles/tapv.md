@@ -2,8 +2,8 @@
 title: "TAPV"
 description: "Canadian tactical armored patrol vehicle with CROWS weapon station"
 category: "light"
-faction: "CAF"
-image: "/img/vehicles/TAPV.webp"
+factions: [CAF]
+image: "TAPV.webp"
 tickets: 5
 respawn: "6 min"
 crew: 2

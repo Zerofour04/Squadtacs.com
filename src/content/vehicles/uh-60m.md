@@ -79,4 +79,4 @@ The UH-60M Black Hawk is a versatile utility helicopter used by the US Army and 
 
 ## Shared With
 
-This vehicle is also used by **USA** (United States Army).
+This vehicle is shared between **USA** (United States Army) and **ADF** (Australian Defence Force).

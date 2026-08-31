@@ -289,7 +289,7 @@ The Canadian Armed Forces bring a professional military force equipped with the 
 
 <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0;">
 
-<a href="/vehicles/msvs-transport" style="text-decoration: none; display: block;">
+<a href="/vehicles/msvs" style="text-decoration: none; display: block;">
 <div style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; overflow: hidden; transition: border-color 0.2s;" onmouseover="this.style.borderColor='#4a90d9'" onmouseout="this.style.borderColor='rgba(71, 85, 105, 0.5)'">
 <img src="/img/vehicles/MSVS Transport.webp" alt="MSVS Transport" style="width: 100%; height: 120px; object-fit: cover;" />
 <div style="padding: 0.75rem;">

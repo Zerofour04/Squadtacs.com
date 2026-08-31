@@ -2,8 +2,8 @@
 title: "LUVW"
 description: "Canadian light utility vehicle based on Mercedes G-Wagon"
 category: "light"
-faction: "CAF"
-image: "/img/vehicles/LUVW M2.webp"
+factions: [CAF]
+image: "LUVW M2.webp"
 tickets: 5
 respawn: "3-5 min"
 crew: 1

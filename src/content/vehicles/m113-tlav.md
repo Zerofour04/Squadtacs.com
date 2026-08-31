@@ -2,8 +2,8 @@
 title: "M113A3 TLAV"
 description: "Canadian tracked armored personnel carrier with RWS turret"
 category: "apc"
-faction: "CAF"
-image: "/img/vehicles/M113A3 TLAV.webp"
+factions: [CAF]
+image: "M113A3 TLAV.webp"
 tickets: 5
 respawn: "6 min"
 crew: 2

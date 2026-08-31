@@ -2,8 +2,8 @@
 title: "LAV III"
 description: "Canadian armored personnel carrier with RWS machine gun"
 category: "apc"
-faction: "CAF"
-image: "/img/vehicles/LAV III C6 RWS.webp"
+factions: [CAF]
+image: "LAV III C6 RWS.webp"
 tickets: 10
 respawn: "10 min"
 crew: 3

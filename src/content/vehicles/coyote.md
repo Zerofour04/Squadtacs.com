@@ -2,8 +2,8 @@
 title: "Coyote"
 description: "Canadian reconnaissance vehicle based on LAV platform with 25mm Bushmaster cannon"
 category: "recon"
-faction: "CAF"
-image: "/img/vehicles/Coyote.webp"
+factions: [CAF]
+image: "Coyote.webp"
 tickets: 10
 respawn: "10 min"
 crew: 4

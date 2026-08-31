@@ -2,8 +2,8 @@
 title: "LAV 6.0"
 description: "Canadian infantry fighting vehicle with 25mm Bushmaster cannon and amphibious capability"
 category: "ifv"
-faction: "CAF"
-image: "/img/vehicles/LAV 6.webp"
+factions: [CAF]
+image: "LAV 6.webp"
 tickets: 10
 respawn: "10 min"
 crew: 4

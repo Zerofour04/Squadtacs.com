@@ -175,7 +175,8 @@ The United States Army is the land warfare branch of the US Armed Forces. It is 
 
 <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0;">
 
-<div style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; overflow: hidden;">
+<a href="/vehicles/m1a2-abrams" style="text-decoration: none; display: block;">
+<div style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; overflow: hidden; transition: transform 0.2s, border-color 0.2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.borderColor='rgba(99, 102, 241, 0.5)';" onmouseout="this.style.transform='none';this.style.borderColor='rgba(71, 85, 105, 0.5)';">
 <img src="/img/vehicles/M1A2.webp" alt="M1A2 Abrams" style="width: 100%; height: 120px; object-fit: cover;" />
 <div style="padding: 0.75rem;">
 <div style="font-weight: 600; color: #e2e8f0;">M1A2 Abrams</div>
@@ -186,6 +187,7 @@ The United States Army is the land warfare branch of the US Armed Forces. It is 
 </div>
 </div>
 </div>
+</a>
 
 </div>
 
@@ -193,7 +195,8 @@ The United States Army is the land warfare branch of the US Armed Forces. It is 
 
 <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0;">
 
-<div style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; overflow: hidden;">
+<a href="/vehicles/m2a3-bradley" style="text-decoration: none; display: block;">
+<div style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; overflow: hidden; transition: transform 0.2s, border-color 0.2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.borderColor='rgba(99, 102, 241, 0.5)';" onmouseout="this.style.transform='none';this.style.borderColor='rgba(71, 85, 105, 0.5)';">
 <img src="/img/vehicles/M2A3.webp" alt="M2A3 Bradley" style="width: 100%; height: 120px; object-fit: cover;" />
 <div style="padding: 0.75rem;">
 <div style="font-weight: 600; color: #e2e8f0;">M2A3 Bradley</div>
@@ -204,8 +207,10 @@ The United States Army is the land warfare branch of the US Armed Forces. It is 
 </div>
 </div>
 </div>
+</a>
 
-<div style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; overflow: hidden;">
+<a href="/vehicles/m7a3-bradley" style="text-decoration: none; display: block;">
+<div style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; overflow: hidden; transition: transform 0.2s, border-color 0.2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.borderColor='rgba(99, 102, 241, 0.5)';" onmouseout="this.style.transform='none';this.style.borderColor='rgba(71, 85, 105, 0.5)';">
 <img src="/img/vehicles/M7A3.webp" alt="M7A3 Bradley" style="width: 100%; height: 120px; object-fit: cover;" />
 <div style="padding: 0.75rem;">
 <div style="font-weight: 600; color: #e2e8f0;">M7A3 Bradley</div>
@@ -216,6 +221,7 @@ The United States Army is the land warfare branch of the US Armed Forces. It is 
 </div>
 </div>
 </div>
+</a>
 
 </div>
 
@@ -223,7 +229,8 @@ The United States Army is the land warfare branch of the US Armed Forces. It is 
 
 <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0;">
 
-<div style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; overflow: hidden;">
+<a href="/vehicles/m1126-stryker" style="text-decoration: none; display: block;">
+<div style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; overflow: hidden; transition: transform 0.2s, border-color 0.2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.borderColor='rgba(99, 102, 241, 0.5)';" onmouseout="this.style.transform='none';this.style.borderColor='rgba(71, 85, 105, 0.5)';">
 <img src="/img/vehicles/M1126 CROWS M2.webp" alt="M1126 Stryker" style="width: 100%; height: 120px; object-fit: cover;" />
 <div style="padding: 0.75rem;">
 <div style="font-weight: 600; color: #e2e8f0;">M1126 Stryker</div>
@@ -234,6 +241,7 @@ The United States Army is the land warfare branch of the US Armed Forces. It is 
 </div>
 </div>
 </div>
+</a>
 
 <div style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; overflow: hidden;">
 <img src="/img/vehicles/M113A3 M2.webp" alt="M113A3" style="width: 100%; height: 120px; object-fit: cover;" />
@@ -265,7 +273,8 @@ The United States Army is the land warfare branch of the US Armed Forces. It is 
 
 <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0;">
 
-<div style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; overflow: hidden;">
+<a href="/vehicles/m1128-mgs" style="text-decoration: none; display: block;">
+<div style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; overflow: hidden; transition: transform 0.2s, border-color 0.2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.borderColor='rgba(99, 102, 241, 0.5)';" onmouseout="this.style.transform='none';this.style.borderColor='rgba(71, 85, 105, 0.5)';">
 <img src="/img/vehicles/M1128 MGS.webp" alt="M1128 MGS" style="width: 100%; height: 120px; object-fit: cover;" />
 <div style="padding: 0.75rem;">
 <div style="font-weight: 600; color: #e2e8f0;">M1128 MGS</div>
@@ -276,6 +285,7 @@ The United States Army is the land warfare branch of the US Armed Forces. It is 
 </div>
 </div>
 </div>
+</a>
 
 <div style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; overflow: hidden;">
 <img src="/img/vehicles/M1064A3 M121.webp" alt="M1064A3" style="width: 100%; height: 120px; object-fit: cover;" />
@@ -295,7 +305,8 @@ The United States Army is the land warfare branch of the US Armed Forces. It is 
 
 <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0;">
 
-<div style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; overflow: hidden;">
+<a href="/vehicles/m-atv" style="text-decoration: none; display: block;">
+<div style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; overflow: hidden; transition: transform 0.2s, border-color 0.2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.borderColor='rgba(99, 102, 241, 0.5)';" onmouseout="this.style.transform='none';this.style.borderColor='rgba(71, 85, 105, 0.5)';">
 <img src="/img/vehicles/M-ATV M2.webp" alt="M-ATV" style="width: 100%; height: 120px; object-fit: cover;" />
 <div style="padding: 0.75rem;">
 <div style="font-weight: 600; color: #e2e8f0;">M-ATV</div>
@@ -306,8 +317,10 @@ The United States Army is the land warfare branch of the US Armed Forces. It is 
 </div>
 </div>
 </div>
+</a>
 
-<div style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; overflow: hidden;">
+<a href="/vehicles/m-atv" style="text-decoration: none; display: block;">
+<div style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; overflow: hidden; transition: transform 0.2s, border-color 0.2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.borderColor='rgba(99, 102, 241, 0.5)';" onmouseout="this.style.transform='none';this.style.borderColor='rgba(71, 85, 105, 0.5)';">
 <img src="/img/vehicles/M-ATV CROWS M2.webp" alt="M-ATV CROWS" style="width: 100%; height: 120px; object-fit: cover;" />
 <div style="padding: 0.75rem;">
 <div style="font-weight: 600; color: #e2e8f0;">M-ATV CROWS</div>
@@ -318,8 +331,10 @@ The United States Army is the land warfare branch of the US Armed Forces. It is 
 </div>
 </div>
 </div>
+</a>
 
-<div style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; overflow: hidden;">
+<a href="/vehicles/m-atv" style="text-decoration: none; display: block;">
+<div style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; overflow: hidden; transition: transform 0.2s, border-color 0.2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.borderColor='rgba(99, 102, 241, 0.5)';" onmouseout="this.style.transform='none';this.style.borderColor='rgba(71, 85, 105, 0.5)';">
 <img src="/img/vehicles/M-ATV TOW.webp" alt="M-ATV TOW" style="width: 100%; height: 120px; object-fit: cover;" />
 <div style="padding: 0.75rem;">
 <div style="font-weight: 600; color: #e2e8f0;">M-ATV TOW</div>
@@ -330,6 +345,7 @@ The United States Army is the land warfare branch of the US Armed Forces. It is 
 </div>
 </div>
 </div>
+</a>
 
 <div style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; overflow: hidden;">
 <img src="/img/vehicles/M1151 M2.webp" alt="M1151 HMMWV" style="width: 100%; height: 120px; object-fit: cover;" />
@@ -361,7 +377,8 @@ The United States Army is the land warfare branch of the US Armed Forces. It is 
 
 <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0;">
 
-<div style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; overflow: hidden;">
+<a href="/vehicles/m939-truck" style="text-decoration: none; display: block;">
+<div style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; overflow: hidden; transition: transform 0.2s, border-color 0.2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.borderColor='rgba(99, 102, 241, 0.5)';" onmouseout="this.style.transform='none';this.style.borderColor='rgba(71, 85, 105, 0.5)';">
 <img src="/img/vehicles/M939 Transport.webp" alt="M939 Transport" style="width: 100%; height: 120px; object-fit: cover;" />
 <div style="padding: 0.75rem;">
 <div style="font-weight: 600; color: #e2e8f0;">M939 Transport</div>
@@ -372,8 +389,10 @@ The United States Army is the land warfare branch of the US Armed Forces. It is 
 </div>
 </div>
 </div>
+</a>
 
-<div style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; overflow: hidden;">
+<a href="/vehicles/m939-truck" style="text-decoration: none; display: block;">
+<div style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; overflow: hidden; transition: transform 0.2s, border-color 0.2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.borderColor='rgba(99, 102, 241, 0.5)';" onmouseout="this.style.transform='none';this.style.borderColor='rgba(71, 85, 105, 0.5)';">
 <img src="/img/vehicles/M939 Logistics.webp" alt="M939 Logistics" style="width: 100%; height: 120px; object-fit: cover;" />
 <div style="padding: 0.75rem;">
 <div style="font-weight: 600; color: #e2e8f0;">M939 Logistics</div>
@@ -384,6 +403,7 @@ The United States Army is the land warfare branch of the US Armed Forces. It is 
 </div>
 </div>
 </div>
+</a>
 
 <div style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; overflow: hidden;">
 <img src="/img/vehicles/Quad Bike.webp" alt="Quad Bike" style="width: 100%; height: 120px; object-fit: cover;" />
@@ -403,7 +423,8 @@ The United States Army is the land warfare branch of the US Armed Forces. It is 
 
 <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0;">
 
-<div style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; overflow: hidden;">
+<a href="/vehicles/uh-60m" style="text-decoration: none; display: block;">
+<div style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; overflow: hidden; transition: transform 0.2s, border-color 0.2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.borderColor='rgba(99, 102, 241, 0.5)';" onmouseout="this.style.transform='none';this.style.borderColor='rgba(71, 85, 105, 0.5)';">
 <img src="/img/vehicles/UH-60M.webp" alt="UH-60M Black Hawk" style="width: 100%; height: 120px; object-fit: cover;" />
 <div style="padding: 0.75rem;">
 <div style="font-weight: 600; color: #e2e8f0;">UH-60M Black Hawk</div>
@@ -414,6 +435,7 @@ The United States Army is the land warfare branch of the US Armed Forces. It is 
 </div>
 </div>
 </div>
+</a>
 
 </div>
 

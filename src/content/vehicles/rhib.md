@@ -8,7 +8,7 @@ crew: 2
 passengers: 4
 hp: 500
 respawn: 3 min
-factions: [USA, USMC, BAF, CAF, ADF, RGF, TLF]
+factions: [USA, USMC, BAF, CAF, ADF, RGF, PLA, PLAAGF, PLANMC, IMF, MEA]
 weapons:
   - M240 7.62mm (USA/USMC/BAF/CAF/ADF variant)
   - M2A1 .50 Cal (USA/USMC/ADF variant)

@@ -2,8 +2,8 @@
 title: "MSVS"
 description: "Canadian medium support vehicle system for transport and logistics"
 category: "logistics"
-faction: "CAF"
-image: "/img/vehicles/MSVS Transport.webp"
+factions: [CAF]
+image: "MSVS Transport.webp"
 tickets: 5
 respawn: "6 min"
 crew: 1
