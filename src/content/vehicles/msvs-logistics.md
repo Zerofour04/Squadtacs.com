@@ -1,6 +1,6 @@
 ---
 title: "MSVS Logistics"
-description: "Canadian medium support vehicle system for supply transport"
+description: "MSVS Logistics guide for Squad - Canadian supply truck with 3000 capacity for FOB building"
 category: "logistics"
 factions: [CAF]
 image: "MSVS Logistics.webp"

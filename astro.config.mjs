@@ -42,8 +42,8 @@ export default defineConfig({
         if (item.url.includes('/guides/')) {
           return { ...item, priority: 0.8, changefreq: 'monthly' };
         }
-        // Individual pages (factions, classes, maps)
-        if (item.url.match(/\/(factions|classes|maps)\/.+/)) {
+        // Individual pages (factions, classes, maps, vehicles, weapons)
+        if (item.url.match(/\/(factions|classes|maps|vehicles|weapons)\/.+/)) {
           return { ...item, priority: 0.7, changefreq: 'monthly' };
         }
         // Default

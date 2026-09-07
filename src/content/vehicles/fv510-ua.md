@@ -1,6 +1,6 @@
 ---
 title: FV510 UA
-description: Warrior variant with TOW anti-tank missile launcher
+description: "FV510 UA guide for Squad - British Warrior IFV with TOW anti-tank missiles and 30mm cannon"
 category: ifv
 image: /img/vehicles/FV510 UA.webp
 tickets: 10

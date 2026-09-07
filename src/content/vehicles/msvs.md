@@ -1,6 +1,6 @@
 ---
 title: "MSVS"
-description: "Canadian medium support vehicle system for transport and logistics"
+description: "MSVS truck guide for Squad - Canadian logistics vehicle with 15 passenger capacity, highest in its class"
 category: "logistics"
 factions: [CAF]
 image: "MSVS Transport.webp"

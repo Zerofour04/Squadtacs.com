@@ -14,7 +14,7 @@ interface Props {
 
 const {
   title,
-  description = 'Squad tactics wiki and field manual. Guides, weapons, vehicles, maps, and strategies — your tactical resource for Squad.',
+  description = 'The complete Squad guide and wiki. Master all 17 factions, vehicles, weapons, and maps. Beginner tutorials and advanced tactics for Squad players.',
   image = '/Squadtacs.png',
   showSidebar = true
 } = Astro.props;
@@ -30,6 +30,7 @@ const ogImage = new URL(image, Astro.site);
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <meta name="keywords" content="Squad guide, Squad wiki, Squad tactics, Squad game guide, Squad beginners guide, Squad vehicles, Squad factions, Squad weapons, Squad maps, Squad strategy" />
     <meta name="author" content="Squad Tacs" />
     <meta name="robots" content="index, follow" />
 
