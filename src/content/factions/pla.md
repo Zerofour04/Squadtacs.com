@@ -69,28 +69,6 @@ Die People's Liberation Army (PLA) ist die primäre Streitkraft der Volksrepubli
 
 </div>
 
-### Mobile Gun System
-
-<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0;">
-
-<a href="/vehicles/ztd05" style="text-decoration: none; display: block;">
-<div style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; overflow: hidden; transition: transform 0.2s, border-color 0.2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.borderColor='rgba(99, 102, 241, 0.5)';" onmouseout="this.style.transform='none';this.style.borderColor='rgba(71, 85, 105, 0.5)';">
-<img src="/img/vehicles/ZTD05.webp" alt="ZTD-05" style="width: 100%; height: 120px; object-fit: cover;" />
-<div style="padding: 0.75rem;">
-<div style="font-weight: 600; color: #e2e8f0;">ZTD-05</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">MGS - 105mm (Amphibious)</div>
-<div style="display: flex; gap: 0.75rem; margin-top: 0.5rem; font-size: 0.7rem; color: #94a3b8;">
-<span style="display: flex; align-items: center; gap: 0.25rem;"><svg style="width:12px;height:12px;" viewBox="0 0 24 24" fill="currentColor"><path d="M9 10h6v4H9zm-2 0v4H5v-4zm10 0h2v4h-2zM4 8h16V6H4zm0 10h16v-2H4z"/></svg>10</span>
-<span style="display: flex; align-items: center; gap: 0.25rem;"><svg style="width:12px;height:12px;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z"/></svg>15 min</span>
-</div>
-</div>
-</div>
-</a>
-
-</div>
-
-**Hinweis:** ZTD-05 nur für PLANMC und PLAAGF verfügbar
-
 ### Infantry Fighting Vehicles
 
 <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0;">
@@ -123,12 +101,26 @@ Die People's Liberation Army (PLA) ist die primäre Streitkraft der Volksrepubli
 </div>
 </a>
 
-<a href="/vehicles/zbd05" style="text-decoration: none; display: block;">
+<a href="/vehicles/zsd89ii-ifv" style="text-decoration: none; display: block;">
 <div style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; overflow: hidden; transition: transform 0.2s, border-color 0.2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.borderColor='rgba(99, 102, 241, 0.5)';" onmouseout="this.style.transform='none';this.style.borderColor='rgba(71, 85, 105, 0.5)';">
-<img src="/img/vehicles/ZBD05.webp" alt="ZBD-05" style="width: 100%; height: 120px; object-fit: cover;" />
+<img src="/img/vehicles/ZSD89II IFV.webp" alt="ZSD89II IFV" style="width: 100%; height: 120px; object-fit: cover;" />
 <div style="padding: 0.75rem;">
-<div style="font-weight: 600; color: #e2e8f0;">ZBD-05</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">IFV - 30mm (Amphibious)</div>
+<div style="font-weight: 600; color: #e2e8f0;">ZSD89II IFV</div>
+<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">IFV - 25mm</div>
+<div style="display: flex; gap: 0.75rem; margin-top: 0.5rem; font-size: 0.7rem; color: #94a3b8;">
+<span style="display: flex; align-items: center; gap: 0.25rem;"><svg style="width:12px;height:12px;" viewBox="0 0 24 24" fill="currentColor"><path d="M9 10h6v4H9zm-2 0v4H5v-4zm10 0h2v4h-2zM4 8h16V6H4zm0 10h16v-2H4z"/></svg>10</span>
+<span style="display: flex; align-items: center; gap: 0.25rem;"><svg style="width:12px;height:12px;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z"/></svg>10 min</span>
+</div>
+</div>
+</div>
+</a>
+
+<a href="/vehicles/zsl92-ifv" style="text-decoration: none; display: block;">
+<div style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; overflow: hidden; transition: transform 0.2s, border-color 0.2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.borderColor='rgba(99, 102, 241, 0.5)';" onmouseout="this.style.transform='none';this.style.borderColor='rgba(71, 85, 105, 0.5)';">
+<img src="/img/vehicles/ZSL92 IFV.webp" alt="ZSL92 IFV" style="width: 100%; height: 120px; object-fit: cover;" />
+<div style="padding: 0.75rem;">
+<div style="font-weight: 600; color: #e2e8f0;">ZSL92 IFV</div>
+<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">IFV - 25mm (Wheeled)</div>
 <div style="display: flex; gap: 0.75rem; margin-top: 0.5rem; font-size: 0.7rem; color: #94a3b8;">
 <span style="display: flex; align-items: center; gap: 0.25rem;"><svg style="width:12px;height:12px;" viewBox="0 0 24 24" fill="currentColor"><path d="M9 10h6v4H9zm-2 0v4H5v-4zm10 0h2v4h-2zM4 8h16V6H4zm0 10h16v-2H4z"/></svg>10</span>
 <span style="display: flex; align-items: center; gap: 0.25rem;"><svg style="width:12px;height:12px;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z"/></svg>10 min</span>
@@ -143,26 +135,40 @@ Die People's Liberation Army (PLA) ist die primäre Streitkraft der Volksrepubli
 
 <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0;">
 
+<a href="/vehicles/zsd89" style="text-decoration: none; display: block;">
+<div style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; overflow: hidden; transition: transform 0.2s, border-color 0.2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.borderColor='rgba(99, 102, 241, 0.5)';" onmouseout="this.style.transform='none';this.style.borderColor='rgba(71, 85, 105, 0.5)';">
+<img src="/img/vehicles/ZSD89 QJZ89.webp" alt="ZSD89" style="width: 100%; height: 120px; object-fit: cover;" />
+<div style="padding: 0.75rem;">
+<div style="font-weight: 600; color: #e2e8f0;">ZSD89</div>
+<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">APC - Multiple Variants</div>
+<div style="display: flex; gap: 0.75rem; margin-top: 0.5rem; font-size: 0.7rem; color: #94a3b8;">
+<span style="display: flex; align-items: center; gap: 0.25rem;"><svg style="width:12px;height:12px;" viewBox="0 0 24 24" fill="currentColor"><path d="M9 10h6v4H9zm-2 0v4H5v-4zm10 0h2v4h-2zM4 8h16V6H4zm0 10h16v-2H4z"/></svg>5</span>
+<span style="display: flex; align-items: center; gap: 0.25rem;"><svg style="width:12px;height:12px;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z"/></svg>6 min</span>
+</div>
+</div>
+</div>
+</a>
+
+<a href="/vehicles/zsl92a" style="text-decoration: none; display: block;">
+<div style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; overflow: hidden; transition: transform 0.2s, border-color 0.2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.borderColor='rgba(99, 102, 241, 0.5)';" onmouseout="this.style.transform='none';this.style.borderColor='rgba(71, 85, 105, 0.5)';">
+<img src="/img/vehicles/ZSL92A APC QJZ89.webp" alt="ZSL92A" style="width: 100%; height: 120px; object-fit: cover;" />
+<div style="padding: 0.75rem;">
+<div style="font-weight: 600; color: #e2e8f0;">ZSL92A</div>
+<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">APC - Multiple Variants</div>
+<div style="display: flex; gap: 0.75rem; margin-top: 0.5rem; font-size: 0.7rem; color: #94a3b8;">
+<span style="display: flex; align-items: center; gap: 0.25rem;"><svg style="width:12px;height:12px;" viewBox="0 0 24 24" fill="currentColor"><path d="M9 10h6v4H9zm-2 0v4H5v-4zm10 0h2v4h-2zM4 8h16V6H4zm0 10h16v-2H4z"/></svg>5</span>
+<span style="display: flex; align-items: center; gap: 0.25rem;"><svg style="width:12px;height:12px;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z"/></svg>6 min</span>
+</div>
+</div>
+</div>
+</a>
+
 <a href="/vehicles/zsl10" style="text-decoration: none; display: block;">
 <div style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; overflow: hidden; transition: transform 0.2s, border-color 0.2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.borderColor='rgba(99, 102, 241, 0.5)';" onmouseout="this.style.transform='none';this.style.borderColor='rgba(71, 85, 105, 0.5)';">
-<img src="/img/vehicles/ZSL10.webp" alt="ZSL-10" style="width: 100%; height: 120px; object-fit: cover;" />
+<img src="/img/vehicles/ZSL10.webp" alt="ZSL10" style="width: 100%; height: 120px; object-fit: cover;" />
 <div style="padding: 0.75rem;">
-<div style="font-weight: 600; color: #e2e8f0;">ZSL-10</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">APC - QJC88 12.7mm</div>
-<div style="display: flex; gap: 0.75rem; margin-top: 0.5rem; font-size: 0.7rem; color: #94a3b8;">
-<span style="display: flex; align-items: center; gap: 0.25rem;"><svg style="width:12px;height:12px;" viewBox="0 0 24 24" fill="currentColor"><path d="M9 10h6v4H9zm-2 0v4H5v-4zm10 0h2v4h-2zM4 8h16V6H4zm0 10h16v-2H4z"/></svg>5</span>
-<span style="display: flex; align-items: center; gap: 0.25rem;"><svg style="width:12px;height:12px;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z"/></svg>6 min</span>
-</div>
-</div>
-</div>
-</a>
-
-<a href="/vehicles/zsd05" style="text-decoration: none; display: block;">
-<div style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; overflow: hidden; transition: transform 0.2s, border-color 0.2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.borderColor='rgba(99, 102, 241, 0.5)';" onmouseout="this.style.transform='none';this.style.borderColor='rgba(71, 85, 105, 0.5)';">
-<img src="/img/vehicles/ZSD05.webp" alt="ZSD-05" style="width: 100%; height: 120px; object-fit: cover;" />
-<div style="padding: 0.75rem;">
-<div style="font-weight: 600; color: #e2e8f0;">ZSD-05</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">APC - QJZ89 (Amphibious)</div>
+<div style="font-weight: 600; color: #e2e8f0;">ZSL10</div>
+<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">APC - Multiple Variants</div>
 <div style="display: flex; gap: 0.75rem; margin-top: 0.5rem; font-size: 0.7rem; color: #94a3b8;">
 <span style="display: flex; align-items: center; gap: 0.25rem;"><svg style="width:12px;height:12px;" viewBox="0 0 24 24" fill="currentColor"><path d="M9 10h6v4H9zm-2 0v4H5v-4zm10 0h2v4h-2zM4 8h16V6H4zm0 10h16v-2H4z"/></svg>5</span>
 <span style="display: flex; align-items: center; gap: 0.25rem;"><svg style="width:12px;height:12px;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z"/></svg>6 min</span>
@@ -172,6 +178,8 @@ Die People's Liberation Army (PLA) ist die primäre Streitkraft der Volksrepubli
 </a>
 
 </div>
+
+**APC Varianten:** ZSD89 (QJZ89, QLZ87), ZSL92A (QJZ89, QLZ87), ZSL10 (QJZ89, QLZ87)
 
 ### Light Vehicles
 
@@ -193,9 +201,9 @@ Die People's Liberation Army (PLA) ist die primäre Streitkraft der Volksrepubli
 
 </div>
 
-**CSK-131 Varianten:** QJY88 (7.62mm), QJZ89 (12.7mm), QJC88 RWS, HJ-8 (ATGM)
+**CSK-131 Varianten:** QJY88 (7.62mm), QJZ89 (12.7mm), QLZ87 (35mm AGL), QJC88 RWS, HJ-8 (ATGM)
 
-### Trucks
+### Logistics & Transport
 
 <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0;">
 
@@ -217,6 +225,8 @@ Die People's Liberation Army (PLA) ist die primäre Streitkraft der Volksrepubli
 
 **CTM-131 Varianten:** Transport QJZ89, Transport QJY88, Logistics
 
+**Lynx Varianten:** Transport, Logistics, QJZ89, QLZ87
+
 ### Helicopters
 
 <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0;">
@@ -230,6 +240,20 @@ Die People's Liberation Army (PLA) ist die primäre Streitkraft der Volksrepubli
 <div style="display: flex; gap: 0.75rem; margin-top: 0.5rem; font-size: 0.7rem; color: #94a3b8;">
 <span style="display: flex; align-items: center; gap: 0.25rem;"><svg style="width:12px;height:12px;" viewBox="0 0 24 24" fill="currentColor"><path d="M9 10h6v4H9zm-2 0v4H5v-4zm10 0h2v4h-2zM4 8h16V6H4zm0 10h16v-2H4z"/></svg>5</span>
 <span style="display: flex; align-items: center; gap: 0.25rem;"><svg style="width:12px;height:12px;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z"/></svg>6-20 min</span>
+</div>
+</div>
+</div>
+</a>
+
+<a href="/vehicles/z-9a" style="text-decoration: none; display: block;">
+<div style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; overflow: hidden; transition: transform 0.2s, border-color 0.2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.borderColor='rgba(99, 102, 241, 0.5)';" onmouseout="this.style.transform='none';this.style.borderColor='rgba(71, 85, 105, 0.5)';">
+<img src="/img/vehicles/Z-9A.webp" alt="Z-9A" style="width: 100%; height: 120px; object-fit: cover;" />
+<div style="padding: 0.75rem;">
+<div style="font-weight: 600; color: #e2e8f0;">Z-9A</div>
+<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Scout Helicopter</div>
+<div style="display: flex; gap: 0.75rem; margin-top: 0.5rem; font-size: 0.7rem; color: #94a3b8;">
+<span style="display: flex; align-items: center; gap: 0.25rem;"><svg style="width:12px;height:12px;" viewBox="0 0 24 24" fill="currentColor"><path d="M9 10h6v4H9zm-2 0v4H5v-4zm10 0h2v4h-2zM4 8h16V6H4zm0 10h16v-2H4z"/></svg>5</span>
+<span style="display: flex; align-items: center; gap: 0.25rem;"><svg style="width:12px;height:12px;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z"/></svg>6 min</span>
 </div>
 </div>
 </div>

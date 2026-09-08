@@ -209,20 +209,6 @@ The British Armed Forces bring a professional, well-trained military with unique
 </div>
 </a>
 
-<a href="/vehicles/fv520" style="text-decoration: none; display: block;">
-<div style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; overflow: hidden; transition: border-color 0.2s;" onmouseover="this.style.borderColor='#4a90d9'" onmouseout="this.style.borderColor='rgba(71, 85, 105, 0.5)'">
-<img src="/img/vehicles/FV510 UA.webp" alt="FV520 CTAS40" style="width: 100%; height: 120px; object-fit: cover;" />
-<div style="padding: 0.75rem;">
-<div style="font-weight: 600; color: #e2e8f0;">FV520 CTAS40</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">40mm CTAS + Spike</div>
-<div style="display: flex; gap: 0.75rem; margin-top: 0.5rem; font-size: 0.7rem; color: #94a3b8;">
-<span style="display: flex; align-items: center; gap: 0.25rem;"><svg style="width:12px;height:12px;" viewBox="0 0 24 24" fill="currentColor"><path d="M9 10h6v4H9zm-2 0v4H5v-4zm10 0h2v4h-2zM4 8h16V6H4zm0 10h16v-2H4z"/></svg>12</span>
-<span style="display: flex; align-items: center; gap: 0.25rem;"><svg style="width:12px;height:12px;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z"/></svg>15 min</span>
-</div>
-</div>
-</div>
-</a>
-
 </div>
 
 ### Armored Personnel Carriers
