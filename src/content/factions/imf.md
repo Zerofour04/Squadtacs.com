@@ -2,6 +2,7 @@
 title: Irregular Militia Forces
 shortName: IMF
 description: Eastern European militia with mixed Soviet and Western equipment, BM-21 Grad rocket artillery, and professional guerrilla tactics
+metaDescription: Master the IMF in Squad. Complete guide to BM-21 Grad, MT-LB, AK rifles and militia tactics for the Irregular Militia Forces.
 side: INDEPENDENT
 order: 32
 flag: /img/flags/IMF.webp

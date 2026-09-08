@@ -2,6 +2,7 @@
 title: Western Private Military Contractors
 shortName: WPMC
 description: Western private military contractors with modern infantry focus, M60T tanks, and agile light vehicles
+metaDescription: Master the WPMC in Squad. Full guide to M60T tank, light vehicles, modern weapons and PMC tactics for the WPMC faction.
 side: BLUFOR
 order: 34
 flag: /img/flags/WPMC.webp

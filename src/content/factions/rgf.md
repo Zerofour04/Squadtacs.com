@@ -2,6 +2,7 @@
 title: Russian Ground Forces
 shortName: RGF
 description: Russia's conventional military might with diverse armor from MT-LBs to T-72B3s, strong anti-tank capabilities, and the iconic AK rifle family
+metaDescription: Master the RGF in Squad. Complete guide to T-72B3, BMP-2, BTR-82A, AK-74M and tactics for the Russian Ground Forces faction.
 side: REDFOR
 order: 10
 flag: /img/flags/RGF.webp

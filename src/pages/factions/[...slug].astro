@@ -1,6 +1,6 @@
 ---
 import { getCollection, render } from 'astro:content';
-import GuideLayout from '../../layouts/GuideLayout.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 
 export async function getStaticPaths() {
   const factions = await getCollection('factions');
@@ -12,8 +12,124 @@ export async function getStaticPaths() {
 
 const { faction } = Astro.props;
 const { Content } = await render(faction);
+
+const sideLabels = {
+  BLUFOR: 'NATO/Western Alliance',
+  REDFOR: 'Russian Forces',
+  PAC: 'Pacific Alliance',
+  INDEPENDENT: 'Independent Forces',
+} as const;
+
+const pageTitle = `${faction.data.title} (${faction.data.shortName}) Guide`;
+const metaDescription = faction.data.metaDescription || faction.data.description;
+const canonicalUrl = `https://squadtacs.com/factions/${faction.id}`;
+
+const schemaData = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: pageTitle,
+  description: metaDescription,
+  url: canonicalUrl,
+  author: {
+    '@type': 'Organization',
+    name: 'Squad Tacs',
+    url: 'https://squadtacs.com',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Squad Tacs',
+    url: 'https://squadtacs.com',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://squadtacs.com/Squadtacs.png',
+    },
+  },
+  about: {
+    '@type': 'Organization',
+    name: faction.data.title,
+    alternateName: faction.data.shortName,
+    description: faction.data.description,
+  },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': canonicalUrl,
+  },
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: 'https://squadtacs.com',
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Factions',
+      item: 'https://squadtacs.com/factions',
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: faction.data.title,
+      item: canonicalUrl,
+    },
+  ],
+};
 ---
 
-<GuideLayout title={faction.data.title} description={faction.data.description}>
-  <Content />
-</GuideLayout>
+<BaseLayout title={pageTitle} description={metaDescription} image={faction.data.flag}>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+  <nav class="mb-6 text-sm" aria-label="Breadcrumb">
+    <ol class="flex items-center gap-2 text-text-dim">
+      <li><a href="/" class="hover:text-accent transition-colors">Home</a></li>
+      <li class="text-text-dim/50">/</li>
+      <li><a href="/factions" class="hover:text-accent transition-colors">Factions</a></li>
+      <li class="text-text-dim/50">/</li>
+      <li class="text-text-muted">{faction.data.shortName}</li>
+    </ol>
+  </nav>
+
+  <article itemscope itemtype="https://schema.org/Article">
+    <header class="mb-8 pb-6 border-b border-border">
+      <div class="flex items-start gap-4">
+        <div class="flex-1">
+          <div class="flex items-center gap-3 mb-2">
+            <span class={`text-xs font-semibold px-2 py-1 rounded uppercase tracking-wider ${
+              faction.data.side === 'BLUFOR' ? 'bg-blufor/15 text-blufor border border-blufor/30' :
+              faction.data.side === 'REDFOR' ? 'bg-redfor/15 text-redfor border border-redfor/30' :
+              faction.data.side === 'PAC' ? 'bg-pac/15 text-pac border border-pac/30' :
+              'bg-independent/15 text-independent border border-independent/30'
+            }`}>
+              {faction.data.side}
+            </span>
+            <span class="text-text-dim text-xs">{sideLabels[faction.data.side]}</span>
+          </div>
+          <h1 class="font-display text-3xl md:text-4xl font-bold text-text mb-3 uppercase tracking-wide" itemprop="headline">
+            {faction.data.title}
+          </h1>
+          <p class="text-lg text-text-muted leading-relaxed" itemprop="description">
+            {faction.data.description}
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <div class="prose" itemprop="articleBody">
+      <Content />
+    </div>
+  </article>
+
+  <aside class="mt-12 pt-8 border-t border-border">
+    <h2 class="text-sm font-semibold text-text-dim uppercase tracking-wider mb-4">More Factions</h2>
+    <div class="flex gap-4">
+      <a href="/factions" class="text-accent hover:underline text-sm">← View all factions</a>
+    </div>
+  </aside>
+</BaseLayout>

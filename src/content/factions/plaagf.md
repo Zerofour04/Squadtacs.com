@@ -2,6 +2,7 @@
 title: PLA Amphibious Ground Force
 shortName: PLAAGF
 description: Chinese amphibious assault units specializing in beach landings with Type 05 amphibious vehicles
+metaDescription: Master PLAAGF in Squad. Complete guide to ZTZ-99A, Type 05 amphibious vehicles and beach assault tactics for Chinese forces.
 side: PAC
 order: 22
 flag: /img/flags/PLAAGF.webp

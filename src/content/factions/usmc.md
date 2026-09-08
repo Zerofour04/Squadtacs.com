@@ -2,6 +2,7 @@
 title: United States Marine Corps
 shortName: USMC
 description: Expeditionary force with amphibious capabilities and close air support
+metaDescription: Master the USMC in Squad. Full guide to LAV-25, AAV, M1A1 Abrams, amphibious assault tactics for the US Marine Corps faction.
 side: BLUFOR
 order: 2
 flag: /img/flags/USMC.webp

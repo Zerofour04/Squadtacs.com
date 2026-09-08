@@ -18,6 +18,7 @@ const factions = defineCollection({
     title: z.string(),
     shortName: z.string(),
     description: z.string(),
+    metaDescription: z.string().optional(),
     side: z.enum(['BLUFOR', 'REDFOR', 'INDEPENDENT', 'PAC']),
     flag: z.string().optional(),
     order: z.number().optional(),

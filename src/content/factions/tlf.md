@@ -2,6 +2,7 @@
 title: Turkish Land Forces
 shortName: TLF
 description: NATO member fielding domestic Cobra II vehicles, upgraded M60T tanks, and Turkish-made MPT-76 rifles with a unique Jandarma special forces class
+metaDescription: Master the TLF in Squad. Complete guide to M60T tank, Cobra II, MPT-76 rifles and tactics for the Turkish Land Forces faction.
 side: BLUFOR
 order: 14
 flag: /img/flags/TLF.webp

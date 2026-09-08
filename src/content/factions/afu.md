@@ -2,6 +2,7 @@
 title: Armed Forces of Ukraine
 shortName: AFU
 description: Modern Ukrainian military with NATO training, mixed Soviet and Western equipment, and indigenous designs
+metaDescription: Master the AFU in Squad. Full guide to Ukrainian vehicles, weapons, NATO equipment mix and tactics for the Armed Forces of Ukraine.
 side: BLUFOR
 order: 6
 flag: /img/flags/AFU.webp

@@ -2,6 +2,7 @@
 title: PLA Navy Marine Corps
 shortName: PLANMC
 description: Chinese naval infantry with amphibious assault vehicles - the only faction without MBTs
+metaDescription: Master the PLANMC in Squad. Full guide to ZBD-05, amphibious vehicles, QBZ-95 rifles and tactics for Chinese Marines faction.
 side: PAC
 order: 21
 flag: /img/flags/PLANMC.webp

@@ -2,6 +2,7 @@
 title: Insurgents
 shortName: INS
 description: Unconventional guerrilla fighters using IEDs, ambush tactics, Soviet-era weapons, and improvised technicals against conventional forces
+metaDescription: Master the Insurgents in Squad. Full guide to IEDs, technicals, ambush tactics and guerrilla warfare for the INS faction.
 side: INDEPENDENT
 order: 33
 flag: /img/flags/INS.webp

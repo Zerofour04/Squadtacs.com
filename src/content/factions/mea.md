@@ -2,6 +2,7 @@
 title: Ground Forces of Iran
 shortName: GFI
 description: Iran's ground military forces combining Western firearms with Soviet heavy weapons and vehicles, featuring G3 battle rifles and T-72 tanks
+metaDescription: Master the GFI in Squad. Full guide to T-72, G3 battle rifles, BMP-1 and tactics for the Ground Forces of Iran faction.
 side: INDEPENDENT
 order: 30
 flag: /img/flags/MEA.webp

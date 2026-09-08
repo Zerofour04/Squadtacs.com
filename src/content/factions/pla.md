@@ -2,6 +2,7 @@
 title: People's Liberation Army
 shortName: PLA
 description: Modern Chinese military with the powerful ZTZ-99 tank and advanced equipment
+metaDescription: Master the PLA in Squad. Complete guide to ZTZ-99A tank, ZBD-04A IFV, QBZ-95 rifles and tactics for the Chinese military faction.
 side: PAC
 order: 20
 flag: /img/flags/PLA.webp

@@ -2,6 +2,7 @@
 title: Australian Defence Force
 shortName: ADF
 description: Professional military with unique Bushmaster vehicles and EF88 rifles
+metaDescription: Master the ADF in Squad. Complete guide to Bushmaster vehicles, EF88 rifles, tactics and loadouts for the Australian Defence Force faction.
 side: BLUFOR
 order: 5
 flag: /img/flags/ADF.webp

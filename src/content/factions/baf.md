@@ -2,6 +2,7 @@
 title: British Armed Forces
 shortName: BAF
 description: Professional army with excellent infantry tactics and unique equipment
+metaDescription: Master the BAF in Squad. Complete guide to Challenger 2 tank, SA80 rifles, Warrior IFV and tactics for British Armed Forces faction.
 side: BLUFOR
 order: 3
 flag: /img/flags/BAF.webp

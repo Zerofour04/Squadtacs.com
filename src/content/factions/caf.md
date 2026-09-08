@@ -2,6 +2,7 @@
 title: Canadian Armed Forces
 shortName: CAF
 description: Well-equipped modern military with LAV III family and C7 rifles
+metaDescription: Master the CAF in Squad. Full guide to LAV 6.0, Leopard 2A6M, C7 rifles and tactics for the Canadian Armed Forces faction.
 side: BLUFOR
 order: 4
 flag: /img/flags/CAF.webp

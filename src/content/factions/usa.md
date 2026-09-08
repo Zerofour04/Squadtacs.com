@@ -2,6 +2,7 @@
 title: United States Army
 shortName: USA
 description: The US Army features advanced equipment and versatile vehicle lineup
+metaDescription: Master the US Army in Squad. Complete guide to M1 Abrams, Bradley IFV, M4A1 rifles, helicopters and tactics for the USA faction.
 side: BLUFOR
 order: 1
 flag: /img/flags/USA.webp

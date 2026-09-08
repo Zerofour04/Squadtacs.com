@@ -2,6 +2,7 @@
 title: Russian Airborne Forces
 shortName: VDV
 description: Elite Russian paratroopers with air-droppable BMD vehicles, the Sprut-SDM1 tank destroyer, and the first AA vehicle for conventional factions
+metaDescription: Master the VDV in Squad. Full guide to BMD-4M, Sprut-SDM1, 2S38 anti-air, AK-74M and tactics for Russian Airborne Forces.
 side: PAC
 order: 13
 flag: /img/flags/VDV.webp
