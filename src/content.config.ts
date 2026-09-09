@@ -50,15 +50,32 @@ const vehicles = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
+    metaDescription: z.string().optional(),
     category: z.enum(['mbt', 'mgs', 'ifv', 'apc', 'recon', 'light', 'technical', 'at-light', 'anti-air', 'artillery', 'logistics', 'transport', 'helicopter', 'boat']),
     image: z.string().optional(),
+    // Core Stats
     tickets: z.number().optional(),
     crew: z.number().optional(),
     passengers: z.number().optional(),
     hp: z.number().optional(),
     respawn: z.string().optional(),
-    factions: z.array(z.string()).optional(),
+    // Performance
+    maxSpeed: z.number().optional(),
+    reverseSpeed: z.number().optional(),
+    // Logistics
+    ammoPoints: z.number().optional(),
+    constructionPoints: z.number().optional(),
+    // Armament - detailed weapon objects
+    armament: z.array(z.object({
+      name: z.string(),
+      caliber: z.string().optional(),
+      ammo: z.string().optional(),
+      rounds: z.number().optional(),
+    })).optional(),
+    countermeasures: z.string().optional(),
+    // Legacy weapons array (for backwards compatibility)
     weapons: z.array(z.string()).optional(),
+    factions: z.array(z.string()).optional(),
     order: z.number().optional(),
   }),
 });

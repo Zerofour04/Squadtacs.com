@@ -1,6 +1,6 @@
 ---
 import { getCollection, render } from 'astro:content';
-import GuideLayout from '../../layouts/GuideLayout.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 
 export async function getStaticPaths() {
   const vehicles = await getCollection('vehicles');
@@ -13,7 +13,6 @@ export async function getStaticPaths() {
 const { vehicle } = Astro.props;
 const { Content } = await render(vehicle);
 
-// Category display names
 const categoryNames: Record<string, string> = {
   mbt: 'Main Battle Tank',
   mgs: 'Mobile Gun System',
@@ -32,101 +31,245 @@ const categoryNames: Record<string, string> = {
 };
 
 const categoryName = categoryNames[vehicle.data.category] || vehicle.data.category;
+const pageTitle = `${vehicle.data.title} - ${categoryName}`;
+const metaDescription = vehicle.data.metaDescription || vehicle.data.description;
+
+const schemaData = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: pageTitle,
+  description: metaDescription,
+  author: { '@type': 'Organization', name: 'Squad Tacs' },
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://squadtacs.com' },
+    { '@type': 'ListItem', position: 2, name: 'Vehicles', item: 'https://squadtacs.com/vehicles' },
+    { '@type': 'ListItem', position: 3, name: vehicle.data.title, item: `https://squadtacs.com/vehicles/${vehicle.id}` },
+  ],
+};
+
+const totalSeats = (vehicle.data.crew || 0) + (vehicle.data.passengers || 0);
 ---
 
-<GuideLayout title={vehicle.data.title} description={vehicle.data.description}>
-  <!-- Vehicle Header -->
-  <div class="mb-8">
-    <div class="flex flex-col md:flex-row gap-6">
-      <!-- Vehicle Image -->
-      {vehicle.data.image && (
-        <div class="md:w-1/3">
-          <img
-            src={`/img/vehicles/${vehicle.data.image}`}
-            alt={vehicle.data.title}
-            class="w-full rounded-lg border border-border"
-          />
-        </div>
-      )}
+<BaseLayout title={pageTitle} description={metaDescription}>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 
-      <!-- Vehicle Info -->
-      <div class="flex-1">
-        <div class="text-sm text-accent uppercase tracking-wide mb-2">{categoryName}</div>
-        <h1 class="font-display text-3xl font-bold text-text mb-3">{vehicle.data.title}</h1>
-        <p class="text-text-muted mb-4">{vehicle.data.description}</p>
+  <!-- Breadcrumb -->
+  <nav class="mb-6 text-sm" aria-label="Breadcrumb">
+    <ol class="flex items-center gap-2 text-text-dim">
+      <li><a href="/" class="hover:text-accent transition-colors">Home</a></li>
+      <li class="text-text-dim/50">/</li>
+      <li><a href="/vehicles" class="hover:text-accent transition-colors">Vehicles</a></li>
+      <li class="text-text-dim/50">/</li>
+      <li class="text-text-muted">{vehicle.data.title}</li>
+    </ol>
+  </nav>
 
-        <!-- Quick Stats -->
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-          {vehicle.data.tickets && (
-            <div class="bg-bg-card rounded-lg border border-border p-3">
-              <div class="text-xs text-text-muted uppercase">Tickets</div>
-              <div class="text-xl font-bold text-text">{vehicle.data.tickets}</div>
-            </div>
-          )}
-          {vehicle.data.crew && (
-            <div class="bg-bg-card rounded-lg border border-border p-3">
-              <div class="text-xs text-text-muted uppercase">Crew</div>
-              <div class="text-xl font-bold text-text">{vehicle.data.crew}</div>
-            </div>
-          )}
-          {vehicle.data.passengers !== undefined && (
-            <div class="bg-bg-card rounded-lg border border-border p-3">
-              <div class="text-xs text-text-muted uppercase">Passengers</div>
-              <div class="text-xl font-bold text-text">{vehicle.data.passengers}</div>
-            </div>
-          )}
-          {vehicle.data.hp && (
-            <div class="bg-bg-card rounded-lg border border-border p-3">
-              <div class="text-xs text-text-muted uppercase">HP</div>
-              <div class="text-xl font-bold text-text">{vehicle.data.hp}</div>
-            </div>
-          )}
-          {vehicle.data.respawn && (
-            <div class="bg-bg-card rounded-lg border border-border p-3">
-              <div class="text-xs text-text-muted uppercase">Respawn</div>
-              <div class="text-xl font-bold text-text">{vehicle.data.respawn}</div>
-            </div>
-          )}
-        </div>
-
-        <!-- Factions -->
-        {vehicle.data.factions && vehicle.data.factions.length > 0 && (
-          <div class="mt-4">
-            <div class="text-xs text-text-muted uppercase mb-2">Available to</div>
-            <div class="flex flex-wrap gap-2">
-              {vehicle.data.factions.map((faction: string) => (
-                <a
-                  href={`/factions/${faction.toLowerCase()}`}
-                  class="flex items-center gap-2 bg-bg-card rounded border border-border px-3 py-1.5 hover:border-accent transition-colors"
-                >
-                  <img src={`/img/flags/${faction}.webp`} alt={faction} class="w-5 h-4 object-cover rounded-sm" />
-                  <span class="text-sm text-text">{faction}</span>
-                </a>
-              ))}
+  <article>
+    <!-- Header Section -->
+    <header class="mb-8">
+      <div class="flex flex-col lg:flex-row gap-6">
+        <!-- Vehicle Image -->
+        {vehicle.data.image && (
+          <div class="lg:w-2/5">
+            <div class="relative rounded-xl overflow-hidden border border-border bg-bg-card">
+              <img
+                src={`/img/vehicles/${vehicle.data.image}`}
+                alt={vehicle.data.title}
+                class="w-full h-auto object-cover"
+              />
+              <div class="absolute top-3 left-3">
+                <span class="bg-accent/90 text-bg-base text-xs font-bold px-2 py-1 rounded uppercase tracking-wide">
+                  {categoryName}
+                </span>
+              </div>
             </div>
           </div>
         )}
 
-        <!-- Weapons -->
-        {vehicle.data.weapons && vehicle.data.weapons.length > 0 && (
-          <div class="mt-4">
-            <div class="text-xs text-text-muted uppercase mb-2">Armament</div>
-            <ul class="space-y-1">
+        <!-- Vehicle Info -->
+        <div class="flex-1">
+          <h1 class="font-display text-3xl md:text-4xl font-bold text-text mb-2 uppercase tracking-wide">
+            {vehicle.data.title}
+          </h1>
+          <p class="text-text-muted text-lg mb-6">{vehicle.data.description}</p>
+
+          <!-- Primary Stats Grid -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 mb-6">
+            {vehicle.data.tickets && (
+              <div class="bg-bg-card rounded-lg border border-border p-3 text-center">
+                <div class="text-2xl font-bold text-accent">{vehicle.data.tickets}</div>
+                <div class="text-xs text-text-muted uppercase tracking-wide">Tickets</div>
+              </div>
+            )}
+            {totalSeats > 0 && (
+              <div class="bg-bg-card rounded-lg border border-border p-3 text-center">
+                <div class="text-2xl font-bold text-text">{totalSeats}</div>
+                <div class="text-xs text-text-muted uppercase tracking-wide">
+                  {vehicle.data.crew && vehicle.data.passengers !== undefined
+                    ? `${vehicle.data.crew} Crew + ${vehicle.data.passengers} Pass`
+                    : 'Seats'}
+                </div>
+              </div>
+            )}
+            {vehicle.data.hp && (
+              <div class="bg-bg-card rounded-lg border border-border p-3 text-center">
+                <div class="text-2xl font-bold text-text">{vehicle.data.hp}</div>
+                <div class="text-xs text-text-muted uppercase tracking-wide">HP</div>
+              </div>
+            )}
+            {vehicle.data.respawn && (
+              <div class="bg-bg-card rounded-lg border border-border p-3 text-center">
+                <div class="text-2xl font-bold text-text">{vehicle.data.respawn}</div>
+                <div class="text-xs text-text-muted uppercase tracking-wide">Respawn</div>
+              </div>
+            )}
+          </div>
+
+          <!-- Performance Stats -->
+          {(vehicle.data.maxSpeed || vehicle.data.reverseSpeed || vehicle.data.ammoPoints !== undefined) && (
+            <div class="bg-bg-card/50 rounded-lg border border-border/50 p-4 mb-6">
+              <h3 class="text-xs text-text-dim uppercase tracking-wider mb-3 font-semibold">Performance</h3>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm">
+                {vehicle.data.maxSpeed && (
+                  <div>
+                    <span class="text-text-muted">Max Speed:</span>
+                    <span class="text-text font-medium ml-1">{vehicle.data.maxSpeed} km/h</span>
+                  </div>
+                )}
+                {vehicle.data.reverseSpeed && (
+                  <div>
+                    <span class="text-text-muted">Reverse:</span>
+                    <span class="text-text font-medium ml-1">{vehicle.data.reverseSpeed} km/h</span>
+                  </div>
+                )}
+                {vehicle.data.ammoPoints !== undefined && (
+                  <div>
+                    <span class="text-text-muted">Ammo Points:</span>
+                    <span class="text-text font-medium ml-1">{vehicle.data.ammoPoints}</span>
+                  </div>
+                )}
+                {vehicle.data.constructionPoints !== undefined && (
+                  <div>
+                    <span class="text-text-muted">Build Points:</span>
+                    <span class="text-text font-medium ml-1">{vehicle.data.constructionPoints}</span>
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
+
+          <!-- Factions -->
+          {vehicle.data.factions && vehicle.data.factions.length > 0 && (
+            <div class="mb-6">
+              <h3 class="text-xs text-text-dim uppercase tracking-wider mb-3 font-semibold">Available Factions</h3>
+              <div class="flex flex-wrap gap-2">
+                {vehicle.data.factions.map((faction: string) => (
+                  <a
+                    href={`/factions/${faction.toLowerCase()}`}
+                    class="flex items-center gap-2 bg-bg-card rounded-lg border border-border px-3 py-2 hover:border-accent hover:bg-bg-hover transition-all"
+                  >
+                    <img src={`/img/flags/${faction}.webp`} alt={faction} class="w-6 h-4 object-cover rounded-sm" />
+                    <span class="text-sm font-medium text-text">{faction}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    </header>
+
+    <!-- Armament Section -->
+    {(vehicle.data.armament || vehicle.data.weapons) && (
+      <section class="mb-8">
+        <h2 class="font-display text-xl font-bold text-text mb-4 uppercase tracking-wide flex items-center gap-2">
+          <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+          Armament
+        </h2>
+
+        {vehicle.data.armament ? (
+          <div class="bg-bg-card rounded-xl border border-border overflow-hidden">
+            <table class="w-full text-sm">
+              <thead class="bg-bg-hover">
+                <tr class="text-left text-text-muted uppercase tracking-wide text-xs">
+                  <th class="px-4 py-3">Weapon</th>
+                  <th class="px-4 py-3">Caliber</th>
+                  <th class="px-4 py-3">Ammo Type</th>
+                  <th class="px-4 py-3 text-right">Rounds</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-border">
+                {vehicle.data.armament.map((weapon) => (
+                  <tr class="hover:bg-bg-hover/50 transition-colors">
+                    <td class="px-4 py-3 font-medium text-text">{weapon.name}</td>
+                    <td class="px-4 py-3 text-text-muted">{weapon.caliber || '-'}</td>
+                    <td class="px-4 py-3 text-text-muted">{weapon.ammo || '-'}</td>
+                    <td class="px-4 py-3 text-right text-text">{weapon.rounds || '-'}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        ) : vehicle.data.weapons && (
+          <div class="bg-bg-card rounded-xl border border-border p-4">
+            <ul class="space-y-2">
               {vehicle.data.weapons.map((weapon: string) => (
-                <li class="text-sm text-text flex items-center gap-2">
-                  <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                <li class="flex items-center gap-3 text-text">
+                  <span class="w-2 h-2 rounded-full bg-accent flex-shrink-0"></span>
                   {weapon}
                 </li>
               ))}
             </ul>
           </div>
         )}
-      </div>
-    </div>
-  </div>
 
-  <!-- Content from Markdown -->
-  <div class="prose prose-invert max-w-none">
-    <Content />
-  </div>
-</GuideLayout>
+        {vehicle.data.countermeasures && (
+          <div class="mt-3 flex items-center gap-2 text-sm text-text-muted">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+            <span>Countermeasures: {vehicle.data.countermeasures}</span>
+          </div>
+        )}
+      </section>
+    )}
+
+    <!-- Content from Markdown (Gameplay, Tips, etc.) -->
+    {vehicle.body && vehicle.body.trim() && (
+      <section class="prose prose-invert max-w-none">
+        <Content />
+      </section>
+    )}
+
+    <!-- Related Vehicles / Navigation -->
+    <footer class="mt-12 pt-8 border-t border-border">
+      <div class="flex flex-wrap gap-4 justify-between items-center">
+        <a href="/vehicles" class="text-accent hover:underline text-sm flex items-center gap-1">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          All Vehicles
+        </a>
+        {vehicle.data.factions && vehicle.data.factions.length > 0 && (
+          <div class="text-sm text-text-muted">
+            See also:
+            {vehicle.data.factions.map((faction: string, i: number) => (
+              <>
+                <a href={`/factions/${faction.toLowerCase()}`} class="text-accent hover:underline ml-1">{faction}</a>
+                {i < vehicle.data.factions!.length - 1 && ','}
+              </>
+            ))}
+          </div>
+        )}
+      </div>
+    </footer>
+  </article>
+</BaseLayout>

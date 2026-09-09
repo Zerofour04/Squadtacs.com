@@ -1,78 +1,85 @@
 ---
 title: M1A1 Abrams
-description: American main battle tank featuring 120mm smoothbore cannon, heavy armor, and advanced fire control systems.
+description: American main battle tank featuring 120mm smoothbore cannon, heavy composite armor, and advanced fire control systems.
+metaDescription: Master the M1A1 Abrams in Squad. Complete guide to armor, weapons, crew positions and tactics for ADF and USMC factions.
 category: mbt
 image: M1A1.webp
+# Core Stats
 tickets: 15
 crew: 3
 passengers: 0
 hp: 3000
 respawn: 20 min
+# Performance
+maxSpeed: 79
+reverseSpeed: 48
+# Logistics
+ammoPoints: 50
+constructionPoints: 0
+# Armament
+armament:
+  - name: M256 120mm Smoothbore
+    caliber: 120mm
+    ammo: KEW-A2 AP Sabot
+    rounds: 21
+  - name: M256 120mm Smoothbore
+    caliber: 120mm
+    ammo: M830A1 HEAT
+    rounds: 21
+  - name: Mag58 Coaxial
+    caliber: 7.62mm
+    rounds: 2000
+  - name: M2A1 Browning CWS
+    caliber: 12.7mm
+    ammo: Commander HMG
+    rounds: 700
+countermeasures: Smoke Launcher (2 charges)
 factions: [ADF, USMC]
-weapons:
-  - M256 120mm Smoothbore (21 AP + 21 HEAT)
-  - M240C 7.62mm Coaxial (800 rounds)
-  - M2A1 .50 Cal Commander Weapon Station (400 rounds)
 order: 1
----
-
-## Overview
-
-The M1A1 Abrams is the primary main battle tank available to the Australian Defence Force and US Marine Corps. It represents one of the most powerful ground combat vehicles in Squad, capable of engaging and destroying any enemy vehicle or emplacement.
-
 ---
 
 ## Crew Positions
 
 | Position | Role | Equipment |
 |----------|------|-----------|
-| **Driver** | Vehicle movement | Periscope, smoke launcher |
-| **Gunner** | Main gun & coax operation | Thermal sight, laser rangefinder |
-| **Commander** | Situational awareness, CWS | Independent Thermal Viewer (ITV), M2A1 .50 cal |
+| **Driver** | Vehicle movement | Periscope, engine smoke generator |
+| **Gunner** | Main gun & coax operation | Thermal sight, 6 sec reload |
+| **Commander** | Situational awareness, CWS | M2A1 CWS (no stabilization, no rangefinder) |
+
+> **Note:** The M1A1 does not include a loader seat. Unlike the M1A2, it uses an older M2A1 CWS with weaker magnification, no stabilization and no laser rangefinder.
 
 ---
 
-## Weapons Systems
+## Armor & Weak Points
 
-### M256 120mm Smoothbore Cannon
+The M1A1 presents a formidable armor profile from the front:
 
-The main armament fires two types of ammunition:
-- **AP (Armor Piercing)**: 21 rounds - For engaging armored vehicles
-- **HEAT (High Explosive Anti-Tank)**: 21 rounds - Effective against vehicles and fortifications
+- **Turret Front**: Very strong, highly resistant to incoming fire
+- **Gun Mantlet**: Major weakness - prioritize this at longer ranges
+- **Lower Glacis (Right)**: Penetrating hits can cause ammunition cook-off
+- **Engine (Rear)**: Damaging reduces speed, destroying renders immobile
+- **Ammo Storage**: Located bottom left of hull - cook-off can destroy the tank
 
-### M240C Coaxial Machine Gun
-- 7.62mm belt-fed machine gun
-- 800 rounds available
-- Effective against infantry and light vehicles
-
-### M2A1 Commander Weapon Station
-- .50 caliber heavy machine gun
-- 400 rounds available
-- Operated by commander from inside the turret
-- **Note**: ADF version uses older M2A1 CWS without stabilization
+> **Tip:** The M1A1 is relatively strong from the front as it's very difficult to hit the ammo storage. At shorter ranges, aim for the right section of the lower glacis for potential cook-off.
 
 ---
 
-## Armor & Protection
-
-The M1A1 features composite armor with excellent protection:
-- **Frontal Arc**: Very strong, can withstand most anti-tank weapons
-- **Side/Rear**: Vulnerable to IFV cannons, ATGMs, and heavy AT weapons
-- **Top**: Vulnerable to top-attack missiles (Javelin, Kornet)
-
----
-
-## Tactical Tips
+## Gameplay Tips
 
 1. **Hull-down positions** maximize your armor advantage
-2. **Use terrain** to protect your weaker side armor
-3. **Communicate with infantry** to spot hidden AT threats
-4. **Don't rush** - methodical advance with infantry support is key
-5. **Watch for flanking** - your sides and rear are vulnerable
-6. **Commander's ITV** can spot targets independently of the gunner
+2. **Fastest reload in-game** - 6 seconds (10 rounds/minute)
+3. **Use engine smoke** by holding left mouse button as driver
+4. **No modern fire control** - manual range adjustments only
+5. **Communicate with infantry** to spot hidden AT threats
+6. **Commander's independent view** can spot targets separately from gunner
 
 ---
 
-## Shared With
+## Variants
 
-This vehicle is also used by **USMC** (United States Marine Corps).
+| Variant | Faction | Notes |
+|---------|---------|-------|
+| M1A1 AIM SA | ADF | Australian variant with tungsten armor package, AIM SA system |
+| M1A1 | USMC | Standard US Marine Corps variant |
+
+The Australian M1A1 AIM SA weighs 63 short tons (7 tons lighter than M1A2), making it slightly more agile.
