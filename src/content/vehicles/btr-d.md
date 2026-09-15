@@ -1,141 +1,146 @@
 ---
-title: "BTR-D"
-description: "Russian airborne armored personnel carrier with multiple armament variants and amphibious capability"
-category: "apc"
-factions: [VDV]
-image: "BTR-D.webp"
+title: BTR-D
+description: Russian airborne tracked APC with transport, logistics, Kord, and PKM variants for VDV.
+metaDescription: Master the BTR-D in Squad. Complete guide to all variants - Transport, Logistics, Kord, PKM for VDV airborne forces.
+category: apc
+image: BTR-D.webp
+# Core Stats (Transport variant)
 tickets: 5
-respawn: "10 min"
 crew: 1
 passengers: 9
----
-
-# BTR-D
-
-The **BTR-D** (Bronetransportyor Desantniy - Airborne Armored Personnel Carrier) is a tracked APC derived from the BMD-1 chassis. Designed specifically for VDV airborne forces, it comes in multiple variants including transport, logistics, and armed versions with Kord or PKM turrets.
-
+hp: 1250
+respawn: 10 min
+# Logistics
+ammoPoints: 600
+constructionPoints: 0
+# Armament (Transport)
+armament:
+  - name: 2x PKT Hull
+    caliber: 7.62mm
+    ammo: Forward only
+    rounds: 2000
+countermeasures: Smoke Launcher (2 charges)
+factions: [VDV]
+order: 39
 ---
 
 ## Overview
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+The **BTR-D** is a Russian airborne tracked APC based on the BMD-1 chassis. Introduced in V5.0 for VDV, it's an amphibious transport available in 4 variants. Low profile excels in forests and urban terrain.
 
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">5</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Tickets</div>
-</div>
+**Key Features:**
 
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">5-10 min</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Respawn</div>
-</div>
-
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">1</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Crew</div>
-</div>
-
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">2-9</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Passengers</div>
-</div>
-
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">1250</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">HP</div>
-</div>
-
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">🌊</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Amphibious</div>
-</div>
-
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">600-1000</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Ammo Pts</div>
-</div>
-
-</div>
+- **Tracked amphibious** - ~70 km/h land, ~10 km/h water
+- **Low profile** - navigates crowded terrain well
+- **4 variants** - Transport, Logistics, Kord, PKM
+- **No kit required** - anyone can drive
+- **VDV exclusive** - airborne forces only
+- **BTR-ZD variant** - separate AA vehicle
 
 ---
 
 ## Variants
 
-### BTR-D Transport
-| Stat | Value |
-|------|-------|
-| Tickets | 5 |
-| Respawn | 10 min |
-| Crew | 1 |
-| Passengers | 9 |
-| Ammo/Build | 600 / 0 |
-| Armament | 2x PKT forward-firing (2000 rds), Smoke x2 |
+| Variant | Tickets | Respawn | Passengers | Ammo/Build | Main Weapon |
+|---------|---------|---------|------------|------------|-------------|
+| **Transport** | 5 | 10 min | 9 | 600/0 | 2x PKT Hull |
+| **Logistics** | 5 | 5 min | 2 | 1000/1000 | None |
+| **Kord** | 5 | 10 min | 9 | 600/0 | Kord 12.7mm + 2x PKT |
+| **PKM** | 5 | 10 min | 9 | 600/0 | PKM 7.62mm + 2x PKT |
 
-### BTR-D Logistics
+All variants: 1250 HP, 1 crew
+
+---
+
+## BTR-D Transport
+
+Standard troop carrier variant.
+
+### Armament
+
+| Weapon | Caliber | Notes | Rounds |
+|--------|---------|-------|--------|
+| 2x PKT Hull | 7.62mm | Forward-firing only | 2000 |
+| Smoke Launcher | 40mm | - | 2 |
+
+---
+
+## BTR-D Logistics
+
+Armored supply carrier - only non-BLUFOR amphibious logi.
+
+### Stats
+
 | Stat | Value |
 |------|-------|
-| Tickets | 5 |
 | Respawn | 5 min |
-| Crew | 1 |
 | Passengers | 2 |
-| Ammo/Build | 1000 / 1000 |
-| Armament | Smoke x2 |
+| Ammo Points | 1000 |
+| Construction Points | 1000 |
 
-### BTR-D Kord
-| Stat | Value |
-|------|-------|
-| Tickets | 5 |
-| Respawn | 10 min |
-| Crew | 1 |
-| Passengers | 9 |
-| Ammo/Build | 600 / 0 |
-| Armament | Kord 12.7mm open turret, 2x PKT forward (2000 rds), Smoke x2 |
-
-### BTR-D PKM
-| Stat | Value |
-|------|-------|
-| Tickets | 5 |
-| Respawn | 10 min |
-| Crew | 1 |
-| Passengers | 9 |
-| Ammo/Build | 600 / 0 |
-| Armament | PKM 7.62mm open turret, 2x PKT forward (2000 rds), Smoke x2 |
+**Notes:**
+- Slow, very loud
+- Carries 2000 total supplies (vs AAVC 3000)
+- Only amphibious logi for REDFOR
+- One of weakest logistics vehicles in game
 
 ---
 
-## Crew Positions
+## BTR-D Kord
 
-| Position | Role | Equipment |
-|----------|------|-----------|
-| Driver | Mobility & weapons | 2x PKT forward-firing (on armed variants) |
-| Gunner (Kord/PKM) | Fire support | Open-top turret (exposed) |
+Fire support variant with open-top HMG.
 
----
+### Armament
 
-## Characteristics
-
-**Strengths:**
-- Multiple variants for different roles (transport, logistics, fire support)
-- Fully amphibious - crosses water obstacles
-- Kord variant provides 12.7mm HMG fire support
-- Logistics variant carries 1000/1000 supplies
-- Only requires 1 crew member (driver)
-- Low ticket cost across all variants
-
-**Weaknesses:**
-- Light armor (1250 HP) - vulnerable to heavy weapons
-- Open-top turrets expose gunner to fire
-- Forward-firing PKTs have limited traverse
-- No anti-armor capability
+| Weapon | Caliber | Notes | Rounds |
+|--------|---------|-------|--------|
+| Kord | 12.7mm | Open-top turret | - |
+| 2x PKT Hull | 7.62mm | Forward-firing | 2000 |
+| Smoke Launcher | 40mm | - | 2 |
 
 ---
 
-## Tactical Notes
+## BTR-D PKM
 
-- The BTR-D Logistics is unique - an armored, amphibious logi that can cross water
-- Kord variant's 12.7mm can suppress infantry effectively but gunner is exposed
-- Forward-firing PKTs are controlled by driver - use them while advancing
-- Use amphibious capability to resupply positions across rivers
-- The anti-air variant (BTR-ZD) is a separate vehicle with ZU-23-2
-- All variants are air-droppable, fitting VDV doctrine
-- Exclusive to VDV faction
+Light fire support variant.
+
+### Armament
+
+| Weapon | Caliber | Notes | Rounds |
+|--------|---------|-------|--------|
+| PKM | 7.62mm | Open-top turret | - |
+| 2x PKT Hull | 7.62mm | Forward-firing | 2000 |
+| Smoke Launcher | 40mm | - | 2 |
+
+---
+
+## Gameplay
+
+- **Low profile** - good in forests, streets, buildings
+- **Amphibious** - ~10 km/h in water
+- **~70 km/h max speed** - moderate mobility
+- **1250 HP** - light armor protection
+- No kit required to operate
+- Hull PKTs forward-firing only
+- Kord/PKM gunners exposed in open top
+- Logistics variant best for water crossings
+
+---
+
+## Tactical Tips
+
+1. **Use low profile** - navigate tight terrain
+2. **Cross water** - unique amphibious capability
+3. **Kord for suppression** - but gunner exposed
+4. **Logistics for river crossings** - armored resupply
+5. **Hull PKTs** - driver fires while advancing
+6. **Avoid heavy weapons** - light armor
+
+---
+
+## See Also
+
+- [BTR-ZD](/vehicles/btr-zd) - Anti-air variant
+- [BTR-MDM](/vehicles/btr-mdm) - Modern VDV APC
+- [BMD-1M](/vehicles/bmd-1m) - Related IFV chassis
+

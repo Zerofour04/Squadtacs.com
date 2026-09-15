@@ -1,97 +1,154 @@
 ---
-title: "Leopard 2A6M CAN"
-description: "Canadian main battle tank with 120mm L/55 smoothbore cannon and excellent armor protection"
-category: "mbt"
-factions: [CAF]
-image: "Leopard 2A6M CAN.webp"
+title: Leopard 2A6M
+description: Canadian MBT with 120mm L/55, hunter-killer, and slat armor variant for CAF.
+metaDescription: Master the Leopard 2A6M in Squad. Complete guide to 120mm gun, armor, and tactics for Canadian Army.
+category: mbt
+image: Leopard 2A6M CAN.webp
+# Core Stats
 tickets: 15
-respawn: "20 min"
 crew: 4
 passengers: 0
-weapons:
-  - "Rheinmetall Rh-120 L/55 120mm (21 APFSDS + 21 HEAT)"
-  - "C6 7.62mm coaxial"
-  - "C6 7.62mm loader's MG"
-  - "Smoke launchers"
----
-
-# Leopard 2A6M CAN
-
-The **Leopard 2A6M CAN** is the main battle tank of the Canadian Armed Forces in Squad. It features the longer L/55 120mm gun and enhanced mine protection, making it one of the most capable tanks in the game.
-
+hp: 3000
+respawn: 20 min
+speed: 81
+reverseSpeed: 47
+# Logistics
+ammoPoints: 50
+constructionPoints: 0
+# Armament
+armament:
+  - name: Rh-120 L/55
+    caliber: 120mm
+    ammo: APFSDS/HEAT
+    rounds: 42
+  - name: C6
+    caliber: 7.62mm
+    rounds: 2000
+  - name: C6 Loader
+    caliber: 7.62mm
+    rounds: 525
+countermeasures: Smoke Launcher (2 charges), Smoke Generator
+factions: [CAF]
+order: 2
 ---
 
 ## Overview
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+The **Leopard 2A6M** is the Canadian main battle tank. Introduced in Alpha 15.3 for the Canadian Army, it is technically the **Leopard 2A6M CAN** - the Canadian designation for loaned German Leopard 2s upgraded with slat armor and other modifications.
 
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">15</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Tickets</div>
-</div>
+**Key Features:**
 
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">20 min</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Respawn</div>
-</div>
+- **120mm L/55** - Longer barrel, higher velocity
+- **Hunter-killer** - Commander 3x zoom levels
+- **4 crew** - Driver, gunner, commander, loader
+- **2 variants** - With/without slat armor
+- **Wedge turret** - Excellent cheek protection
+- **CAF exclusive**
 
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">4</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Crew</div>
-</div>
+---
 
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">3000</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">HP</div>
-</div>
+## Statistics
 
-</div>
+| Stat | Value |
+|------|-------|
+| Tickets | 15 |
+| Crew | 3+1 |
+| Passengers | 0 |
+| HP | 3000 |
+| Respawn | 20 min |
+| Max Speed | 81 km/h |
+| Reverse Speed | 47 km/h |
+| Ammo Points | 50 |
+
+---
+
+## Performance
+
+| Attribute | Value |
+|-----------|-------|
+| Turret Rotation | 40°/s |
+| Gun Elevation | -10° / +20° |
+| Zoom Levels | 3x, 12x |
+| Reload | 8s (~7.2 RPM) |
 
 ---
 
 ## Armament
 
-| Weapon | Caliber | Ammunition |
-|--------|---------|------------|
-| Rheinmetall Rh-120 L/55 | 120mm | 21x DM33 APFSDS, 21x DM12 HEAT |
-| C6 Coaxial | 7.62mm | 2000 rounds |
-| C6 Loader's MG | 7.62mm | 525 rounds |
-| Smoke Launchers | 40mm | 2 salvos |
+| Weapon | Caliber | Ammo Type | Rounds |
+|--------|---------|-----------|--------|
+| Rh-120 L/55 | 120mm | DM53 APFSDS | 21 |
+| Rh-120 L/55 | 120mm | DM12 HEAT | 21 |
+| C6 Coaxial | 7.62mm | Belt-fed | 2000 |
+| C6 Loader | 7.62mm | Belt-fed | 525 |
+| Smoke Launcher | 40mm | Smoke Grenades | 2 |
+| Smoke Generator | - | Engine smoke | Driver |
 
 ---
 
 ## Crew Positions
 
-| Position | Role | Equipment |
-|----------|------|-----------|
-| Driver | Mobility | Smoke generator |
-| Gunner | Main weapon | 120mm + coax, 2x zoom levels |
-| Commander | Observation | Hunter-Killer capability, 3x zoom |
-| Loader | Defense | C6 MG (exposed position) |
+| Position | Notes |
+|----------|-------|
+| **Driver** | Smoke generator |
+| **Gunner** | 120mm + coax + smoke, manual ranging |
+| **Commander** | Hunter-killer, 3 zoom levels |
+| **Loader** | C6 MG (exposed, no shield, overheats) |
 
 ---
 
-## Characteristics
+## Armor Protection
 
-**Strengths:**
-- Excellent frontal armor with wedge-shaped composite
-- Powerful 120mm L/55 gun with high muzzle velocity
-- 4-man crew with Hunter-Killer capability
-- Good mobility for its weight class
+| Area | Protection |
+|------|------------|
+| **Turret Cheeks** | Wedge composite, exceptional vs AT |
+| **Hull Front** | Strong composite |
+| **Hull Sides** | Moderate (slat variant better) |
+| **Ammo Rack** | Front-left hull (enemy's right) |
 
-**Weaknesses:**
-- Manual range adjustment required (X key)
-- Ammo storage on left side near driver (vulnerable from right)
-- Loader position is unprotected
-- Large profile
+**Vulnerability:** Ammo rack on front-left hull (to driver's left). Enemy shots from your right side can cause ammunition cook-off.
 
 ---
 
-## Tactical Notes
+## Variants
 
-- The Leopard 2A6M is the only tank in Squad with **manual range adjustment** - use X key and mouse wheel
-- Double-tap X to reset range to default
-- The gun bore is on the **left side** of the sight, not centered
-- Ammo rack is located on the left side below frontal armor - enemy shots from the right can detonate it
-- Commander has Hunter-Killer: can designate targets for the gunner or slew to gunner's position
-- Available with or without slat armor depending on layer
+| Variant | Armor | Notes |
+|---------|-------|-------|
+| **Standard** | Base | No side protection |
+| **Slat Armor** | +Side slat | Better RPG protection |
+
+Both variants: Same stats, slat adds weight but improves protection.
+
+---
+
+## Gameplay
+
+- **Manual ranging** - Press X, use mouse wheel
+- **Double-tap X** - Reset to default range
+- **Gun bore left** - Not centered in sight
+- **Hunter-killer** - Commander designates targets
+- **Loader exposed** - C6 MG has no shield
+- **Slat variant** - Better side protection
+- **Ammo rack weakness** - Front-left hull
+
+---
+
+## Tactical Tips
+
+1. **Manual range** - X key + mouse wheel
+2. **Reset range** - Double-tap X
+3. **Gun offset** - Bore is bottom-left of sight
+4. **Protect right side** - Ammo rack vulnerability
+5. **Use hunter-killer** - Commander spots, gunner kills
+6. **Loader MG** - 525 rounds, no reload needed
+7. **Slat armor** - Better vs RPGs
+8. **Reverse speed** - 47 km/h is excellent
+
+---
+
+## See Also
+
+- [M1A2](/vehicles/m1a2) - US Army MBT
+- [FV4034](/vehicles/fv4034) - British MBT (Challenger 2)
+- [T-72B3](/vehicles/t-72b3) - Russian MBT
+- [LAV 6.0](/vehicles/lav-6) - CAF IFV

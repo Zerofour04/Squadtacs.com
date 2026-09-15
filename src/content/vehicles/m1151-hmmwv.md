@@ -1,106 +1,165 @@
 ---
-title: M1151 HMMWV
-description: American light tactical vehicle in various configurations, from transport to anti-tank roles.
+title: M1151 Humvee
+description: US light attack vehicle with M2HB, CROWS, and Mk19 variants for USMC, USA, WPMC, and INS.
+metaDescription: Master the M1151 Humvee in Squad. Complete guide to all variants for multiple factions.
 category: light
 image: M1151 M2.webp
+# Core Stats
 tickets: 5
-crew: 2
-passengers: 3
-hp: 750
-respawn: 5 min
-factions: [USMC]
-weapons:
-  - M2A1 .50 Cal (400 rounds) or Mk19 40mm (96 rounds) or M240B 7.62mm (800 rounds)
+crew: 0
+passengers: 5
+hp: 650
+respawn: 6 min
+# Logistics
+ammoPoints: 300
+constructionPoints: 0
+# Armament (M2HB variant)
+armament:
+  - name: M2HB
+    caliber: 12.7mm
+    ammo: .50 BMG
+    rounds: 1000
+factions: [USMC, USA, WPMC, INS]
 order: 26
 ---
 
 ## Overview
 
-The M1151 HMMWV (High Mobility Multipurpose Wheeled Vehicle), commonly known as "Humvee," is the USMC's primary light tactical vehicle. While less protected than the M-ATV, it remains a versatile platform for various roles.
+The **M1151 Humvee** (HMMWV) is a light attack vehicle used by multiple factions. Introduced in v3.0 for USMC, it provides fast transport with light armament. Less protected than M-ATV but more common.
 
----
+**Key Features:**
 
-## Crew Positions
-
-| Position | Role | Equipment |
-|----------|------|-----------|
-| **Driver** | Vehicle movement | Basic periscope |
-| **Gunner** | Weapon operation | Open turret or CROWS |
-| **Passengers** (3) | Dismount infantry | Limited protection |
+- **3 variants** - M2HB, M2HB CROWS, Mk19
+- **No crewman kit** required
+- **5 passengers** (open-top) / **4 passengers** (CROWS)
+- **Light armor** - Minimal protection
+- **Multi-faction** - USMC, USA, WPMC, INS
 
 ---
 
 ## Variants
 
-### M1151 M2 (Open Top)
+| Variant | Tickets | Pass | Weapon | Gunner |
+|---------|---------|------|--------|--------|
+| **M2HB** | 5 | 5 | .50 cal (1000) | Exposed |
+| **M2HB CROWS** | 5 | 4 | .50 cal (400) | Protected |
+| **Mk19** | 5 | 5 | 40mm AGL | Exposed |
 
-- **Weapon**: M2A1 .50 caliber heavy machine gun
-- **Ammunition**: 400 rounds
-- **Mount**: Open turret (exposed gunner)
-- **Role**: Anti-vehicle, anti-infantry
-
-### M1151 Mk19 (Open Top)
-
-- **Weapon**: Mk19 40mm automatic grenade launcher
-- **Ammunition**: 96 grenades
-- **Mount**: Open turret (exposed gunner)
-- **Role**: Area suppression
-
-### M1151 CROWS M2
-
-- **Weapon**: M2A1 .50 Cal via CROWS
-- **Ammunition**: 400 rounds
-- **Features**: Thermal sight, stabilized, protected gunner
-- **Role**: Anti-vehicle, anti-infantry
-
-### M1151 CROWS M240
-
-- **Weapon**: M240B via CROWS
-- **Ammunition**: 800 rounds
-- **Features**: Thermal sight, stabilized, protected gunner
-- **Role**: Anti-infantry
+All: 0 crew, 650 HP, 6 min respawn, 300 ammo points
 
 ---
 
-## Armor & Protection
+## Statistics
 
-Minimal armor - the Humvee prioritizes mobility:
+| Stat | Value |
+|------|-------|
+| Tickets | 5 |
+| Crew | 0 |
+| Passengers | 4-5 |
+| HP | 650 |
+| Respawn | 6 min |
+| Ammo Points | 300 |
 
-- **Frontal**: Limited small arms protection
-- **Side/Rear**: Vulnerable to all weapons
-- **Open Top Variants**: Gunner fully exposed
-- **CROWS Variants**: Gunner protected inside
+---
+
+## M1151 M2HB
+
+Open-top .50 cal variant.
+
+| Weapon | Caliber | Rounds |
+|--------|---------|--------|
+| M2HB | 12.7mm (.50 BMG) | 10x 100 |
+
+**Features:**
+- Open-top mount
+- Gunner exposed
+- 5 passengers
+
+---
+
+## M1151 M2HB CROWS
+
+Protected .50 cal variant.
+
+| Weapon | Caliber | Rounds |
+|--------|---------|--------|
+| M2HB CROWS | 12.7mm (.50 BMG) | 400 |
+
+**Features:**
+- CROWS remote turret
+- Gunner protected inside
+- Thermal/zoom optics
+- 4 passengers
+
+---
+
+## M1151 Mk19
+
+Open-top 40mm AGL variant.
+
+| Weapon | Caliber | Notes |
+|--------|---------|-------|
+| Mk19 | 40mm | Open-top mount |
+
+**Features:**
+- Automatic grenade launcher
+- Area suppression
+- Gunner exposed
+- 5 passengers
+
+---
+
+## Armor Protection
+
+| Area | Protection |
+|------|------------|
+| **Overall** | Minimal |
+| **Frontal** | Light small arms only |
+| **Side/Rear** | Vulnerable to all weapons |
+
+**Weakest light vehicle** - Even HMGs destroy quickly.
+
+---
+
+## Gameplay
+
+- **No crewman kit** - Any kit can drive/gun
+- **Minimal armor** - 650 HP only
+- **CROWS preferred** - Only protected variant
+- **Open-top danger** - Gunner easily killed
+- **Fast transport** - Light vehicle mobility
+- **INS variant** - Technical-style captured Humvee
 
 ---
 
 ## Tactical Tips
 
-1. **CROWS variants preferred** - Gunner protection is crucial
-2. **Avoid contact with armor** - Even IFVs will destroy you instantly
-3. **Speed is survival** - Keep moving at all times
-4. **Use as transport** - Get troops where they need to be fast
-5. **Mk19 for infantry suppression** - Area denial weapon
-6. **Flank and harass** - Don't engage head-on
-7. **Scout ahead** - Expendable recon vehicle
+1. **CROWS preferred** - Only protected gunner
+2. **Avoid all armor** - Can't survive anything
+3. **Speed is survival** - Don't stop moving
+4. **Use for transport** - Not for combat
+5. **Mk19 suppression** - Area denial
+6. **Scout role** - Expendable recon
+7. **Flank only** - Never engage head-on
+8. **INS Humvee** - Same stats, captured vehicle
 
 ---
 
-## Comparison to M-ATV
+## Comparison
 
-| Feature | M1151 | M-ATV |
-|---------|-------|-------|
-| HP | 750 | 1000 |
-| Armor | Minimal | Moderate (MRAP) |
-| Passengers | 3 | 4 |
-| Protection | Low | Better (V-hull) |
-| Role | Light transport | Protected transport |
+| Vehicle | HP | Armor | Role |
+|---------|-----|-------|------|
+| **M1151** | 650 | Minimal | Light transport |
+| M-ATV | 750 | MRAP | Protected light |
+| LUVW | 750 | Light | CAF equivalent |
+| Tigr-M | 750 | Light | RGF equivalent |
 
 ---
 
-## Role in Battlegroups
+## See Also
 
-The M1151 HMMWV appears in:
+- [M-ATV](/vehicles/m-atv) - US Army protected light vehicle
+- [LUVW](/vehicles/luvw) - CAF equivalent
+- [Tigr-M](/vehicles/tigr-m) - RGF equivalent
+- [Technical](/vehicles/technical) - INS/IMF light vehicle
 
-- **1st Marines RCT (Light Infantry)** - Primary transport
-- **2nd Marine Logistics Group** - Utility vehicle
-- **Light/Support** battlegroups - Fast transport

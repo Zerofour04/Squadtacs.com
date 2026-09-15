@@ -1,60 +1,68 @@
 ---
-title: "ZSD05"
-description: "Chinese high-speed amphibious APC with planing hull design, capable of 30 km/h water speed"
-category: "apc"
+title: ZSD05
+description: Chinese high-speed amphibious APC with planing hull design. APC and Logistics variants with 30 km/h water speed.
+metaDescription: Master the ZSD05 in Squad. Guide to the amphibious APC with fastest water speed and no Crewman kit required.
+category: apc
 factions: [PLA, PLANMC, PLAAGF]
-image: "ZSD05.webp"
+image: ZSD05.webp
 tickets: 5
-respawn: "10 min"
 crew: 2
 passengers: 8
----
-
-# ZSD05
-
-The **ZSD05** (Type 05) is a high-speed amphibious armored personnel carrier designed for rapid amphibious assault operations. Its unique planing hull allows water speeds of 30 km/h - the fastest of any vehicle in Squad.
-
+hp: 1250
+ammoPoints: 600
+constructionPoints: 0
+armament:
+  - name: QJZ89
+    caliber: 12.7mm
+    ammo: HMG
+    rounds: 0
+order: 85
 ---
 
 ## Overview
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+The **ZSD05** (Type 05) is a high-speed amphibious armored personnel carrier serving PLA, PLANMC, and PLAAGF. Part of the Type 05 family, it shares the ZBD05's hydroplane design for 30 km/h water speed - the fastest of any vehicle in Squad.
 
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">5</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Tickets</div>
-</div>
+**Key Features:**
 
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">10 min</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Respawn</div>
-</div>
+- **30 km/h water speed** - Fastest amphibious vehicle in Squad
+- **5 tickets** - Low cost like light vehicles
+- **No Crewman kit required** - Suited for infantry beach assaults
+- **2 variants** - APC (protected HMG) and Logistics (3000 supply)
+- **Open-top gunner** - Exposed but APC has armor plates
 
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">2</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Crew</div>
-</div>
+---
 
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">1250</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">HP</div>
-</div>
+## Statistics
 
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">30 km/h</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Water Speed</div>
-</div>
-
-</div>
+| Stat | ZSD05 APC | ZSD05 Logistics |
+|------|-----------|-----------------|
+| Tickets | 5 | 5 |
+| Crew | 2 | 2 |
+| Passengers | 8 | 5 |
+| HP | 1250 | 1250 |
+| Ammo Points | 600 | 1500 (max 3000) |
+| Construction | 0 | 1500 (max 3000) |
+| Weapon | QJZ89 12.7mm | QJY88 5.8mm |
+| Protection | Armored plates | None |
 
 ---
 
 ## Variants
 
-| Variant | Weapon | Passengers | Supply Capacity |
-|---------|--------|------------|-----------------|
-| ZSD05 APC | QJZ89 12.7mm (armored turret) | 8 | 600 ammo pts |
-| ZSD05 Logistics | QJY88 5.8mm (open) | 5 | 3000 ammo/build |
+| Variant | Weapon | Protection | Passengers | Supply |
+|---------|--------|------------|------------|--------|
+| **ZSD05 APC** | QJZ89 12.7mm HMG | Armor plates | 8 | 600 ammo |
+| **ZSD05 Logistics** | QJY88 5.8mm GPMG | None! | 5 | 1500 ammo + 1500 construction |
+
+---
+
+## Armament
+
+| Variant | Weapon | Caliber | Notes |
+|---------|--------|---------|-------|
+| ZSD05 APC | QJZ89 | 12.7mm | Open-top with armor plate protection |
+| ZSD05 Logistics | QJY88 | 5.8mm | Open-top, NO protection |
 
 ---
 
@@ -65,19 +73,28 @@ The **ZSD05** (Type 05) is a high-speed amphibious armored personnel carrier des
 - Planing hull for high-speed amphibious assault
 - Low ticket cost (5 tickets)
 - No Crewman kit required
-- Logistics variant can carry 3000 supplies
+- Logistics variant carries 3000 total supply
 
 **Weaknesses:**
-- Open-top turret leaves gunner exposed
-- Light armor
+- Logistics gunner has NO protection
+- Light armor overall
 - Vulnerable to HMG and autocannon fire
 
 ---
 
 ## Tactical Notes
 
-- The ZSD05 is specifically designed for rapid amphibious assault - use its 30 km/h water speed advantage
-- Shares the same hull design as the ZBD05 IFV (APC variant of Type 05 family)
-- APC variant has armored protection for the gunner, Logistics variant does not
-- Does NOT require Crewman kit - suitable for infantry squads conducting beach assaults
-- Available to PLA, PLANMC, and PLAAGF factions
+- Shares hull with ZBD05 IFV - designed for rapid amphibious assault
+- Use 30 km/h water speed advantage for beach landings
+- APC has armor plates protecting gunner, Logistics does NOT
+- No Crewman kit required - suitable for infantry squads
+- Logistics can deliver 3000 total supply (1500 ammo + 1500 construction)
+- Same hydroplane design as ZBD05
+
+---
+
+## See Also
+
+- [ZBD05](/vehicles/zbd05) - Type 05 IFV variant
+- [ZTD05](/vehicles/ztd05) - Type 05 MGS variant
+- [AAVP-7A1](/vehicles/aavp-7a1) - USMC amphibious APC

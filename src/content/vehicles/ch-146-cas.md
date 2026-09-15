@@ -3,7 +3,7 @@ title: "CH-146 Griffon CAS"
 description: "Canadian attack helicopter with GAU-19 minigun and rocket pods"
 category: "helicopter"
 factions: [CAF]
-image: "CH-146 CAS.webp"
+image: CH-146 CAS.webp
 tickets: 10
 respawn: "10 min"
 crew: 2

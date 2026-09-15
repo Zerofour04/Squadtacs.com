@@ -1,8 +1,38 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { vehicleCategories, getVehicleCount } from '../../data/vehicles';
+import { getCollection } from 'astro:content';
 
 const totalVehicles = getVehicleCount();
+
+// Get all vehicle content files to create links
+const vehicleContent = await getCollection('vehicles');
+const vehicleSlugs = new Set(vehicleContent.map(v => v.id.replace('.md', '')));
+
+// Pre-compute slug map for all vehicles (using plain object for Astro compatibility)
+const vehicleSlugMap: Record<string, string> = {};
+
+vehicleCategories.forEach(cat => {
+  cat.subcategories.forEach(sub => {
+    sub.vehicles.forEach(vehicle => {
+      // Try exact match first (lowercase, replace spaces with hyphens)
+      const directSlug = vehicle.name.toLowerCase().replace(/\s+/g, '-').replace(/[()]/g, '');
+      if (vehicleSlugs.has(directSlug)) {
+        vehicleSlugMap[vehicle.name] = directSlug;
+        return;
+      }
+
+      // Try simplified version (remove variant suffixes)
+      const simplifiedName = vehicle.name
+        .replace(/\s+(M2A1|M2|M240|M134|MG3|Kord|PKM|PKT|QJZ89|QJY88|QLZ87|HJ8|TOW|Kornet|Spandrel|Logistics|Transport|CAS|Scout|RWS|CROWS|Mk19|AGS-17|NSV|DShK|UB-32|ZU-23-2|Small|Black Hawk|Venom|Griffon).*$/i, '')
+        .trim();
+      const simpleSlug = simplifiedName.toLowerCase().replace(/\s+/g, '-').replace(/[()]/g, '');
+      if (vehicleSlugs.has(simpleSlug)) {
+        vehicleSlugMap[vehicle.name] = simpleSlug;
+      }
+    });
+  });
+});
 ---
 
 <BaseLayout title="All Squad Vehicles - Tanks, IFVs, Helicopters & APCs (2026)" description="Complete Squad vehicle guide: All tanks, IFVs, APCs, helicopters & trucks. Armor values, weak spots, weapons, crew requirements and tactics.">
@@ -15,8 +45,34 @@ const totalVehicles = getVehicleCount();
     <p class="text-accent mt-2 text-sm">{totalVehicles} vehicles documented</p>
   </div>
 
+  <!-- Search Bar -->
+  <div class="mb-8">
+    <div class="relative max-w-md">
+      <input
+        type="text"
+        id="vehicle-search"
+        placeholder="Search vehicles... (e.g. LAV-25, T-90A)"
+        class="w-full px-4 py-3 pl-11 bg-bg-card border border-border rounded-lg text-text placeholder:text-text-muted focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors"
+      />
+      <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-text-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+      </svg>
+      <button
+        type="button"
+        id="search-clear"
+        class="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-text-muted hover:text-text hidden"
+        aria-label="Clear search"
+      >
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    <p id="search-results" class="text-sm text-text-muted mt-2 hidden"></p>
+  </div>
+
   <!-- Vehicle Categories Browser -->
-  <section class="mb-12">
+  <section class="mb-12" id="vehicle-categories">
     <h2 class="font-display text-2xl font-bold text-text mb-6 uppercase">Browse by Category</h2>
 
     <div class="space-y-6">
@@ -68,7 +124,11 @@ const totalVehicles = getVehicleCount();
                 <div class="p-4 pt-0">
                   <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mt-4">
                     {subcategory.vehicles.map((vehicle) => (
-                      <div class="group/card flex items-center gap-3 bg-bg rounded-lg border border-border/50 hover:border-accent/50 transition-all p-2">
+                      <div
+                        class="group/card vehicle-card flex items-center gap-3 bg-bg rounded-lg border border-border/50 hover:border-accent/50 transition-all p-2"
+                        data-vehicle-name={vehicle.name.toLowerCase()}
+                        data-vehicle-factions={vehicle.factions.join(',').toLowerCase()}
+                      >
                         {/* Vehicle Image - Clickable for Lightbox */}
                         <button
                           type="button"
@@ -86,9 +146,15 @@ const totalVehicles = getVehicleCount();
                         </button>
                         {/* Vehicle Name */}
                         <div class="flex-1 min-w-0">
-                          <p class="text-sm text-text truncate group-hover/card:text-accent transition-colors" title={vehicle.name}>
-                            {vehicle.name}
-                          </p>
+                          {vehicleSlugMap[vehicle.name] ? (
+                            <a href={`/vehicles/${vehicleSlugMap[vehicle.name]}`} class="text-sm text-text truncate group-hover/card:text-accent transition-colors hover:underline block" title={vehicle.name}>
+                              {vehicle.name}
+                            </a>
+                          ) : (
+                            <p class="text-sm text-text truncate group-hover/card:text-accent transition-colors" title={vehicle.name}>
+                              {vehicle.name}
+                            </p>
+                          )}
                         </div>
                         {/* Faction Flags */}
                         <div class="flex items-center gap-1 flex-shrink-0">
@@ -427,6 +493,107 @@ const totalVehicles = getVehicleCount();
       });
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') closeLightbox();
+      });
+
+      // Vehicle Search Functionality
+      const searchInput = document.getElementById('vehicle-search') as HTMLInputElement;
+      const searchClear = document.getElementById('search-clear');
+      const searchResults = document.getElementById('search-results');
+      const vehicleCards = document.querySelectorAll('.vehicle-card') as NodeListOf<HTMLElement>;
+      const allDetails = document.querySelectorAll('details');
+
+      let highlightedCards: HTMLElement[] = [];
+
+      const clearHighlight = () => {
+        highlightedCards.forEach(card => {
+          card.classList.remove('ring-2', 'ring-accent', 'bg-accent/10');
+        });
+        highlightedCards = [];
+      };
+
+      const resetSearch = () => {
+        clearHighlight();
+        vehicleCards.forEach(card => {
+          card.style.display = '';
+          card.classList.remove('hidden');
+        });
+        allDetails.forEach(d => d.removeAttribute('open'));
+        searchClear?.classList.add('hidden');
+        searchResults?.classList.add('hidden');
+      };
+
+      const performSearch = (query: string) => {
+        const q = query.toLowerCase().trim();
+
+        if (!q) {
+          resetSearch();
+          return;
+        }
+
+        searchClear?.classList.remove('hidden');
+        clearHighlight();
+
+        let matchCount = 0;
+
+        // Close all accordions first
+        allDetails.forEach(d => d.removeAttribute('open'));
+
+        vehicleCards.forEach(card => {
+          const name = card.dataset.vehicleName || '';
+          const factions = card.dataset.vehicleFactions || '';
+          const matches = name.includes(q) || factions.includes(q);
+
+          if (matches) {
+            matchCount++;
+            card.style.display = '';
+            card.classList.remove('hidden');
+
+            // Highlight this match
+            card.classList.add('ring-2', 'ring-accent', 'bg-accent/10');
+            highlightedCards.push(card);
+
+            // Find and open parent accordion
+            const details = card.closest('details');
+            if (details) {
+              details.setAttribute('open', '');
+            }
+          } else {
+            // Don't hide non-matches, just don't highlight them
+            card.style.display = '';
+          }
+        });
+
+        // Show results count
+        if (searchResults) {
+          searchResults.textContent = matchCount > 0
+            ? `${matchCount} vehicle${matchCount !== 1 ? 's' : ''} found`
+            : 'No vehicles found';
+          searchResults.classList.remove('hidden');
+        }
+      };
+
+      // Debounce function for live search
+      let searchTimeout: ReturnType<typeof setTimeout>;
+      searchInput?.addEventListener('input', (e) => {
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(() => {
+          performSearch((e.target as HTMLInputElement).value);
+        }, 150);
+      });
+
+      // Clear button
+      searchClear?.addEventListener('click', () => {
+        if (searchInput) searchInput.value = '';
+        resetSearch();
+        searchInput?.focus();
+      });
+
+      // Escape key to clear
+      searchInput?.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          searchInput.value = '';
+          resetSearch();
+        }
       });
     });
   </script>

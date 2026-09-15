@@ -1,112 +1,106 @@
 ---
-title: "BTR-ZD"
-description: "Russian airborne anti-aircraft vehicle with ZU-23-2 twin autocannon and amphibious capability"
-category: "anti-air"
-factions: [VDV]
-image: "BTR-ZD.webp"
+title: BTR-ZD
+description: Russian airborne AA vehicle with ZU-23-2 twin autocannon, Kord HMG, and amphibious capability for VDV.
+metaDescription: Master the BTR-ZD in Squad. Complete guide to ZU-23-2 AA gun, Kord HMG and tactics for VDV airborne forces.
+category: apc
+image: BTR-ZD.webp
+# Core Stats
 tickets: 5
-respawn: "10 min"
 crew: 1
 passengers: 9
----
-
-# BTR-ZD
-
-The **BTR-ZD** "Skrezhet" (Grind) is an air-droppable, amphibious anti-aircraft vehicle based on the BTR-D chassis. It mounts the devastating ZU-23-2 twin 23mm autocannon, making it the first dedicated AA platform for conventional forces in Squad.
-
+hp: 1250
+respawn: 10 min
+# Logistics
+ammoPoints: 600
+constructionPoints: 0
+# Armament
+armament:
+  - name: ZU-23-2
+    caliber: 23mm
+    ammo: AA Autocannon
+    rounds: 1000
+  - name: Kord
+    caliber: 12.7mm
+    ammo: Open top
+    rounds: 1000
+  - name: 2x PKT Hull
+    caliber: 7.62mm
+    ammo: Forward only
+    rounds: 2000
+countermeasures: Smoke Launcher (2 charges)
+factions: [VDV]
+order: 41
 ---
 
 ## Overview
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+The **BTR-ZD** "Skrezhet" is an airborne AA vehicle based on the BMD-1 chassis. Introduced in V5.0 for VDV, it's the first dedicated AA vehicle for conventional forces. Mounts devastating ZU-23-2 twin autocannon.
 
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">5</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Tickets</div>
-</div>
+**Key Features:**
 
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">10 min</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Respawn</div>
-</div>
-
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">1</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Crew</div>
-</div>
-
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">4</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Gunners</div>
-</div>
-
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">1250</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">HP</div>
-</div>
-
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">🌊</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Amphibious</div>
-</div>
-
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">600</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Ammo Pts</div>
-</div>
-
-</div>
+- **ZU-23-2 23mm** - Twin AA autocannon (1000 rounds)
+- **Kord 12.7mm** - Secondary HMG (1000 rounds)
+- **2x PKT Hull** - Forward-firing MGs (2000 rounds)
+- **4 gunner positions** - Most of any vehicle
+- **Fully amphibious** - Crosses water
+- **No crewman kit** required
 
 ---
 
 ## Armament
 
-| Weapon | Caliber | Role |
-|--------|---------|------|
-| ZU-23-2 Autocannon | 23mm | Primary anti-air |
-| Kord HMG (open turret) | 12.7mm | Secondary fire support |
-| 2x PKT (forward-firing) | 7.62mm | Driver-controlled (2000 rds) |
-| Smoke Launchers | — | 2 salvos |
+| Weapon | Caliber | Notes | Rounds |
+|--------|---------|-------|--------|
+| ZU-23-2 | 23mm | Twin AA gun | 1000 |
+| Kord | 12.7mm | Open top HMG | 1000 |
+| 2x PKT Hull | 7.62mm | Forward only | 2000 |
+| Smoke Launcher | 40mm | - | 2 |
 
 ---
 
 ## Crew Positions
 
-| Position | Role | Equipment |
-|----------|------|-----------|
-| Driver | Mobility | 2x PKT forward-firing |
-| Gunner 1 | Anti-air | ZU-23-2 twin 23mm |
-| Gunner 2 | Fire support | Kord 12.7mm HMG |
-| Gunner 3 | Left PKT | Forward-firing MG |
-| Gunner 4 | Right PKT | Forward-firing MG |
+| Position | Role | Notes |
+|----------|------|-------|
+| **Driver** | Mobility | Controls 2x PKT hull guns |
+| **Gunner 1** | ZU-23-2 | Primary AA weapon |
+| **Gunner 2** | Kord | Secondary fire support |
+| **Gunner 3** | Left PKT | Forward-firing |
+| **Gunner 4** | Right PKT | Forward-firing |
+
+All positions: No crewman kit required
 
 ---
 
-## Characteristics
+## Gameplay
 
-**Strengths:**
-- ZU-23-2 devastates helicopters with rapid 23mm fire
-- Most gunner positions of any vehicle (4)
-- Effective against light vehicles and infantry too
-- Fully amphibious - crosses water obstacles
-- Low ticket cost for its firepower
-
-**Weaknesses:**
-- All gunners are exposed - no armor protection
-- Light armor (1250 HP) - vulnerable to heavy weapons
-- No stabilization - must stop for accurate fire
-- Open-top design means easy crew kills
-- Requires multiple crew for full effectiveness
+- **First AA vehicle** for conventional forces
+- **4 gunner positions** - most in game
+- ZU-23-2 destroys helicopters and UAVs
+- Also effective vs light vehicles and IFVs
+- Kord for sustained fire during reload
+- All gunners **exposed** - no protection
+- Can transport 9 passengers
+- Based on BTR-D chassis (BMD-1)
+- Fully amphibious
 
 ---
 
-## Tactical Notes
+## Tactical Tips
 
-- The BTR-ZD is the first dedicated AA vehicle for conventional forces in Squad
-- The ZU-23-2 has extreme rate of fire - lead helicopters significantly
-- 23mm rounds are also devastating against IFVs and APCs
-- Use the Kord for sustained fire when 23mm is reloading
-- Position on high ground for best engagement angles against aircraft
-- Crew the secondary weapons for 360-degree coverage
-- Variant of the BTR-D APC chassis
-- Exclusive to VDV faction
+1. **Lead helicopters** - ZU-23-2 has high ROF
+2. **High ground** - best AA engagement angles
+3. **Crew all positions** - 360° coverage
+4. **23mm vs IFVs** - penetrates light armor
+5. **Kord backup** - use during 23mm reload
+6. **Protect gunners** - all exposed to fire
+7. **Resupply infantry** - 600 ammo points
+
+---
+
+## See Also
+
+- [BTR-D](/vehicles/btr-d) - Base APC variant
+- [MT-LB ZU-23-2](/vehicles/mt-lb) - Similar AA role
+- [BMD-4M](/vehicles/bmd-4m) - Related chassis
+

@@ -1,93 +1,168 @@
 ---
 title: M1126 Stryker
-description: American 8x8 wheeled armored personnel carrier featuring CROWS remote weapon system and high mobility for rapid deployment.
+description: US 8x8 APC with CROWS M2 or M240B variants for US Army.
+metaDescription: Master the M1126 Stryker in Squad. Complete guide to CROWS variants for US Army.
 category: apc
 image: M1126 CROWS M2.webp
-tickets: 6
-crew: 2
-passengers: 9
+# Core Stats (M2 variant)
+tickets: 10
+crew: 0
+passengers: 10
 hp: 1250
-respawn: 6 min
+respawn: 10 min
+speed: 90
+reverseSpeed: 15
+# Logistics
+ammoPoints: 600
+constructionPoints: 0
+# Armament (M2 variant)
+armament:
+  - name: M2A1 CROWS
+    caliber: 12.7mm
+    ammo: .50 BMG
+    rounds: 400
 factions: [USA]
-weapons:
-  - M2A1 .50 Cal CROWS (400 rounds) or M240B 7.62mm CROWS (800 rounds)
 order: 20
 ---
 
 ## Overview
 
-The M1126 Stryker is an 8-wheeled armored personnel carrier that provides rapid deployment capability and excellent mobility for the US Army. Equipped with the CROWS (Common Remotely Operated Weapon Station), it offers protected firepower while keeping the operator safely inside the vehicle.
+The **M1126 Stryker** is a US Army 8-wheeled APC. Based on the Swiss Piranha III, it was adopted in 2002 as the standard APC and ICV alongside the M113. Features CROWS remote weapon system for protected gunner operation.
 
----
+**Key Features:**
 
-## Crew Positions
-
-| Position | Role | Equipment |
-|----------|------|-----------|
-| **Driver** | Vehicle movement | Periscope, smoke launcher |
-| **Gunner** | CROWS operation | Thermal sight, zoom, rangefinder |
-| **Passengers** (9) | Dismount infantry | Exit via rear ramp |
+- **2 variants** - CROWS M2 HB (10 tickets) and CROWS M240B (5 tickets)
+- **No crewman kit** required
+- **10 passengers** - Full squad transport
+- **CROWS system** - Protected gunner with thermal/zoom
+- **90 km/h** top speed
+- **US Army exclusive**
 
 ---
 
 ## Variants
 
-### M1126 CROWS M2A1
-- **Weapon**: M2A1 .50 caliber heavy machine gun
-- **Ammunition**: 400 rounds
-- **Role**: Anti-vehicle, anti-infantry
+| Variant | Tickets | Weapon | Rounds | Role |
+|---------|---------|--------|--------|------|
+| **CROWS M2 HB** | 10 | M2A1 .50 cal | 400 | Anti-vehicle |
+| **CROWS M240B** | 5 | M240B 7.62mm | 750 | Anti-infantry |
 
-### M1126 CROWS M240B
-- **Weapon**: M240B 7.62mm machine gun
-- **Ammunition**: 800 rounds
-- **Role**: Anti-infantry focused
+Both: 0 crew, 10 passengers, 1250 HP, 10 min respawn, 600 ammo points
+
+---
+
+## Statistics
+
+| Stat | Value |
+|------|-------|
+| Tickets | 5-10 |
+| Crew | 0 |
+| Passengers | 10 |
+| HP | 1250 |
+| Respawn | 10 min |
+| Speed | 90 km/h |
+| Reverse | 15 km/h |
+| Ammo Points | 600 |
+
+---
+
+## CROWS M2 HB
+
+Heavy machine gun variant for anti-vehicle work.
+
+| Weapon | Caliber | Rounds |
+|--------|---------|--------|
+| M2A1 Browning CROWS | 12.7mm (.50 BMG) | 400 |
+| Smoke Launcher | 40mm | 2 |
+
+**Role:** Anti-vehicle, anti-infantry, protected gunner
+
+---
+
+## CROWS M240B
+
+General purpose machine gun variant.
+
+| Weapon | Caliber | Rounds |
+|--------|---------|--------|
+| M240B CROWS | 7.62mm | 750 |
+| Smoke Launcher | 40mm | 2 |
+
+**Role:** Anti-infantry, protected gunner
 
 ---
 
 ## CROWS System Features
 
-The Common Remotely Operated Weapon Station provides:
-- **Thermal Imaging**: Day/night combat capability
-- **3x Zoom Levels**: For target identification
-- **Laser Rangefinder**: Accurate distance measurement
-- **Stabilization**: Fire on the move capability
-- **Protected Operation**: Gunner remains inside the vehicle
+| Feature | Capability |
+|---------|------------|
+| **Thermal imaging** | Day/night combat |
+| **3x zoom levels** | Target identification |
+| **Laser rangefinder** | Range measurement |
+| **Stabilization** | Fire on move |
+| **Protected** | Gunner inside vehicle |
+| **360° traverse** | Full coverage |
 
 ---
 
 ## Armor & Protection
 
-The Stryker features steel and ceramic composite armor:
-- **Frontal Arc**: Protection against heavy machine guns
-- **Side/Rear**: Vulnerable to RPGs and heavy weapons
-- **Mine Protection**: V-shaped hull design
-- **Slat Armor**: Some variants feature cage armor for RPG protection
+| Area | Protection |
+|------|------------|
+| **Front** | 14.5mm resistant (.50 cal proof) |
+| **Side/Rear** | Weaker, vulnerable to RPGs |
+| **Roof** | Weak point |
+| **Rear doors** | Weak point |
 
-### Smoke Systems
-- Smoke grenade launchers for concealment
+**Additional Systems:**
+- Smoke generator (driver, hold LMB)
+- Smoke grenade launchers (2 charges)
+
+---
+
+## Gameplay
+
+- **No crewman kit** - Any kit can drive/gun
+- **Battle taxi** - Drop squads, provide overwatch
+- **CROWS protected** - Gunner inside, uses optics
+- **Fast 8x8** - High speed and acceleration
+- **M2 variant** - Can engage light armor
+- **M240 variant** - Anti-infantry only
+- **Smoke systems** - Generator + grenades
+
+---
+
+## Vehicle Matchups
+
+| Enemy | Threat Level | Notes |
+|-------|--------------|-------|
+| BTR-80/82A | Medium | Similar speed, weaker armor |
+| FV432 | Low | Slower, same armament |
+| LAV III | Medium | Nearly identical stats |
+| LAV-25/Coyote | High | 25mm autocannon |
+| LAV 6.0 | Very High | Avoid, outgunned |
+| MT-LB variants | Low-High | 30mm variant dangerous |
+| ZBL08 | Very High | Avoid, 30mm + ATGMs |
 
 ---
 
 ## Tactical Tips
 
-1. **Use as a battle taxi** - Drop infantry near objectives, then provide overwatch
-2. **Stay mobile** - Your speed is your best defense
-3. **Avoid IFVs** - Autocannons will destroy you quickly
-4. **Support from range** - Use thermals and zoom to engage from distance
-5. **Don't expose to AT threats** - RPGs and LAWs are lethal
-6. **Infantry coordination** - Your passengers are your force multiplier
-7. **Use smoke** - Cover dismounting infantry or retreat
+1. **Battle taxi role** - Transport full squad
+2. **CROWS advantage** - Thermal, zoom, protection
+3. **Avoid IFVs** - Autocannons destroy you
+4. **Use smoke** - Driver + grenade systems
+5. **Stay mobile** - Speed is your defense
+6. **M2 for vehicles** - .50 cal can hurt APCs
+7. **M240 for infantry** - More ammo, less threat
+8. **Flanking attacks** - Target enemy rear armor
 
 ---
 
-## Role in Battlegroups
+## See Also
 
-The M1126 Stryker is the backbone of:
-- **Motorized** battlegroups (2nd Cavalry Regiment) - Multiple Strykers
-- **Combined Arms** battlegroups - Supporting role
+- [M1128](/vehicles/m1128) - US MGS (105mm Stryker variant)
+- [M113A3](/vehicles/m113a3) - US Army tracked APC
+- [LAV III](/vehicles/lav-iii) - CAF equivalent
+- [BTR-80](/vehicles/btr-80) - RGF equivalent
 
----
-
-## M1128 Mobile Gun System
-
-A related variant, the M1128 MGS, replaces the CROWS with a 105mm cannon, providing direct fire support capability. See the M1128 MGS page for details.

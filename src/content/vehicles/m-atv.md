@@ -1,108 +1,168 @@
 ---
 title: M-ATV
-description: American MRAP (Mine-Resistant Ambush Protected) vehicle providing infantry transport with excellent protection against IEDs and small arms.
+description: US MRAP with 6 variants - M2HB, M240B, CROWS, TOW, Mk19 for US Army and USMC.
+metaDescription: Master the M-ATV in Squad. Complete guide to all 6 variants for US Army and USMC.
 category: light
 image: M-ATV M2.webp
+# Core Stats
 tickets: 5
-crew: 2
-passengers: 4
-hp: 1000
-respawn: 5 min
+crew: 0
+passengers: 5
+hp: 750
+respawn: 6 min
+# Logistics
+ammoPoints: 300
+constructionPoints: 0
+# Armament (M2HB variant)
+armament:
+  - name: M2A1
+    caliber: 12.7mm
+    ammo: .50 BMG
+    rounds: 1000
 factions: [USA, USMC]
-weapons:
-  - M2A1 .50 Cal (400 rounds) or M240B 7.62mm (800 rounds) or Mk19 40mm (96 rounds)
-order: 25
+order: 35
 ---
 
 ## Overview
 
-The M-ATV (MRAP All-Terrain Vehicle) is a highly mobile, mine-resistant vehicle designed for infantry transport and patrol operations. Its V-shaped hull provides excellent protection against IEDs and mines, making it ideal for operations in contested areas.
+The **M-ATV** (MRAP All-Terrain Vehicle) is the US light attack vehicle. Introduced in A9.4 for US Army, it features 6 variants and is also used by USMC. Replaced the Humvee in A9.12 due to licensing.
 
----
+**Key Features:**
 
-## Crew Positions
-
-| Position | Role | Equipment |
-|----------|------|-----------|
-| **Driver** | Vehicle movement | Periscope |
-| **Gunner** | Weapon operation | Open turret or CROWS |
-| **Passengers** (4) | Dismount infantry | Protected compartment |
+- **6 variants** - M2HB, M240B, CROWS x2, TOW, Mk19
+- **No crewman kit** required
+- **MRAP design** - V-hull IED protection
+- **105 km/h** top speed
+- **Light armor** - Small arms resistant
+- **US Army + USMC**
 
 ---
 
 ## Variants
 
-### M-ATV M2A1
-
-- **Weapon**: M2A1 .50 caliber heavy machine gun
-- **Ammunition**: 400 rounds
-- **Mount**: Open turret (exposed gunner)
-- **Role**: Anti-vehicle, anti-infantry
-
-### M-ATV M240B
-
-- **Weapon**: M240B 7.62mm machine gun
-- **Ammunition**: 800 rounds
-- **Mount**: Open turret (exposed gunner)
-- **Role**: Anti-infantry
-
-### M-ATV CROWS M2
-
-- **Weapon**: M2A1 .50 Cal via CROWS
-- **Ammunition**: 400 rounds
-- **Features**: Thermal sight, stabilized, protected gunner
-- **Role**: Anti-vehicle, anti-infantry
-
-### M-ATV CROWS M240
-
-- **Weapon**: M240B via CROWS
-- **Ammunition**: 800 rounds
-- **Features**: Thermal sight, stabilized, protected gunner
-- **Role**: Anti-infantry
-
-### M-ATV TOW
-
-- **Weapon**: BGM-71 TOW ATGM
-- **Ammunition**: 3 missiles
-- **Features**: Wire-guided anti-tank capability
-- **Role**: Anti-armor
-
-### M-ATV Mk19
-
-- **Weapon**: Mk19 40mm automatic grenade launcher
-- **Ammunition**: 96 grenades
-- **Mount**: Open turret
-- **Role**: Area suppression, light vehicles
+| Variant | Tickets | Passengers | Weapon | Gunner |
+|---------|---------|------------|--------|--------|
+| **M2HB** | 5 | 5 | M2A1 .50 | Exposed |
+| **M240B** | 5 | 5 | M240B 7.62 | Exposed |
+| **M2HB CROWS** | 5 | 4 | M2A1 .50 | Protected |
+| **M240B CROWS** | 5 | 4 | M240B 7.62 | Protected |
+| **TOW** | 10 | 5 | BGM-71 TOW | Exposed |
+| **Mk19** | 5 | 5 | Mk19 40mm | Exposed |
 
 ---
 
-## Armor & Protection
+## Statistics
 
-The M-ATV features excellent mine and IED protection:
+| Stat | Standard | TOW |
+|------|----------|-----|
+| Tickets | 5 | 10 |
+| Crew | 0 | 0 |
+| HP | 750 | 750 |
+| Respawn | 6 min | 10 min |
+| Ammo Points | 300 | 150 |
 
-- **Frontal Arc**: Resistant to heavy machine gun fire
-- **Side/Rear**: Protected against small arms and shrapnel
-- **Underbody**: V-shaped hull for mine/IED protection
-- **Windows**: Ballistic glass
+---
+
+## M-ATV M2HB
+
+Open-top .50 cal variant.
+
+| Weapon | Caliber | Rounds |
+|--------|---------|--------|
+| M2A1 | 12.7mm (.50 BMG) | 10x 100 |
+
+**Role:** Anti-vehicle, anti-infantry (exposed gunner)
+
+---
+
+## M-ATV M240B
+
+Open-top GPMG variant.
+
+| Weapon | Caliber | Rounds |
+|--------|---------|--------|
+| M240B | 7.62mm | 10x 200 |
+
+**Role:** Anti-infantry (exposed gunner)
+
+---
+
+## M-ATV M2HB CROWS
+
+Protected .50 cal variant.
+
+| Weapon | Caliber | Rounds |
+|--------|---------|--------|
+| M2A1 CROWS | 12.7mm | 400 |
+
+**Features:** Zoom, rangefinder, turret indicator, protected gunner
+
+---
+
+## M-ATV M240B CROWS
+
+Protected GPMG variant.
+
+| Weapon | Caliber | Rounds |
+|--------|---------|--------|
+| M240B CROWS | 7.62mm | 750 |
+
+**Features:** Zoom, rangefinder, turret indicator, protected gunner
+
+---
+
+## M-ATV TOW
+
+Anti-tank missile variant.
+
+| Weapon | Caliber | Missiles |
+|--------|---------|----------|
+| BGM-71 TOW | 152mm | 6 |
+
+**Role:** Anti-armor (equivalent to BRDM-2 Spandrel)
+
+---
+
+## M-ATV Mk19
+
+Automatic grenade launcher variant.
+
+| Weapon | Caliber | Rounds |
+|--------|---------|--------|
+| Mk19 | 40mm | 10x 48 |
+
+**Role:** Area suppression, light vehicles
+
+---
+
+## Gameplay
+
+- **No crewman kit** - Any kit can drive/gun
+- **MRAP armor** - V-hull IED protection
+- **Light armor** - Withstands small arms
+- **Open-top** - M2HB, M240B, TOW, Mk19 expose gunner
+- **CROWS protected** - Gunner inside vehicle
+- **TOW expensive** - 10 tickets, mobile ATGM
+- **Replaced Humvee** - A9.12 licensing change
 
 ---
 
 ## Tactical Tips
 
-1. **Use as scout vehicle** - Fast and well-protected for reconnaissance
-2. **Avoid heavy armor** - No chance against IFVs or MBTs
-3. **CROWS variants preferred** - Gunner stays protected inside
-4. **TOW variant for ambushes** - Effective anti-armor from concealed positions
-5. **Stay mobile** - Speed is your defense against AT weapons
-6. **Support infantry** - Provide fire support for dismounted troops
-7. **Flanking maneuvers** - Use mobility to attack from unexpected angles
+1. **CROWS preferred** - Gunner protected
+2. **TOW for ambush** - 6 missiles, mobile AT
+3. **Open-top caution** - Gunner vulnerable
+4. **Speed is armor** - 105 km/h
+5. **No crewman** - Anyone can operate
+6. **Avoid IFVs** - Light armor only
+7. **Mk19** - Area denial, light vehicles
+8. **CROWS rearm** - Only at repair stations
 
 ---
 
-## Role in Battlegroups
+## See Also
 
-The M-ATV appears in various USA battlegroups:
-
-- **Motorized** battlegroups - Primary transport vehicle
-- **Combined Arms** battlegroups - Scout and patrol role
-- **Light Infantry** battlegroups - Fire support element
+- [M1151](/vehicles/m1151) - US Humvee
+- [TAPV](/vehicles/tapv) - CAF equivalent
+- [Tigr-M](/vehicles/tigr-m) - RGF equivalent
+- [BRDM-2](/vehicles/brdm-2) - RGF ATGM vehicle

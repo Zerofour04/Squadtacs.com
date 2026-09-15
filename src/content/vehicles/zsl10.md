@@ -1,59 +1,59 @@
 ---
-title: "ZSL10"
-description: "Chinese 8x8 wheeled APC with open-top 12.7mm HMG, based on the Type 08 chassis"
-category: "apc"
+title: ZSL10
+description: Chinese 8x8 wheeled APC with open-top 12.7mm HMG. Part of the Type 08 family, no Crewman kit required.
+metaDescription: Master the ZSL10 in Squad. Guide to the PLA wheeled APC with 5 ticket cost and no Crewman kit.
+category: apc
 factions: [PLA, PLANMC]
-image: "ZSL10.webp"
+image: ZSL10.webp
 tickets: 5
-respawn: "10 min"
 crew: 2
 passengers: 7
----
-
-# ZSL10
-
-The **ZSL10** is an 8x8 wheeled armored personnel carrier of the People's Liberation Army in Squad. Based on the ZBL08 (Type 08) chassis, it serves as the primary wheeled APC with an open-top QJZ89 heavy machine gun.
-
+hp: 1250
+ammoPoints: 600
+constructionPoints: 0
+armament:
+  - name: QJZ89
+    caliber: 12.7mm
+    ammo: HMG
+    rounds: 0
+order: 87
 ---
 
 ## Overview
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+The **ZSL10** is an 8x8 wheeled armored personnel carrier serving PLA and PLANMC. Introduced in v4.0 (Red Star Rising), it's part of the ZBL08 (Type 08) family. Unlike most APCs, it costs only 5 tickets and requires no Crewman kit.
 
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">5</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Tickets</div>
-</div>
+**Key Features:**
 
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">10 min</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Respawn</div>
-</div>
+- **5 tickets** - Low cost like light vehicles (other APCs cost 10)
+- **No Crewman kit required** - Any player can operate
+- **8x8 wheeled** - Same chassis as ZBL08 IFV
+- **Open-top HMG** - QJZ89 12.7mm, gunner exposed
+- **Amphibious** - Water-capable
+- **Only one variant** - No logistics or IFV versions
 
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">2</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Crew</div>
-</div>
+---
 
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">1250</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">HP</div>
-</div>
+## Statistics
 
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">600</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Ammo Pts</div>
-</div>
-
-</div>
+| Stat | Value |
+|------|-------|
+| Tickets | 5 |
+| Crew | 2 (Driver, Gunner) |
+| Passengers | 7 |
+| HP | 1250 |
+| Respawn | 10 min |
+| Ammo Points | 600 |
+| Construction | 0 |
+| Crewman Kit | NOT required |
 
 ---
 
 ## Armament
 
-| Weapon | Caliber | Notes |
-|--------|---------|-------|
-| QJZ89 HMG | 12.7mm | Open-top turret |
+| Weapon | Caliber | Type | Notes |
+|--------|---------|------|-------|
+| QJZ89 | 12.7mm | HMG | Open-top turret, gunner exposed |
 
 ---
 
@@ -62,7 +62,7 @@ The **ZSL10** is an 8x8 wheeled armored personnel carrier of the People's Libera
 | Position | Role | Notes |
 |----------|------|-------|
 | Driver | Mobility | No Crewman kit required |
-| Gunner | Weapon | Open-top, exposed position |
+| Gunner | Weapon | Open-top, exposed but better protected than scout cars |
 
 ---
 
@@ -70,8 +70,8 @@ The **ZSL10** is an 8x8 wheeled armored personnel carrier of the People's Libera
 
 **Strengths:**
 - Low ticket cost (5 tickets vs 10 for most APCs)
-- No Crewman kit required
-- 8x8 wheeled mobility
+- No Crewman kit required - suited for infantry squads
+- 8x8 wheeled mobility for roads
 - Fully amphibious
 - Carries 7 passengers
 
@@ -79,14 +79,24 @@ The **ZSL10** is an 8x8 wheeled armored personnel carrier of the People's Libera
 - Open-top turret leaves gunner exposed
 - Light armor
 - Vulnerable to HMG and autocannon fire
-- No enclosed turret protection
+- Better protected than scout cars but worse than enclosed APCs
 
 ---
 
 ## Tactical Notes
 
-- The ZSL10 functions more as a light assault vehicle than a traditional APC due to its exposed gunner position
-- Does NOT require Crewman kit - any player can operate it
-- Shares the same chassis as the ZBL08 IFV
-- Available to PLA and PLANMC factions
-- Use the 12.7mm HMG against infantry, light vehicles, and helicopters
+- Functions more as a light assault vehicle than traditional APC
+- Does NOT require Crewman kit - any player can operate
+- Shares chassis with ZBL08 IFV (no IFV variant though)
+- Added to PLANMC in v5.0
+- Use 12.7mm HMG against infantry, light vehicles, helicopters
+- Better gunner protection than scout cars, but still exposed
+
+---
+
+## See Also
+
+- [ZBL08](/vehicles/zbl08) - PLA wheeled IFV (same chassis)
+- [ZSD89](/vehicles/zsd89) - PLA tracked APC
+- [ZSL92](/vehicles/zsl92) - PLA wheeled APC
+- [BTR-80](/vehicles/btr-80) - Russian wheeled APC

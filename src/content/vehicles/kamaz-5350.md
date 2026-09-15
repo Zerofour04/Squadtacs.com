@@ -1,96 +1,106 @@
 ---
-title: "KamAZ 5350"
-description: "Russian military transport and logistics truck with high speed and large cargo capacity"
-category: "logistics"
-factions: [RGF, VDV]
-image: "KamAZ-5350.webp"
+title: KamAZ 5350
+description: Russian 6x6 transport and logistics truck for RGF and VDV, fastest logi in Squad.
+metaDescription: Master the KamAZ 5350 in Squad. Complete guide to transport and logistics variants for RGF and VDV.
+category: logistics
+image: KamAZ 5350 Transport.webp
+# Core Stats
 tickets: 5
-respawn: "6 min"
 crew: 1
 passengers: 15
----
-
-# KamAZ 5350
-
-The **KamAZ 5350** is a Russian 6x6 military truck from the "Mustang" family. It serves as the primary logistics and transport vehicle for both RGF and VDV in Squad, replacing the older Ural 4320 in their inventories.
-
+respawn: 6 min
+speed: 100
+# Logistics (Logi variant)
+ammoPoints: 3000
+constructionPoints: 3000
+factions: [RGF, VDV]
+order: 60
 ---
 
 ## Overview
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+The **KamAZ 5350** is a Russian 6x6 military truck from the "Mustang" family. Introduced in B21 for Russian Ground Forces and Russian Airborne Forces, it replaced the older Ural 4320 in their inventories.
 
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">5</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Tickets</div>
-</div>
+**Key Features:**
 
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">6 min</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Respawn</div>
-</div>
-
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">1</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Crew</div>
-</div>
-
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">100 km/h</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Top Speed</div>
-</div>
-
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">6,000 kg</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Payload</div>
-</div>
-
-</div>
+- **2 variants** - Transport and Logistics
+- **Fastest logi truck** - Faster than M939
+- **High payload** - 6,000 kg capacity
+- **Cold weather capable** - Starts at -50°C
+- **No armor** - Vulnerable to small arms
+- **RGF & VDV**
 
 ---
 
 ## Variants
 
-### KamAZ 5350 Transport
-| Stat | Value |
-|------|-------|
-| Passengers | 15+ |
-| Supplies | — |
-| Role | Troop transport |
+| Variant | Passengers | Supplies | Role |
+|---------|------------|----------|------|
+| **Transport** | 15+ | None | Troop transport |
+| **Logistics** | 2 | 3000/3000 | FOB supply |
 
-### KamAZ 5350 Logistics
+Both variants: 5 tickets, 6 min respawn
+
+---
+
+## Statistics
+
 | Stat | Value |
 |------|-------|
-| Passengers | 2 |
+| Tickets | 5 |
+| Crew | 1 |
+| Respawn | 6 min |
+| Max Speed | 100 km/h |
+| Payload | 6,000 kg |
+
+---
+
+## Logistics Capacity
+
+| Stat | Value |
+|------|-------|
 | Ammo Points | 3000 |
-| Build Points | 3000 |
-| Role | FOB supply |
+| Construction Points | 3000 |
+| Total Capacity | 6000 |
 
 ---
 
-## Characteristics
+## Technical Specs
 
-**Strengths:**
-- Fastest logistics truck in Squad
-- High payload capacity (6,000 kg)
-- KamAZ-740 V8 diesel with 260 HP
-- Cold start capable to -50°C
-- Large passenger capacity in transport variant
-
-**Weaknesses:**
-- No armor - vulnerable to any weapon
-- No armament for self-defense
-- High speed makes it prone to rollover
-- Engine/tires disabled by rifle fire
+| Feature | Value |
+|---------|-------|
+| Engine | KamAZ-740 V8 diesel |
+| Power | 260 HP |
+| Configuration | 6x6 |
+| Cold Start | -50°C capable |
 
 ---
 
-## Tactical Notes
+## Gameplay
 
-- The KamAZ 5350 is faster than any other logistics truck including the US M939
-- High center of gravity - slow down in corners to avoid rollover
-- Engine and tires can be disabled with rifle fire to the front grille
-- Keep away from combat zones - no protection whatsoever
-- Ideal for fast logistics runs between main base and FOBs
-- Replaced the Ural 4320 for RGF/VDV logistics
-- Available to RGF and VDV factions
+- **Fastest logi** - Beats M939 in speed
+- **No armor** - Any weapon can damage
+- **No weapons** - Cannot defend itself
+- **Rollover risk** - High speed + high CoG
+- **Small arms vulnerable** - Engine/tires disabled by rifle fire
+- **Stay behind lines** - No combat capability
+
+---
+
+## Tactical Tips
+
+1. **Speed advantage** - Fast supply runs
+2. **Slow in corners** - Prone to rollover
+3. **Avoid combat** - Zero protection
+4. **Front grille weak** - Rifle fire disables engine
+5. **Transport variant** - 15+ passengers
+6. **Logi variant** - 3000/3000 supplies
+7. **Replaced Ural 4320** - For RGF/VDV
+
+---
+
+## See Also
+
+- [URAL 4320](/vehicles/ural-4320) - Previous RGF logi truck
+- [M939 Truck](/vehicles/m939-truck) - US Army equivalent
+- [MSVS](/vehicles/msvs) - CAF logi truck

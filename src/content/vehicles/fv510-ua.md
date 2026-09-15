@@ -2,7 +2,7 @@
 title: FV510 UA
 description: "FV510 UA guide for Squad - British Warrior IFV with TOW anti-tank missiles and 30mm cannon"
 category: ifv
-image: /img/vehicles/FV510 UA.webp
+image: FV510 UA.webp
 tickets: 10
 crew: 3
 passengers: 7

@@ -1,25 +1,43 @@
 ---
 title: AAVP-7A1
-description: American amphibious assault vehicle carrying 21 Marines, armed with .50 cal and 40mm grenade launcher.
+description: American amphibious assault vehicle with Mk19 grenade launcher and M2 HMG for beach assault operations.
+metaDescription: Master the AAVP in Squad. Complete guide to weapons, amphibious assault tactics and troop transport for USMC faction.
 category: apc
 image: AAVP-7A1.webp
+# Core Stats
 tickets: 10
-crew: 3
-passengers: 21
-hp: 2000
+crew: 2
+passengers: 10
 respawn: 10 min
+# Performance
+maxSpeed: 84
+# Logistics
+ammoPoints: 600
+constructionPoints: 600
+# Armament
+armament:
+  - name: Mk19 Grenade Launcher
+    caliber: 40mm
+    ammo: HEDP
+    rounds: 48
+  - name: M2A1 Browning
+    caliber: 12.7mm
+    ammo: Ball
+    rounds: 500
+countermeasures: Smoke Launcher (4 charges)
 factions: [USMC]
-weapons:
-  - M2HB .50 Cal (400 rounds)
-  - Mk19 40mm Grenade Launcher (96 rounds)
 order: 20
 ---
 
 ## Overview
 
-The AAVP-7A1 (Assault Amphibious Vehicle, Personnel) is the USMC's primary amphibious troop transport. Capable of carrying 21 Marines from ship to shore, it's the backbone of Marine amphibious operations in Squad.
+The **AAVP-7A1** (Assault Amphibious Vehicle, Personnel) is the USMC's amphibious combat APC. Introduced in V3.0, it's the armed variant compared to the logistics-focused [AAVC](/vehicles/aavc-7a1).
 
-**Key Feature**: Massive troop capacity with full amphibious capability.
+**Key Features:**
+- **Amphibious** - Ship-to-shore assault capability
+- **Well-armed** - Mk19 grenade launcher + M2 HMG
+- **No Crewman kit required** to operate
+- Supply capacity: 600/600 (max 1200 total)
 
 ---
 
@@ -27,91 +45,61 @@ The AAVP-7A1 (Assault Amphibious Vehicle, Personnel) is the USMC's primary amphi
 
 | Position | Role | Equipment |
 |----------|------|-----------|
-| **Driver** | Vehicle movement | Periscope, swim controls |
-| **Gunner** | Weapons operation | M2HB and Mk19 in turret |
-| **Commander** | Situational awareness | Independent hatch |
+| **Driver** | Vehicle movement | Water jets for swimming |
+| **Gunner** | Weapons operation | Mk19 + M2A1 in turret |
+
+> **Note:** Unlike most APCs, the AAVP does NOT require a Crewman kit to operate.
 
 ---
 
-## Weapons Systems
+## Armament
 
-### M2HB .50 Caliber Heavy Machine Gun
+| Weapon | Caliber | Ammo | Rounds |
+|--------|---------|------|--------|
+| Mk19 Grenade Launcher | 40mm | HEDP | 48 |
+| M2A1 Browning | 12.7mm | Ball | 500 |
+| Smoke Launcher | 40mm | - | 4 |
 
-- 400 rounds available
-- Effective against infantry and light vehicles
-- Primary anti-personnel weapon
-
-### Mk19 40mm Automatic Grenade Launcher
-
-- 96 grenades available
+**Mk19 Tips:**
 - Area suppression weapon
 - Devastating against infantry in the open
 - Limited anti-vehicle capability
 
 ---
 
-## Troop Capacity
-
-The AAVP-7A1 carries the most troops of any vehicle in Squad:
-
-- **21 Passengers** - Nearly a full platoon
-- **Protected compartment** - Passengers inside armored hull
-- **Exit via rear ramp** - Quick dismount capability
-
----
-
-## Armor & Protection
-
-Moderate armor for an APC:
-
-- **Frontal Arc**: Protection against heavy machine guns
-- **Side/Rear**: Vulnerable to RPGs and autocannon fire
-- **Note**: Prioritize getting troops to shore safely
-
-### Smoke Systems
-
-- Smoke grenade launchers for concealment
-
----
-
 ## Amphibious Capability
 
 The AAV-7 is designed for ship-to-shore operations:
-
-- **Water Speed**: Approximately 13 km/h (faster than LAV-25)
-- **Preparation**: None required
-- **Propulsion**: Water jets for efficient swimming
-- **Sea State**: Can operate in moderate sea conditions
+- **Fully amphibious** - No preparation needed
+- **Water jets** for propulsion
+- Can operate in moderate sea conditions
 
 ---
 
 ## Tactical Tips
 
-1. **Beach landings** - Use amphibious capability for flanking via water
-2. **Mass deployment** - 21 troops makes this a game-changer in one delivery
-3. **Don't linger on the beach** - Drop troops and move to cover
-4. **Suppressive fire during landing** - Mk19 clears the beach
-5. **Coordinate with AAVC** - Command variant provides logistics support
-6. **Screen with LAV-25s** - They provide reconnaissance and fire support
-7. **Multiple waves** - Don't put all eggs in one basket
+1. **Beach assault** - Use amphibious capability for flanking
+2. **Suppressive fire during landing** - Mk19 clears the beach
+3. **Don't linger** - Drop troops and move to cover
+4. **Coordinate with AAVC** - It provides 3000 supply points
+5. **Screen with LAV-25s** - They provide reconnaissance
+6. **Use smoke** - 4 charges for concealment
 
 ---
 
-## Comparison to AAVC-7A1
+## Comparison: AAVP vs AAVC
 
-| Feature | AAVP-7A1 | AAVC-7A1 |
-|---------|----------|----------|
-| Role | Troop Transport | Command/Logistics |
-| Passengers | 21 | 6 |
-| Supplies | None | 600 build/ammo |
-| Best For | Beach assault | Sustained operations |
+| Feature | AAVP | AAVC |
+|---------|------|------|
+| Role | Combat APC | Logistics |
+| Weapons | Mk19 + M2 | None |
+| Supply Capacity | 1200 | 3000 |
+| Tickets | 10 | 5 |
+| Crewman Kit | No | No |
 
 ---
 
-## Role in Battlegroups
+## See Also
 
-The AAVP-7A1 appears in:
-
-- **31st MEU (Combined Arms)** - Primary transport
-- **4th Marines Amphibious Ready Group** - Assault waves
-- **Amphibious Operations** - Ship-to-shore delivery
+- [AAVC-7A1](/vehicles/aavc-7a1) - Logistics variant
+- [United States Marine Corps](/factions/usmc)

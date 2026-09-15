@@ -1,67 +1,75 @@
 ---
-title: "ZBD04A"
-description: "Chinese amphibious IFV with BMP-3 style dual-gun system featuring 30mm autocannon and 100mm gun with ATGM capability"
-category: "ifv"
+title: ZBD04A
+description: Chinese amphibious IFV with BMP-3 style dual-gun system. 30mm autocannon and 100mm gun with ATGM capability.
+metaDescription: Master the ZBD04A in Squad. Guide to the PLA IFV with dual-gun system, ATGM, and 73 km/h speed.
+category: ifv
 factions: [PLA]
-image: "ZBD04A.webp"
+image: ZBD04A.webp
 tickets: 10
-respawn: "10 min"
 crew: 3
 passengers: 7
----
-
-# ZBD04A
-
-The **ZBD04A** is an amphibious infantry fighting vehicle of the People's Liberation Army in Squad. It features a BMP-3 derived dual-gun weapon system combining a 30mm autocannon with a 100mm low-pressure gun capable of firing ATGMs.
-
+hp: 1250
+speed: 73
+reverseSpeed: 47
+ammoPoints: 600
+constructionPoints: 0
+armament:
+  - name: ZPT99
+    caliber: 30mm
+    ammo: AP/HE
+    rounds: 500
+  - name: 2A70
+    caliber: 100mm
+    ammo: HE/ATGM
+    rounds: 25
+  - name: QJT02
+    caliber: 5.8mm
+    ammo: Coaxial
+    rounds: 3000
+order: 82
 ---
 
 ## Overview
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+The **ZBD04A** is an amphibious infantry fighting vehicle serving the PLA. Introduced in v4.0 (Red Star Rising), it features a BMP-3 derived dual-gun weapon system combining a 30mm autocannon with a 100mm gun capable of firing ATGMs.
 
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">10</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Tickets</div>
-</div>
+**Key Features:**
 
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">10 min</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Respawn</div>
-</div>
+- **Dual-gun system** - 30mm autocannon + 100mm gun (licensed from BMP-3)
+- **ATGM capability** - APS03-100 missiles through 100mm barrel
+- **Keep ATGM loaded** - Can use 30mm while ATGM ready in 100mm
+- **Amphibious** - Fully water-capable
+- **73 km/h** - Fast for a tracked IFV
 
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">3</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Crew</div>
-</div>
+---
 
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">1250</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">HP</div>
-</div>
+## Statistics
 
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">55 km/h</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Max Speed</div>
-</div>
-
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">600</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Ammo Pts</div>
-</div>
-
-</div>
+| Stat | Value |
+|------|-------|
+| Tickets | 10 |
+| Crew | 3 (Driver, Gunner, Commander) |
+| Passengers | 7 |
+| HP | 1250 |
+| Turret HP | 300 |
+| Speed | 73 km/h |
+| Reverse | 47 km/h |
+| Respawn | 10 min |
+| Ammo Points | 600 |
+| Zoom | 4x, 14x |
 
 ---
 
 ## Armament
 
-| Weapon | Caliber | Ammunition |
-|--------|---------|------------|
-| ZPT99 Autocannon | 30mm | 200x AP, 300x HE |
-| 2A70 Gun | 100mm | 22x HE, 3x APS03 ATGM |
-| QJT02 Coaxial | 5.8mm | 3000 rounds |
-| Smoke Launchers | 40mm | 2 salvos |
+| Weapon | Caliber | Ammunition | Rounds |
+|--------|---------|------------|--------|
+| **ZPT99** | 30mm | DTC10-30 AP | 200 |
+| **ZPT99** | 30mm | DTB02-30 HE-Frag | 300 |
+| **2A70** | 100mm | DTB02-100 HE-Frag | 22 |
+| **2A70** | 100mm | APS03-100 ATGM | 3 |
+| **QJT02** | 5.8mm | Coaxial MG | 3000 |
+| **Smoke** | 40mm | Smoke Launcher | 2 salvos |
 
 ---
 
@@ -102,3 +110,14 @@ The **ZBD04A** is an amphibious infantry fighting vehicle of the People's Libera
   - 导 (dǎo) = ATGM
 - Despite being the ZBD04A variant (which sacrifices amphibious capability for armor IRL), in Squad it remains fully amphibious
 - Commander has stadiametric rangefinder for 2.7m tall objects
+- Gun elevation: -5° to 60°
+- Turret rotation: 35°/s
+
+---
+
+## See Also
+
+- [ZBL08](/vehicles/zbl08) - PLA wheeled IFV
+- [ZBD05](/vehicles/zbd05) - PLA amphibious IFV
+- [BMP-3M](/vehicles/bmp-3m) - Russian IFV with similar weapon system
+- [BMD-4M](/vehicles/bmd-4m) - VDV IFV with same 2A70 gun

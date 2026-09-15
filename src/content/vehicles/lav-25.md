@@ -1,108 +1,148 @@
 ---
 title: LAV-25
-description: American 8x8 amphibious light armored vehicle with 25mm autocannon, providing reconnaissance and rapid deployment capability.
+description: USMC amphibious IFV with 25mm Bushmaster and hunter-killer capability.
+metaDescription: Master the LAV-25 in Squad. Complete guide to 25mm Bushmaster, amphibious ops, and tactics for USMC.
 category: ifv
 image: LAV-25.webp
+# Core Stats
 tickets: 10
-crew: 3
-passengers: 6
-hp: 1750
+crew: 4
+passengers: 7
+hp: 1250
 respawn: 10 min
+speed: 100
+reverseSpeed: 17
+# Logistics
+ammoPoints: 600
+constructionPoints: 0
+# Armament
+armament:
+  - name: M242 Bushmaster
+    caliber: 25mm
+    ammo: AP/HE
+    rounds: 210
+  - name: M240C
+    caliber: 7.62mm
+    rounds: 452
+  - name: M240G
+    caliber: 7.62mm
+    rounds: 2500
+countermeasures: Smoke Launcher (2 charges)
 factions: [USMC]
-weapons:
-  - M242 Bushmaster 25mm (70 AP + 230 HE)
-  - M240C 7.62mm Coaxial (800 rounds)
-order: 12
+order: 32
 ---
 
 ## Overview
 
-The LAV-25 (Light Armored Vehicle) is an 8x8 amphibious reconnaissance vehicle used by the US Marine Corps. Its combination of speed, firepower, and amphibious capability makes it ideal for the USMC's expeditionary warfare doctrine.
+The **LAV-25** is the USMC amphibious infantry fighting vehicle. Introduced alongside the USMC faction, it is an 8x8 reconnaissance vehicle designed for rapid deployment and amphibious operations.
 
-**Key Feature**: Fully amphibious - can swim across water obstacles without preparation.
+**Key Features:**
+
+- **25mm Bushmaster** - Same gun as M2A3
+- **Hunter-killer** - Commander periscope (not stabilized)
+- **Amphibious** - Can swim across water
+- **4 crew** - Driver, gunner, commander, MG
+- **7 passengers** - Infantry transport
+- **USMC exclusive**
+
+---
+
+## Statistics
+
+| Stat | Value |
+|------|-------|
+| Tickets | 10 |
+| Crew | 4 |
+| Passengers | 7 |
+| HP | 1250 |
+| Turret HP | 300 |
+| Respawn | 10 min |
+| Max Speed | 100 km/h |
+| Reverse Speed | 17 km/h |
+| Ammo Points | 600 |
+
+---
+
+## Performance
+
+| Attribute | Value |
+|-----------|-------|
+| 0-50 km/h | 10s |
+| 0-70 km/h | 20s |
+| 0-90 km/h | 43s |
+| Turret Rotation | 50°/s |
+| Gun Elevation | -10° / +60° |
+| Zoom Levels | 1x, 10x |
+| Sabot DPS | 133.3 HP (burst) |
+
+---
+
+## Armament
+
+| Weapon | Caliber | Ammo Type | Rounds |
+|--------|---------|-----------|--------|
+| M242 Bushmaster | 25mm | M919 APFSDS-T | 60 |
+| M242 Bushmaster | 25mm | MK210 HE-I | 150 |
+| M240C Coaxial | 7.62mm | Belt-fed | 225(+1) x 2 |
+| M240G Pintle | 7.62mm | Belt-fed | 250 x 10 |
+| Smoke Launcher | 40mm | Smoke Grenades | 2 |
 
 ---
 
 ## Crew Positions
 
-| Position | Role | Equipment |
-|----------|------|-----------|
-| **Driver** | Vehicle movement | Periscope, swim controls |
-| **Gunner** | Autocannon, coax operation | Thermal sight, laser rangefinder |
-| **Commander** | Situational awareness | Independent periscope, Hunter-Killer |
+| Position | Notes |
+|----------|-------|
+| **Driver** | Standard controls, amphibious |
+| **Gunner** | 25mm + coax + smoke |
+| **Commander** | Hunter-killer (periscope NOT stabilized) |
+| **Machine Gunner** | M240G pintle (2500 rounds total) |
 
 ---
 
-## Weapons Systems
+## Comparison: LAV-25 vs LAV 6.0
 
-### M242 Bushmaster 25mm Autocannon
-
-Dual-feed autocannon with two ammunition types:
-
-- **AP (Armor Piercing)**: 70 rounds - For engaging armored vehicles
-- **HE (High Explosive)**: 230 rounds - For infantry and light targets
-
-### M240C Coaxial Machine Gun
-
-- 7.62mm belt-fed machine gun
-- 800 rounds available
-- Effective against infantry
+| Feature | LAV-25 | LAV 6.0 |
+|---------|--------|---------|
+| Faction | USMC | CAF |
+| HP | 1250 | 1750 |
+| Turret HP | 300 | 600 |
+| Speed | 100 km/h | 115 km/h |
+| AP Rounds | 60 | 75 |
+| HE Rounds | 150 | 200 |
+| Amphibious | **Yes** | No |
+| Periscope | Not stabilized | Stabilized |
 
 ---
 
-## Armor & Protection
+## Gameplay
 
-Light armor suited for reconnaissance:
-
-- **Frontal Arc**: Protection against heavy machine guns
-- **Side/Rear**: Vulnerable to RPGs and autocannon fire
-- **Note**: Lighter than Bradley - prioritize speed over slugging matches
-
-### Smoke Systems
-
-- Smoke grenade launchers for concealment
-
----
-
-## Amphibious Capability
-
-The LAV-25 is fully amphibious:
-
-- **Water Speed**: Approximately 10 km/h
-- **Preparation**: None required - drive straight into water
-- **Propulsion**: Wheel-driven in water
-- **Tactical Use**: Bypass bridges, flank via rivers, amphibious assaults
+- **Amphibious** - Can swim (only LAV with ASLAV-25)
+- **Hunter-killer** - Commander not stabilized (unlike LAV 6.0)
+- **Light armor** - Only 1250 HP
+- **Low turret HP** - Only 300 (weak point)
+- **Good speed** - 100 km/h wheeled
+- **Recon role** - Designed for reconnaissance
+- **Less ammo** - 60 AP vs LAV 6.0's 75
 
 ---
 
 ## Tactical Tips
 
-1. **Use amphibious capability** - Cross rivers to flank enemy positions
-2. **Scout aggressively** - Speed and optics make you an excellent reconnaissance platform
-3. **Avoid head-on fights with IFVs** - Bradley, BMP-2 have similar or better firepower with more armor
-4. **Support infantry** - 25mm is devastating against enemy positions
-5. **Stay mobile** - Don't become a stationary target
-6. **Shoot and scoot** - Fire, displace, fire again
-7. **Coordinate with AAVs** - LAV-25 provides fire support for amphibious assaults
+1. **Use amphibious** - Cross rivers to flank
+2. **Avoid IFV duels** - Less HP than LAV 6.0
+3. **Turret weakness** - 300 HP, easy to disable
+4. **Recon role** - Scout, don't brawl
+5. **Periscope unstabilized** - Stop to use hunter-killer
+6. **Shoot and scoot** - Use speed, avoid slugging
+7. **Support infantry** - 25mm devastates positions
+8. **Pintle MG** - 2500 rounds of 7.62mm
 
 ---
 
-## Comparison to ASLAV-25
+## See Also
 
-| Feature | LAV-25 | ASLAV-25 |
-|---------|--------|----------|
-| Faction | USMC | ADF |
-| HP | 1750 | 1750 |
-| Passengers | 6 | 7 |
-| Weapons | Identical | Identical |
-| Origin | American | Australian variant |
-
----
-
-## Role in Battlegroups
-
-The LAV-25 appears in:
-
-- **3rd Light Armored Recon Battalion** - Primary vehicle
-- **Combined Arms** battlegroups - Reconnaissance element
-- **Amphibious Assault** battlegroups - Fire support
+- [ASLAV-25](/vehicles/aslav-25) - Australian variant (also amphibious)
+- [LAV 6.0](/vehicles/lav-6) - Canadian IFV (upgraded, not amphibious)
+- [LAV III](/vehicles/lav-iii) - Canadian APC
+- [AAVP-7A1](/vehicles/aavp-7a1) - USMC amphibious APC

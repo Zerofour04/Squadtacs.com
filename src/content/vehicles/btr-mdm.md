@@ -1,105 +1,82 @@
 ---
-title: "BTR-MDM"
-description: "Russian airborne armored personnel carrier with PKT RWS and amphibious capability"
-category: "apc"
-factions: [VDV]
-image: "BTR-MDM.webp"
+title: BTR-MDM
+description: Modern Russian airborne APC with PKT RWS, hull MG, and amphibious capability for VDV.
+metaDescription: Master the BTR-MDM in Squad. Complete guide to PKT RWS, amphibious ops, and tactics for VDV airborne forces.
+category: apc
+image: BTR-MDM.webp
+# Core Stats
 tickets: 5
-respawn: "10 min"
-crew: 2
-passengers: 10
----
-
-# BTR-MDM
-
-The **BTR-MDM** "Rakushka" (Shell) is a modern armored personnel carrier based on the BMD-4M chassis. Designed for VDV airborne forces, it combines excellent troop capacity with full amphibious capability and a remote-controlled weapon station.
-
+crew: 0
+passengers: 12
+hp: 1250
+respawn: 10 min
+# Logistics
+ammoPoints: 600
+constructionPoints: 0
+# Armament
+armament:
+  - name: PKT RWS
+    caliber: 7.62mm
+    rounds: 2000
+  - name: PKT Hull
+    caliber: 7.62mm
+    ammo: Front-facing
+countermeasures: Smoke Launcher (2 charges)
+factions: [VDV]
+order: 40
 ---
 
 ## Overview
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+The **BTR-MDM** "Rakushka" (Shell) is a modern Russian airborne APC based on the BMD-4M chassis. Introduced in V5.0 for VDV, it features a 500 HP engine (rare for APC) and full amphibious capability.
 
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">5</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Tickets</div>
-</div>
+**Key Features:**
 
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">10 min</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Respawn</div>
-</div>
-
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">2</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Crew</div>
-</div>
-
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">10</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Passengers</div>
-</div>
-
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">1250</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">HP</div>
-</div>
-
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">🌊</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Amphibious</div>
-</div>
-
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">600</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Ammo Pts</div>
-</div>
-
-</div>
+- **12 passengers** - largest capacity VDV transport
+- **PKT RWS** - remote weapon station (protected gunner)
+- **Hull-mounted PKT** - front-facing secondary
+- **Fully amphibious** - crosses water obstacles
+- **500 HP engine** - impressive for APC class
+- **No kit required** - anyone can operate
 
 ---
 
 ## Armament
 
-| Weapon | Caliber | Ammunition |
-|--------|---------|------------|
-| PKT RWS | 7.62mm | 2000 rounds |
-| Smoke Launchers | — | 2 salvos |
+| Weapon | Caliber | Notes | Rounds |
+|--------|---------|-------|--------|
+| PKT RWS | 7.62mm | Unstabilized | 2000 |
+| PKT Hull | 7.62mm | Front-facing, unstabilized | - |
+| Smoke Launcher | 40mm | - | 2 |
 
 ---
 
-## Crew Positions
+## Gameplay
 
-| Position | Role | Equipment |
-|----------|------|-----------|
-| Driver | Mobility | Amphibious propulsion, weapon control |
-| Gunner | PKT RWS | Unstabilized RWS, optic |
-
----
-
-## Characteristics
-
-**Strengths:**
-- Excellent troop capacity (10 passengers) - can transport full squad plus
-- Remote weapon station keeps gunner protected
-- Fully amphibious - crosses water obstacles
-- Based on BMD-4M chassis - proven mobility
-- Low ticket cost (5) for its capability
-
-**Weaknesses:**
-- PKT 7.62mm only - no anti-armor capability
-- RWS is unstabilized - must stop for accurate fire
-- Light armor (1250 HP) - HMG fire can damage it
-- No heavy weapons for fire support
+- **No crew required** - 0 crew, 12 passengers
+- PKT RWS is **unstabilized** - stop for accurate fire
+- Hull PKT also **unstabilized**, front-facing only
+- Fully **amphibious** - river crossings
+- No anti-armor capability - avoid combat vehicles
+- Use for rapid troop insertion
+- 500 HP engine = good power for APC
 
 ---
 
-## Tactical Notes
+## Tactical Tips
 
-- The BTR-MDM excels at rapid troop insertion - use its speed and capacity
-- Amphibious capability enables flanking across water obstacles
-- The PKT RWS is for self-defense only - avoid direct combat with armed vehicles
-- Use smoke launchers to cover troop dismount
-- 10 passengers means you can move a full infantry squad plus attachments
-- Stay mobile - don't linger in the open with only 7.62mm armament
-- Exclusive to VDV faction
+1. **Rapid insertion** - use 12-passenger capacity
+2. **Amphibious flanking** - cross water obstacles
+3. **Stop to fire** - RWS unstabilized
+4. **Avoid armor** - PKT only for self-defense
+5. **Use smoke** - cover troop dismount
+6. **Stay mobile** - don't linger with 7.62mm only
+
+---
+
+## See Also
+
+- [BTR-D](/vehicles/btr-d) - Older VDV APC
+- [BMD-4M](/vehicles/bmd-4m) - Related IFV chassis
+- [BTR-80](/vehicles/btr-80) - RGF wheeled APC
+

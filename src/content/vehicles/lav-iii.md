@@ -1,88 +1,147 @@
 ---
-title: "LAV III"
-description: "Canadian armored personnel carrier with RWS machine gun"
-category: "apc"
-factions: [CAF]
-image: "LAV III C6 RWS.webp"
+title: LAV III
+description: Canadian APC with M2A1 or C6 RWS variants and pintle MG for CAF.
+metaDescription: Master the LAV III in Squad. Complete guide to M2A1 and C6 RWS variants for Canadian Army.
+category: apc
+image: LAV III C6 RWS.webp
+# Core Stats (M2A1 variant)
 tickets: 10
-respawn: "10 min"
-crew: 3
+crew: 0
 passengers: 10
-weapons:
-  - "M2A1 .50 cal RWS or C6 7.62mm RWS"
-  - "C6 7.62mm (pintle mount)"
-  - "Smoke launchers"
----
-
-# LAV III
-
-The **LAV III** is an armored personnel carrier used by the Canadian Armed Forces in Squad. It serves as the primary troop transport with protection and fire support capability.
-
+respawn: 10 min
+# Logistics
+ammoPoints: 600
+constructionPoints: 0
+# Armament (M2A1 variant)
+armament:
+  - name: M2A1 RWS
+    caliber: 12.7mm
+    ammo: .50 BMG
+    rounds: 400
+  - name: C6
+    caliber: 7.62mm
+    rounds: 2500
+countermeasures: Smoke Launcher (2 charges)
+factions: [CAF]
+order: 31
 ---
 
 ## Overview
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+The **LAV III** is the Canadian armored personnel carrier. Introduced in B21 for the Canadian Army, it is the basis for the M1126 Stryker and predecessor to the LAV 6.0.
 
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">10</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Tickets</div>
-</div>
+**Key Features:**
 
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">10 min</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Respawn</div>
-</div>
-
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">3+10</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Crew + Passengers</div>
-</div>
-
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">600</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Ammo Points</div>
-</div>
-
-</div>
+- **2 variants** - M2A1 RWS and C6 RWS
+- **No crewman kit** required
+- **10 passengers** - High capacity
+- **Dual MGs** - RWS + pintle mount
+- **CROWS turret** - Protected gunner
+- **CAF exclusive**
 
 ---
 
 ## Variants
 
-### LAV III M2A1 RWS
-- **Main Weapon:** M2A1 .50 cal CROWS (400 rounds)
-- **Secondary:** C6 pintle mount (2500 rounds)
-- Same CROWS system as M1126 and M-ATV
+| Variant | Tickets | Main Weapon | Notes |
+|---------|---------|-------------|-------|
+| **LAV III M2A1 RWS** | 10 | M2A1 .50 cal | Anti-vehicle capability |
+| **LAV III C6 RWS** | 5 | C6A1 7.62mm | Anti-infantry focus |
 
-### LAV III C6 RWS
-- **Main Weapon:** C6 7.62mm CROWS (750 rounds)
-- **Secondary:** C6 pintle mount (2500 rounds)
-- Better anti-infantry capability
+Both: 10 passengers, 10 min respawn, 600 ammo
 
 ---
 
-## Characteristics
+## Statistics
 
-**Strengths:**
-- High passenger capacity (10 infantry)
-- Protected RWS for gunner
-- Additional pintle-mounted MG for third seat
-- Good wheeled mobility
-
-**Weaknesses:**
-- Not amphibious
-- MGs cannot damage heavy armor
-- Third seat gunner exposed with limited arc
-- Similar to M1126 but with extra MG seat
+| Stat | M2A1 RWS | C6 RWS |
+|------|----------|--------|
+| Tickets | 10 | 5 |
+| Crew | 0 | 0 |
+| Passengers | 10 | 10 |
+| Respawn | 10 min | 10 min |
+| Ammo Points | 600 | 600 |
 
 ---
 
-## Tactical Notes
+## LAV III M2A1 RWS
 
-- The LAV III is Canada's equivalent to the US M1126 Stryker
-- The M2A1 variant is better for engaging light vehicles
-- The C6 variant is better for sustained anti-infantry fire
-- Third seat C6 has limited forward arc only
-- Both CROWS variants have 2x zoom and 360° rotation
-- Does not require Crewman kit
+Heavy machine gun variant.
+
+| Weapon | Caliber | Rounds |
+|--------|---------|--------|
+| M2A1 RWS | .50 BMG (12.7mm) | 1x 400 |
+| C6 Pintle | 7.62mm | 10x 250 |
+| Smoke Launcher | 40mm | 2 |
+
+**Role:** Anti-vehicle and anti-infantry
+
+---
+
+## LAV III C6 RWS
+
+General purpose machine gun variant.
+
+| Weapon | Caliber | Rounds |
+|--------|---------|--------|
+| C6A1 RWS | 7.62mm | 1x 750 |
+| C6 Pintle | 7.62mm | 10x 250 |
+| Smoke Launcher | 40mm | 2 |
+
+**Role:** Anti-infantry, sustained fire
+
+---
+
+## Crew Positions
+
+| Position | Notes |
+|----------|-------|
+| **Driver** | No crewman required |
+| **Gunner** | CROWS (M2A1 or C6A1), 360° |
+| **Machine Gunner** | C6 pintle, limited frontal arc |
+
+---
+
+## Gameplay
+
+- **No crewman kit** - Any kit can drive/gun
+- **CROWS turret** - Protected gunner
+- **Pintle MG** - 3rd seat, exposed, frontal arc only
+- **M2A1 variant** - .50 cal vs light vehicles
+- **C6 variant** - Cheaper, anti-infantry
+- **Overheats** - Fire in bursts
+- **Not amphibious** - Cannot swim
+- **M1126 equivalent** - Similar to US Stryker
+
+---
+
+## Tactical Tips
+
+1. **M2A1** - Better vs vehicles (10 tickets)
+2. **C6** - Better value (5 tickets)
+3. **Pintle MG** - Limited frontal traverse
+4. **No crewman** - Anyone can operate
+5. **CROWS protection** - Gunner inside
+6. **10 passengers** - Full squad transport
+7. **Burst fire** - Prevent overheating
+8. **Non-amphibious** - Unlike LAV-25
+
+---
+
+## Comparison vs M1126
+
+| Feature | LAV III | M1126 |
+|---------|---------|-------|
+| Faction | CAF | US Army |
+| Pintle MG | Yes | No |
+| Passengers | 10 | 11 |
+| C6 Variant | Yes (5 tickets) | No |
+
+---
+
+## See Also
+
+- [LAV 6.0](/vehicles/lav-6) - CAF IFV (upgraded LAV III)
+- [Coyote](/vehicles/coyote) - CAF recon vehicle
+- [M1126](/vehicles/m1126) - US APC (similar)
+- [TAPV](/vehicles/tapv) - CAF light vehicle

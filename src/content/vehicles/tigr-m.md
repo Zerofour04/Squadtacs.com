@@ -1,107 +1,174 @@
 ---
-title: "Tigr-M"
-description: "Russian light assault vehicle with Kord 12.7mm heavy machine gun in open turret or RWS configuration"
-category: "light"
-factions: [RGF, VDV]
-image: "Tigr-M.webp"
+title: Tigr-M
+description: Russian light attack vehicle with Kord 12.7mm HMG in open top or RWS configuration.
+metaDescription: Master the Tigr-M in Squad. Complete guide to the RGF and IMF light attack vehicle.
+category: light
+image: Tigr-M Kord.webp
+# Core Stats (Kord Open Top)
 tickets: 5
-respawn: "6 min"
 crew: 0
-passengers: 5
----
-
-# Tigr-M
-
-The **Tigr-M** (Tiger) is a Russian 4x4 infantry mobility vehicle manufactured by GAZ. Used by both RGF and VDV in Squad, it comes in two variants: an open turret version and a modern RWS (Remote Weapon Station) version with the Arbalet fire control system.
-
+passengers: 8
+hp: 750
+respawn: 6 min
+# Logistics
+ammoPoints: 300
+constructionPoints: 0
+# Armament (Kord Open Top)
+armament:
+  - name: Kord
+    caliber: 12.7mm
+    ammo: HMG
+    rounds: 1000
+factions: [RGF, IMF]
+order: 55
 ---
 
 ## Overview
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+The **Tigr-M** (GAZ Tigr) is a Russian 4x4 light armored vehicle manufactured by Military Industrial Company. Introduced in B21, it serves as a light attack and mobility vehicle for RGF and IMF.
 
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">5</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Tickets</div>
-</div>
+**Key Features:**
 
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">6 min</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Respawn</div>
-</div>
-
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">5</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Passengers</div>
-</div>
-
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">750</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">HP</div>
-</div>
-
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">300</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Ammo Pts</div>
-</div>
-
-</div>
+- **Kord 12.7mm HMG** - Effective vs infantry and light vehicles
+- **Two variants** - Open top and RWS (remote weapon station)
+- **8-9 passengers** - High troop capacity
+- **Rifle-rated windows** - Stops 7.62mm, vulnerable to .50 cal+
+- **No crewman kit** - Any kit can operate
+- **Smoke launchers** - Both variants
 
 ---
 
 ## Variants
 
-### Tigr-M Kord (Open Turret)
-| Stat | Value |
-|------|-------|
-| Armament | Kord 12.7mm open turret (10x100 rds) |
-| Smoke | 2 salvos |
-| Notes | Gunner exposed, driver controls smoke |
+| Variant | Tickets | Pass | Respawn | Weapon | Factions |
+|---------|---------|------|---------|--------|----------|
+| **Kord Open Top** | 5 | 8 | 6 min | Kord 12.7mm (10x100) | RGF, IMF |
+| **Kord RWS** | 5 | 9 | 6 min | Kord RWS (450) | RGF |
 
-### Tigr-M Kord RWS
+Both variants: 0 crew, 750 HP, 300 ammo points
+
+---
+
+## Statistics (Kord Open Top)
+
 | Stat | Value |
 |------|-------|
-| Armament | Kord 12.7mm RWS (450 rds) |
-| Fire Modes | Automatic (АВТОМАТ) / 4-round burst (КОРОТКАЯ) |
-| Features | Stabilized, rangefinder, digital ammo counter |
-| Smoke | 2 salvos (gunner-controlled) |
-| Notes | Gunner protected inside vehicle |
+| Tickets | 5 |
+| Crew | 0 |
+| Passengers | 8 |
+| HP | 750 |
+| Respawn | 6 min |
+| Ammo Points | 300 |
+
+---
+
+## Kord Open Top
+
+| Stat | Value |
+|------|-------|
+| **Weapon** | Kord 12.7mm |
+| **Ammo** | 10x 100 rounds (1000 total) |
+| **Smoke** | 2 salvos (driver) |
+| **Passengers** | 8 |
+| **Factions** | RGF, IMF |
+
+Gunner exposed with no gun shield. Unlike M-ATV, driver controls smoke launchers.
+
+---
+
+## Kord RWS
+
+| Stat | Value |
+|------|-------|
+| **Weapon** | Kord RWS 12.7mm |
+| **Ammo** | 450 rounds |
+| **Smoke** | 2 salvos (gunner) |
+| **Passengers** | 9 |
+| **Factions** | RGF |
+
+**RWS Features:**
+
+- **Arbalet weapon system** - Only Russian vehicle with true RWS
+- **Rangefinder** - Distance measurement
+- **Digital ammo counter** - On-screen display
+- **Stabilizer indicator** - ВКЛ (on) / ВЫКЛ (off)
+- **Fire modes** - АВТОМАТ (full auto) / КОРОТКАЯ (4-round burst)
+- **Gunner protected** - Inside vehicle
 
 ---
 
 ## Crew Positions
 
-| Position | Role | Equipment |
-|----------|------|-----------|
-| Driver | Mobility | Smoke launcher (open variant only) |
-| Gunner | Fire support | Kord 12.7mm |
+| Position | Equipment |
+|----------|-----------|
+| **Driver** | Smoke launcher (Open Top only) |
+| **Gunner** | Kord 12.7mm, smoke (RWS) |
+
+No crewman kit required for either position.
 
 ---
 
-## Characteristics
+## Armament
 
-**Strengths:**
-- Kord 12.7mm effective against infantry and light vehicles
-- RWS variant is stabilized with rangefinder
-- Fast wheeled mobility
-- RWS has fire mode selection (auto/burst)
-- Low ticket cost
-
-**Weaknesses:**
-- Open turret variant exposes gunner to fire
-- Windows can be penetrated by rifle fire
-- No gun shield (unlike M-ATV)
-- Light armor (750 HP) - vulnerable to heavy weapons
+| Weapon | Caliber | Rounds | Notes |
+|--------|---------|--------|-------|
+| **Kord Open Top** | 12.7mm | 10x 100 | Gunner exposed |
+| **Kord RWS** | 12.7mm | 450 | Stabilized, protected |
+| **Smoke** | 40mm | 2 | Driver (Open) or Gunner (RWS) |
 
 ---
 
-## Tactical Notes
+## Armor
 
-- The RWS variant is the only Russian vehicle with a true remote weapon station
-- RWS interface shows stabilizer status: BKЛ (on) / BЫKЛ (off)
-- 4-round burst mode conserves ammo for precision engagements
-- Open variant lacks gun shield - stay mobile to protect the gunner
-- Both variants have smoke launchers (unlike M-ATV)
-- VDV Tigrs have black camouflage, RGF have tan/green
-- Comparable to US M-ATV in role
-- Available to RGF and VDV factions
+| Protection | Notes |
+|------------|-------|
+| **Windows** | Rated for rifle rounds (7.62mm) |
+| **Above 7.62mm** | Can penetrate windows |
+| **No gun shield** | Gunner exposed (Open Top) |
+
+---
+
+## Gameplay
+
+- **Light attack vehicle** - Scouting and fire support
+- **High capacity** - 8-9 passengers
+- **Kord 12.7mm** - Effective vs infantry and light vehicles
+- **RWS stabilized** - Accurate fire on the move
+- **No gun shield** - More exposed than M-ATV
+- **Smoke available** - Unlike M-ATV
+- **Windows penetrable** - By .50 cal and above
+
+---
+
+## Tactical Tips
+
+1. **Stay mobile** - No gun shield, keep moving
+2. **RWS burst mode** - Conserves ammo for precision
+3. **Check stabilizer** - ВКЛ (on) for moving fire
+4. **Smoke escape** - 2 salvos available
+5. **Avoid .50 cal** - Windows vulnerable
+6. **High capacity** - Good for squad transport
+7. **IMF has Open Top** - RWS is RGF only
+8. **vs M-ATV** - More passengers, has smoke, but exposed gunner
+
+---
+
+## Vehicle Matchups
+
+| Vehicle | Advantage |
+|---------|-----------|
+| **vs M-ATV** | Tigr has smoke, more passengers |
+| **vs M-ATV** | M-ATV has gun shield |
+| **vs TAPV** | TAPV has 40mm grenade |
+| **vs Technicals** | Tigr has armor |
+| **vs BRDM-2** | Even fight |
+
+---
+
+## See Also
+
+- [M-ATV](/vehicles/m-atv) - US equivalent
+- [BRDM-2](/vehicles/brdm-2) - Scout car
+- [TAPV](/vehicles/tapv) - CAF light vehicle
+- [LPPV](/vehicles/lppv) - ADF light vehicle
+

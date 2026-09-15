@@ -1,108 +1,99 @@
 ---
 title: AAVC-7A1
-description: American amphibious command vehicle with logistics capability, supporting amphibious operations.
+description: American amphibious logistics vehicle with high capacity supply transport for sustained amphibious operations.
+metaDescription: Master the AAVC in Squad. Complete guide to amphibious logistics, supply capacity and tactics for USMC faction.
 category: logistics
 image: AAVC-7A1.webp
-tickets: 10
-crew: 3
-passengers: 6
-hp: 2000
+# Core Stats
+tickets: 5
+crew: 2
+passengers: 10
 respawn: 10 min
+# Performance
+maxSpeed: 84
+# Logistics - the main feature
+ammoPoints: 1500
+constructionPoints: 1500
+# No weapons - observer seat only
 factions: [USMC]
-weapons:
-  - M2HB .50 Cal (400 rounds)
 order: 21
 ---
 
 ## Overview
 
-The AAVC-7A1 (Assault Amphibious Vehicle, Command) is a command and logistics variant of the AAV-7. While carrying fewer troops than the AAVP, it provides critical resupply capability for sustained amphibious operations.
+The **AAVC** (Assault Amphibious Vehicle, Command) is the logistics variant of the [AAVP-7A1](/vehicles/aavp-7a1). Introduced in V3.0 with the USMC faction, it's the only amphibious logistics vehicle in Squad.
 
-**Key Feature**: Amphibious logistics vehicle - can resupply FOBs from the water.
+**Key Features:**
+- Can load up to **3000 total supply points** (ammo + construction combined)
+- Spawns with **1500/1500** by default
+- **No weapons** - gunner seat is observer-only
+- **No Crewman kit required** to operate
 
 ---
 
 ## Crew Positions
 
-| Position | Role | Equipment |
-|----------|------|-----------|
-| **Driver** | Vehicle movement | Periscope, swim controls |
-| **Gunner** | Weapons operation | M2HB .50 cal |
-| **Commander** | Command functions | Communications equipment |
+| Position | Role | Notes |
+|----------|------|-------|
+| **Driver** | Vehicle movement | No special kit required |
+| **Observer** | Situational awareness | Gunner seat without weapon |
 
----
-
-## Weapons Systems
-
-### M2HB .50 Caliber Heavy Machine Gun
-
-- 400 rounds available
-- Self-defense weapon
-- Limited compared to AAVP's Mk19
+> **Note:** Unlike most APCs, the AAVC does NOT require a Crewman kit to operate.
 
 ---
 
 ## Logistics Capability
 
-The AAVC provides mobile logistics:
+The AAVC is a dedicated supply transport:
 
-- **600 Build Points**
-- **600 Ammunition Points**
-- **Can resupply from water** - Unique amphibious logi capability
-- **Enables beachhead FOBs** - Critical for sustained operations
+| Stat | Value |
+|------|-------|
+| Default Ammo | 1500 |
+| Default Construction | 1500 |
+| **Max Capacity** | **3000** (any combination) |
+| AAVP Capacity | 1200 (for comparison) |
 
----
-
-## Troop Capacity
-
-Reduced passenger space for command equipment:
-
-- **6 Passengers** - Command staff capacity
-- **Protected compartment**
-- **Rear ramp exit**
-
----
-
-## Armor & Protection
-
-Identical to AAVP-7A1:
-
-- **Frontal Arc**: Protection against heavy machine guns
-- **Side/Rear**: Vulnerable to RPGs and autocannon fire
-- **HP**: 2000 (same as AAVP)
-
-### Smoke Systems
-
-- Smoke grenade launchers for concealment
+**Advantages over AAVP:**
+- 2.5x more supply capacity
+- Can resupply FOBs from the water
+- Enables beachhead HABs
 
 ---
 
 ## Amphibious Capability
 
 Same water performance as AAVP:
-
-- **Water Speed**: Approximately 13 km/h
-- **Preparation**: None required
-- **Propulsion**: Water jets
+- **Fully amphibious** - no preparation needed
+- **Water jets** for propulsion
+- Enables naval logistics that trucks cannot
 
 ---
 
 ## Tactical Tips
 
-1. **Set up beachhead FOBs** - Carry supplies across water for coastal HABs
+1. **Set up beachhead FOBs** - Only vehicle that can supply coastal HABs from water
 2. **Follow assault waves** - Let AAVP clear the beach first
-3. **Protect this asset** - Losing logistics hurts more than losing one APC
-4. **Keep moving** - Don't be a stationary target while unloading
-5. **Coordinate resupply** - Pre-plan FOB locations with SLs
-6. **Secondary transport** - 6 passengers still matters
-7. **Don't engage armor** - One .50 cal won't save you
+3. **Protect this asset** - At 5 tickets + logistics loss, it hurts
+4. **Max load when possible** - 3000 points beats two 1500 trips
+5. **Use observer seat** - Gunner can spot threats even without a weapon
+6. **Don't stay stationary** - Unload and move
 
 ---
 
-## Role in Battlegroups
+## Comparison: AAVC vs AAVP
 
-The AAVC-7A1 appears in:
+| Feature | AAVC | AAVP |
+|---------|------|------|
+| Role | Logistics | Combat APC |
+| Supply Capacity | 3000 | 1200 |
+| Weapons | None | Mk19 + M2 |
+| Tickets | 5 | 6 |
+| Crew Required | 2 | 3 |
+| Crewman Kit | No | Yes |
 
-- **31st MEU (Combined Arms)** - Logistics support
-- **4th Marines Amphibious Ready Group** - Beachhead resupply
-- **2nd Marine Logistics Group** - Primary logistics vehicle
+---
+
+## See Also
+
+- [AAVP-7A1](/vehicles/aavp-7a1) - Combat variant with weapons
+- [United States Marine Corps](/factions/usmc)

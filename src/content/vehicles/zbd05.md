@@ -1,67 +1,75 @@
 ---
-title: "ZBD05"
-description: "Chinese high-speed amphibious IFV with planing hull design, capable of 30 km/h water speed"
-category: "ifv"
+title: ZBD05
+description: Chinese high-speed amphibious IFV with planing hull design. Fastest water speed in Squad at 30 km/h.
+metaDescription: Master the ZBD05 in Squad. Guide to the fastest amphibious IFV with 30 km/h water speed and HJ-73C ATGM.
+category: ifv
 factions: [PLA, PLANMC, PLAAGF]
-image: "ZBD05.webp"
+image: ZBD05.webp
 tickets: 10
-respawn: "10 min"
 crew: 3
 passengers: 7
----
-
-# ZBD05
-
-The **ZBD05** (Type 05) is a high-speed amphibious infantry fighting vehicle designed for the PLA Navy Marine Corps and PLA Amphibious Ground Force. Its unique planing hull design allows water speeds of 30 km/h - the fastest amphibious speed of any vehicle in Squad.
-
+hp: 1250
+speed: 74
+reverseSpeed: 17
+ammoPoints: 600
+constructionPoints: 0
+armament:
+  - name: ZPT99
+    caliber: 30mm
+    ammo: AP/HE
+    rounds: 500
+  - name: HJ-73C
+    caliber: 125mm
+    ammo: ATGM
+    rounds: 2
+  - name: QJT02
+    caliber: 5.8mm
+    ammo: Coaxial
+    rounds: 3000
+order: 83
 ---
 
 ## Overview
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+The **ZBD05** (Type 05) is a high-speed amphibious infantry fighting vehicle serving the PLANMC and PLAAGF. Introduced in v5.0, its unique hydroplane design enables 30 km/h water speed - the fastest of any vehicle in Squad.
 
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">10</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Tickets</div>
-</div>
+**Key Features:**
 
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">10 min</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Respawn</div>
-</div>
+- **30 km/h water speed** - Fastest amphibious vehicle in Squad
+- **Hydroplane design** - Unique high-speed water propulsion
+- **HJ-73C ATGM** - 2 anti-tank missiles (125mm)
+- **74 km/h land speed** - Fast on land too
+- **Commander no Crewman kit** - Useful for beach assaults
 
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">3</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Crew</div>
-</div>
+---
 
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">1250</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">HP</div>
-</div>
+## Statistics
 
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">30 km/h</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Water Speed</div>
-</div>
-
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">600</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Ammo Pts</div>
-</div>
-
-</div>
+| Stat | Value |
+|------|-------|
+| Tickets | 10 |
+| Crew | 3 (Driver, Gunner, Commander) |
+| Passengers | 7 |
+| HP | 1250 |
+| Turret HP | 300 |
+| Land Speed | 74 km/h |
+| Reverse | 17 km/h |
+| Water Speed | 30 km/h |
+| Respawn | 10 min |
+| Ammo Points | 600 |
+| Zoom | 2x, 8x |
 
 ---
 
 ## Armament
 
-| Weapon | Caliber | Ammunition |
-|--------|---------|------------|
-| ZPT99 Autocannon | 30mm | 200x AP, 300x HE |
-| HJ-73C ATGM | 125mm | 2 missiles |
-| QJT02 Coaxial | 5.8mm | 3000 rounds |
-| Smoke Launchers | 40mm | 2 salvos |
+| Weapon | Caliber | Ammunition | Rounds |
+|--------|---------|------------|--------|
+| **ZPT99** | 30mm | DTC041A-30 AP Sabot | 200 |
+| **ZPT99** | 30mm | DTB02-30 HE-Frag | 300 |
+| **HJ-73C** | 125mm | ATGM Missile Rail | 2 |
+| **QJT02** | 5.8mm | Coaxial MG | 3000 |
+| **Smoke** | 40mm | Smoke Launcher | 2 salvos |
 
 ---
 
@@ -98,3 +106,26 @@ The **ZBD05** (Type 05) is a high-speed amphibious infantry fighting vehicle des
 - Commander position does not require Crewman kit - useful for infantry squads conducting beach assaults
 - Shares the same turret and armament as ZBD04A but in a dedicated amphibious hull
 - Available to PLA, PLANMC, and PLAAGF factions
+- Gun elevation: -8° to 44°
+- Turret rotation: 50°/s (faster than ZBD04A's 35°/s)
+
+---
+
+## Gunner HUD
+
+Chinese character indicators:
+- 尾 (wěi) = AP Sabot
+- 穿 (chuān) = unused (AP)
+- 杀 (shā) = HE
+- 导 (dǎo) = ATGM
+- 并 (bìng) = Coaxial MG
+- 烟 (yān) = Smoke
+
+---
+
+## See Also
+
+- [ZBD04A](/vehicles/zbd04a) - PLA tracked IFV
+- [ZTD05](/vehicles/ztd05) - Type 05 MGS variant
+- [ZSD05](/vehicles/zsd05) - Type 05 APC variant
+- [AAVP-7A1](/vehicles/aavp-7a1) - USMC amphibious assault vehicle

@@ -1,67 +1,75 @@
 ---
-title: "ZBL08"
-description: "Chinese 8x8 wheeled IFV with 30mm autocannon and optional HJ-73C ATGM capability"
-category: "ifv"
+title: ZBL08
+description: Chinese 8x8 wheeled IFV with 30mm autocannon and optional HJ-73C ATGM. Fastest IFV at 113 km/h.
+metaDescription: Master the ZBL08 in Squad. Guide to the PLA wheeled IFV with 113 km/h speed and optional ATGM.
+category: ifv
 factions: [PLA]
-image: "ZBL08.webp"
+image: ZBL08.webp
 tickets: 10
-respawn: "10 min"
 crew: 2
 passengers: 8
----
-
-# ZBL08
-
-The **ZBL08** (Type 08) is a wheeled infantry fighting vehicle of the People's Liberation Army in Squad. It serves as the primary wheeled IFV for mechanized infantry brigades, offering good mobility and firepower with a 30mm autocannon.
-
+hp: 1250
+speed: 113
+reverseSpeed: 17
+ammoPoints: 600
+constructionPoints: 0
+armament:
+  - name: ZPT99A
+    caliber: 30mm
+    ammo: AP/HE
+    rounds: 460
+  - name: HJ-73C
+    caliber: 125mm
+    ammo: ATGM
+    rounds: 2
+  - name: QJT02
+    caliber: 5.8mm
+    ammo: Coaxial
+    rounds: 2000
+order: 84
 ---
 
 ## Overview
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+The **ZBL08** (Type 08) is a wheeled infantry fighting vehicle serving the PLA. Introduced in v4.0 (Red Star Rising), it's the primary wheeled IFV for mechanized infantry brigades. At 113 km/h, it's the fastest IFV in Squad.
 
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">10</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Tickets</div>
-</div>
+**Key Features:**
 
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">10 min</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Respawn</div>
-</div>
+- **113 km/h** - Fastest IFV in Squad!
+- **8x8 wheeled** - Excellent road mobility
+- **ZPT99A 30mm** - Same autocannon as ZBD04A
+- **HJ-73C ATGM** - Optional anti-tank variant
+- **Amphibious** - Water-capable (slow speed)
+- **Turret HP 600** - Double the ZBD04A (300)
 
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">2</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Crew</div>
-</div>
+---
 
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">1250</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">HP</div>
-</div>
+## Statistics
 
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">70 km/h</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Max Speed</div>
-</div>
-
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">600</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Ammo Pts</div>
-</div>
-
-</div>
+| Stat | Value |
+|------|-------|
+| Tickets | 10 |
+| Crew | 2 (Driver, Gunner) |
+| Passengers | 8 |
+| HP | 1250 |
+| Turret HP | 600 |
+| Speed | 113 km/h |
+| Reverse | 17 km/h |
+| Respawn | 10 min |
+| Ammo Points | 600 |
+| Zoom | 2x, 8x |
 
 ---
 
 ## Armament
 
-| Weapon | Caliber | Ammunition |
-|--------|---------|------------|
-| ZPT99A Autocannon | 30mm | 160x AP, 300x HE |
-| HJ-73C ATGM | 125mm | 2 missiles (HJ-73C variant only) |
-| QJT02 Coaxial | 5.8mm | 2000 rounds |
-| Smoke Launchers | 40mm | 2 salvos |
+| Weapon | Caliber | Ammunition | Rounds |
+|--------|---------|------------|--------|
+| **ZPT99A** | 30mm | DTC041A-30 AP Sabot | 160 |
+| **ZPT99A** | 30mm | DTB02-30 HE-Frag | 300 |
+| **HJ-73C** | 125mm | ATGM (HJ-73C variant) | 2 |
+| **QJT02** | 5.8mm | Coaxial MG | 2000 |
+| **Smoke** | 40mm | Smoke Launcher | 2 salvos |
 
 ---
 
@@ -86,24 +94,38 @@ The **ZBL08** (Type 08) is a wheeled infantry fighting vehicle of the People's L
 ## Characteristics
 
 **Strengths:**
-- High road speed (70 km/h)
+- Fastest IFV in Squad (113 km/h)
 - 8x8 wheeled mobility
 - Fully amphibious
 - Carries 8 passengers
 - HJ-73C variant has ATGM capability
+- High turret HP (600) - double ZBD04A
 
 **Weaknesses:**
 - Slower turret rotation than BLUFOR IFVs
 - Only 2 crew (no commander position)
 - Light armor
-- Slow reverse speed (10 km/h)
+- Slow reverse speed (17 km/h)
 
 ---
 
 ## Tactical Notes
 
-- The ZBL08 has notably slower turret traverse compared to Western IFVs - plan engagements accordingly
-- Fully amphibious despite wheeled configuration
+- Fastest IFV in Squad at 113 km/h - excellent for rapid deployment and flanking
+- The ZBL08 has notably slower turret traverse compared to Western IFVs
+- Fully amphibious despite wheeled configuration (slow water speed)
 - The HJ-73C variant adds 2 ATGMs for anti-armor capability
-- Lower AP ammo count (160) compared to ZBD04A (200) - manage ammunition carefully
-- Fast on roads, making it effective for rapid deployment and flanking maneuvers
+- Lower AP ammo count (160) compared to ZBD04A (200) - manage ammo carefully
+- Driver gets wide-angle gimbal camera instead of driver hatch view
+- Gun elevation: -8° to 44°
+- Turret rotation: 50°/s
+- Same gunner HUD as ZBD05
+
+---
+
+## See Also
+
+- [ZBD04A](/vehicles/zbd04a) - PLA tracked IFV
+- [ZBD05](/vehicles/zbd05) - PLA amphibious IFV
+- [ZSL92](/vehicles/zsl92) - PLA wheeled APC
+- [LAV-25](/vehicles/lav-25) - USMC wheeled IFV

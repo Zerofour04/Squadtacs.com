@@ -1,24 +1,57 @@
 ---
 title: M1A2 Abrams
-description: American main battle tank featuring 120mm smoothbore cannon, advanced armor, and sophisticated fire control systems including Commander's Independent Thermal Viewer.
+description: US Army MBT with 120mm cannon, M2A1 CROWS, loader MG, and hunter-killer system.
+metaDescription: Master the M1A2 Abrams in Squad. Complete guide to the US Army main battle tank with CROWS and loader MG.
 category: mbt
 image: M1A2.webp
+# Core Stats
 tickets: 15
 crew: 4
 passengers: 0
-hp: 3500
+hp: 3000
 respawn: 20 min
+speed: 79
+reverseSpeed: 48
+# Logistics
+ammoPoints: 50
+constructionPoints: 0
+# Armament
+armament:
+  - name: M256
+    caliber: 120mm
+    ammo: M829A4 APFSDS
+    rounds: 21
+  - name: M256
+    caliber: 120mm
+    ammo: M830A1 HEAT
+    rounds: 21
+  - name: M240
+    caliber: 7.62mm
+    rounds: 2000
+  - name: M2A1 CROWS
+    caliber: 12.7mm
+    ammo: Commander
+    rounds: 400
+  - name: M240B
+    caliber: 7.62mm
+    ammo: Loader
+    rounds: 1400
 factions: [USA]
-weapons:
-  - M256 120mm Smoothbore (21 AP + 21 HEAT)
-  - M240C 7.62mm Coaxial (800 rounds)
-  - M2A1 .50 Cal Commander Weapon Station (400 rounds)
 order: 1
 ---
 
 ## Overview
 
-The M1A2 Abrams is the primary main battle tank of the United States Army. As the most advanced variant of the Abrams family in Squad, it features the Commander's Independent Thermal Viewer (CITV) and enhanced armor protection, making it one of the most formidable ground combat vehicles in the game.
+The **M1A2 Abrams** is the US Army's main battle tank. Most advanced Abrams variant in Squad, featuring M2A1 CROWS with hunter-killer, separate loader's MG position, and M829A4 depleted uranium rounds.
+
+**Key Features:**
+
+- **4-man crew** - Driver, gunner, commander, loader
+- **M2A1 CROWS** - Stabilized, 5x/12x zoom, hunter-killer
+- **Loader's M240B** - Extra firepower (exposed!)
+- **M829A4 APFSDS** - DU penetrator rounds
+- **70 short tons** - Heaviest MBT in game
+- **US Army exclusive**
 
 ---
 
@@ -26,70 +59,130 @@ The M1A2 Abrams is the primary main battle tank of the United States Army. As th
 
 | Position | Role | Equipment |
 |----------|------|-----------|
-| **Driver** | Vehicle movement | Periscope, smoke launcher |
-| **Gunner** | Main gun & coax operation | Thermal sight, laser rangefinder, stabilized |
-| **Commander** | Situational awareness, CWS | Commander's Independent Thermal Viewer (CITV), M2A1 .50 cal |
-| **Loader** | Ammunition management | Periscope |
+| **Driver** | Movement | Periscope, smoke generator |
+| **Gunner** | Main gun + coax | Thermal, 3x/6x/12x zoom |
+| **Commander** | M2A1 CROWS | 5x/12x zoom, hunter-killer |
+| **Loader** | M240B exposed MG | 7x200 rounds, exposed! |
 
 ---
 
-## Weapons Systems
+## Statistics
 
-### M256 120mm Smoothbore Cannon
+| Stat | Value |
+|------|-------|
+| Tickets | 15 |
+| Crew | 3+1 (loader) |
+| HP | 3000 |
+| Respawn | 20 min |
+| Speed | 79 km/h |
+| Reverse | 48 km/h |
+| Ammo Points | 50 |
 
-The main armament fires two types of ammunition:
-- **AP (Armor Piercing)**: 21 rounds - Sabot rounds for engaging armored vehicles
-- **HEAT (High Explosive Anti-Tank)**: 21 rounds - Effective against vehicles and fortifications
+**Turret Performance:**
 
-### M240C Coaxial Machine Gun
-- 7.62mm belt-fed machine gun
-- 800 rounds available
-- Effective against infantry and light vehicles
-
-### M2A1 Commander Weapon Station (CWS)
-- .50 caliber heavy machine gun
-- 400 rounds available
-- Fully stabilized and operable from within the turret
-- Includes thermal imaging and rangefinder
+| Stat | Value |
+|------|-------|
+| Turret Rotation | 40°/s |
+| Gun Elevation | -10°/+20° |
+| Zoom | 3x, 6x, 12x |
+| Reload | 6.5 sec |
 
 ---
 
-## Armor & Protection
+## Main Armament - M256 120mm
 
-The M1A2 features Chobham composite armor with excellent protection:
-- **Frontal Arc**: Extremely strong, resistant to most anti-tank weapons
-- **Side/Rear**: More vulnerable to IFV cannons, ATGMs, and heavy AT weapons
-- **Top**: Vulnerable to top-attack missiles (Javelin, Kornet)
+| Ammo Type | Rounds | Role |
+|-----------|--------|------|
+| **M829A4 APFSDS** | 21 | Anti-armor (DU penetrator) |
+| **M830A1 HEAT** | 21 | Anti-vehicle, fortifications |
 
-### Smoke Systems
-- 8x smoke grenades (2 salvos of 4)
-- Engine smoke generator
+**Total:** 42 rounds
+
+---
+
+## Secondary Armament
+
+| Weapon | Caliber | Rounds | Operator |
+|--------|---------|--------|----------|
+| **M240 Coax** | 7.62mm | 2000 | Gunner |
+| **M2A1 CROWS** | 12.7mm | 400 | Commander |
+| **M240B Loader** | 7.62mm | 7x 200 | Loader (exposed) |
+| **Smoke Launcher** | 40mm | 2 | Driver |
+
+---
+
+## M2A1 CROWS (Commander)
+
+| Feature | Capability |
+|---------|------------|
+| **Zoom** | 5x, 12x |
+| **Traverse** | 360° independent |
+| **Stabilization** | Yes |
+| **Hunter-Killer** | Yes |
+| **Protection** | Fully enclosed |
+
+The commander can designate targets for the gunner (hunter-killer system).
+
+---
+
+## Loader's M240B
+
+| Feature | Notes |
+|---------|-------|
+| **Ammo** | 1400 rounds (7x200) |
+| **Protection** | Exposed - shield only |
+| **Use** | Aim upward to hide behind shield |
+
+**Warning:** Loader is exposed and vulnerable. Hard to hear local voice chat due to engine noise.
+
+---
+
+## Armor & Weak Points
+
+| Area | Protection |
+|------|------------|
+| **Turret front** | Very strong |
+| **Hull front** | Strong composite |
+| **Gun mantlet** | Major weakness |
+| **Lower glacis (right)** | Ammo cook-off risk |
+| **Side/Rear** | Vulnerable |
+| **Engine (rear)** | Mobility kill |
+
+**Ammo storage:** Bottom left of hull - penetration can cause cook-off.
+
+---
+
+## M1A2 vs M1A1
+
+| Feature | M1A2 | M1A1 |
+|---------|------|------|
+| Faction | USA | ADF, USMC |
+| Crew | 4 | 3 |
+| APFSDS | M829A4 (DU) | KEW-A2 (Tungsten) |
+| Commander MG | M2A1 CROWS | M2A1 CWS |
+| CROWS features | 5x/12x, stabilized, hunter-killer | Weak magnification, no stab |
+| Loader MG | M240B (1400 rds) | None |
+| Weight | 70 short tons | 63 short tons |
 
 ---
 
 ## Tactical Tips
 
-1. **Use the CITV** - The commander can independently scan for targets while the gunner engages
-2. **Hull-down positions** maximize your armor advantage
-3. **Communicate with infantry** to spot hidden AT threats
-4. **Protect your flanks** - Side and rear armor are vulnerable
-5. **Use thermals at night** for significant advantage
-6. **Avoid urban areas** without infantry support - AT ambushes are deadly
-7. **Keep moving** when under ATGM threat - wire-guided missiles are easier to dodge
+1. **Hunter-killer** - Commander marks, gunner engages
+2. **CROWS advantage** - Commander scans independently
+3. **Loader MG** - Extra firepower but exposed
+4. **Hull-down** - Maximize frontal armor
+5. **6.5s reload** - Fastest MBT reload
+6. **Avoid mantlet shots** - Major weak point
+7. **Lower glacis right** - Ammo cook-off risk
+8. **Engine smoke** - Hold LMB as driver
 
 ---
 
-## Comparison to M1A1
+## See Also
 
-| Feature | M1A2 | M1A1 |
-|---------|------|------|
-| CITV | Yes | No |
-| CWS Stabilization | Yes | No |
-| HP | 3500 | 3000 |
-| Crew | 4 | 3 |
+- [M1A1 Abrams](/vehicles/m1a1-abrams) - USMC/ADF variant
+- [M2A3 Bradley](/vehicles/m2a3-bradley) - US Army IFV
+- [Leopard 2A6M](/vehicles/leopard-2a6m) - CAF MBT
+- [T-72B3](/vehicles/t-72b3) - RGF equivalent
 
----
-
-## Commander Assets
-
-When combined with the A-10 Warthog CAS and MQ-9 UAV reconnaissance, the M1A2 becomes even more effective with coordinated strikes and enhanced situational awareness.

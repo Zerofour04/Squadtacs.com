@@ -1,82 +1,146 @@
 ---
-title: "LAV 6.0"
-description: "Canadian infantry fighting vehicle with 25mm Bushmaster cannon and amphibious capability"
-category: "ifv"
-factions: [CAF]
-image: "LAV 6.webp"
+title: LAV 6.0
+description: Canadian IFV with 25mm Bushmaster, hunter-killer, and upgraded armor for CAF.
+metaDescription: Master the LAV 6.0 in Squad. Complete guide to 25mm Bushmaster, stats, and tactics for Canadian Army.
+category: ifv
+image: LAV 6.webp
+# Core Stats
 tickets: 10
-respawn: "10 min"
 crew: 4
 passengers: 7
-weapons:
-  - "M242 Bushmaster 25mm (75 AP + 230 HE)"
-  - "C6 7.62mm coaxial"
-  - "Smoke launchers"
----
-
-# LAV 6.0
-
-The **LAV 6.0** is the primary infantry fighting vehicle of the Canadian Armed Forces in Squad. Based on the LAV III chassis with upgraded armor and firepower, it provides excellent infantry support with its 25mm Bushmaster cannon.
-
+hp: 1750
+respawn: 15 min
+speed: 115
+reverseSpeed: 19
+# Logistics
+ammoPoints: 600
+constructionPoints: 0
+# Armament
+armament:
+  - name: M242 Bushmaster
+    caliber: 25mm
+    ammo: AP/HE
+    rounds: 275
+  - name: C6
+    caliber: 7.62mm
+    rounds: 882
+  - name: C6A1 FLEX
+    caliber: 7.62mm
+    rounds: 2500
+countermeasures: Smoke Launcher (2 charges)
+factions: [CAF]
+order: 30
 ---
 
 ## Overview
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+The **LAV 6.0** is the Canadian infantry fighting vehicle. Introduced in Alpha 15.3 for the Canadian Army, it is a heavily upgraded LAV III with improved armor, fire control, and double-V hull for mine protection.
 
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">10</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Tickets</div>
-</div>
+**Key Features:**
 
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">10 min</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Respawn</div>
-</div>
+- **25mm Bushmaster** - Same gun as M2A3
+- **Hunter-killer** - Commander target designation
+- **4 crew** - Driver, gunner, commander, MG
+- **7 passengers** - Infantry transport
+- **Fastest IFV** - 115 km/h top speed
+- **CAF exclusive**
 
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">4+7</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Crew + Passengers</div>
-</div>
+---
 
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">1500</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">HP</div>
-</div>
+## Statistics
 
-</div>
+| Stat | Value |
+|------|-------|
+| Tickets | 10 |
+| Crew | 4 |
+| Passengers | 7 |
+| HP | 1750 |
+| Turret HP | 600 |
+| Respawn | 15 min |
+| Max Speed | 115 km/h |
+| Reverse Speed | 19 km/h |
+| Ammo Points | 600 |
+
+---
+
+## Performance
+
+| Attribute | Value |
+|-----------|-------|
+| 0-50 km/h | 11s |
+| 0-70 km/h | 20s |
+| 0-90 km/h | 38s |
+| Turret Rotation | 60°/s |
+| Gun Elevation | -8° / +60° |
+| Zoom Levels | 1.5x, 12x |
+| Sabot DPS | 133.3 HP (burst) |
 
 ---
 
 ## Armament
 
-| Weapon | Caliber | Ammunition |
-|--------|---------|------------|
-| M242 Bushmaster | 25mm | 75x M919 APFSDS-T, 230x MK210 HE-I-T |
-| C6 Coaxial | 7.62mm | 440 rounds (2 belts) |
-| Smoke Launchers | 40mm | 2 salvos |
+| Weapon | Caliber | Ammo Type | Rounds |
+|--------|---------|-----------|--------|
+| M242 Bushmaster | 25mm | M919 APFSDS-T | 75 |
+| M242 Bushmaster | 25mm | MK210 HE-I-T | 200 |
+| C6 Coaxial | 7.62mm | Belt-fed | 440(+1) x 2 |
+| C6A1 FLEX Pintle | 7.62mm | Belt-fed | 250 x 10 |
+| Smoke Launcher | 40mm | Smoke Grenades | 2 |
 
 ---
 
-## Characteristics
+## Crew Positions
 
-**Strengths:**
-- Powerful 25mm cannon effective against infantry and light vehicles
-- Can transport 7 infantry
-- Good mobility with 8x8 wheeled configuration
-- Stabilized turret for accurate fire on the move
-
-**Weaknesses:**
-- Not amphibious (unlike LAV-25/ASLAV-25)
-- Vulnerable to heavy AT weapons
-- Limited armor compared to tracked IFVs
+| Position | Notes |
+|----------|-------|
+| **Driver** | Standard controls |
+| **Gunner** | 25mm + coax + smoke |
+| **Commander** | Stabilized periscope, hunter-killer |
+| **Machine Gunner** | C6A1 FLEX pintle (2500 rounds total) |
 
 ---
 
-## Tactical Notes
+## Comparison vs LAV III / Coyote
 
-- The LAV 6.0 is the upgraded version of the LAV III with better armor and firepower
-- Use APFSDS against vehicles and HE against infantry/emplacements
-- The 25mm can penetrate light armor and disable heavier vehicles
-- Commander has stabilized optics for target designation
-- Requires Crewman kit for driver and gunner positions
+| Feature | LAV 6.0 | LAV III / Coyote |
+|---------|---------|------------------|
+| HP | 1750 | ~1350 |
+| Turret HP | 600 | ~300 |
+| Turret Rotation | 60°/s | Slower |
+| Ammo | 275 (25mm) | Less |
+| Hunter-Killer | Yes | No (LAV III) |
+
+---
+
+## Gameplay
+
+- **Fastest IFV** - 115 km/h wheeled
+- **Hunter-killer** - Commander designates targets
+- **Strong against IFVs** - 25mm high DPS
+- **No ATGMs** - Cannot fight MBTs at range
+- **Wheeled** - Tires can be popped
+- **Not amphibious** - Unlike LAV-25/ASLAV-25
+- **Rear gun depression** - Poor, vulnerable to infantry behind
+- **4-man crew** - Including pintle MG
+
+---
+
+## Tactical Tips
+
+1. **Use speed** - Fastest IFV, flank positions
+2. **Hunter-killer** - Commander spots, gunner kills
+3. **75 AP + 200 HE** - Less AP than M2A3 (70+250)
+4. **Avoid MBTs** - No missiles, can't penetrate
+5. **Coax + pintle** - 3300+ rounds of 7.62mm
+6. **Rear weakness** - Poor gun depression behind
+7. **Protect tires** - Wheeled vulnerability
+8. **Non-amphibious** - Cannot swim
+
+---
+
+## See Also
+
+- [LAV III](/vehicles/lav-iii) - CAF APC (predecessor)
+- [Coyote](/vehicles/coyote) - CAF recon vehicle
+- [ASLAV-25](/vehicles/aslav-25) - Australian LAV (amphibious)
+- [M2A3](/vehicles/m2a3) - US IFV (same gun)

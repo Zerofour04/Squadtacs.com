@@ -1,112 +1,168 @@
 ---
-title: "Mi-8"
-description: "Russian medium transport helicopter with twin door guns and 1500 supply capacity"
-category: "helicopter"
-factions: [RGF, VDV, MEA, CAF]
-image: "Mi-8.webp"
+title: Mi-8 Hip
+description: Soviet transport helicopter with 3 variants, twin door guns, and 1500 supply capacity.
+metaDescription: Master the Mi-8 in Squad. Complete guide to RGF, VDV, GFI, and CAF transport helicopter.
+category: helicopter
+image: Mi-8.webp
+# Core Stats
 tickets: 5
-respawn: "6 min"
 crew: 4
 passengers: 9
----
-
-# Mi-8
-
-The **Mi-8** "Hip" (NATO reporting name) is a Soviet-designed medium transport helicopter that remains one of the most widely used helicopters in the world. In Squad, it serves RGF, VDV, MEA (as Mi-17), and CAF (as CH-178) with large troop capacity and supply capability.
-
+hp: 1000
+respawn: 6 min
+speed: 250
+# Logistics
+ammoPoints: 1500
+constructionPoints: 0
+# Armament (Mi-8 variant)
+armament:
+  - name: PKP
+    caliber: 7.62mm
+    ammo: Door Gun Left
+    rounds: 800
+  - name: PKP
+    caliber: 7.62mm
+    ammo: Door Gun Right
+    rounds: 800
+factions: [RGF, VDV, GFI, CAF]
+order: 60
 ---
 
 ## Overview
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+The **Mi-8 Hip** is a Soviet medium transport helicopter. One of the most produced helicopters in history (17,000+ built). In Squad, it serves RGF, VDV, GFI (Mi-17), and CAF (CH178) with large troop capacity.
 
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">5</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Tickets</div>
-</div>
+**Key Features:**
 
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">6-15 min</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Respawn</div>
-</div>
-
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">4</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Crew</div>
-</div>
-
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">9</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Passengers</div>
-</div>
-
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">250 km/h</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Max Speed</div>
-</div>
-
-<div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.5); border-radius: 8px; padding: 1rem; text-align: center;">
-<div style="font-size: 1.5rem; font-weight: bold; color: #e2e8f0;">1500</div>
-<div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Supply Pts</div>
-</div>
-
-</div>
+- **3 variants** - Mi-8 (RGF/VDV), Mi-17 (GFI), CH178 (CAF)
+- **9 passengers** + pilot + copilot + 2 door gunners
+- **1500 supply capacity** - 500 more than UH-60M
+- **Twin door guns** - Defensive fire
+- **250 km/h** max speed
+- **Multi-faction** - RGF, VDV, GFI, CAF
 
 ---
 
 ## Variants
 
-| Variant | Faction | Door Guns | Notes |
-|---------|---------|-----------|-------|
-| Mi-8 | RGF, VDV | 2x PKP 7.62mm | Tan/green (RGF), black (VDV) |
-| Mi-17 | MEA | 2x MG3 7.62mm | Export variant |
-| CH-178 | CAF | 2x PKP 7.62mm | Canadian designation, Afghanistan maps |
+| Variant | Faction | Door Guns | Ammo |
+|---------|---------|-----------|------|
+| **Mi-8MTV-5** | RGF, VDV | 2x PKP | 8x 100 each |
+| **Mi-17** | GFI | 2x MG3 | 6x 125 each |
+| **CH178** | CAF | 2x C6A1 | 5x 200 each |
+
+All: 5 tickets, 13 seats (pilot + 12), 1500 supply
 
 ---
 
-## Armament
+## Statistics
 
-| Weapon | Caliber | Ammunition |
-|--------|---------|------------|
-| PKP Door Gun (x2) | 7.62mm | 8x 100-round boxes each |
-| MG3 Door Gun (x2) | 7.62mm | Mi-17 variant |
+| Stat | Value |
+|------|-------|
+| Tickets | 5 |
+| Crew | 4 (pilot, copilot, 2 gunners) |
+| Passengers | 9 |
+| Total Seats | 13 |
+| Respawn | 6 min |
+| Speed | 250 km/h |
+| Supply Points | 1500 |
 
 ---
 
 ## Crew Positions
 
-| Position | Role | Equipment |
-|----------|------|-----------|
-| Pilot | Flight control | Collective, cyclic, pedals |
-| Copilot | Navigation/comms | Full flight controls |
-| Left Door Gunner | Fire support | PKP/MG3 |
-| Right Door Gunner | Fire support | PKP/MG3 |
+| Position | Kit Required | Equipment |
+|----------|--------------|-----------|
+| **Pilot** | Pilot | Collective, cyclic, pedals |
+| **Copilot** | Any | Full flight controls |
+| **Left Door Gunner** | Any | PKP/MG3/C6A1 |
+| **Right Door Gunner** | Any | PKP/MG3/C6A1 |
 
 ---
 
-## Characteristics
+## Door Guns by Variant
 
-**Strengths:**
-- 1500 supply capacity - 500 more than UH-60M
-- Large passenger capacity (9)
-- Twin door guns for defensive fire
-- High top speed (250 km/h)
-- Widely available across multiple factions
+### Mi-8MTV-5 (RGF, VDV)
 
-**Weaknesses:**
-- Large profile makes it an easy target
-- No armor - vulnerable to small arms
-- Requires skilled pilot for safe landings
-- Door gunners exposed to ground fire
+| Weapon | Caliber | Ammo |
+|--------|---------|------|
+| PKP (x2) | 7.62mm | 8x 100 = 800 each |
+
+### Mi-17 (GFI)
+
+| Weapon | Caliber | Ammo |
+|--------|---------|------|
+| MG3 (x2) | 7.62mm | 6x 125 = 750 each |
+
+### CH178 (CAF)
+
+| Weapon | Caliber | Ammo |
+|--------|---------|------|
+| C6A1 (x2) | 7.62mm | 5x 200 = 1000 each |
 
 ---
 
-## Tactical Notes
+## Supply Capacity
 
-- The Mi-8 can transport a full squad plus attachments in one flight
-- 1500 supply capacity allows efficient FOB resupply
-- Door guns have limited forward arc - fly sideways for engagement
-- RGF Mi-8s use tan/green camo, VDV use black paint scheme
-- One of the most produced helicopters in history (17,000+ built)
-- CH-178 is Canadian-operated Mi-17 for Afghanistan maps
-- Available to RGF, VDV, MEA, and CAF factions
+| Helicopter | Supply |
+|------------|--------|
+| **Mi-8/Mi-17/CH178** | 1500 |
+| UH-60M | 1000 |
+| CH146 | 1000 |
+
+Mi-8 family carries 500 more than NATO helicopters.
+
+---
+
+## Faction Colors
+
+| Variant | Camo |
+|---------|------|
+| **RGF Mi-8** | Tan/green |
+| **VDV Mi-8** | Black |
+| **GFI Mi-17** | Desert |
+| **CAF CH178** | Olive |
+
+---
+
+## Gameplay
+
+- **13 seats** - Full squad + extras
+- **1500 supply** - Efficient FOB resupply
+- **Door guns** - Limited forward arc
+- **Large profile** - Easy target
+- **No armor** - Vulnerable to small arms
+- **Exposed gunners** - Use evasive flying
+
+---
+
+## Tactical Tips
+
+1. **Fly sideways** - Door guns have limited forward arc
+2. **Use speed** - 250 km/h to minimize exposure
+3. **Low approach** - Terrain masking
+4. **Hot LZ suppression** - Door gunners cover landing
+5. **Quick drops** - Don't hover over objectives
+6. **1500 supply** - Fewer trips than UH-60M
+7. **Copilot navigation** - Any kit can copilot
+8. **Abort if damaged** - No armor to tank hits
+
+---
+
+## Version History
+
+| Update | Variant | Faction |
+|--------|---------|---------|
+| Alpha 16 | Mi-8 | RGF |
+| V1.0 | Mi-17 | GFI |
+| V2.16 | CH178 | CAF |
+
+---
+
+## See Also
+
+- [UH-60M Blackhawk](/vehicles/uh-60m) - US equivalent
+- [CH146 Griffon](/vehicles/ch-146) - CAF helicopter
+- [Z-8](/vehicles/z-8) - PLA equivalent
+- [Helicopter Flying](/guides/helicopter-flying) - Flight guide
+

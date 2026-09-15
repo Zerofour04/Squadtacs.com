@@ -1,65 +1,140 @@
 ---
 title: M939 Truck
-description: American 5-ton military cargo truck used for troop transport and logistics supply operations.
-category: transport
+description: US 6x6 heavy truck for troop transport and logistics supply operations.
+metaDescription: Master the M939 Truck in Squad. Complete guide to US transport and logistics truck.
+category: logistics
 image: M939 Transport.webp
+# Core Stats
 tickets: 5
-crew: 1
+crew: 0
 passengers: 18
 hp: 750
 respawn: 3 min
-factions: [USA, USMC]
-weapons: []
+speed: 86
+# Logistics (Logi variant)
+ammoPoints: 3000
+constructionPoints: 3000
+# No armament
+armament: []
+factions: [USA, USMC, WPMC]
 order: 40
 ---
 
 ## Overview
 
-The M939 is a 5-ton 6x6 military cargo truck that serves as the backbone of US Army logistics and transport operations. Available in transport and logistics variants, it provides essential supply capabilities for sustained combat operations.
+The **M939 Truck** is a US 6x6 heavy truck for transport and logistics. Introduced in Alpha 7, it serves USA, USMC, and WPMC factions. Based on the real M939 5-ton truck adopted in 1982.
 
----
+**Key Features:**
 
-## Crew Positions
-
-| Position | Role | Equipment |
-|----------|------|-----------|
-| **Driver** | Vehicle movement | None |
-| **Passengers** (18) | Transported infantry | Rear cargo bed |
+- **2 variants** - Transport, Logistics
+- **18 passengers** - Transport variant
+- **6000 total supply** - Logistics (3000/3000)
+- **No crewman kit** required
+- **No armor/weapons** - Avoid combat
+- **86 km/h** top speed
+- **USA, USMC, WPMC**
 
 ---
 
 ## Variants
 
-### M939 Transport
+| Variant | Tickets | Pass | Ammo | Build | Role |
+|---------|---------|------|------|-------|------|
+| **Transport** | 5 | 18 | 0 | 0 | Troop movement |
+| **Logistics** | 5 | 3 | 3000 | 3000 | FOB resupply |
 
-- **Role**: Troop transport
-- **Capacity**: 18 passengers
-- **Supply Points**: 0
-- **Use**: Rapid troop deployment
+Both: 0 crew, 750 HP, 3 min respawn
 
-### M939 Logistics
+---
 
-- **Role**: Supply delivery
-- **Capacity**: Limited passengers
-- **Supply Points**: 3000 (construction) + 3000 (ammunition)
-- **Use**: FOB resupply, ammunition delivery
+## Statistics
+
+| Stat | Value |
+|------|-------|
+| Tickets | 5 |
+| Crew | 0 |
+| HP | 750 |
+| Respawn | 3 min |
+| Speed | 86 km/h |
+
+---
+
+## M939 Transport
+
+Troop transport variant.
+
+| Stat | Value |
+|------|-------|
+| **Passengers** | 18 |
+| **Weapons** | None |
+| **Use** | Rapid deployment |
+
+---
+
+## M939 Logistics
+
+Supply delivery variant.
+
+| Stat | Value |
+|------|-------|
+| **Passengers** | 3 |
+| **Ammo Points** | 3000 (max 3000) |
+| **Build Points** | 3000 (max 3000) |
+| **Total Capacity** | 6000 |
+
+---
+
+## Vulnerabilities
+
+| Threat | Notes |
+|--------|-------|
+| **All weapons** | No armor protection |
+| **Engine** | Small arms can disable |
+| **Tires** | Infantry can shoot out |
+| **Overall** | Avoid all combat |
+
+---
+
+## Gameplay
+
+- **No armor** - Any weapon damages
+- **No weapons** - Cannot defend
+- **Soft target** - 750 HP only
+- **5 tickets** - Significant loss
+- **Stay behind lines** - Never frontline
+- **Speed is survival** - 86 km/h
 
 ---
 
 ## Tactical Tips
 
-1. **Avoid combat zones** - No armor or weapons
-2. **Use for initial deployment** - Get squads to objectives quickly
-3. **Logistics runs** - Keep FOBs supplied with ammo and build materials
-4. **Stay behind lines** - 5 ticket loss is significant
-5. **Use roads** - Better speed on paved surfaces
-6. **Coordinate with SL** - Plan supply routes and drop-off points
+1. **Avoid combat** - No protection
+2. **Initial deployment** - Get squads to objectives
+3. **Logi runs** - Keep FOBs supplied
+4. **Use roads** - Faster on pavement
+5. **Plan routes** - Avoid enemy territory
+6. **Drive fast** - Don't stop in open
+7. **Hide when unloading** - Behind cover
+8. **Coordinate with SL** - Supply priorities
 
 ---
 
-## Role in Battlegroups
+## Comparison
 
-The M939 is standard equipment across all USA battlegroups:
+| Truck | Faction | Speed | Supply |
+|-------|---------|-------|--------|
+| **M939** | USA, USMC, WPMC | 86 km/h | 6000 |
+| URAL 4320 | RGF, VDV | 75 km/h | 6000 |
+| KamAZ 5350 | RGF | 90 km/h | 6000 |
+| MSVS | CAF | 90 km/h | 6000 |
+| MAN HX | BAF | 90 km/h | 6000 |
 
-- **All battlegroups** - 2x Transport, 2x Logistics typically available
-- **Logistics Company** - Additional logistics variants
+---
+
+## See Also
+
+- [URAL 4320](/vehicles/ural-4320) - RGF equivalent
+- [KamAZ 5350](/vehicles/kamaz-5350) - RGF truck
+- [MSVS](/vehicles/msvs) - CAF truck
+- [Logistic System](/guides/logistics) - FOB supply guide
+
