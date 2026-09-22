@@ -1,6 +1,7 @@
 ---
 title: FV510 UA
 description: "FV510 UA guide for Squad - British Warrior IFV with TOW anti-tank missiles and 30mm cannon"
+metaDescription: Master the FV510 UA Warrior in Squad. Guide to the up-armoured British IFV with 30mm RARDEN cannon.
 category: ifv
 image: FV510 UA.webp
 tickets: 10

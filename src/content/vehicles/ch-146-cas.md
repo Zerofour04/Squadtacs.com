@@ -1,7 +1,8 @@
 ---
 title: "CH-146 Griffon CAS"
 description: "Canadian attack helicopter with GAU-19 minigun and rocket pods"
-category: "helicopter"
+metaDescription: Master the CH-146 CAS in Squad. Guide to the Canadian attack helicopter with minigun and rockets.
+category: helicopter
 factions: [CAF]
 image: CH-146 CAS.webp
 tickets: 10
