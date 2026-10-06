@@ -126,7 +126,7 @@ const categories = [
 
 <BaseLayout title="Squad Tactics Guide & Wiki" description="Squad Tactics guide and wiki. Learn strategies, master all 17 factions, vehicles, weapons and maps. Beginner guides and advanced tactics for Squad players." showSidebar={false}>
   <!-- Hero Section with Background Image (Full Bleed) -->
-  <div class="relative -mt-8 mb-16" style="margin-left: calc(-50vw + 50%); width: 100vw;">
+  <div class="relative -mt-8 mb-16" style="margin-left: calc(-50vw + 50%); width: 100vw; max-width: 100vw;">
     <!-- Background Image Carousel -->
     <div class="absolute inset-0 z-0">
       <img
@@ -178,13 +178,14 @@ const categories = [
         Squad Tactics Guide
       </h1>
 
-      <div class="inline-flex items-center gap-4 mb-6">
+      <div class="inline-flex items-center gap-4 mb-2">
         <span class="w-12 h-px bg-[#7A9E5A]/60"></span>
         <span class="font-display text-xl uppercase tracking-[0.25em] text-[#A4C78E] drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
           Developed by GER | Ben//[Zerofour][04]
         </span>
         <span class="w-12 h-px bg-[#7A9E5A]/60"></span>
       </div>
+      <p class="text-amber-300/80 text-sm mb-6 drop-shadow-lg">Beta — Some information may be incomplete or inaccurate</p>
 
       <p class="text-xl font-medium text-white/90 max-w-2xl mx-auto leading-relaxed drop-shadow-lg">
         Your tactical field manual for Squad. Weapons, vehicles, maps, and strategies — all in one place. Hit Shift+Tab in-game for instant battlefield reference.

@@ -15,14 +15,20 @@ const vehicleSlugMap: Record<string, string> = {};
 vehicleCategories.forEach(cat => {
   cat.subcategories.forEach(sub => {
     sub.vehicles.forEach(vehicle => {
-      // Try exact match first (lowercase, replace spaces with hyphens)
+      // First check if vehicle has explicit link property
+      if (vehicle.link && vehicleSlugs.has(vehicle.link)) {
+        vehicleSlugMap[vehicle.name] = vehicle.link;
+        return;
+      }
+
+      // Fallback: Try exact match (lowercase, replace spaces with hyphens)
       const directSlug = vehicle.name.toLowerCase().replace(/\s+/g, '-').replace(/[()]/g, '');
       if (vehicleSlugs.has(directSlug)) {
         vehicleSlugMap[vehicle.name] = directSlug;
         return;
       }
 
-      // Try simplified version (remove variant suffixes)
+      // Fallback: Try simplified version (remove variant suffixes)
       const simplifiedName = vehicle.name
         .replace(/\s+(M2A1|M2|M240|M134|MG3|Kord|PKM|PKT|QJZ89|QJY88|QLZ87|HJ8|TOW|Kornet|Spandrel|Logistics|Transport|CAS|Scout|RWS|CROWS|Mk19|AGS-17|NSV|DShK|UB-32|ZU-23-2|Small|Black Hawk|Venom|Griffon).*$/i, '')
         .trim();

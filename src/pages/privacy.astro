@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="Privacy Policy" showSidebar={false}>
-  <div class="max-w-3xl mx-auto prose prose-invert prose-sm">
+  <div class="max-w-3xl mx-auto prose prose-invert prose-sm overflow-x-hidden [&_a]:break-all [&_code]:break-all">
     <h1 class="font-display text-4xl font-bold text-text mb-2 uppercase tracking-wide">Privacy Policy</h1>
     <p class="text-text-muted mb-1">Data protection information according to GDPR</p>
     <p class="text-text-dim text-sm mb-8">Last updated: August 2026</p>
@@ -129,42 +129,44 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       We use cookies. Cookies are small text files stored on your device. We obtain prior consent from users where required.
     </p>
 
-    <table>
-      <thead>
-        <tr>
-          <th>Cookie</th>
-          <th>Provider</th>
-          <th>Purpose</th>
-          <th>Duration</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><code>cc_cookie</code></td>
-          <td>Own</td>
-          <td>Cookie consent</td>
-          <td>6 months</td>
-        </tr>
-        <tr>
-          <td><code>__cf_bm</code></td>
-          <td>Cloudflare</td>
-          <td>Bot protection</td>
-          <td>30 minutes</td>
-        </tr>
-        <tr>
-          <td><code>cf_clearance</code></td>
-          <td>Cloudflare</td>
-          <td>CAPTCHA validation</td>
-          <td>30 minutes</td>
-        </tr>
-        <tr>
-          <td><code>_ga, _ga_*</code></td>
-          <td>Google</td>
-          <td>Analytics (consent required)</td>
-          <td>2 years</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="overflow-x-auto -mx-4 px-4">
+      <table class="min-w-full text-sm">
+        <thead>
+          <tr>
+            <th>Cookie</th>
+            <th>Provider</th>
+            <th>Purpose</th>
+            <th>Duration</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>cc_cookie</code></td>
+            <td>Own</td>
+            <td>Cookie consent</td>
+            <td>6 months</td>
+          </tr>
+          <tr>
+            <td><code>__cf_bm</code></td>
+            <td>Cloudflare</td>
+            <td>Bot protection</td>
+            <td>30 minutes</td>
+          </tr>
+          <tr>
+            <td><code>cf_clearance</code></td>
+            <td>Cloudflare</td>
+            <td>CAPTCHA validation</td>
+            <td>30 minutes</td>
+          </tr>
+          <tr>
+            <td><code>_ga, _ga_*</code></td>
+            <td>Google</td>
+            <td>Analytics (consent required)</td>
+            <td>2 years</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
     <h2>Contact Requests</h2>
     <p>

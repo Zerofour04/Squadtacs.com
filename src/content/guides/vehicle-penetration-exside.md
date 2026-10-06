@@ -25,15 +25,15 @@ A quick visual reference showing exactly where to aim on every vehicle in Squad.
 ## Quick Navigation
 
 **Main Battle Tanks:**
-[ZTZ-99A](#ztz-99a-china) ·
-[M1A2 Abrams](#m1a21-abrams-usaaustralia) ·
 [Challenger 2](#fv4034-challenger-2-uk) ·
-[T-90A](#t-90a-russia) ·
 [Leopard 2A6M](#leopard-2a6m-canada) ·
-[T-72B3](#t-72b3-russiamea) ·
+[M1A2 Abrams](#m1a21-abrams-usaaustralia) ·
 [M60T](#m60t-turkeypmc) ·
+[T-62](#t-62-insurgentsmilitia) ·
 [T-64BM2](#t-64bm2-ukraine) ·
-[T-62](#t-62-insurgentsmilitia)
+[T-72B3](#t-72b3-russiamea) ·
+[T-90A](#t-90a-russia) ·
+[ZTZ-99A](#ztz-99a-china)
 
 **Mobile Gun Systems:**
 [M1128 Stryker](#m1128-stryker-mgs-usa) ·
@@ -41,28 +41,28 @@ A quick visual reference showing exactly where to aim on every vehicle in Squad.
 [ZTD-05](#ztd-05-mgs-china-navy)
 
 **Infantry Fighting Vehicles:**
-[M2A3 Bradley](#m2a3-bradley-usa) ·
-[FV510 Warrior](#fv510-warrior-uk) ·
-[FV520 CTAS](#fv520-ctas-uk) ·
+[ACV-15](#acv-15-turkey) ·
 [ASLAV](#aslav-australia) ·
+[BMD-1M](#bmd-1m-russia-vdv) ·
+[BMD-4M](#bmd-4m-russia-vdv) ·
 [BMP-1](#bmp-1-russiamilitia) ·
 [BMP-1AM](#bmp-1am-russia) ·
 [BMP-2](#bmp-2-russiamea) ·
 [BMP-2M](#bmp-2m-russia) ·
 [BMP-3](#bmp-3-russia) ·
-[BMD-1M](#bmd-1m-russia-vdv) ·
-[BMD-4M](#bmd-4m-russia-vdv) ·
 [BTR-4](#btr-4-ukraine) ·
 [BTR-80](#btr-80-russiamilitia) ·
 [BTR-82A](#btr-82a-russia) ·
 [Coyote](#coyote-canada) ·
+[FV510 Warrior](#fv510-warrior-uk) ·
+[FV520 CTAS](#fv520-ctas-uk) ·
 [LAV 6.0](#lav-60-canada) ·
 [LAV-25](#lav-25-usmc) ·
-[ACV-15](#acv-15-turkey) ·
+[M2A3 Bradley](#m2a3-bradley-usa) ·
 [PARS III](#pars-iii-turkey) ·
-[ZBL-08](#zbl-08-china) ·
+[ZBD-04A](#zbd-04a-china) ·
 [ZBD-05](#zbd-05-china-navy) ·
-[ZBD-04A](#zbd-04a-china)
+[ZBL-08](#zbl-08-china)
 
 **Armoured Personnel Carriers:**
 [ZSD-89](#zsd-89-china) ·

@@ -43,9 +43,14 @@
   --font-display: 'Barlow Condensed', 'Inter', system-ui, sans-serif;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   @apply bg-bg-dark text-text antialiased;
   font-family: var(--font-sans);
+  overflow-x: hidden;
 }
 
 /* Display Headlines */
